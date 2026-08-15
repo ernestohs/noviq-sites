@@ -11,7 +11,7 @@ Brand name: Noviq Peptides
 
 | Item | Value |
 | --- | --- |
-| Registrar | GoDaddy, client can transfer |
+| Registrar | GoDaddy. We have account access and can manage the domains directly. |
 | Products at launch | ~25 |
 | People managing catalog and orders | 3 |
 | Payment methods | "All methods". Client needs the live site to get final CC-processor approval. |

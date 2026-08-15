@@ -19,7 +19,7 @@ Blocks all Shopify work.
 | A3 | Collaborator request code, from Settings, Users and permissions, Security | TBD |
 | A4 | Confirmation the collaborator account has the Manage themes permission | TBD |
 | A5 | WordPress admin login for noviqpeptides.com | TBD |
-| A6 | Registrar or DNS access for all three domains, or the contact who has it | noviqpeptides.com on GoDaddy, client can transfer. Other two domains TBD. |
+| A6 | Registrar or DNS access for all three domains, or the contact who has it | Done. Client granted GoDaddy account access with domain management. Confirm all three domains live in that account. |
 
 Once A1 to A4 land, most of block C can be pulled from the store directly
 rather than transcribed. See "Self-serve" at the bottom.
