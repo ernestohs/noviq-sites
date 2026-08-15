@@ -193,5 +193,14 @@ Review the diff before pushing back.
 
 None. The earlier Noviq Bio bacteriostatic water label was a placeholder; the
 designer is producing corrected art unrelated to Noviq Peptides, so the
-separation constraint holds. Remaining items are client inputs, tracked in
-`specs/10-intake.md`.
+separation constraint holds.
+
+For noviqpeptides, the recommended direction is a custom WooCommerce build, a
+purpose-built theme plus a domain plugin that owns the data model, pricing, and
+compliance logic, rather than a restyle of a stock or commercial parent theme.
+See `specs/03-noviqpeptides.md`. Two items still need client answers: the
+build-vs-alignment scope and price (E4), and whether bacteriostatic water or
+injection consumables are sold on the peptide site given the dedicated water
+store in `specs/01-bacwatermarket.md` (E6).
+
+Remaining items are client inputs, tracked in `specs/10-intake.md`.

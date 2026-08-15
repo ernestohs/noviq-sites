@@ -66,6 +66,25 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | C13 | How results are delivered | TBD |
 | C14 | Sample intake fields to capture at checkout | TBD |
 
+### noviqpeptides
+
+Blocks launch of the peptide site. Any prices, SKUs, or catalog data used during
+the build are placeholders until these land.
+
+| # | Item | Answer |
+| --- | --- | --- |
+| C15 | Confirmed price list, per compound and vial size | TBD |
+| C16 | Real SKU scheme | TBD |
+| C17 | Whether volume/bulk discounts apply, and at what thresholds | TBD |
+| C18 | Whether availability is wired to real inventory before launch | TBD |
+| C19 | COA issuer and format, and expected first release lot and date | TBD |
+| C20 | Whether SDS documents are supplied alongside COAs | TBD |
+| C21 | Independent lab we may name once contracted | TBD |
+| C22 | Full catalog: category list, compounds, and which content migrates at launch | TBD |
+| C23 | Shipping carriers, rates, flat vs live, and any same-day dispatch cutoff | TBD |
+| C24 | International shipping, and to which countries (compliance question) | TBD |
+| C25 | Cold-chain requirements for any SKU | TBD |
+
 ## D. Legal and operational
 
 | # | Item | Answer |
@@ -77,6 +96,8 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | D5 | Where order notification emails go, per store | Noviq: orders@noviqpeptides.com, not yet set up. Shopify stores need different addresses, see D2/D7. |
 | D6 | High-risk gateway for bacwatermarket, if selected | TBD |
 | D7 | Owner email per Shopify store, must differ | TBD |
+| D8 | Tax nexus states, and manual rates vs a tax service | TBD |
+| D9 | High-risk processor for noviqpeptides, and whether the category is disclosed in writing | TBD |
 
 ## E. Decisions the client must make
 
@@ -85,8 +106,14 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | E1 | Accepts two Shopify subscriptions, $78/mo | TBD |
 | E2 | Accepts that Shopify Payments is not viable for bacwatermarket | TBD |
 | E3 | Accepts the no-cross-linking constraint | TBD |
-| E4 | Scope for noviqpeptides: alignment only or rebuild | TBD |
+| E4 | Scope for noviqpeptides: alignment only or rebuild | TBD, recommend build, see spec 03 |
 | E5 | Wants Shopify stores transferred to his ownership at launch | TBD |
+| E6 | Sell bacteriostatic water or injection consumables on the peptide site, or keep them off given the separate water store | TBD, recommend off, see spec 03 |
+| E7 | Subscribe and save: licence WooCommerce Subscriptions, drop the feature, or defer | TBD |
+| E8 | Post-launch reviews programme, covering material quality only, never personal outcomes | TBD |
+| E9 | Analytics: GA4, a privacy-preserving alternative, or none (ad-platform restrictions apply to remarketing tags) | TBD |
+| E10 | WordPress admin accounts: who needs access and at what role | TBD |
+| E11 | If a commercial parent theme licence is already owned, which one (affects template strategy, see spec 03) | TBD |
 
 ---
 
