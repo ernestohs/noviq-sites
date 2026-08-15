@@ -133,6 +133,49 @@ to `shop.name`.
 Checkout, notification emails, and the admin still use the store name from
 Settings, Store details. Rename each store there before launch as well.
 
+## Design system
+
+Shared across all three sites. This is a client requirement, not a preference.
+The same minimalist design language and the same palette apply everywhere. Only
+names, logos, and images differ between sites, so the three still read as
+unrelated companies while following one design pattern.
+
+Do not introduce colours, sections, or decorative elements beyond what is listed
+here. When in doubt, use the Dawn default and add nothing.
+
+### Palette
+
+Monochrome base with a single green accent, read from the client's sample.
+
+| Token | Use | Value |
+| --- | --- | --- |
+| Background | Page | White, `#FFFFFF` |
+| Section band | Hero and alternating sections | Light gray, approx `#ECECEC` |
+| Text | Headings and body | Near-black, approx `#121212` |
+| Muted text | Subtext | Medium gray, approx `#6B6B6B` |
+| Primary button | Solid fill, white label | Near-black, approx `#121212` |
+| Secondary button | White fill, thin border | Border near-black |
+| Accent | Icons and small marks only, never large fills | Generic green, `#16A34A` |
+
+The accent green is a generic placeholder, approved by the client to unblock the
+build. Swap it for the designer's exact hex when it arrives; do not restyle
+anything else when you do.
+
+The gray values are approximate placeholders taken from the sample. Confirm exact
+hex with the designer; do not treat them as final brand colours.
+
+### Rules
+
+1. Minimalist and clean. Heavy whitespace, Dawn defaults, nothing decorative.
+2. Monochrome base. Green appears only on small accents such as icons, never on
+   large surfaces.
+3. Buttons: primary solid near-black, secondary outline. No gradients, no heavy
+   shadows, no background patterns.
+4. Same design language and palette on all three sites; only names, logos, and
+   images differ.
+5. Images use gray-rectangle placeholders labelled "IMAGE TBD" until the designer
+   delivers. No stock or lifestyle imagery in the meantime.
+
 ## Theme editor drift
 
 The Shopify theme editor writes into the store's remote `config/settings_data.json`.
@@ -148,5 +191,7 @@ Review the diff before pushing back.
 
 ## Open architecture questions
 
-None. The architecture is settled. Outstanding items are client inputs, tracked
-in `specs/10-intake.md`.
+None. The earlier Noviq Bio bacteriostatic water label was a placeholder; the
+designer is producing corrected art unrelated to Noviq Peptides, so the
+separation constraint holds. Remaining items are client inputs, tracked in
+`specs/10-intake.md`.

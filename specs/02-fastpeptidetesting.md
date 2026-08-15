@@ -12,8 +12,32 @@ without risking a terminated store.
 
 ## What it sells
 
-Analytical testing of customer-supplied samples, primarily HPLC purity. The
-customer buys a test, ships a sample to the lab, and receives a report.
+Analytical testing of customer-supplied samples. The customer buys a test,
+ships a sample to the lab, and receives a report.
+
+The client's model is one base test, priced add-ons, quantity bundles, and
+turnaround upsells. It is not four equal standalone tests. Build the product
+model to match this shape.
+
+## Reference sites and intent
+
+The client named three references and one hard rule about them:
+
+- `vanguardlaboratory.com`, called "the best template for testing, but even
+  simpler is ok".
+- `peptidetest.com`, a testing-service storefront that leads with an "Order
+  Testing" call to action.
+- `freedomdiagnosticstesting.com`, "basically this".
+
+The client's complaint about all of them: "they never have the pricing" up
+front, and they bury the service behind "a bunch of shit no one cares about".
+
+So the storefront rules are:
+
+1. The landing page is the product. First thing on screen: services offered,
+   the price, and a buy control. No hero essay before the price.
+2. An "Order Testing" call to action is prominent on every page.
+3. A top banner reads exactly: FAST AFFORDABLE RELIABLE.
 
 ## The critical Shopify configuration
 
@@ -27,15 +51,49 @@ common way this kind of store ships broken.
 
 ## Service catalog
 
-| Service | Price | Turnaround, business days | Status |
-| --- | --- | --- | --- |
-| HPLC purity | TBD | TBD | TBD |
-| Mass spectrometry identity | TBD | TBD | Confirm whether offered |
-| Sterility | TBD | TBD | Confirm whether offered |
-| Endotoxin | TBD | TBD | Confirm whether offered |
+Base test, one product. It covers three measurements together:
 
-Confirm which of these the lab actually runs before building product pages for
-them. Advertising a test the lab cannot perform is worse than a thin catalog.
+| Base test includes | Price |
+| --- | --- |
+| Purity, Potency, Identity | $299 (see price conflict below) |
+
+Add-ons, sold on top of the base test. Model as line-item options or variants
+on the base product, not as separate products:
+
+| Add-on | Price |
+| --- | --- |
+| Heavy metal testing | $100 |
+| Sterility | $75 |
+| Endotoxins | $100 |
+
+Turnaround upsells, applied to the base test:
+
+| Turnaround | Price |
+| --- | --- |
+| 3 business days | Standard, included |
+| 1 business day | +$300 |
+| Same day | +$500 |
+
+### Two pricing offers
+
+The client gave two price lists and confirmed they are two separate offers, not
+a conflict to reconcile. Model them as two distinct products so a buyer picks
+one path, not a blended cart.
+
+| Offer | Single | Bundles | Notes |
+| --- | --- | --- | --- |
+| A, itemised | $299 | 5 tests $1250, 10 tests $2000 | Base test plus the add-ons and turnaround upsells above |
+| B, flat bundle | $300 | 3 tests $820, 10 tests $2500 | Simple all-in bundles, "fast affordable reliable" framing |
+
+Open risk: both offers include a 10-test tier at different prices ($2000 vs
+$2500) and a near-identical single price ($299 vs $300). Side by side on one page
+this reads as inconsistent pricing for the same thing. Give each offer a distinct
+name and page section, or have the client decide which is the headline offer.
+
+Base test covers Purity, Potency, and Identity as one purchase; Heavy metal,
+Sterility, and Endotoxin are the only add-ons. Confirmed by the client. The
+client said "Identity", not "mass spectrometry"; do not advertise a specific
+instrument for identity until the lab confirms the method.
 
 ## Sample intake
 
@@ -70,13 +128,19 @@ difference generates chargebacks.
 
 ## Homepage
 
-1. `image-banner` or `slideshow`, what the lab does and turnaround time
-2. `featured-collection` or `multicolumn`, the service list with prices
+Pricing and the buy control must be above the fold. Do not open with a hero
+essay; the client rejected that pattern on every reference site.
+
+1. Thin top banner: FAST AFFORDABLE RELIABLE
+2. `featured-product` for the base test, price and buy control visible above the
+   fold, with add-ons and turnaround selectable inline
 3. `icons-with-content`, methodology trust points, for example HPLC, in-house
    instrumentation, chain of custody, independent
 4. `multirow`, how it works as a numbered process: order, ship sample, receive
    report
 5. `collapsible-content`, FAQ
+
+Keep a persistent "Order Testing" call to action in the header on every page.
 
 ## Pages
 
@@ -105,16 +169,21 @@ commercial relationship the sites do not advertise.
 | --- | --- |
 | Logo, SVG preferred | TBD |
 | Favicon, 512x512 PNG | TBD |
-| Brand colours, hex | TBD |
-| Any lab or instrument photography | TBD |
+| Brand colours, hex | Use the shared palette in `specs/00-overview.md`, "Design system" |
+| Any lab or instrument photography | Provided by the client; RUO graphics coming. Until delivered, gray "IMAGE TBD" placeholders, no stock imagery. |
 
-Should look like a laboratory, not like an ecommerce brand. Restrained
-typography, minimal colour, no lifestyle imagery.
+Follow the shared minimalist design system in `specs/00-overview.md`. Only the
+name, logo, and images differ from the other sites. The restrained monochrome
+palette already suits a laboratory look; no lifestyle imagery.
 
 ## Definition of done
 
 - Every service product is non-physical with inventory tracking off, and
   checkout never asks for a shipping method.
+- Base test price and buy control are above the fold at 375px, with add-ons and
+  turnaround selectable on the same screen.
+- FAST AFFORDABLE RELIABLE banner present; "Order Testing" call to action on
+  every page.
 - Sample intake fields appear on the order in the admin.
 - Turnaround language matches whatever the client confirms about the clock.
 - All seven pages exist with the handles above.

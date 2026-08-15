@@ -19,7 +19,7 @@ Blocks all Shopify work.
 | A3 | Collaborator request code, from Settings, Users and permissions, Security | TBD |
 | A4 | Confirmation the collaborator account has the Manage themes permission | TBD |
 | A5 | WordPress admin login for noviqpeptides.com | TBD |
-| A6 | Registrar or DNS access for all three domains, or the contact who has it | TBD |
+| A6 | Registrar or DNS access for all three domains, or the contact who has it | noviqpeptides.com on GoDaddy, client can transfer. Other two domains TBD. |
 
 Once A1 to A4 land, most of block C can be pulled from the store directly
 rather than transcribed. See "Self-serve" at the bottom.
@@ -46,10 +46,10 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 
 | # | Item | Answer |
 | --- | --- | --- |
-| C1 | Vial size and pack contents | TBD |
-| C2 | Price, 1-pack and 5-pack | TBD |
+| C1 | Vial size and pack contents | 10 mL vials, 1-pack and 5-pack |
+| C2 | Price, 1-pack and 5-pack | $10 and $45 |
 | C3 | Shipped weight in grams, each variant | TBD |
-| C4 | Product photography, 2000px square | TBD |
+| C4 | Product photography, 2000px square | AI-generated acceptable, client requested AI renders |
 | C5 | Ship-from address, carrier, flat rate or calculated | TBD |
 | C6 | States or countries the client will not ship to | TBD |
 
@@ -57,9 +57,9 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 
 | # | Item | Answer |
 | --- | --- | --- |
-| C7 | Which tests the lab actually runs | TBD |
-| C8 | Price per test | TBD |
-| C9 | Turnaround per test, business days | TBD |
+| C7 | Which tests the lab actually runs | Base test = Purity, Potency, Identity. Add-ons = Heavy metal, Sterility, Endotoxin. Confirm lab runs all. |
+| C8 | Price per test | Two offers, see spec 02. Add-ons: heavy metal $100, sterility $75, endotoxin $100. |
+| C9 | Turnaround per test, business days | 3 days standard, 1 day +$300, same day +$500 |
 | C10 | Whether turnaround starts at payment or at sample receipt | TBD |
 | C11 | Lab receiving address for samples | TBD |
 | C12 | What the customer ships and any packaging requirements | TBD |
@@ -74,7 +74,7 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | D2 | Support email per domain, three different addresses | TBD |
 | D3 | Who writes terms, privacy, refund, and shipping policies | TBD |
 | D4 | RUO disclaimer text, verbatim | TBD |
-| D5 | Where order notification emails go, per store | TBD |
+| D5 | Where order notification emails go, per store | Noviq: orders@noviqpeptides.com, not yet set up. Shopify stores need different addresses, see D2/D7. |
 | D6 | High-risk gateway for bacwatermarket, if selected | TBD |
 | D7 | Owner email per Shopify store, must differ | TBD |
 

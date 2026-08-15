@@ -1,10 +1,20 @@
 # 01 bacwatermarket.com
 
-Status: draft. Blocked on client product data and brand assets.
+Status: draft. Core product data received. Brand conflict resolved: the Noviq Bio
+label was a placeholder image and the designer will correct it. Blocked only on
+the new brand assets and remaining shipping data.
 
 Platform: Shopify, Dawn theme in `bacwatermarket/`.
 Store handle: TBD
-Brand name: TBD, the working assumption is "Bac Water Market"
+Brand name: TBD, unrelated to Noviq Peptides. Designer is producing corrected
+label art that drops the Noviq Bio wordmark and the noviqpeptides.com URL.
+
+## Branding, resolved
+
+The earlier label art branded "Noviq Bio" with noviqpeptides.com was a
+placeholder. The designer will replace it with a brand unrelated to Noviq
+Peptides, which satisfies the separation constraint in `specs/00-overview.md`.
+Do not build storefront branding until the corrected assets arrive.
 
 ## What it sells
 
@@ -21,10 +31,10 @@ value on the same page.
 
 | Field | Value |
 | --- | --- |
-| Title | TBD |
-| Vial size | TBD, for example 30ml |
-| Variant 1 | 1-pack, price TBD, shipped weight TBD grams |
-| Variant 2 | 5-pack, price TBD, shipped weight TBD grams |
+| Title | TBD, depends on the brand decision above |
+| Vial size | 10 mL, per the client's label art |
+| Variant 1 | 1-pack, $10, shipped weight TBD grams |
+| Variant 2 | 5-pack, $45, shipped weight TBD grams |
 | SKUs | TBD |
 | Physical product | Yes |
 | Inventory tracking | TBD, on unless the client says otherwise |
@@ -95,11 +105,14 @@ adjacency are precisely what FDA warning letters have cited.
 | --- | --- |
 | Logo, SVG preferred | TBD |
 | Favicon, 512x512 PNG | TBD |
-| Exact wordmark spelling | TBD |
-| Brand colours, hex | TBD |
-| Product photography, 2000px square | TBD |
+| Exact wordmark spelling | TBD, depends on the brand decision above |
+| Brand colours, hex | Use the shared palette in `specs/00-overview.md`, "Design system" |
+| Product photography, 2000px square | AI-generated is acceptable; client asked for AI 1-pack and 5-pack renders. Until delivered, gray "IMAGE TBD" placeholders. |
 
-Must not visually resemble Noviq Peptides or March Analytics.
+Follow the shared minimalist design system in `specs/00-overview.md`. Only the
+name, logo, and images differ from the other sites. Must not visually resemble
+Noviq Peptides or March Analytics. The designer is producing corrected label art
+on this basis, see "Branding, resolved" above.
 
 ## Definition of done
 

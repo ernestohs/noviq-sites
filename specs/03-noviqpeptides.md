@@ -1,10 +1,39 @@
 # 03 noviqpeptides.com
 
-Status: draft. Site already built by the client. Scope of our involvement is
-undecided.
+Status: draft. Client is actively building this out and answering build intake
+questions, so treat it as in scope. Confirm the exact scope, alignment vs
+rebuild, and price before starting.
 
 Platform: WordPress + WooCommerce, hosted externally.
 Brand name: Noviq Peptides
+
+## Client-provided facts
+
+| Item | Value |
+| --- | --- |
+| Registrar | GoDaddy, client can transfer |
+| Products at launch | ~25 |
+| People managing catalog and orders | 3 |
+| Payment methods | "All methods". Client needs the live site to get final CC-processor approval. |
+| Fulfilment | Shipping exclusively, no pickup or local delivery |
+| Notifications | Wants CRM integration; fulfilment software undecided, open to suggestions |
+| Order notification email | orders@noviqpeptides.com, not yet set up |
+| White label | Vials say the actual peptide name, not "injectable peptide" |
+
+## Copy constraint
+
+Do not use the word "injectable" anywhere, per the client. The white-label vial
+art carries the peptide name in place of "injectable peptide". Apply the same
+clinical, RUO-only tone as the other sites: no health claims, no dosage, no
+therapeutic language.
+
+## Design
+
+Follow the shared minimalist design system in `specs/00-overview.md`: monochrome
+base, single green accent, clean and uncluttered. Only the name, logo, and images
+differ from the other sites. This is WordPress, not Dawn, so the palette and
+principles carry over even though the theme mechanics differ. Use gray "IMAGE
+TBD" placeholders until the designer delivers assets.
 
 ## Scope question
 

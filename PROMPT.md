@@ -55,6 +55,14 @@ a merchant account, or a payout.
 - `reference/` holds visual specs captured from other sites. It is listed in
   `.shopifyignore` and must never reach Shopify. Copy layout structure only,
   never trademarks, logos, photography, or proprietary copy.
+- All three sites share one design system: minimalist and clean, a monochrome
+  base with a single green accent. It is defined in `specs/00-overview.md` under
+  "Design system" and is a client requirement. Do not introduce colours,
+  sections, or decorative elements beyond what that section lists. The accent
+  green is a generic placeholder (`#16A34A`) until the designer supplies the
+  exact hex.
+- Wherever an image will go but is not yet supplied, use a clean gray-rectangle
+  placeholder labelled "IMAGE TBD". No stock or lifestyle imagery as a stand-in.
 
 ## Workflow
 
