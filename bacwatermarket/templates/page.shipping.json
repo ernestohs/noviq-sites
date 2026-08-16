@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "shipping": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shipping",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ship-from address: TBD.</p><p>Carrier: TBD.</p><p>Rate model (flat or calculated): TBD.</p><p>Restricted states or countries: TBD.</p><p>Shipped weight per variant is required before rates can be configured. Water is heavy; the 5-pack will not cost five times the 1-pack rate.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": ["main", "shipping"]
+}

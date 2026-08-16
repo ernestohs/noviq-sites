@@ -1,0 +1,59 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-noviqpeptides}
+      MYSQL_USER: ${MYSQL_USER:-wordpress}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-wordpress}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${MYSQL_ROOT_PASSWORD:-rootpass}"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 60s
+
+  wordpress:
+    image: wordpress:php8.2-apache
+    restart: unless-stopped
+    ports:
+      - "${WORDPRESS_PORT:-8080}:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${MYSQL_USER:-wordpress}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:-wordpress}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:-noviqpeptides}
+    volumes:
+      - wp_data:/var/www/html
+      - ../theme:/var/www/html/wp-content/themes/noviq-peptides
+      - ../plugin:/var/www/html/wp-content/plugins/noviq-peptides
+    depends_on:
+      db:
+        condition: service_healthy
+
+  wpcli:
+    image: wordpress:cli-php8.2
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${MYSQL_USER:-wordpress}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:-wordpress}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:-noviqpeptides}
+    volumes:
+      - wp_data:/var/www/html
+      - ../theme:/var/www/html/wp-content/themes/noviq-peptides
+      - ../plugin:/var/www/html/wp-content/plugins/noviq-peptides
+      - ./setup.sh:/setup.sh:ro
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+    entrypoint: ["sleep", "infinity"]
+
+volumes:
+  db_data:
+  wp_data:

@@ -1,0 +1,10 @@
+# Environments filled from intake A1/A2 once store access exists.
+# Never use a bare `shopify theme push`. Always --unpublished first.
+
+[environments.development]
+# store = "STORE_HANDLE.myshopify.com"
+# theme = ""
+
+[environments.production]
+# store = "STORE_HANDLE.myshopify.com"
+# theme = ""

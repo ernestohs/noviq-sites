@@ -1,0 +1,229 @@
+{
+  "sections": {
+    "featured_product": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price": {
+          "type": "price"
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector"
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description"
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description"
+      ],
+      "settings": {
+        "product": "",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "divider_1": {
+      "type": "section-divider",
+      "settings": {
+        "thickness": 1,
+        "width": 100,
+        "color": "#D4D4D4",
+        "opacity": 100,
+        "color_scheme": "scheme-1",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "icons_trust": {
+      "type": "icons-with-content",
+      "blocks": {
+        "col1": {
+          "type": "column",
+          "settings": {
+            "icon": "verified",
+            "heading": "Sterility focused",
+            "text": "<p>Manufactured and handled with sterility controls appropriate for USP-grade bacteriostatic water.</p>"
+          }
+        },
+        "col2": {
+          "type": "column",
+          "settings": {
+            "icon": "science",
+            "heading": "USP grade",
+            "text": "<p>10 mL vials specified to USP bacteriostatic water expectations.</p>"
+          }
+        },
+        "col3": {
+          "type": "column",
+          "settings": {
+            "icon": "fact_check",
+            "heading": "Batch testing",
+            "text": "<p>Batches are tested against published specifications before release.</p>"
+          }
+        },
+        "col4": {
+          "type": "column",
+          "settings": {
+            "icon": "local_shipping",
+            "heading": "Shipping",
+            "text": "<p>Carrier, rates, and restricted destinations are configured once shipping data (intake C3, C5, C6) is confirmed.</p>"
+          }
+        }
+      },
+      "block_order": ["col1", "col2", "col3", "col4"],
+      "settings": {
+        "heading": "Product standards",
+        "heading_size": "h1",
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "divider_2": {
+      "type": "section-divider",
+      "settings": {
+        "thickness": 1,
+        "width": 100,
+        "color": "#D4D4D4",
+        "opacity": 100,
+        "color_scheme": "scheme-1",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "product_facts": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bacteriostatic water, 10 mL",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Single-product catalog with pack-size variants: 1-pack and 5-pack. Product photography is pending; gray IMAGE TBD placeholders remain until AI renders or designer assets arrive.</p><p>No dosage guidance. No reconstitution instructions. No claims beyond what the product is and what testing was done.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "image": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What pack sizes are available?",
+            "icon": "none",
+            "row_content": "<p>A 1-pack and a 5-pack of 10 mL vials. Both are variants of one product.</p>",
+            "page": ""
+          }
+        },
+        "faq2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the vial size?",
+            "icon": "none",
+            "row_content": "<p>10 mL, per the product label specification.</p>",
+            "page": ""
+          }
+        },
+        "faq3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where do you ship?",
+            "icon": "none",
+            "row_content": "<p>Ship-from address, carriers, rate model, and restricted destinations are TBD pending client shipping data.</p>",
+            "page": ""
+          }
+        },
+        "faq4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should this product be used?",
+            "icon": "none",
+            "row_content": "<p>This storefront states what the product is and what testing was done. It does not provide dosage, reconstitution, or application guidance.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": ["faq1", "faq2", "faq3", "faq4"],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "featured_product",
+    "divider_1",
+    "icons_trust",
+    "divider_2",
+    "product_facts",
+    "faq"
+  ]
+}

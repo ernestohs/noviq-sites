@@ -1,0 +1,18 @@
+{%- comment -%}
+  Renders a Material Symbols ligature icon in the accent color.
+  Accepts:
+  - icon: Material Symbols ligature name (e.g. "verified")
+  - size: CSS size, default 2.4rem
+  - class: optional extra classes
+{%- endcomment -%}
+{%- liquid
+  assign icon_name = icon | default: 'check_circle'
+  assign icon_size = size | default: '2.4rem'
+  assign icon_class = class | default: ''
+  assign accent = settings.accent_color | default: '#16A34A'
+-%}
+<span
+  class="icon-symbol {{ icon_class }}"
+  style="font-family: 'Material Symbols Outlined'; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-size: {{ icon_size }}; color: {{ accent }}; line-height: 1; display: inline-flex; speak: never;"
+  aria-hidden="true"
+>{{ icon_name }}</span>

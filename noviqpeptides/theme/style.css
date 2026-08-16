@@ -1,0 +1,291 @@
+/*
+Theme Name: Noviq Peptides
+Theme URI: https://noviqpeptides.com
+Description: Purpose-built WooCommerce theme for the Noviq Peptides store.
+Author: Noviq Peptides
+Version: 0.1.0
+Requires at least: 6.4
+Requires PHP: 8.1
+Text Domain: noviq-peptides
+*/
+
+:root {
+  --noviq-bg: #ffffff;
+  --noviq-band: #ececec;
+  --noviq-text: #121212;
+  --noviq-muted: #6b6b6b;
+  --noviq-accent: #16a34a;
+  --noviq-border: #d4d4d4;
+  --noviq-max: 72rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--noviq-text);
+  background: var(--noviq-bg);
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--noviq-text);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.noviq-container {
+  width: min(100% - 2rem, var(--noviq-max));
+  margin-inline: auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--noviq-border);
+  padding: 1rem 0;
+  background: var(--noviq-bg);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-branding a {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.primary-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primary-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-header__cart a {
+  text-decoration: none;
+  border: 1px solid var(--noviq-text);
+  padding: 0.4rem 0.8rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--noviq-border);
+  margin-top: 3rem;
+  padding: 2rem 0 3rem;
+  background: var(--noviq-bg);
+}
+
+.site-footer__nav ul {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.noviq-ruo-notice {
+  border: 1px solid var(--noviq-border);
+  padding: 0.85rem 1rem;
+  margin: 1rem 0;
+  background: var(--noviq-band);
+  color: var(--noviq-text);
+}
+
+.noviq-ruo-notice p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.noviq-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--noviq-text);
+  text-decoration: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.noviq-btn--primary {
+  background: var(--noviq-text);
+  color: #fff;
+}
+
+.noviq-btn--secondary {
+  background: #fff;
+  color: var(--noviq-text);
+}
+
+.noviq-band {
+  background: var(--noviq-band);
+  padding: 3rem 0;
+}
+
+.noviq-section {
+  padding: 3rem 0;
+}
+
+.noviq-section h1,
+.noviq-section h2 {
+  margin-top: 0;
+}
+
+.noviq-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  margin: 0 0 1rem;
+  max-width: 18ch;
+}
+
+.noviq-hero p {
+  color: var(--noviq-muted);
+  max-width: 40rem;
+}
+
+.noviq-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.noviq-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.noviq-card {
+  border: 1px solid var(--noviq-border);
+  padding: 1.25rem;
+  background: #fff;
+}
+
+.noviq-card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.noviq-card p {
+  margin: 0;
+  color: var(--noviq-muted);
+}
+
+.noviq-image-tbd {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  background: #e5e5e5;
+  border: 1px solid var(--noviq-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--noviq-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.noviq-faq details {
+  border-bottom: 1px solid var(--noviq-border);
+  padding: 0.85rem 0;
+}
+
+.noviq-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.products,
+ul.products {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  margin: 0;
+  width: auto;
+  float: none;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.woocommerce .quantity .qty {
+  padding: 0.4rem;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  background: var(--noviq-text);
+  color: #fff;
+  border-radius: 0;
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.noviq-empty {
+  color: var(--noviq-muted);
+  border: 1px dashed var(--noviq-border);
+  padding: 1.5rem;
+}
+
+.noviq-compound-spec dl {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.noviq-compound-spec dt {
+  font-weight: 600;
+}
+
+.noviq-compound-spec dd {
+  margin: 0;
+}
+
+.site-main {
+  min-height: 50vh;
+}

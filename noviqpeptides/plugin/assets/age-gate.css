@@ -1,0 +1,62 @@
+.noviq-age-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 18, 18, 0.72);
+  padding: 1.5rem;
+}
+
+.noviq-age-gate[hidden],
+.noviq-age-gate.is-dismissed {
+  display: none !important;
+}
+
+.noviq-age-gate__panel {
+  background: #ffffff;
+  color: #121212;
+  max-width: 28rem;
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid #d4d4d4;
+}
+
+.noviq-age-gate__panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+.noviq-age-gate__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.noviq-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #121212;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.noviq-btn--primary {
+  background: #121212;
+  color: #ffffff;
+}
+
+.noviq-btn--secondary {
+  background: #ffffff;
+  color: #121212;
+}
+
+.noviq-age-gate__refused {
+  margin-top: 1rem;
+  color: #6b6b6b;
+}

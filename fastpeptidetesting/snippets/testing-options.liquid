@@ -1,0 +1,70 @@
+{%- comment -%}
+  Testing add-ons and turnaround upsells as line-item properties.
+  Labels include list prices from spec 02 for clarity at checkout.
+  Charging add-on amounts requires store-side variants or priced option
+  products once collaborator access (A1-A4) exists; properties alone do not
+  adjust price.
+{%- endcomment -%}
+{%- liquid
+  assign sid = section_id | default: section.id
+  assign form_id = product_form_id
+-%}
+<div class="testing-options product-form__input">
+  <h3 class="h4" style="margin-bottom: 1rem;">Add-ons</h3>
+  <div style="display: grid; gap: 0.8rem; margin-bottom: 1.6rem;">
+    <label for="AddonHeavyMetal-{{ sid }}" style="display: flex; gap: 0.8rem; align-items: flex-start;">
+      <input
+        type="checkbox"
+        id="AddonHeavyMetal-{{ sid }}"
+        name="properties[Heavy metal testing]"
+        {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+        value="Yes (+$100)"
+        style="margin-top: 0.3rem;"
+      >
+      <span>Heavy metal testing (+$100)</span>
+    </label>
+    <label for="AddonSterility-{{ sid }}" style="display: flex; gap: 0.8rem; align-items: flex-start;">
+      <input
+        type="checkbox"
+        id="AddonSterility-{{ sid }}"
+        name="properties[Sterility]"
+        {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+        value="Yes (+$75)"
+        style="margin-top: 0.3rem;"
+      >
+      <span>Sterility (+$75)</span>
+    </label>
+    <label for="AddonEndotoxin-{{ sid }}" style="display: flex; gap: 0.8rem; align-items: flex-start;">
+      <input
+        type="checkbox"
+        id="AddonEndotoxin-{{ sid }}"
+        name="properties[Endotoxin]"
+        {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+        value="Yes (+$100)"
+        style="margin-top: 0.3rem;"
+      >
+      <span>Endotoxin (+$100)</span>
+    </label>
+  </div>
+
+  <h3 class="h4" style="margin-bottom: 1rem;">Turnaround</h3>
+  <div class="select" style="margin-bottom: 1rem;">
+    <select
+      id="Turnaround-{{ sid }}"
+      class="select__select"
+      name="properties[Turnaround]"
+      {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+      required
+    >
+      <option value="3 business days (standard)">3 business days (standard)</option>
+      <option value="1 business day (+$300)">1 business day (+$300)</option>
+      <option value="Same day (+$500)">Same day (+$500)</option>
+    </select>
+    <span class="svg-wrapper">
+      {{- 'icon-caret.svg' | inline_asset_content -}}
+    </span>
+  </div>
+  <p class="caption" style="color: #6B6B6B; margin: 0;">
+    Turnaround clock start (payment vs sample receipt) is TBD pending client confirmation (intake C10).
+  </p>
+</div>

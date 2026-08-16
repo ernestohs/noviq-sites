@@ -1,0 +1,14 @@
+# Never deploy reference materials or local tooling to Shopify.
+../reference/
+reference/
+**/.git/**
+**/node_modules/**
+**/.DS_Store
+shopify.theme.toml
+.git*
+README.md
+LICENSE.md
+release-notes.md
+.github/
+.prettierrc.json
+.theme-check.yml

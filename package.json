@@ -1,0 +1,15 @@
+{
+  "name": "noviq-sites",
+  "version": "1.0.0",
+  "description": "Dawn theme projects for bacwatermarket and fastpeptidetesting",
+  "scripts": {
+    "theme-check:bac": "shopify theme check --path bacwatermarket",
+    "theme-check:fpt": "shopify theme check --path fastpeptidetesting",
+    "theme-check": "npm run theme-check:bac && npm run theme-check:fpt"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@shopify/cli": "^4.6.1"
+  },
+  "private": true
+}

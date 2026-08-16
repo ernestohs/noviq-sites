@@ -1,0 +1,107 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-divider-{{ section.id }} {
+    border: 0;
+    border-top: {{ section.settings.thickness }}px solid {{ section.settings.color }};
+    width: {{ section.settings.width }}%;
+    margin: 0 auto;
+    opacity: {{ section.settings.opacity | divided_by: 100.0 }};
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <hr class="section-divider-{{ section.id }}" aria-hidden="true">
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section divider",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "thickness",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Line thickness",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Line width",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Line color",
+      "default": "#D4D4D4"
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Line opacity",
+      "default": 100
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section divider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "methods": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Methods",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Base measurements: purity, potency, and identity. Optional add-ons: heavy metal, sterility, and endotoxin.</p><p>Do not advertise a specific identity instrument until the lab confirms the method. RUO graphics and instrument photography are pending; placeholders remain IMAGE TBD until delivered.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": ["main", "methods"]
+}

@@ -1,0 +1,231 @@
+{
+  "sections": {
+    "featured_product": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price": {
+          "type": "price"
+        },
+        "text_includes": {
+          "type": "text",
+          "settings": {
+            "text": "Base test includes purity, potency, and identity.",
+            "text_style": "subtitle"
+          }
+        },
+        "testing_options": {
+          "type": "testing_options",
+          "settings": {}
+        },
+        "sample_intake": {
+          "type": "sample_intake",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "text_includes",
+        "testing_options",
+        "sample_intake",
+        "buy_buttons"
+      ],
+      "settings": {
+        "product": "",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "icons_trust": {
+      "type": "icons-with-content",
+      "blocks": {
+        "col1": {
+          "type": "column",
+          "settings": {
+            "icon": "science",
+            "heading": "Analytical methods",
+            "text": "<p>Base test covers purity, potency, and identity. Instrument-specific method names are published only after lab confirmation.</p>"
+          }
+        },
+        "col2": {
+          "type": "column",
+          "settings": {
+            "icon": "biotech",
+            "heading": "In-house instrumentation",
+            "text": "<p>Testing is performed on laboratory instrumentation operated by March Analytics.</p>"
+          }
+        },
+        "col3": {
+          "type": "column",
+          "settings": {
+            "icon": "inventory_2",
+            "heading": "Chain of custody",
+            "text": "<p>Samples are received, logged, and tracked through reporting.</p>"
+          }
+        },
+        "col4": {
+          "type": "column",
+          "settings": {
+            "icon": "verified_user",
+            "heading": "Independent lab",
+            "text": "<p>March Analytics is operated as an independent testing laboratory.</p>"
+          }
+        }
+      },
+      "block_order": ["col1", "col2", "col3", "col4"],
+      "settings": {
+        "heading": "How we test",
+        "heading_size": "h1",
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "divider_1": {
+      "type": "section-divider",
+      "settings": {
+        "thickness": 1,
+        "width": 100,
+        "color": "#D4D4D4",
+        "opacity": 100,
+        "color_scheme": "scheme-1",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "how_it_works": {
+      "type": "multicolumn",
+      "blocks": {
+        "step1": {
+          "type": "column",
+          "settings": {
+            "title": "1. Order",
+            "text": "<p>Select the base test, any add-ons, and turnaround. Provide sample details at checkout.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "step2": {
+          "type": "column",
+          "settings": {
+            "title": "2. Ship sample",
+            "text": "<p>Ship your sample to the lab receiving address listed on the how-it-works page after purchase.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "step3": {
+          "type": "column",
+          "settings": {
+            "title": "3. Receive report",
+            "text": "<p>Results are delivered by the method confirmed for your order. Delivery method is TBD pending client confirmation.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["step1", "step2", "step3"],
+      "settings": {
+        "title": "How it works",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What does the base test include?",
+            "icon": "none",
+            "row_content": "<p>Purity, potency, and identity as one purchase. Heavy metal, sterility, and endotoxin are optional add-ons.</p>",
+            "page": ""
+          }
+        },
+        "faq2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the two pricing offers?",
+            "icon": "none",
+            "row_content": "<p>Offer A is itemised (base test plus add-ons and turnaround). Offer B is flat bundles. Each offer is a separate product path; assign products in the theme editor once they exist in the store.</p>",
+            "page": ""
+          }
+        },
+        "faq3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When does turnaround start?",
+            "icon": "none",
+            "row_content": "<p>Pending client confirmation (intake C10): either at payment or at sample receipt. Copy will match that decision before launch.</p>",
+            "page": ""
+          }
+        },
+        "faq4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need to provide shipping at checkout?",
+            "icon": "none",
+            "row_content": "<p>No. Each service product must be configured as non-physical with inventory tracking off so checkout does not request a shipping method.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": ["faq1", "faq2", "faq3", "faq4"],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "featured_product",
+    "icons_trust",
+    "divider_1",
+    "how_it_works",
+    "faq"
+  ]
+}

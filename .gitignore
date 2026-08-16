@@ -1,0 +1,5 @@
+node_modules/
+noviqpeptides/local/.env
+noviqpeptides/local/data/
+noviqpeptides/deploy/.env
+*.zip

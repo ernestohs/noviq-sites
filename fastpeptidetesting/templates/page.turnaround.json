@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 16
+      }
+    },
+    "turnaround": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Turnaround",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Standard: 3 business days (included).</p><p>1 business day: +$300.</p><p>Same day: +$500.</p><p>Whether the clock starts at payment or at sample receipt is TBD (intake C10). Storefront copy must match that decision before launch to avoid chargebacks.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": ["main", "turnaround"]
+}

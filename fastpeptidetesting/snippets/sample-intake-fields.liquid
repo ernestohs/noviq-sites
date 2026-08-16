@@ -1,0 +1,79 @@
+{%- comment -%}
+  Sample intake fields attached to the cart line as order properties.
+  Required fields reduce support email volume on incomplete orders.
+  Configure the service product as non-physical with inventory tracking off
+  (store admin; blocked until intake A1-A4).
+{%- endcomment -%}
+{%- liquid
+  assign sid = section_id | default: section.id
+  assign form_id = product_form_id
+-%}
+<div class="sample-intake product-form__input">
+  <h3 class="h4" style="margin-bottom: 1rem;">Sample details</h3>
+
+  <div class="field" style="margin-bottom: 1rem;">
+    <input
+      class="field__input"
+      type="text"
+      id="SampleCompound-{{ sid }}"
+      name="properties[Compound name]"
+      {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+      required
+      placeholder="Compound name"
+    >
+    <label class="field__label" for="SampleCompound-{{ sid }}">Compound name</label>
+  </div>
+
+  <div class="field" style="margin-bottom: 1rem;">
+    <input
+      class="field__input"
+      type="text"
+      id="SampleBatch-{{ sid }}"
+      name="properties[Batch or lot number]"
+      {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+      required
+      placeholder="Batch or lot number"
+    >
+    <label class="field__label" for="SampleBatch-{{ sid }}">Batch or lot number</label>
+  </div>
+
+  <div class="field" style="margin-bottom: 1rem;">
+    <input
+      class="field__input"
+      type="text"
+      id="SampleQuantity-{{ sid }}"
+      name="properties[Quantity supplied]"
+      {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+      required
+      placeholder="Quantity supplied"
+    >
+    <label class="field__label" for="SampleQuantity-{{ sid }}">Quantity supplied</label>
+  </div>
+
+  <div class="field" style="margin-bottom: 1rem;">
+    <textarea
+      class="text-area field__input"
+      rows="3"
+      id="SampleReturnAddress-{{ sid }}"
+      name="properties[Customer return address]"
+      {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+      required
+      placeholder="Customer return address"
+    ></textarea>
+    <label class="form__label field__label" for="SampleReturnAddress-{{ sid }}">Customer return address</label>
+  </div>
+
+  <div class="field" style="margin-bottom: 1rem;">
+    <label for="SamplePublicCoa-{{ sid }}" style="display: flex; gap: 0.8rem; align-items: flex-start;">
+      <input
+        type="checkbox"
+        id="SamplePublicCoa-{{ sid }}"
+        name="properties[Public COA consent]"
+        {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+        value="Yes"
+        style="margin-top: 0.3rem;"
+      >
+      <span>I consent to this result being published as a public COA</span>
+    </label>
+  </div>
+</div>
