@@ -30,7 +30,11 @@
           }
         },
         "description": {
-          "type": "description"
+          "type": "text",
+          "settings": {
+            "text": "10 mL bacteriostatic water. Variants: 1-pack and 5-pack.",
+            "text_style": "body"
+          }
         }
       },
       "block_order": [

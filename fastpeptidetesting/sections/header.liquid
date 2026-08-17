@@ -98,6 +98,17 @@
     min-width: 4.4rem;
     height: 4.4rem;
   }
+
+  .header__icon.header__icon--cta.button {
+    width: auto;
+    min-width: auto;
+    height: auto;
+    padding: 0.8rem 1.4rem;
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    color: rgb(var(--color-button-text));
+  }
 </style>
 
 {%- style -%}
@@ -289,7 +300,6 @@
         <a
           href="{{ section.settings.cta_link | default: routes.root_url }}"
           class="header__icon header__icon--cta button button--primary"
-          style="width: auto; min-width: auto; height: auto; padding: 0.8rem 1.4rem; margin-right: 0.8rem; font-size: 1.2rem; letter-spacing: 0.04em;"
         >
           {{ section.settings.cta_label }}
         </a>
