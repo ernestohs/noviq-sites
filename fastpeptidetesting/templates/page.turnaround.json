@@ -10,21 +10,14 @@
     "turnaround": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Turnaround",
-            "heading_size": "h1"
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Standard: 3 business days (included).</p><p>1 business day: +$300.</p><p>Same day: +$500.</p><p>Whether the clock starts at payment or at sample receipt is TBD (intake C10). Storefront copy must match that decision before launch to avoid chargebacks.</p>"
+            "text": "<p>Select turnaround on the product form when you order. Expedited fees are added as line-item properties until priced variants are confirmed in Admin.</p><p>Whether the clock starts at payment or at sample receipt is pending client confirmation (intake C10). Live copy will match that decision before launch.</p>"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": ["text"],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",

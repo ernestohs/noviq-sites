@@ -144,7 +144,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Single-product catalog with pack-size variants: 1-pack and 5-pack. Product photography is pending; gray IMAGE TBD placeholders remain until AI renders or designer assets arrive.</p><p>No dosage guidance. No reconstitution instructions. No claims beyond what the product is and what testing was done.</p>",
+            "text": "<p>Single-product catalog with pack-size variants: 1-pack and 5-pack. The product graphic is the original 10 mL vial render from the source catalog.</p><p>No dosage guidance. No reconstitution instructions. No claims beyond what the product is and what testing was done.</p>",
             "text_style": "body"
           }
         }

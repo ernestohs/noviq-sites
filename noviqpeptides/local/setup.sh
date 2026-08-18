@@ -72,11 +72,14 @@ if ( ! get_option( "woocommerce_placeholder_image" ) ) {
 ' || true
 
 # Host bind mounts are often 770; www-data (33) must read them.
-chmod -R a+rX ../theme ../plugin 2>/dev/null || true
+chmod -R a+rX ../theme ../plugin ./seed-images 2>/dev/null || true
 
 echo "Activating Noviq Peptides theme and plugin..."
 wp theme activate noviq-peptides
 wp plugin activate noviq-peptides
+
+echo "Seeding catalog, pages, and product images..."
+wp --user=1 noviq seed
 
 # Use front-page.php as the site home
 wp option update show_on_front page
@@ -106,11 +109,11 @@ create_page() {
 create_page about "About"
 create_page why-noviq "Why Noviq"
 create_page contact "Contact"
-create_page wholesale "Wholesale" page-wholesale.php
-create_page quality-standard "Quality Standard" page-quality-standard.php
-create_page research-hub "Research Hub" page-research-hub.php
-create_page coa "Certificates of Analysis" page-coa.php
-create_page verify "Verify Lot" page-verify.php
+create_page wholesale "Wholesale"
+create_page quality-standard "Quality Standard"
+create_page research-hub "Research Hub"
+create_page coa "Certificates of Analysis"
+create_page verify "Verify Lot"
 create_page blog "Journal"
 
 # Policy pages under /policies/{slug}/

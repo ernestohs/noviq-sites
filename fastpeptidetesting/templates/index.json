@@ -1,5 +1,47 @@
 {
   "sections": {
+    "hero": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fast, clear, reliable results for informed research decisions",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Independent HPLC purity, potency, and identity testing of customer-supplied samples. Results issued as a certificate of analysis.",
+            "text_style": "body"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Order Testing",
+            "button_link_1": "shopify://collections/order-testing",
+            "button_style_secondary_1": false,
+            "button_label_2": "How it works",
+            "button_link_2": "shopify://pages/how-it-works",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": ["heading", "text", "buttons"],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "featured_product": {
       "type": "featured-product",
       "blocks": {
@@ -44,7 +86,7 @@
         "buy_buttons"
       ],
       "settings": {
-        "product": "",
+        "product": "bpc-157-testing",
         "color_scheme": "scheme-1",
         "secondary_background": false,
         "media_size": "medium",
@@ -58,6 +100,34 @@
         "padding_bottom": 28
       }
     },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "order-testing",
+        "products_to_show": 8,
+        "title": "Popular tests",
+        "heading_size": "h1",
+        "description": "<p>Compound purity tests and optional add-on screens. Select a test, complete sample details, then ship the vial after checkout.</p>",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "icons_trust": {
       "type": "icons-with-content",
       "blocks": {
@@ -66,15 +136,15 @@
           "settings": {
             "icon": "science",
             "heading": "Analytical methods",
-            "text": "<p>Base test covers purity, potency, and identity. Instrument-specific method names are published only after lab confirmation.</p>"
+            "text": "<p>Base tests cover HPLC purity, potency, and identity. Methods follow USP validation principles. Instrument names are published after lab confirmation.</p>"
           }
         },
         "col2": {
           "type": "column",
           "settings": {
             "icon": "biotech",
-            "heading": "In-house instrumentation",
-            "text": "<p>Testing is performed on laboratory instrumentation operated by March Analytics.</p>"
+            "heading": "Quality-control background",
+            "text": "<p>Testing is performed on laboratory instrumentation operated by March Analytics, with methods drawn from pharmaceutical QC practice.</p>"
           }
         },
         "col3": {
@@ -82,7 +152,7 @@
           "settings": {
             "icon": "inventory_2",
             "heading": "Chain of custody",
-            "text": "<p>Samples are received, logged, and tracked through reporting.</p>"
+            "text": "<p>Samples are received, logged, and tracked through reporting. The certificate of analysis applies only to the vial tested.</p>"
           }
         },
         "col4": {
@@ -90,7 +160,7 @@
           "settings": {
             "icon": "verified_user",
             "heading": "Independent lab",
-            "text": "<p>March Analytics is operated as an independent testing laboratory.</p>"
+            "text": "<p>March Analytics is operated as an independent testing laboratory. We do not sell the compounds we test.</p>"
           }
         }
       },
@@ -124,7 +194,7 @@
           "type": "column",
           "settings": {
             "title": "1. Order",
-            "text": "<p>Select the base test, any add-ons, and turnaround. Provide sample details at checkout.</p>",
+            "text": "<p>Select the compound test, any add-ons, and turnaround. Provide sample details on the product form so they attach to the order.</p>",
             "link_label": "",
             "link": ""
           }
@@ -133,7 +203,7 @@
           "type": "column",
           "settings": {
             "title": "2. Ship sample",
-            "text": "<p>Ship your sample to the lab receiving address listed on the how-it-works page after purchase.</p>",
+            "text": "<p>After checkout you receive the lab receiving address. Ship the sample with the order number on the package. Do not require a signature.</p>",
             "link_label": "",
             "link": ""
           }
@@ -142,7 +212,7 @@
           "type": "column",
           "settings": {
             "title": "3. Receive report",
-            "text": "<p>Results are delivered by the method confirmed for your order. Delivery method is TBD pending client confirmation.</p>",
+            "text": "<p>Results are issued as a certificate of analysis by email. Public COA publication is optional and requires consent at checkout.</p>",
             "link_label": "",
             "link": ""
           }
@@ -160,6 +230,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "button_label": "Order Testing",
+        "button_link": "shopify://collections/order-testing",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
@@ -173,25 +244,25 @@
           "settings": {
             "heading": "What does the base test include?",
             "icon": "none",
-            "row_content": "<p>Purity, potency, and identity as one purchase. Heavy metal, sterility, and endotoxin are optional add-ons.</p>",
+            "row_content": "<p>Purity, potency, and identity as one purchase. Heavy metal, sterility, endotoxin, Karl Fischer moisture, and vial vacuum are optional add-ons or standalone services.</p>",
             "page": ""
           }
         },
         "faq2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What are the two pricing offers?",
+            "heading": "Can I send extra vials from the same lot?",
             "icon": "none",
-            "row_content": "<p>Offer A is itemised (base test plus add-ons and turnaround). Offer B is flat bundles. Each offer is a separate product path; assign products in the theme editor once they exist in the store.</p>",
+            "row_content": "<p>Yes. Additional vials must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>",
             "page": ""
           }
         },
         "faq3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "When does turnaround start?",
+            "heading": "What are the turnaround options?",
             "icon": "none",
-            "row_content": "<p>Pending client confirmation (intake C10): either at payment or at sample receipt. Copy will match that decision before launch.</p>",
+            "row_content": "<p>Standard is 3 business days, included. 1 business day is +$300. Same day is +$500. Whether the clock starts at payment or at sample receipt is confirmed with the client before launch.</p>",
             "page": ""
           }
         },
@@ -200,12 +271,21 @@
           "settings": {
             "heading": "Do I need to provide shipping at checkout?",
             "icon": "none",
-            "row_content": "<p>No. Each service product must be configured as non-physical with inventory tracking off so checkout does not request a shipping method.</p>",
+            "row_content": "<p>No. Testing products are configured as non-physical services. You ship the sample to the lab after you receive the confirmation email.</p>",
             "page": ""
+          }
+        },
+        "faq5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What am I attesting to?",
+            "icon": "none",
+            "row_content": "<p>Samples are submitted for research and analytical purposes only, not for human or animal use. The certificate of analysis applies only to the tested sample. See the attestation page for the full list.</p>",
+            "page": "attestation"
           }
         }
       },
-      "block_order": ["faq1", "faq2", "faq3", "faq4"],
+      "block_order": ["faq1", "faq2", "faq3", "faq4", "faq5"],
       "settings": {
         "caption": "",
         "heading": "FAQ",
@@ -223,7 +303,9 @@
     }
   },
   "order": [
+    "hero",
     "featured_product",
+    "featured_collection",
     "icons_trust",
     "divider_1",
     "how_it_works",

@@ -1,6 +1,8 @@
 node_modules/
+fastpeptidetesting/seed/.env
 noviqpeptides/local/.env
 noviqpeptides/local/data/
+noviqpeptides/local/seed-images/*.png
 noviqpeptides/deploy/.env
 noviqpeptides/deploy/preview/.env
 *.zip

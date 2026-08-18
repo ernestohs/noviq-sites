@@ -1,0 +1,3163 @@
+{
+  "generated_at": "2026-08-18T06:52:13.617Z",
+  "source": "https://peptidetest.com",
+  "note": "Demo catalog for March Analytics preview. Prices copied as placeholders pending intake C8. Copy is original, not a Peptide Test reprint.",
+  "collection": {
+    "handle": "order-testing",
+    "title": "Order Testing",
+    "body_html": "<p>Select a compound test or an add-on service. Each purchase is a laboratory analysis of a sample you ship to March Analytics after checkout.</p>"
+  },
+  "products": [
+    {
+      "source_handle": "benzyl-alcohol-purity-and-mass-testing",
+      "handle": "benzyl-alcohol-testing",
+      "title": "Benzyl Alcohol Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Benzyl Alcohol. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "250.00",
+          "sku": "MA-BENZYLALCOHO-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "385.00",
+          "sku": "MA-BENZYLALCOHO-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "370.00",
+          "sku": "MA-BENZYLALCOHO-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-BENZYLALCOHO-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "490.00",
+          "sku": "MA-BENZYLALCOHO-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "655.00",
+          "sku": "MA-BENZYLALCOHO-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "610.00",
+          "sku": "MA-BENZYLALCOHO-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "790.00",
+          "sku": "MA-BENZYLALCOHO-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "730.00",
+          "sku": "MA-BENZYLALCOHO-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "blend-assay-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
+      "handle": "bpc-157-and-tb-500-tb4-testing",
+      "title": "BPC-157 and TB-500 (TB4) Blend Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-BPC157ANDTB5-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-BPC157ANDTB5-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-BPC157ANDTB5-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-BPC157ANDTB5-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-BPC157ANDTB5-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-BPC157ANDTB5-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-BPC157ANDTB5-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-BPC157ANDTB5-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-BPC157ANDTB5-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "bpc-157-arginate-assay-purity-and-mass-testing",
+      "handle": "bpc-157-arginate-testing",
+      "title": "BPC-157 Arginate Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for BPC-157 Arginate. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "200.00",
+          "sku": "MA-BPC157ARGINA-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "335.00",
+          "sku": "MA-BPC157ARGINA-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "320.00",
+          "sku": "MA-BPC157ARGINA-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "470.00",
+          "sku": "MA-BPC157ARGINA-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "440.00",
+          "sku": "MA-BPC157ARGINA-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "605.00",
+          "sku": "MA-BPC157ARGINA-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "560.00",
+          "sku": "MA-BPC157ARGINA-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "740.00",
+          "sku": "MA-BPC157ARGINA-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "680.00",
+          "sku": "MA-BPC157ARGINA-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "bpc-157-purity-and-mass-testing",
+      "handle": "bpc-157-testing",
+      "title": "BPC-157 Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for BPC-157. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "200.00",
+          "sku": "MA-BPC157-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "335.00",
+          "sku": "MA-BPC157-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "320.00",
+          "sku": "MA-BPC157-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "470.00",
+          "sku": "MA-BPC157-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "440.00",
+          "sku": "MA-BPC157-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "605.00",
+          "sku": "MA-BPC157-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "560.00",
+          "sku": "MA-BPC157-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "740.00",
+          "sku": "MA-BPC157-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "680.00",
+          "sku": "MA-BPC157-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "cagrilintide-purity-and-mass-testing",
+      "handle": "cagrilintide-testing",
+      "title": "Cagrilintide Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Cagrilintide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-CAGRILINTIDE-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-CAGRILINTIDE-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-CAGRILINTIDE-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-CAGRILINTIDE-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-CAGRILINTIDE-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-CAGRILINTIDE-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-CAGRILINTIDE-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-CAGRILINTIDE-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-CAGRILINTIDE-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "blend-assay-cagrireta-purity-and-mass-testing",
+      "handle": "cagrireta-testing",
+      "title": "CagriReta Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for CagriReta. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $800.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "800.00",
+          "sku": "MA-CAGRIRETA-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "935.00",
+          "sku": "MA-CAGRIRETA-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "920.00",
+          "sku": "MA-CAGRIRETA-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "1070.00",
+          "sku": "MA-CAGRIRETA-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "1040.00",
+          "sku": "MA-CAGRIRETA-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "1205.00",
+          "sku": "MA-CAGRIRETA-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "1160.00",
+          "sku": "MA-CAGRIRETA-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "1340.00",
+          "sku": "MA-CAGRIRETA-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "1280.00",
+          "sku": "MA-CAGRIRETA-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "blend-assay-cagrisema-purity-and-mass-testing",
+      "handle": "cagrisema-testing",
+      "title": "CagriSema Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for CagriSema. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $700.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "700.00",
+          "sku": "MA-CAGRISEMA-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "835.00",
+          "sku": "MA-CAGRISEMA-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "820.00",
+          "sku": "MA-CAGRISEMA-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "970.00",
+          "sku": "MA-CAGRISEMA-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-CAGRISEMA-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "1105.00",
+          "sku": "MA-CAGRISEMA-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "1060.00",
+          "sku": "MA-CAGRISEMA-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "1240.00",
+          "sku": "MA-CAGRISEMA-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "1180.00",
+          "sku": "MA-CAGRISEMA-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "cjc-1295-no-dac-purity-and-mass-testing",
+      "handle": "cjc-1295-no-dac-testing",
+      "title": "CJC-1295 (no DAC) Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for CJC-1295 (no DAC). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "200.00",
+          "sku": "MA-CJC1295NODAC-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "335.00",
+          "sku": "MA-CJC1295NODAC-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "320.00",
+          "sku": "MA-CJC1295NODAC-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "470.00",
+          "sku": "MA-CJC1295NODAC-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "440.00",
+          "sku": "MA-CJC1295NODAC-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "605.00",
+          "sku": "MA-CJC1295NODAC-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "560.00",
+          "sku": "MA-CJC1295NODAC-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "740.00",
+          "sku": "MA-CJC1295NODAC-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "680.00",
+          "sku": "MA-CJC1295NODAC-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "custom-analytical-service",
+      "handle": "custom-analytical-service",
+      "title": "Custom Analytical Service",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "addon"
+      ],
+      "description_html": "<p>Scoped analytical work after intake. The listed amount is a demo placeholder, not a final quote.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": null,
+      "variants": [
+        {
+          "title": "$5",
+          "price": "5.00",
+          "sku": "MA-CUSTOMANALYT-1",
+          "option_value": null,
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "endotoxin-test",
+      "handle": "endotoxin-testing",
+      "title": "Endotoxin Test",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "addon"
+      ],
+      "description_html": "<p>Endotoxin screen for the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "300.00",
+          "sku": "MA-ENDOTOXIN-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials",
+          "price": "600.00",
+          "sku": "MA-ENDOTOXIN-2",
+          "option_value": "2 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials",
+          "price": "900.00",
+          "sku": "MA-ENDOTOXIN-3",
+          "option_value": "3 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials",
+          "price": "1200.00",
+          "sku": "MA-ENDOTOXIN-4",
+          "option_value": "4 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials",
+          "price": "1500.00",
+          "sku": "MA-ENDOTOXIN-5",
+          "option_value": "5 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "6 Vials",
+          "price": "1800.00",
+          "sku": "MA-ENDOTOXIN-6",
+          "option_value": "6 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "7 Vials",
+          "price": "2100.00",
+          "sku": "MA-ENDOTOXIN-7",
+          "option_value": "7 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "8 Vials",
+          "price": "2400.00",
+          "sku": "MA-ENDOTOXIN-8",
+          "option_value": "8 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "9 Vials",
+          "price": "2700.00",
+          "sku": "MA-ENDOTOXIN-9",
+          "option_value": "9 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "10 Vials",
+          "price": "3000.00",
+          "sku": "MA-ENDOTOXIN-10",
+          "option_value": "10 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "11 Vials",
+          "price": "3300.00",
+          "sku": "MA-ENDOTOXIN-11",
+          "option_value": "11 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "12 Vials",
+          "price": "3600.00",
+          "sku": "MA-ENDOTOXIN-12",
+          "option_value": "12 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "13 Vials",
+          "price": "3900.00",
+          "sku": "MA-ENDOTOXIN-13",
+          "option_value": "13 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "14 Vials",
+          "price": "4200.00",
+          "sku": "MA-ENDOTOXIN-14",
+          "option_value": "14 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "15 Vials",
+          "price": "4500.00",
+          "sku": "MA-ENDOTOXIN-15",
+          "option_value": "15 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "16 Vials",
+          "price": "4800.00",
+          "sku": "MA-ENDOTOXIN-16",
+          "option_value": "16 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "17 Vials",
+          "price": "5100.00",
+          "sku": "MA-ENDOTOXIN-17",
+          "option_value": "17 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "18 Vials",
+          "price": "5400.00",
+          "sku": "MA-ENDOTOXIN-18",
+          "option_value": "18 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "19 Vials",
+          "price": "5700.00",
+          "sku": "MA-ENDOTOXIN-19",
+          "option_value": "19 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "20 Vials",
+          "price": "6000.00",
+          "sku": "MA-ENDOTOXIN-20",
+          "option_value": "20 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "21 Vials",
+          "price": "6300.00",
+          "sku": "MA-ENDOTOXIN-21",
+          "option_value": "21 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "22 Vials",
+          "price": "6600.00",
+          "sku": "MA-ENDOTOXIN-22",
+          "option_value": "22 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "23 Vials",
+          "price": "6900.00",
+          "sku": "MA-ENDOTOXIN-23",
+          "option_value": "23 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "24 Vials",
+          "price": "7200.00",
+          "sku": "MA-ENDOTOXIN-24",
+          "option_value": "24 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "25 Vials",
+          "price": "7500.00",
+          "sku": "MA-ENDOTOXIN-25",
+          "option_value": "25 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "ghk-cu-purity-and-mass-testing",
+      "handle": "ghk-cu-testing",
+      "title": "GHK-Cu Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for GHK-Cu. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "250.00",
+          "sku": "MA-GHKCU-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "385.00",
+          "sku": "MA-GHKCU-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "370.00",
+          "sku": "MA-GHKCU-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-GHKCU-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "490.00",
+          "sku": "MA-GHKCU-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "655.00",
+          "sku": "MA-GHKCU-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "610.00",
+          "sku": "MA-GHKCU-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "790.00",
+          "sku": "MA-GHKCU-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "730.00",
+          "sku": "MA-GHKCU-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "glow-blend-assay-ghk-cu-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
+      "handle": "glow-blend-testing",
+      "title": "GLOW Blend Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for GLOW Blend - GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $600.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "600.00",
+          "sku": "MA-GLOWBLEND-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "735.00",
+          "sku": "MA-GLOWBLEND-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "720.00",
+          "sku": "MA-GLOWBLEND-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "870.00",
+          "sku": "MA-GLOWBLEND-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "840.00",
+          "sku": "MA-GLOWBLEND-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "1005.00",
+          "sku": "MA-GLOWBLEND-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "960.00",
+          "sku": "MA-GLOWBLEND-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "1140.00",
+          "sku": "MA-GLOWBLEND-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "1080.00",
+          "sku": "MA-GLOWBLEND-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "metals-analysis-epa-methods",
+      "handle": "heavy-metals-testing",
+      "title": "Heavy Metals Test",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "addon"
+      ],
+      "description_html": "<p>Elemental screen for specified metals on the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "250.00",
+          "sku": "MA-HEAVYMETALS-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials",
+          "price": "500.00",
+          "sku": "MA-HEAVYMETALS-2",
+          "option_value": "2 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials",
+          "price": "750.00",
+          "sku": "MA-HEAVYMETALS-3",
+          "option_value": "3 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials",
+          "price": "1000.00",
+          "sku": "MA-HEAVYMETALS-4",
+          "option_value": "4 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials",
+          "price": "1250.00",
+          "sku": "MA-HEAVYMETALS-5",
+          "option_value": "5 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "6 Vials",
+          "price": "1500.00",
+          "sku": "MA-HEAVYMETALS-6",
+          "option_value": "6 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "7 Vials",
+          "price": "1750.00",
+          "sku": "MA-HEAVYMETALS-7",
+          "option_value": "7 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "8 Vials",
+          "price": "2000.00",
+          "sku": "MA-HEAVYMETALS-8",
+          "option_value": "8 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "9 Vials",
+          "price": "2250.00",
+          "sku": "MA-HEAVYMETALS-9",
+          "option_value": "9 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "10 Vials",
+          "price": "2500.00",
+          "sku": "MA-HEAVYMETALS-10",
+          "option_value": "10 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "11 Vials",
+          "price": "2750.00",
+          "sku": "MA-HEAVYMETALS-11",
+          "option_value": "11 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "12 Vials",
+          "price": "3000.00",
+          "sku": "MA-HEAVYMETALS-12",
+          "option_value": "12 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "13 Vials",
+          "price": "3250.00",
+          "sku": "MA-HEAVYMETALS-13",
+          "option_value": "13 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "14 Vials",
+          "price": "3500.00",
+          "sku": "MA-HEAVYMETALS-14",
+          "option_value": "14 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "15 Vials",
+          "price": "3750.00",
+          "sku": "MA-HEAVYMETALS-15",
+          "option_value": "15 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "16 Vials",
+          "price": "4000.00",
+          "sku": "MA-HEAVYMETALS-16",
+          "option_value": "16 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "17 Vials",
+          "price": "4250.00",
+          "sku": "MA-HEAVYMETALS-17",
+          "option_value": "17 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "18 Vials",
+          "price": "4500.00",
+          "sku": "MA-HEAVYMETALS-18",
+          "option_value": "18 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "19 Vials",
+          "price": "4750.00",
+          "sku": "MA-HEAVYMETALS-19",
+          "option_value": "19 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "20 Vials",
+          "price": "5000.00",
+          "sku": "MA-HEAVYMETALS-20",
+          "option_value": "20 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "21 Vials",
+          "price": "5250.00",
+          "sku": "MA-HEAVYMETALS-21",
+          "option_value": "21 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "22 Vials",
+          "price": "5500.00",
+          "sku": "MA-HEAVYMETALS-22",
+          "option_value": "22 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "23 Vials",
+          "price": "5750.00",
+          "sku": "MA-HEAVYMETALS-23",
+          "option_value": "23 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "24 Vials",
+          "price": "6000.00",
+          "sku": "MA-HEAVYMETALS-24",
+          "option_value": "24 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "25 Vials",
+          "price": "6250.00",
+          "sku": "MA-HEAVYMETALS-25",
+          "option_value": "25 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "blend-assay-ipamorelin-and-cjc-1295-no-dac-purity-and-mass-testing",
+      "handle": "ipamorelin-and-cjc-1295-no-dac-testing",
+      "title": "Ipamorelin and CJC-1295 (no DAC) Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-IPAMORELINAN-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-IPAMORELINAN-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-IPAMORELINAN-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-IPAMORELINAN-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-IPAMORELINAN-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-IPAMORELINAN-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-IPAMORELINAN-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-IPAMORELINAN-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-IPAMORELINAN-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "blend-assay-ipamorelin-and-tesamorelin-purity-and-mass-testing-copy",
+      "handle": "ipamorelin-and-tesamorelin-testing",
+      "title": "Ipamorelin and Tesamorelin Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $450.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "450.00",
+          "sku": "MA-IPAMORELINAN-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "585.00",
+          "sku": "MA-IPAMORELINAN-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "570.00",
+          "sku": "MA-IPAMORELINAN-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "720.00",
+          "sku": "MA-IPAMORELINAN-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "690.00",
+          "sku": "MA-IPAMORELINAN-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "855.00",
+          "sku": "MA-IPAMORELINAN-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "810.00",
+          "sku": "MA-IPAMORELINAN-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "990.00",
+          "sku": "MA-IPAMORELINAN-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "930.00",
+          "sku": "MA-IPAMORELINAN-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "ipamorelin-purity-and-mass-testing",
+      "handle": "ipamorelin-testing",
+      "title": "Ipamorelin Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "200.00",
+          "sku": "MA-IPAMORELIN-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "335.00",
+          "sku": "MA-IPAMORELIN-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "320.00",
+          "sku": "MA-IPAMORELIN-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "470.00",
+          "sku": "MA-IPAMORELIN-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "440.00",
+          "sku": "MA-IPAMORELIN-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "605.00",
+          "sku": "MA-IPAMORELIN-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "560.00",
+          "sku": "MA-IPAMORELIN-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "740.00",
+          "sku": "MA-IPAMORELIN-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "680.00",
+          "sku": "MA-IPAMORELIN-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "karl-fischer-water-analysis",
+      "handle": "karl-fischer-testing",
+      "title": "Karl Fischer Water Analysis",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "addon"
+      ],
+      "description_html": "<p>Karl Fischer moisture determination for the submitted sample.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "250.00",
+          "sku": "MA-KARLFISCHER-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials",
+          "price": "500.00",
+          "sku": "MA-KARLFISCHER-2",
+          "option_value": "2 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials",
+          "price": "750.00",
+          "sku": "MA-KARLFISCHER-3",
+          "option_value": "3 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials",
+          "price": "1000.00",
+          "sku": "MA-KARLFISCHER-4",
+          "option_value": "4 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials",
+          "price": "1250.00",
+          "sku": "MA-KARLFISCHER-5",
+          "option_value": "5 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "6 Vials",
+          "price": "1500.00",
+          "sku": "MA-KARLFISCHER-6",
+          "option_value": "6 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "7 Vials",
+          "price": "1750.00",
+          "sku": "MA-KARLFISCHER-7",
+          "option_value": "7 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "8 Vials",
+          "price": "2000.00",
+          "sku": "MA-KARLFISCHER-8",
+          "option_value": "8 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "9 Vials",
+          "price": "2250.00",
+          "sku": "MA-KARLFISCHER-9",
+          "option_value": "9 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "10 Vials",
+          "price": "2500.00",
+          "sku": "MA-KARLFISCHER-10",
+          "option_value": "10 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "11 Vials",
+          "price": "2750.00",
+          "sku": "MA-KARLFISCHER-11",
+          "option_value": "11 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "12 Vials",
+          "price": "3000.00",
+          "sku": "MA-KARLFISCHER-12",
+          "option_value": "12 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "13 Vials",
+          "price": "3250.00",
+          "sku": "MA-KARLFISCHER-13",
+          "option_value": "13 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "14 Vials",
+          "price": "3500.00",
+          "sku": "MA-KARLFISCHER-14",
+          "option_value": "14 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "15 Vials",
+          "price": "3750.00",
+          "sku": "MA-KARLFISCHER-15",
+          "option_value": "15 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "16 Vials",
+          "price": "4000.00",
+          "sku": "MA-KARLFISCHER-16",
+          "option_value": "16 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "17 Vials",
+          "price": "4250.00",
+          "sku": "MA-KARLFISCHER-17",
+          "option_value": "17 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "18 Vials",
+          "price": "4500.00",
+          "sku": "MA-KARLFISCHER-18",
+          "option_value": "18 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "19 Vials",
+          "price": "4750.00",
+          "sku": "MA-KARLFISCHER-19",
+          "option_value": "19 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "20 Vials",
+          "price": "5000.00",
+          "sku": "MA-KARLFISCHER-20",
+          "option_value": "20 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "21 Vials",
+          "price": "5250.00",
+          "sku": "MA-KARLFISCHER-21",
+          "option_value": "21 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "22 Vials",
+          "price": "5500.00",
+          "sku": "MA-KARLFISCHER-22",
+          "option_value": "22 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "23 Vials",
+          "price": "5750.00",
+          "sku": "MA-KARLFISCHER-23",
+          "option_value": "23 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "24 Vials",
+          "price": "6000.00",
+          "sku": "MA-KARLFISCHER-24",
+          "option_value": "24 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "25 Vials",
+          "price": "6250.00",
+          "sku": "MA-KARLFISCHER-25",
+          "option_value": "25 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "kpv-ghk-cu-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
+      "handle": "klow-blend-testing",
+      "title": "KLOW Blend Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for KLOW Blend - KPV, GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $800.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "800.00",
+          "sku": "MA-KLOWBLEND-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "935.00",
+          "sku": "MA-KLOWBLEND-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "920.00",
+          "sku": "MA-KLOWBLEND-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "1070.00",
+          "sku": "MA-KLOWBLEND-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "1040.00",
+          "sku": "MA-KLOWBLEND-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "1205.00",
+          "sku": "MA-KLOWBLEND-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "1160.00",
+          "sku": "MA-KLOWBLEND-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "1340.00",
+          "sku": "MA-KLOWBLEND-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "1280.00",
+          "sku": "MA-KLOWBLEND-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "kpv-purity-and-mass-testing",
+      "handle": "kpv-testing",
+      "title": "KPV Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for KPV. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-KPV-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-KPV-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-KPV-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-KPV-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-KPV-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-KPV-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-KPV-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-KPV-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-KPV-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "mazdutide-purity-and-mass-testing",
+      "handle": "mazdutide-testing",
+      "title": "Mazdutide Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Mazdutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-MAZDUTIDE-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-MAZDUTIDE-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-MAZDUTIDE-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-MAZDUTIDE-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-MAZDUTIDE-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-MAZDUTIDE-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-MAZDUTIDE-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-MAZDUTIDE-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-MAZDUTIDE-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "mots-c-purity-and-mass-testing",
+      "handle": "mots-c-testing",
+      "title": "MOTS-c Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for MOTS-c. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-MOTSC-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-MOTSC-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-MOTSC-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-MOTSC-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-MOTSC-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-MOTSC-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-MOTSC-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-MOTSC-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-MOTSC-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "nad-purity-and-mass-testing",
+      "handle": "nad-testing",
+      "title": "NAD+ Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for NAD+. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-NAD-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-NAD-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-NAD-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-NAD-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-NAD-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-NAD-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-NAD-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-NAD-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-NAD-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "retatrutide-purity-and-mass-testing",
+      "handle": "retatrutide-testing",
+      "title": "Retatrutide Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Retatrutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-RETATRUTIDE-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-RETATRUTIDE-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-RETATRUTIDE-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-RETATRUTIDE-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-RETATRUTIDE-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-RETATRUTIDE-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-RETATRUTIDE-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-RETATRUTIDE-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-RETATRUTIDE-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "semaglutide-purity-and-mass-testing",
+      "handle": "semaglutide-testing",
+      "title": "Semaglutide Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Semaglutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $300.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "300.00",
+          "sku": "MA-SEMAGLUTIDE-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "435.00",
+          "sku": "MA-SEMAGLUTIDE-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "420.00",
+          "sku": "MA-SEMAGLUTIDE-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "570.00",
+          "sku": "MA-SEMAGLUTIDE-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "540.00",
+          "sku": "MA-SEMAGLUTIDE-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "705.00",
+          "sku": "MA-SEMAGLUTIDE-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "660.00",
+          "sku": "MA-SEMAGLUTIDE-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "840.00",
+          "sku": "MA-SEMAGLUTIDE-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "780.00",
+          "sku": "MA-SEMAGLUTIDE-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "ss-31-elamipretide-purity-and-mass-testing-copy",
+      "handle": "ss-31-elamipretide-testing",
+      "title": "SS-31 Elamipretide Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for SS-31 Elamipretide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "400.00",
+          "sku": "MA-SS31ELAMIPRE-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "535.00",
+          "sku": "MA-SS31ELAMIPRE-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-SS31ELAMIPRE-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "670.00",
+          "sku": "MA-SS31ELAMIPRE-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "640.00",
+          "sku": "MA-SS31ELAMIPRE-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "805.00",
+          "sku": "MA-SS31ELAMIPRE-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "760.00",
+          "sku": "MA-SS31ELAMIPRE-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "940.00",
+          "sku": "MA-SS31ELAMIPRE-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "880.00",
+          "sku": "MA-SS31ELAMIPRE-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "sterility-test",
+      "handle": "sterility-testing",
+      "title": "Sterility Test",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "addon"
+      ],
+      "description_html": "<p>Sterility screen for the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": null,
+      "variants": [
+        {
+          "title": "Default Title",
+          "price": "300.00",
+          "sku": "MA-STERILITY-1",
+          "option_value": null,
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "tb-500-tb4-purity-and-mass-testing",
+      "handle": "tb-500-tb4-testing",
+      "title": "TB-500 (TB4) Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "200.00",
+          "sku": "MA-TB500TB4-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "335.00",
+          "sku": "MA-TB500TB4-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "320.00",
+          "sku": "MA-TB500TB4-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "470.00",
+          "sku": "MA-TB500TB4-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "440.00",
+          "sku": "MA-TB500TB4-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "605.00",
+          "sku": "MA-TB500TB4-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "560.00",
+          "sku": "MA-TB500TB4-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "740.00",
+          "sku": "MA-TB500TB4-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "680.00",
+          "sku": "MA-TB500TB4-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "tesamorelin-purity-and-mass-testing",
+      "handle": "tesamorelin-testing",
+      "title": "Tesamorelin Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Tesamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "250.00",
+          "sku": "MA-TESAMORELIN-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "385.00",
+          "sku": "MA-TESAMORELIN-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "370.00",
+          "sku": "MA-TESAMORELIN-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "520.00",
+          "sku": "MA-TESAMORELIN-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "490.00",
+          "sku": "MA-TESAMORELIN-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "655.00",
+          "sku": "MA-TESAMORELIN-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "610.00",
+          "sku": "MA-TESAMORELIN-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "790.00",
+          "sku": "MA-TESAMORELIN-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "730.00",
+          "sku": "MA-TESAMORELIN-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "tirzepatide-purity-and-mass-testing",
+      "handle": "tirzepatide-testing",
+      "title": "Tirzepatide Testing",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "compound"
+      ],
+      "description_html": "<p>HPLC purity and potency analysis for Tirzepatide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $300.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "300.00",
+          "sku": "MA-TIRZEPATIDE-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Differentiated Results)",
+          "price": "435.00",
+          "sku": "MA-TIRZEPATIDE-2",
+          "option_value": "2 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials (Non-Differentiated Results)",
+          "price": "420.00",
+          "sku": "MA-TIRZEPATIDE-3",
+          "option_value": "2 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Differentiated Results)",
+          "price": "570.00",
+          "sku": "MA-TIRZEPATIDE-4",
+          "option_value": "3 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials (Non-Differentiated Results)",
+          "price": "540.00",
+          "sku": "MA-TIRZEPATIDE-5",
+          "option_value": "3 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Differentiated Results)",
+          "price": "705.00",
+          "sku": "MA-TIRZEPATIDE-6",
+          "option_value": "4 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials (Non-Differentiated Results)",
+          "price": "660.00",
+          "sku": "MA-TIRZEPATIDE-7",
+          "option_value": "4 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Differentiated Results)",
+          "price": "840.00",
+          "sku": "MA-TIRZEPATIDE-8",
+          "option_value": "5 Vials (Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials (Non-Differentiated Results)",
+          "price": "780.00",
+          "sku": "MA-TIRZEPATIDE-9",
+          "option_value": "5 Vials (Non-Differentiated Results)",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    },
+    {
+      "source_handle": "vial-vacuum-test-add-on-test",
+      "handle": "vial-vacuum-testing",
+      "title": "Vial Vacuum Test",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "addon"
+      ],
+      "description_html": "<p>Vial vacuum integrity check. Typically added to a compound purity order.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "25.00",
+          "sku": "MA-VIALVACUUM-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials",
+          "price": "50.00",
+          "sku": "MA-VIALVACUUM-2",
+          "option_value": "2 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials",
+          "price": "75.00",
+          "sku": "MA-VIALVACUUM-3",
+          "option_value": "3 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials",
+          "price": "100.00",
+          "sku": "MA-VIALVACUUM-4",
+          "option_value": "4 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials",
+          "price": "125.00",
+          "sku": "MA-VIALVACUUM-5",
+          "option_value": "5 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "6 Vials",
+          "price": "150.00",
+          "sku": "MA-VIALVACUUM-6",
+          "option_value": "6 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "7 Vials",
+          "price": "175.00",
+          "sku": "MA-VIALVACUUM-7",
+          "option_value": "7 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "8 Vials",
+          "price": "200.00",
+          "sku": "MA-VIALVACUUM-8",
+          "option_value": "8 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "9 Vials",
+          "price": "225.00",
+          "sku": "MA-VIALVACUUM-9",
+          "option_value": "9 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "10 Vials",
+          "price": "250.00",
+          "sku": "MA-VIALVACUUM-10",
+          "option_value": "10 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "11 Vials",
+          "price": "275.00",
+          "sku": "MA-VIALVACUUM-11",
+          "option_value": "11 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "12 Vials",
+          "price": "300.00",
+          "sku": "MA-VIALVACUUM-12",
+          "option_value": "12 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "13 Vials",
+          "price": "325.00",
+          "sku": "MA-VIALVACUUM-13",
+          "option_value": "13 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "14 Vials",
+          "price": "350.00",
+          "sku": "MA-VIALVACUUM-14",
+          "option_value": "14 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "15 Vials",
+          "price": "375.00",
+          "sku": "MA-VIALVACUUM-15",
+          "option_value": "15 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "16 Vials",
+          "price": "400.00",
+          "sku": "MA-VIALVACUUM-16",
+          "option_value": "16 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "17 Vials",
+          "price": "425.00",
+          "sku": "MA-VIALVACUUM-17",
+          "option_value": "17 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "18 Vials",
+          "price": "450.00",
+          "sku": "MA-VIALVACUUM-18",
+          "option_value": "18 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "19 Vials",
+          "price": "475.00",
+          "sku": "MA-VIALVACUUM-19",
+          "option_value": "19 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "20 Vials",
+          "price": "500.00",
+          "sku": "MA-VIALVACUUM-20",
+          "option_value": "20 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "21 Vials",
+          "price": "525.00",
+          "sku": "MA-VIALVACUUM-21",
+          "option_value": "21 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "22 Vials",
+          "price": "550.00",
+          "sku": "MA-VIALVACUUM-22",
+          "option_value": "22 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "23 Vials",
+          "price": "575.00",
+          "sku": "MA-VIALVACUUM-23",
+          "option_value": "23 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "24 Vials",
+          "price": "600.00",
+          "sku": "MA-VIALVACUUM-24",
+          "option_value": "24 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "25 Vials",
+          "price": "625.00",
+          "sku": "MA-VIALVACUUM-25",
+          "option_value": "25 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "handle": "how-it-works",
+      "title": "How it works",
+      "template_suffix": "how-it-works",
+      "body_html": "<p>March Analytics tests customer-supplied samples and returns a certificate of analysis. Checkout does not ship anything to you. After payment you receive the lab receiving address and packaging notes for the sample you send in.</p>\n<ol><li>Select a compound test or add-on. Fill in compound name, batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email. Portal or public COA publication is confirmed with the client before launch (intake C13).</li></ol>\n<p>The receiving street address is issued after checkout (intake C11). Packaging requirements are confirmed with the lab (intake C12).</p>"
+    },
+    {
+      "handle": "methods",
+      "title": "Methods",
+      "template_suffix": "methods",
+      "body_html": "<p>Base compound tests measure purity, potency, and identity. HPLC is the primary purity and potency method. Methods follow USP &lt;1225&gt; validation principles. Specific identity instruments are named only after the lab confirms them.</p>\n<p>Optional add-on services: heavy metal screen, sterility screen, endotoxin screen, Karl Fischer moisture, and vial vacuum integrity. These can be ordered with a compound test or as standalone services.</p>\n<p>Reports translate instrument output into a certificate of analysis. Photography of instrumentation is pending; storefront images remain IMAGE TBD until client assets arrive.</p>"
+    },
+    {
+      "handle": "turnaround",
+      "title": "Turnaround",
+      "template_suffix": "turnaround",
+      "body_html": "<p>Standard turnaround is 3 business days and is included in the test price.</p>\n<p>1 business day: +$300.</p>\n<p>Same day: +$500.</p>\n<p>Whether the clock starts at payment or at sample receipt is pending client confirmation (intake C10). Storefront copy will match that decision before launch.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>"
+    },
+    {
+      "handle": "contact-us",
+      "title": "Contact",
+      "template_suffix": "contact",
+      "body_html": "<p>Questions about an order, a sample, or a report can be sent with the form below.</p>\n<p>Support email and legal entity details are pending client intake (D1, D2). Do not treat any address on this preview as a live lab location.</p>"
+    },
+    {
+      "handle": "about",
+      "title": "About",
+      "template_suffix": "about",
+      "body_html": "<p>March Analytics is an independent testing laboratory. We analyse customer-supplied peptides and related research compounds and return a certificate of analysis.</p>\n<p>The work is analytical quality control: purity, potency, and identity, with optional add-on screens. Reports are written so a researcher can read the result without guessing what was measured.</p>\n<p>March Analytics is operated independently from any seller of research compounds. We do not market, validate, or endorse products that were not in the vial we tested.</p>"
+    },
+    {
+      "handle": "attestation",
+      "title": "Attestation",
+      "template_suffix": "attestation",
+      "body_html": "<p>By placing an order you confirm:</p>\n<ul>\n<li>The sample is submitted for research and analytical purposes only.</li>\n<li>It is not for human or animal use.</li>\n<li>The certificate of analysis is valid only for the tested sample and may not be reused for any other material.</li>\n<li>Certificates may not be used to market, sell, or validate untested products.</li>\n<li>You will comply with all applicable laws.</li>\n<li>You indemnify March Analytics and its laboratory partners from liability related to misuse, misrepresentation, or unlawful submission.</li>\n</ul>\n<p>Legal entity name for this attestation is pending client intake (D1).</p>"
+    },
+    {
+      "handle": "terms",
+      "title": "Terms of service",
+      "template_suffix": "terms",
+      "body_html": "<p>This preview uses placeholder terms of service. Client counsel supplies the live version (intake D3).</p>\n<p>Testing is a laboratory service. The customer ships the sample to the lab. Results apply only to the sample received.</p>"
+    },
+    {
+      "handle": "privacy",
+      "title": "Privacy policy",
+      "template_suffix": "privacy",
+      "body_html": "<p>This preview uses a placeholder privacy policy. Client counsel supplies the live version (intake D3).</p>\n<p>Order forms collect compound name, batch or lot number, quantity, and a return address so the lab can process the sample. Contact details are used to deliver the report.</p>"
+    },
+    {
+      "handle": "refund-policy",
+      "title": "Refund policy",
+      "template_suffix": "refund-policy",
+      "body_html": "<p>This preview uses a placeholder refund policy for a laboratory service. Client counsel supplies the live version (intake D3). Goods-style restocking language does not apply.</p>\n<p>Once a sample has been logged for analysis, the test fee is generally not refundable. Requests received before sample receipt are reviewed case by case.</p>"
+    }
+  ],
+  "menus": {
+    "main": [
+      {
+        "title": "Order Testing",
+        "type": "COLLECTION",
+        "handle": "order-testing"
+      },
+      {
+        "title": "How it works",
+        "type": "PAGE",
+        "handle": "how-it-works"
+      },
+      {
+        "title": "Methods",
+        "type": "PAGE",
+        "handle": "methods"
+      },
+      {
+        "title": "Turnaround",
+        "type": "PAGE",
+        "handle": "turnaround"
+      },
+      {
+        "title": "About",
+        "type": "PAGE",
+        "handle": "about"
+      },
+      {
+        "title": "Contact",
+        "type": "PAGE",
+        "handle": "contact-us"
+      }
+    ],
+    "footer": [
+      {
+        "title": "How it works",
+        "type": "PAGE",
+        "handle": "how-it-works"
+      },
+      {
+        "title": "Methods",
+        "type": "PAGE",
+        "handle": "methods"
+      },
+      {
+        "title": "Attestation",
+        "type": "PAGE",
+        "handle": "attestation"
+      },
+      {
+        "title": "Terms of service",
+        "type": "PAGE",
+        "handle": "terms"
+      },
+      {
+        "title": "Privacy policy",
+        "type": "PAGE",
+        "handle": "privacy"
+      },
+      {
+        "title": "Refund policy",
+        "type": "PAGE",
+        "handle": "refund-policy"
+      },
+      {
+        "title": "Contact",
+        "type": "PAGE",
+        "handle": "contact-us"
+      }
+    ]
+  }
+}

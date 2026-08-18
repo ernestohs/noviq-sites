@@ -1,0 +1,136 @@
+{
+  "primary": [
+    {
+      "label": "Catalog",
+      "path": "/shop/",
+      "note": null
+    },
+    {
+      "label": "Documentation",
+      "path": "/coa/",
+      "note": null
+    },
+    {
+      "label": "Learn",
+      "path": "/learn/",
+      "note": null
+    },
+    {
+      "label": "Standard",
+      "path": "/quality-standard/",
+      "note": null
+    },
+    {
+      "label": "Wholesale",
+      "path": "/wholesale/",
+      "note": null
+    },
+    {
+      "label": "Journal",
+      "path": "/blog/",
+      "note": null
+    }
+  ],
+  "footer": [
+    {
+      "heading": "Catalog",
+      "links": [
+        {
+          "label": "All products",
+          "path": "/shop/"
+        },
+        {
+          "label": "Metabolic research",
+          "path": "/collections/metabolic/"
+        },
+        {
+          "label": "Research peptides",
+          "path": "/collections/peptides/"
+        },
+        {
+          "label": "Blends",
+          "path": "/collections/blends/"
+        }
+      ]
+    },
+    {
+      "heading": "Documentation",
+      "links": [
+        {
+          "label": "COA & SDS library",
+          "path": "/coa/"
+        },
+        {
+          "label": "Verify a lot",
+          "path": "/verify/"
+        },
+        {
+          "label": "Our testing standard",
+          "path": "/quality-standard/"
+        },
+        {
+          "label": "Compound reference",
+          "path": "/research-hub/"
+        },
+        {
+          "label": "Comparisons",
+          "path": "/compare/"
+        }
+      ]
+    },
+    {
+      "heading": "Company",
+      "links": [
+        {
+          "label": "About Noviq",
+          "path": "/about/"
+        },
+        {
+          "label": "Why Noviq",
+          "path": "/why-noviq/"
+        },
+        {
+          "label": "Wholesale & bulk",
+          "path": "/wholesale/"
+        },
+        {
+          "label": "Partner program",
+          "path": "/partner-program/"
+        },
+        {
+          "label": "Journal",
+          "path": "/blog/"
+        },
+        {
+          "label": "Contact",
+          "path": "/contact/"
+        }
+      ]
+    },
+    {
+      "heading": "Policies",
+      "links": [
+        {
+          "label": "Shipping & returns",
+          "path": "/policies/shipping-returns/"
+        },
+        {
+          "label": "Terms of service",
+          "path": "/policies/terms/"
+        },
+        {
+          "label": "Privacy policy",
+          "path": "/policies/privacy/"
+        },
+        {
+          "label": "Cancellation policy",
+          "path": "/policies/cancellation/"
+        },
+        {
+          "label": "Accessibility",
+          "path": "/policies/accessibility/"
+        }
+      ]
+    }
+  ]
+}

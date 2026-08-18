@@ -1,0 +1,121 @@
+# 02 fastpeptidetesting.com
+
+Status: draft. Blocked on service catalog and lab logistics.
+
+Platform: Shopify, Dawn theme in `fastpeptidetesting/`.
+Store handle: TBD
+Brand name: March Analytics
+
+Build this site first. It sells a laboratory service, carries no restricted
+product, and works on Shopify Payments, so it validates the whole pipeline
+without risking a terminated store.
+
+## What it sells
+
+Analytical testing of customer-supplied samples, primarily HPLC purity. The
+customer buys a test, ships a sample to the lab, and receives a report.
+
+## The critical Shopify configuration
+
+Each service is a product with **"This is a physical product" unchecked** and
+**inventory tracking off**.
+
+If this is missed, Shopify demands a shipping address and quotes shipping rates
+at checkout on a service where the customer is the one shipping something to
+the lab. It also blocks the order when no rate matches. This is the single most
+common way this kind of store ships broken.
+
+## Service catalog
+
+| Service | Price | Turnaround, business days | Status |
+| --- | --- | --- | --- |
+| HPLC purity | TBD | TBD | TBD |
+| Mass spectrometry identity | TBD | TBD | Confirm whether offered |
+| Sterility | TBD | TBD | Confirm whether offered |
+| Endotoxin | TBD | TBD | Confirm whether offered |
+
+Confirm which of these the lab actually runs before building product pages for
+them. Advertising a test the lab cannot perform is worse than a thin catalog.
+
+## Sample intake
+
+Sample details are captured at checkout using cart line item properties on the
+product page, so they arrive attached to the order. No app required; this is a
+form in the product template plus the `properties[...]` input naming
+convention.
+
+Default fields, pending client confirmation:
+
+1. Compound name
+2. Batch or lot number
+3. Quantity supplied
+4. Customer return address
+5. Whether the customer consents to the result being published as a public COA
+
+Mark required fields as required in the markup. A test with no batch number
+generates a support email for every order.
+
+## Lab logistics
+
+| Field | Value |
+| --- | --- |
+| Receiving address for samples | TBD |
+| What the customer ships, and packaging requirements | TBD |
+| Result delivery method | TBD, emailed PDF, portal login, or public COA page |
+| Turnaround clock start, on payment or on sample receipt | TBD |
+
+The turnaround clock question matters for the copy. "3 day turnaround" means
+something different measured from checkout than from sample arrival, and the
+difference generates chargebacks.
+
+## Homepage
+
+1. `image-banner` or `slideshow`, what the lab does and turnaround time
+2. `featured-collection` or `multicolumn`, the service list with prices
+3. `icons-with-content`, methodology trust points, for example HPLC, in-house
+   instrumentation, chain of custody, independent
+4. `multirow`, how it works as a numbered process: order, ship sample, receive
+   report
+5. `collapsible-content`, FAQ
+
+## Pages
+
+| Handle | Purpose |
+| --- | --- |
+| `how-it-works` | Ordering and sample submission process |
+| `methods` | Instrumentation and methodology, factual |
+| `turnaround` | Timing and what starts the clock |
+| `contact-us` | Dawn `contact-form` section |
+| `terms` | TBD, client supplies |
+| `privacy` | TBD, client supplies |
+| `refund-policy` | TBD, client supplies. Services need a different refund policy than goods. |
+
+## Independence
+
+March Analytics reads as an independent testing lab. That independence is the
+product. No links to noviqpeptides.com, no shared branding, no language
+implying common ownership with any peptide seller.
+
+If the client wants Noviq products tested by March Analytics, that is a
+commercial relationship the sites do not advertise.
+
+## Brand assets needed
+
+| Asset | Status |
+| --- | --- |
+| Logo, SVG preferred | TBD |
+| Favicon, 512x512 PNG | TBD |
+| Brand colours, hex | TBD |
+| Any lab or instrument photography | TBD |
+
+Should look like a laboratory, not like an ecommerce brand. Restrained
+typography, minimal colour, no lifestyle imagery.
+
+## Definition of done
+
+- Every service product is non-physical with inventory tracking off, and
+  checkout never asks for a shipping method.
+- Sample intake fields appear on the order in the admin.
+- Turnaround language matches whatever the client confirms about the clock.
+- All seven pages exist with the handles above.
+- Test order completes end to end with intake fields populated.

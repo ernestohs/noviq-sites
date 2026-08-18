@@ -8,7 +8,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "FAST AFFORDABLE RELIABLE",
+            "text": "Independent analytical testing. Demo preview.",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""
@@ -38,7 +38,7 @@
         "show_line_separator": true,
         "show_search": false,
         "cta_label": "Order Testing",
-        "cta_link": "/",
+        "cta_link": "/collections/order-testing",
         "enable_country_selector": false,
         "enable_language_selector": false,
         "mobile_logo_position": "center",

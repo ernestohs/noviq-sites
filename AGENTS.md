@@ -50,7 +50,9 @@ Clinical and factual. No health claims, no dosage guidance, no therapeutic langu
 
 The three sites must read as three unrelated companies to a visitor, a processor, and a regulator.
 
-## Design system (all three)
+## Design system
+
+Shopify stores (bacwatermarket, fastpeptidetesting):
 
 | Token | Value |
 | --- | --- |
@@ -63,6 +65,8 @@ The three sites must read as three unrelated companies to a visitor, a processor
 | Accent | `#16A34A` on icons only, never large fills |
 
 Minimalist, whitespace-heavy. No gradients, no heavy shadows, no stock art. Missing images use a gray **IMAGE TBD** placeholder.
+
+**noviqpeptides** uses the client-approved navy storefront (primary `#0A4DA8`, deep navy `#042F73`, Space Grotesk / Inter), not the tokens above. Do not restyle it to the Shopify system unless the client asks.
 
 ## Repository layout
 

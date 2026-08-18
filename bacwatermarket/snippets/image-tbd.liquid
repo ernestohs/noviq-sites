@@ -1,18 +1,7 @@
 {%- comment -%}
-  Gray rectangle placeholder labelled IMAGE TBD.
+  Product-media fallback. Bac Water Market uses the original 10 mL catalog
+  graphic instead of a gray IMAGE TBD block.
   Accepts:
-  - aspect_ratio: CSS aspect-ratio value, default 1 / 1
-  - label: overlay text, default IMAGE TBD
+  - loading: eager | lazy (default lazy)
 {%- endcomment -%}
-{%- liquid
-  assign ratio = aspect_ratio | default: '1 / 1'
-  assign placeholder_label = label | default: 'IMAGE TBD'
--%}
-<div
-  class="image-tbd"
-  style="aspect-ratio: {{ ratio }}; width: 100%; background: #E5E5E5; display: flex; align-items: center; justify-content: center; color: #6B6B6B; font-size: 1.2rem; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid #D4D4D4;"
-  role="img"
-  aria-label="{{ placeholder_label | escape }}"
->
-  <span>{{ placeholder_label }}</span>
-</div>
+{% render 'bacwater-graphic', loading: loading %}

@@ -1,0 +1,18 @@
+{%- comment -%}
+  Original 10 mL bacteriostatic water catalog graphic.
+  Accepts:
+  - loading: eager | lazy (default lazy)
+  - class: extra classes on the img
+{%- endcomment -%}
+{%- liquid
+  assign loading_attr = loading | default: 'lazy'
+-%}
+<img
+  src="{{ 'bacwater-main.png' | asset_url }}"
+  alt="Bacteriostatic water, 10 mL"
+  width="1122"
+  height="1402"
+  loading="{{ loading_attr }}"
+  class="bacwater-graphic{% if class != blank %} {{ class }}{% endif %}"
+  style="width: 100%; height: auto; object-fit: contain; display: block;"
+>

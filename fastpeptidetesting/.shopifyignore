@@ -12,3 +12,4 @@ release-notes.md
 .github/
 .prettierrc.json
 .theme-check.yml
+seed/

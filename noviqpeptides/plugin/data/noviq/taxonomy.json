@@ -1,0 +1,66 @@
+{
+  "categories": [
+    {
+      "slug": "metabolic",
+      "name": "Metabolic research",
+      "description": "Incretin analogues, amylin analogues and mitochondrial-derived sequences studied in glucose handling and energy-substrate models."
+    },
+    {
+      "slug": "peptides",
+      "name": "Research peptides",
+      "description": "Single-compound peptides synthesized by solid-phase methods and released against an RP-HPLC purity specification."
+    },
+    {
+      "slug": "blends",
+      "name": "Blends",
+      "description": "Co-lyophilized multi-compound vials. Every component is quantified separately on the lot COA. A blend is not an excuse for a vague certificate."
+    }
+  ],
+  "research_areas": [
+    {
+      "slug": "metabolic",
+      "name": "Metabolic research",
+      "description": "Incretin analogues and mitochondrial-derived sequences studied in glucose handling and energy-substrate models."
+    },
+    {
+      "slug": "growth",
+      "name": "Somatotropic research",
+      "description": "Releasing-hormone analogues and secretagogues examined in endocrine signalling assays."
+    },
+    {
+      "slug": "tissue",
+      "name": "Tissue & matrix research",
+      "description": "Short sequences investigated in cell migration, matrix remodelling and wound-model systems."
+    },
+    {
+      "slug": "neuro",
+      "name": "Neurological research",
+      "description": "Regulatory peptides studied in neurotrophic signalling and central-nervous-system models."
+    },
+    {
+      "slug": "longevity",
+      "name": "Longevity & mitochondrial research",
+      "description": "Compounds explored in cellular senescence, mitochondrial function and oxidative-stress models."
+    },
+    {
+      "slug": "bioregulator",
+      "name": "Peptide bioregulators",
+      "description": "Short di- to tetrapeptides from the Khavinson bioregulator literature, studied in gene-expression models."
+    },
+    {
+      "slug": "cosmetic",
+      "name": "Dermal & cosmetic research",
+      "description": "Sequences studied topically in dermal matrix, pigmentation and in-vitro skin models."
+    },
+    {
+      "slug": "hormone",
+      "name": "Endocrine & receptor research",
+      "description": "Receptor-active peptides used as reference standards in binding and signalling assays."
+    },
+    {
+      "slug": "immune",
+      "name": "Immunological research",
+      "description": "Peptides examined in cytokine signalling, inflammation and immune-modulation models."
+    }
+  ]
+}

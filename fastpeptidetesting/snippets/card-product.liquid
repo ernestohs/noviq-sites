@@ -46,7 +46,7 @@
       <div
         class="
           card card--{{ settings.card_style }}
-          {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
+          card--media
           {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
           {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
           {% if extend_height %} card--extend-height{% endif %}
@@ -106,6 +106,10 @@
                   >
                 {%- endif -%}
               </div>
+            </div>
+          {%- else -%}
+            <div class="card__media">
+              {% render 'image-tbd', aspect_ratio: '1 / 1' %}
             </div>
           {%- endif -%}
           <div class="card__content">

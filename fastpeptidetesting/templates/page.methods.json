@@ -10,21 +10,14 @@
     "methods": {
       "type": "rich-text",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Methods",
-            "heading_size": "h1"
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Base measurements: purity, potency, and identity. Optional add-ons: heavy metal, sterility, and endotoxin.</p><p>Do not advertise a specific identity instrument until the lab confirms the method. RUO graphics and instrument photography are pending; placeholders remain IMAGE TBD until delivered.</p>"
+            "text": "<p>Optional add-ons: heavy metal screen, sterility screen, endotoxin screen, Karl Fischer moisture, and vial vacuum integrity. These can be ordered with a compound test or as standalone services from the Order Testing catalog.</p><p>Instrument photography is pending. Storefront images remain IMAGE TBD until client assets arrive.</p>"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": ["text"],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",

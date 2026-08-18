@@ -1,0 +1,127 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"custom": false,
+			"customDuotone": false,
+			"palette": [
+				{ "slug": "primary", "color": "#0A4DA8", "name": "Primary" },
+				{ "slug": "primary-hover", "color": "#073C87", "name": "Primary hover" },
+				{ "slug": "deep-navy", "color": "#042F73", "name": "Deep navy" },
+				{ "slug": "lit-edge", "color": "#0959C3", "name": "Lit edge" },
+				{ "slug": "cap-blue", "color": "#1B3F82", "name": "Cap blue" },
+				{ "slug": "tint-50", "color": "#F0F4FB", "name": "Tint 50" },
+				{ "slug": "tint-100", "color": "#E0E9F7", "name": "Tint 100" },
+				{ "slug": "tint-200", "color": "#BDC7EB", "name": "Tint 200" },
+				{ "slug": "ink", "color": "#151515", "name": "Ink" },
+				{ "slug": "ink-soft", "color": "#3E3E40", "name": "Ink soft" },
+				{ "slug": "gray-600", "color": "#6B6B6D", "name": "Gray 600" },
+				{ "slug": "gray-500", "color": "#9E9E9F", "name": "Gray 500" },
+				{ "slug": "gray-400", "color": "#BEBEC0", "name": "Gray 400" },
+				{ "slug": "gray-200", "color": "#E4E4E6", "name": "Gray 200" },
+				{ "slug": "page", "color": "#FFFFFF", "name": "Page ground" },
+				{ "slug": "warning", "color": "#8A5A00", "name": "Warning" },
+				{ "slug": "warning-field", "color": "#FBF3E3", "name": "Warning field" },
+				{ "slug": "danger", "color": "#A8201A", "name": "Danger" },
+				{ "slug": "danger-field", "color": "#FBECEB", "name": "Danger field" }
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"slug": "display",
+					"name": "Space Grotesk",
+					"fontFamily": "\"Space Grotesk\", ui-sans-serif, system-ui, sans-serif"
+				},
+				{
+					"slug": "body",
+					"name": "Inter",
+					"fontFamily": "\"Inter\", ui-sans-serif, system-ui, -apple-system, sans-serif"
+				},
+				{
+					"slug": "mono",
+					"name": "IBM Plex Mono",
+					"fontFamily": "\"IBM Plex Mono\", ui-monospace, SFMono-Regular, monospace"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "x-small", "size": "0.8125rem", "name": "X-small" },
+				{ "slug": "small", "size": "0.875rem", "name": "Small" },
+				{ "slug": "medium", "size": "1rem", "name": "Medium" },
+				{ "slug": "large", "size": "1.25rem", "name": "Large" },
+				{
+					"slug": "x-large",
+					"name": "X-large",
+					"size": "1.75rem",
+					"fluid": { "min": "1.5rem", "max": "2rem" }
+				},
+				{
+					"slug": "xx-large",
+					"name": "XX-large",
+					"size": "2.5rem",
+					"fluid": { "min": "2rem", "max": "3rem" }
+				}
+			]
+		},
+		"spacing": {
+			"units": [ "px", "rem", "vw", "%" ]
+		},
+		"layout": {
+			"contentSize": "44rem",
+			"wideSize": "68rem"
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--page)",
+			"text": "var(--wp--preset--color--ink)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--display)",
+					"fontWeight": "500",
+					"letterSpacing": "-0.02em",
+					"lineHeight": "1.2"
+				}
+			},
+			"link": {
+				"color": { "text": "var(--wp--preset--color--primary)" },
+				":hover": {
+					"color": { "text": "var(--wp--preset--color--primary-hover)" }
+				}
+			},
+			"button": {
+				"border": { "radius": "2px" },
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--page)"
+				},
+				"typography": { "fontWeight": "500" },
+				":hover": {
+					"color": { "background": "var(--wp--preset--color--primary-hover)" }
+				}
+			}
+		},
+		"blocks": {
+			"core/code": {
+				"typography": { "fontFamily": "var(--wp--preset--font-family--mono)" }
+			},
+			"core/table": {
+				"typography": { "fontSize": "var(--wp--preset--font-size--small)" }
+			}
+		}
+	}
+}

@@ -14,21 +14,21 @@
           "type": "column",
           "settings": {
             "title": "1. Place your order",
-            "text": "<p>Choose the base test, add-ons, and turnaround. Complete sample details on the product form so they attach to the order.</p>"
+            "text": "<p>Choose the compound test, add-ons, and turnaround. Complete sample details on the product form so they attach to the order.</p>"
           }
         },
         "step2": {
           "type": "column",
           "settings": {
             "title": "2. Ship the sample",
-            "text": "<p>Ship to the lab receiving address (TBD, intake C11). Packaging requirements are TBD (intake C12).</p>"
+            "text": "<p>The confirmation email includes the lab receiving address and the order number to mark on the package. Do not require a signature. Packaging notes are included in that email.</p>"
           }
         },
         "step3": {
           "type": "column",
           "settings": {
             "title": "3. Receive the report",
-            "text": "<p>Result delivery method is TBD (intake C13): emailed PDF, portal login, or public COA page.</p>"
+            "text": "<p>Results are issued as a certificate of analysis by email. Public COA publication is optional and requires consent at checkout.</p>"
           }
         }
       },

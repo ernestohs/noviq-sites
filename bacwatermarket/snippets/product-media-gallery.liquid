@@ -61,6 +61,16 @@
       class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
       role="list"
     >
+      {%- if product.media.size == 0 -%}
+        <li class="product__media-item grid__item slider__slide is-active product__media-item--single">
+          <div
+            class="product-media-container global-media-settings gradient{% if section.settings.constrain_to_viewport %} constrain-height{% endif %}"
+            style="--ratio: 0.8; --preview-ratio: 0.8;"
+          >
+            {% render 'bacwater-graphic', loading: 'eager' %}
+          </div>
+        </li>
+      {%- endif -%}
       {%- if product.selected_or_first_available_variant.featured_media != null -%}
         {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <li

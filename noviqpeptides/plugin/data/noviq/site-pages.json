@@ -1,0 +1,57 @@
+[
+  {
+    "slug": "research-hub",
+    "title": "Research hub",
+    "lede": "Every compound in the catalog, indexed by the research area it is studied in. Each entry links to its monograph.",
+    "shortcode": "[noviq_research_hub]"
+  },
+  {
+    "slug": "coa",
+    "title": "COA & SDS library",
+    "lede": "Certificates of Analysis and Safety Data Sheets, published per lot on release. Every vial ships with the certificate matching its lot number.",
+    "shortcode": "[noviq_coa_library]"
+  },
+  {
+    "slug": "verify",
+    "title": "Verify a lot",
+    "lede": "Enter the lot number printed on the vial label to retrieve that lot's certificate.",
+    "shortcode": "[noviq_verify]"
+  },
+  {
+    "slug": "quality-standard",
+    "title": "Our testing standard",
+    "lede": "The specifications every lot is released against. Figures we cannot yet substantiate are not shown.",
+    "shortcode": "[noviq_quality_standard]",
+    "body": "<p>Every lot is released against a written specification and accompanied by the analytical package that demonstrates it. Identity is confirmed by mass spectrometry; purity is measured by reversed-phase HPLC and reported as a percentage of total peak area at 214 nm.</p><p>A certificate that reports a purity figure without the chromatogram behind it is a claim, not a measurement. Ours ship with both.</p><p>Where a figure below is absent, it is because we do not yet hold the data to support it \u2014 not because it is unfavourable. It will appear here when released lots supply it.</p>"
+  },
+  {
+    "slug": "why-noviq",
+    "title": "Why Noviq",
+    "lede": "What actually differs between suppliers in this category, and what to check before you order from anyone.",
+    "body": "<h2>Documentation is the product</h2><p>Two vials of the same sequence from two suppliers are not the same material. What separates them is whether the analytical package is real, lot-specific, and reproducible on request.</p><h2>What we publish</h2><p>Each released lot has a Certificate of Analysis carrying its lot number, the analytical method, and the measured result. The certificate is published here at the same time the lot is released \u2014 not on request, and not as a generic specimen document reused across lots.</p><h2>What we do not publish</h2><p>We do not publish figures we cannot evidence. Where this site shows no number, it is because the data does not yet exist. A supplier that quotes an average purity across lots it has not yet sold is quoting an aspiration.</p><h2>What to check anywhere</h2><p>Ask whether the certificate names the lot you are buying. Ask which method produced the purity figure and at what wavelength. Ask whether the quoted molecular weight matches the sequence actually supplied \u2014 a mass that matches the parent protein rather than the fragment is a common and diagnostic error.</p>"
+  },
+  {
+    "slug": "about",
+    "title": "About Noviq",
+    "lede": "A supplier of research-grade peptides and reference materials for in-vitro laboratory work.",
+    "body": "<p>Noviq supplies synthetic peptides and related reference materials to research laboratories, contract research organisations and academic groups. Every item in the catalog is sold as a laboratory reagent.</p><h2>Scope</h2><p>We stock single-compound peptides and co-lyophilized blends. Bacteriostatic water and injection consumables are not part of this catalog.</p><h2>How we describe compounds</h2><p>Our monographs describe molecular profile, handling characteristics and analytical considerations. They do not describe biological effects, outcomes or applications in humans or animals, because these materials are not supplied for those purposes and we are not in a position to make such statements.</p><h2>Company details</h2><p>Registered entity, address and telephone details are being finalised and will be published here before launch.</p>"
+  },
+  {
+    "slug": "wholesale",
+    "title": "Wholesale & bulk",
+    "lede": "Volume supply for laboratories, CROs and institutional purchasing.",
+    "body": "<h2>Who this is for</h2><p>Research groups placing repeat orders, contract research organisations, and institutional purchasing departments that need quotes, purchase-order terms and consolidated invoicing.</p><h2>What we can quote</h2><p>Bulk quantities beyond catalog vial sizes, custom fill volumes, and standing orders against a schedule. Lot reservation is available so a multi-stage study can run on a single lot with one certificate.</p><h2>Documentation</h2><p>Wholesale orders ship with the same lot-matched Certificate of Analysis as single-vial orders. Additional documentation for institutional receiving can be arranged.</p><h2>Getting a quote</h2><p>Write to <a href=\"mailto:wholesale@noviqpeptides.com\">wholesale@noviqpeptides.com</a> with the compounds, quantities and timeline. Include your institution and purchasing contact if you need PO terms.</p>"
+  },
+  {
+    "slug": "partner-program",
+    "title": "Partner program",
+    "lede": "For laboratories, educators and technical writers whose audiences buy research materials.",
+    "body": "<h2>What the program is</h2><p>A referral arrangement for people who already recommend suppliers to research audiences \u2014 lab managers, method developers, technical educators.</p><h2>What we ask</h2><p>That anything written about our materials describes them accurately and as research reagents. We do not accept promotion that describes these compounds in terms of human or veterinary use, and we will end an arrangement over it.</p><h2>Applying</h2><p>Write to <a href=\"mailto:partners@noviqpeptides.com\">partners@noviqpeptides.com</a> describing your audience and how you would reference our materials.</p>"
+  },
+  {
+    "slug": "contact",
+    "title": "Contact",
+    "lede": "Technical questions, documentation requests and order enquiries.",
+    "body": "<h2>Email</h2><p>General and order enquiries: <a href=\"mailto:support@noviqpeptides.com\">support@noviqpeptides.com</a></p><p>Wholesale and bulk: <a href=\"mailto:wholesale@noviqpeptides.com\">wholesale@noviqpeptides.com</a></p><p>Partner program: <a href=\"mailto:partners@noviqpeptides.com\">partners@noviqpeptides.com</a></p><h2>Documentation requests</h2><p>If you need the certificate for a lot you already hold, send the lot number printed on the vial label and we will retrieve it. You can also look it up directly on the <a href=\"/verify\">verify page</a>.</p><h2>Damage or error</h2><p>Report shipping damage or a fulfilment error within 72 hours of delivery, with photographs of the packaging and vial, and we will replace or refund.</p><h2>Postal address</h2><p>Our registered address will be published here before launch.</p>"
+  }
+]

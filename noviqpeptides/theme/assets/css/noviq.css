@@ -1,0 +1,2145 @@
+/**
+ * Noviq storefront design system.
+ *
+ * Structure, spacing, density and control shapes are measured from the
+ * reference storefront at www.americanpeptides.us; the palette and the
+ * monospace tabular numerics are Noviq's own. Where the two disagree, colour
+ * follows Noviq and layout follows the reference.
+ *
+ * The reference's accent role (its red) maps to --nq-primary. Its cream ground
+ * maps to white. Money is monospace tabular here, not serif lining figures.
+ */
+
+/* =========================================================== 1. tokens === */
+
+:root {
+	/* Brand */
+	--nq-blue-600: #0a4da8;
+	--nq-blue-700: #073c87;
+	--nq-blue-800: #042f73;
+	--nq-blue-500: #0959c3;
+	--nq-navy-cap: #1b3f82;
+
+	--nq-blue-50: #f0f4fb;
+	--nq-blue-100: #e0e9f7;
+	--nq-blue-200: #bdc7eb;
+
+	--nq-ink: #151515;
+	--nq-ink-soft: #3e3e40;
+	--nq-paper: #ecebed;
+	--nq-white: #ffffff;
+
+	--nq-gray-600: #6b6b6d;
+	--nq-gray-500: #9e9e9f;
+	--nq-gray-400: #bebec0;
+	--nq-gray-200: #e4e4e6;
+
+	--nq-amber-700: #8a5a00;
+	--nq-amber-50: #fbf3e3;
+	--nq-red-700: #a8201a;
+	--nq-red-50: #fbeceb;
+
+	--nq-green-700: #1a7f46;
+	--nq-green-50: #eaf6ef;
+	--nq-green-200: #bfe3cd;
+
+	/* Semantic */
+	--nq-bg: var( --nq-white );
+	--nq-bg-alt: var( --nq-blue-50 );
+	--nq-surface-2: var( --nq-blue-100 );
+	--nq-bg-inverse: var( --nq-blue-800 );
+	--nq-text: var( --nq-ink );
+	--nq-text-muted: var( --nq-ink-soft );
+	--nq-text-subtle: var( --nq-gray-600 );
+	--nq-text-inverse: var( --nq-white );
+	--nq-primary: var( --nq-blue-600 );
+	--nq-primary-hover: var( --nq-blue-700 );
+	--nq-border: rgba( 10, 18, 32, 0.1 );
+	--nq-border-soft: rgba( 10, 18, 32, 0.07 );
+	--nq-border-strong: var( --nq-gray-400 );
+	--nq-focus: var( --nq-blue-500 );
+	--nq-primary-on-inverse: var( --nq-blue-200 );
+
+	/* Type */
+	--nq-font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+	--nq-font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--nq-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+	/* Shape — measured from the reference */
+	--nq-r-card: 18px;
+	--nq-r-panel: 14px;
+	--nq-r-chip: 12px;
+	--nq-r-btn: 11px;
+	--nq-r-pill: 999px;
+
+	/* Layout */
+	--nq-maxw: 1460px;
+	--nq-maxw-wide: 1800px;
+	--nq-gutter: clamp( 22px, 3.2vw, 52px );
+	--nq-header-h: 78px;
+}
+
+/* ============================================================= 2. base === */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+}
+
+body.noviq {
+	margin: 0;
+	font-family: var( --nq-font-body );
+	color: var( --nq-text );
+	background: var( --nq-bg );
+	line-height: 1.55;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body.noviq img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+body.noviq h1,
+body.noviq h2,
+body.noviq h3,
+body.noviq h4 {
+	font-family: var( --nq-font-display );
+	font-weight: 500;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	margin: 0;
+	color: var( --nq-text );
+	text-wrap: balance;
+}
+
+body.noviq a {
+	color: var( --nq-primary );
+	text-decoration: none;
+}
+
+body.noviq a:hover {
+	color: var( --nq-primary-hover );
+}
+
+body.noviq :focus-visible {
+	outline: 2px solid var( --nq-focus );
+	outline-offset: 2px;
+}
+
+body.noviq ::selection {
+	background: var( --nq-primary );
+	color: var( --nq-text-inverse );
+}
+
+.nq-skip {
+	position: absolute;
+	left: -9999px;
+}
+
+.nq-skip:focus {
+	left: 1rem;
+	top: 1rem;
+	z-index: 100;
+	background: var( --nq-primary );
+	color: var( --nq-text-inverse );
+	padding: 0.5rem 1rem;
+	border-radius: var( --nq-r-btn );
+}
+
+/* Every number on this site is monospace and tabular. That is the brand. */
+body.noviq .noviq-num,
+body.noviq .woocommerce-Price-amount,
+body.noviq .price,
+body.noviq .amount,
+body.noviq .nq-price,
+body.noviq code,
+body.noviq kbd {
+	font-family: var( --nq-font-mono );
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: "tnum" 1, "zero" 1;
+	letter-spacing: -0.01em;
+}
+
+/* ======================================================== 3. primitives === */
+
+.nq-wrap {
+	width: 100%;
+	max-width: var( --nq-maxw );
+	margin: 0 auto;
+	padding: 0 var( --nq-gutter );
+}
+
+.nq-wrap--wide {
+	max-width: var( --nq-maxw-wide );
+}
+
+.nq-main {
+	display: block;
+}
+
+.nq-section {
+	padding: clamp( 48px, 7vw, 90px ) 0;
+}
+
+.nq-section-head {
+	text-align: center;
+	max-width: 40rem;
+	margin: 0 auto clamp( 32px, 5vw, 54px );
+}
+
+.nq-section-head p {
+	color: var( --nq-text-subtle );
+	margin: 12px 0 0;
+}
+
+/* The kicker: the reference's small tracked uppercase label, in the accent. */
+.nq-kicker,
+body.noviq .nq-kicker,
+.nq-eyebrow {
+	font-family: var( --nq-font-mono );
+	font-size: 0.72rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var( --nq-primary );
+	margin: 0 0 10px;
+}
+
+body.noviq .nq-section-head h2 {
+	font-size: clamp( 1.8rem, 4vw, 2.7rem );
+	letter-spacing: -0.025em;
+	line-height: 1.08;
+}
+
+/* -------------------------------------------------------------- buttons */
+
+.nq-btn,
+body.noviq .nq-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	font-family: var( --nq-font-body );
+	font-size: 0.95rem;
+	font-weight: 600;
+	line-height: 1;
+	padding: 14px 26px;
+	border-radius: var( --nq-r-btn );
+	border: 1px solid transparent;
+	cursor: pointer;
+	text-decoration: none;
+	transition: transform 0.14s ease, background 0.14s ease, box-shadow 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+
+.nq-btn--primary,
+body.noviq .nq-btn--primary {
+	background: var( --nq-primary );
+	border-color: var( --nq-primary );
+	color: var( --nq-text-inverse );
+	box-shadow: 0 8px 22px rgba( 10, 77, 168, 0.28 );
+}
+
+.nq-btn--primary:hover,
+body.noviq .nq-btn--primary:hover {
+	background: var( --nq-primary-hover );
+	border-color: var( --nq-primary-hover );
+	color: var( --nq-text-inverse );
+	transform: translateY( -1px );
+}
+
+.nq-btn--dark,
+body.noviq .nq-btn--dark {
+	background: var( --nq-bg-inverse );
+	border-color: var( --nq-bg-inverse );
+	color: var( --nq-text-inverse );
+}
+
+.nq-btn--dark:hover,
+body.noviq .nq-btn--dark:hover {
+	background: var( --nq-navy-cap );
+	color: var( --nq-text-inverse );
+}
+
+.nq-btn--ghost,
+body.noviq .nq-btn--ghost {
+	background: transparent;
+	border-color: var( --nq-border );
+	color: var( --nq-text );
+}
+
+.nq-btn--ghost:hover,
+body.noviq .nq-btn--ghost:hover {
+	border-color: var( --nq-primary );
+	color: var( --nq-primary );
+}
+
+.nq-btn:disabled,
+body.noviq .nq-btn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+/* =========================================================== 4. marquee === */
+
+.nq-marquee {
+	background: linear-gradient( 90deg, var( --nq-bg-inverse ) 0, var( --nq-navy-cap ) 55%, var( --nq-bg-inverse ) 100% );
+	color: var( --nq-text-inverse );
+	overflow: hidden;
+	white-space: nowrap;
+	border-bottom: 1px solid rgba( 189, 199, 235, 0.28 );
+}
+
+.nq-marquee__track {
+	display: inline-flex;
+	align-items: center;
+	animation: nq-marquee 46s linear infinite;
+}
+
+.nq-marquee:hover .nq-marquee__track {
+	animation-play-state: paused;
+}
+
+.nq-marquee__item {
+	display: inline-flex;
+	align-items: center;
+	padding: 8px 0;
+	font-size: 0.72rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var( --nq-text-inverse );
+}
+
+.nq-marquee__dot {
+	color: var( --nq-primary-on-inverse );
+	padding: 0 18px;
+}
+
+@keyframes nq-marquee {
+	from { transform: translateX( 0 ); }
+	to { transform: translateX( -50% ); }
+}
+
+/* ========================================================= 5. RUO strip === */
+
+.nq-ruo-strip {
+	margin: 0;
+	background: var( --nq-primary );
+	color: var( --nq-text-inverse );
+	text-align: center;
+	font-size: 0.76rem;
+	letter-spacing: 0.05em;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 7px 12px;
+}
+
+/* ========================================================== 6. masthead === */
+
+.nq-masthead {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: rgba( 255, 255, 255, 0.9 );
+	backdrop-filter: saturate( 180% ) blur( 16px );
+	-webkit-backdrop-filter: saturate( 180% ) blur( 16px );
+	border-bottom: 1px solid var( --nq-border-soft );
+	box-shadow: 0 10px 30px -26px rgba( 10, 18, 32, 0.4 );
+}
+
+.nq-masthead__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	height: var( --nq-header-h );
+}
+
+.nq-logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: var( --nq-text );
+	flex: 0 0 auto;
+}
+
+.nq-logo__mark {
+	display: grid;
+	place-items: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 9px;
+	background: var( --nq-primary );
+	color: var( --nq-text-inverse );
+}
+
+.nq-logo__word {
+	font-family: var( --nq-font-display );
+	font-weight: 600;
+	font-size: 1.05rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.nq-nav {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	flex: 1 1 auto;
+	justify-content: center;
+}
+
+.nq-nav__list {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.noviq .nq-nav__list a {
+	position: relative;
+	color: #2b3648;
+	font-weight: 600;
+	font-size: 0.9rem;
+	white-space: nowrap;
+}
+
+body.noviq .nq-nav__list a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 100%;
+	bottom: -5px;
+	height: 2px;
+	background: var( --nq-primary );
+	border-radius: 2px;
+	transition: right 0.28s cubic-bezier( 0.22, 1, 0.36, 1 );
+}
+
+body.noviq .nq-nav__list a:hover,
+body.noviq .nq-nav__list .current-menu-item > a {
+	color: var( --nq-primary );
+}
+
+body.noviq .nq-nav__list a:hover::after,
+body.noviq .nq-nav__list .current-menu-item > a::after {
+	right: 0;
+}
+
+.nq-masthead__actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex: 0 0 auto;
+}
+
+body.noviq .nq-cart {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: var( --nq-bg-inverse );
+	color: var( --nq-text-inverse );
+	border: 1px solid var( --nq-bg-inverse );
+	border-radius: var( --nq-r-pill );
+	padding: 9px 18px;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+body.noviq .nq-cart:hover {
+	background: var( --nq-navy-cap );
+	color: var( --nq-text-inverse );
+}
+
+.nq-cart__count {
+	background: var( --nq-primary );
+	color: var( --nq-text-inverse );
+	border-radius: var( --nq-r-pill );
+	min-width: 20px;
+	height: 20px;
+	display: grid;
+	place-items: center;
+	font-size: 0.72rem;
+	padding: 0 5px;
+}
+
+.nq-burger {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 4px;
+	width: 38px;
+	height: 38px;
+	padding: 0 9px;
+	background: var( --nq-bg );
+	border: 1px solid var( --nq-border );
+	border-radius: var( --nq-r-pill );
+	cursor: pointer;
+}
+
+.nq-burger span[aria-hidden] {
+	display: block;
+	height: 1.5px;
+	background: var( --nq-text );
+	border-radius: 2px;
+}
+
+/* --------------------------------------------------------- mobile drawer */
+
+.nq-mobile-nav {
+	border-top: 1px solid var( --nq-border-soft );
+	padding: 14px var( --nq-gutter ) 20px;
+	background: var( --nq-bg );
+}
+
+.nq-mobile-nav__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+}
+
+body.noviq .nq-mobile-nav__list a {
+	display: block;
+	padding: 12px 0;
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: var( --nq-text );
+	border-bottom: 1px solid var( --nq-border-soft );
+}
+
+/* =========================================================== 7. collbar === */
+
+.nq-collbar {
+	position: sticky;
+	top: var( --nq-header-h );
+	z-index: 40;
+	background: var( --nq-bg );
+	border-bottom: 1px solid var( --nq-border-soft );
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+
+.nq-collbar::-webkit-scrollbar {
+	display: none;
+}
+
+.nq-collbar__track {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	width: max-content;
+	min-width: 100%;
+	padding: 10px var( --nq-gutter );
+}
+
+body.noviq .nq-collbar__chip {
+	flex: none;
+	display: inline-flex;
+	align-items: baseline;
+	gap: 6px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: #48566b;
+	background: var( --nq-bg );
+	border: 1px solid var( --nq-border );
+	border-radius: var( --nq-r-pill );
+	padding: 7px 14px;
+	white-space: nowrap;
+	transition: background 0.22s, color 0.22s, border-color 0.22s, transform 0.18s;
+}
+
+body.noviq .nq-collbar__chip:hover {
+	background: var( --nq-bg-inverse );
+	color: var( --nq-text-inverse );
+	border-color: var( --nq-bg-inverse );
+	transform: translateY( -1px );
+}
+
+body.noviq .nq-collbar__chip.is-current {
+	background: var( --nq-primary );
+	border-color: var( --nq-primary );
+	color: var( --nq-text-inverse );
+}
+
+.nq-collbar__count {
+	font-size: 0.68rem;
+	opacity: 0.7;
+}
+
+/* ====================================================== 8. product card === */
+
+body.noviq ul.products,
+.nq-grid {
+	display: grid;
+	grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+	gap: 26px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body.noviq ul.products::before,
+body.noviq ul.products::after {
+	content: none;
+}
+
+@media ( min-width: 1360px ) {
+	body.noviq ul.products,
+	.nq-grid { grid-template-columns: repeat( 4, minmax( 0, 1fr ) ); }
+}
+
+@media ( max-width: 900px ) {
+	body.noviq ul.products,
+	.nq-grid { grid-template-columns: repeat( 2, minmax( 0, 1fr ) ); gap: 18px; }
+}
+
+/* Never collapses to one column — 2-up on phones, as the reference does. */
+@media ( max-width: 560px ) {
+	body.noviq ul.products,
+	.nq-grid { grid-template-columns: repeat( 2, minmax( 0, 1fr ) ); gap: 12px; }
+}
+
+body.noviq li.product.nq-card,
+.nq-card {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	float: none;
+	background: var( --nq-bg );
+	border: 1px solid var( --nq-border-soft );
+	border-radius: var( --nq-r-card );
+	overflow: hidden;
+	box-shadow: 0 1px 2px rgba( 10, 18, 32, 0.04 );
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+body.noviq li.product.nq-card:hover,
+.nq-card:hover {
+	transform: translateY( -5px );
+	box-shadow: 0 22px 48px rgba( 10, 20, 38, 0.16 );
+	border-color: var( --nq-border );
+}
+
+.nq-card__link {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	color: inherit;
+}
+
+/*
+ * The media well. The light radial is what makes a product render on white
+ * sit properly once it is multiplied over the backdrop.
+ */
+.nq-card__media {
+	position: relative;
+	aspect-ratio: 1 / 1;
+	display: grid;
+	place-items: center;
+	padding: 22px;
+	overflow: hidden;
+	background: radial-gradient( 120% 100% at 50% 0, #ffffff 0, #eef1f6 100% );
+	border-bottom: 1px solid rgba( 10, 18, 32, 0.05 );
+}
+
+.nq-card__media img {
+	width: 78%;
+	height: auto;
+	object-fit: contain;
+	mix-blend-mode: multiply;
+	transition: transform 0.4s cubic-bezier( 0.22, 1, 0.36, 1 );
+}
+
+.nq-card:hover .nq-card__media img {
+	transform: scale( 1.06 );
+}
+
+/* Diagonal shine sweep on hover. */
+.nq-card__media::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: linear-gradient( 105deg, transparent 38%, rgba( 255, 255, 255, 0.35 ) 50%, transparent 62% );
+	transform: translateX( -130% );
+}
+
+.nq-card:hover .nq-card__media::after {
+	transform: translateX( 130% );
+	transition: transform 0.8s ease;
+}
+
+.nq-card__body {
+	padding: 20px 22px 22px;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
+body.noviq .nq-card__title {
+	font-family: var( --nq-font-display );
+	font-size: 1.12rem;
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	color: var( --nq-text );
+	margin: 0 0 6px;
+	transition: color 0.2s ease;
+}
+
+.nq-card:hover .nq-card__title {
+	color: var( --nq-primary );
+}
+
+.nq-card__sub {
+	font-size: 0.86rem;
+	color: var( --nq-text-subtle );
+	margin: 0 0 14px;
+	flex: 1 1 auto;
+}
+
+.nq-card__foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: auto;
+}
+
+body.noviq .nq-card__price {
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: var( --nq-text );
+	margin: 0;
+}
+
+body.noviq .nq-card__price small {
+	font-weight: 400;
+	font-size: 0.76rem;
+	color: var( --nq-text-subtle );
+	font-family: var( --nq-font-body );
+	letter-spacing: 0.02em;
+}
+
+.nq-card__variants {
+	margin: 0;
+	font-size: 0.76rem;
+	color: var( --nq-text-subtle );
+}
+
+/* Sibling of the link, so the whole card can be one anchor. */
+body.noviq .nq-card__atc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	width: 100%;
+	border: 0;
+	border-radius: 0;
+	cursor: pointer;
+	background: var( --nq-bg-inverse );
+	color: var( --nq-text-inverse );
+	font-family: var( --nq-font-body );
+	font-weight: 600;
+	font-size: 0.9rem;
+	padding: 15px 16px;
+	transition: background 0.18s ease;
+}
+
+body.noviq .nq-card__atc:hover {
+	background: var( --nq-primary );
+	color: var( --nq-text-inverse );
+}
+
+body.noviq .nq-card__atc.loading {
+	opacity: 0.7;
+}
+
+/* Woo injects this after an AJAX add. */
+body.noviq .nq-card a.added_to_cart {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	background: var( --nq-bg-alt );
+	color: var( --nq-primary );
+}
+
+@media ( max-width: 560px ) {
+	.nq-card__body { padding: 12px 12px 14px; }
+	body.noviq .nq-card__title { font-size: 0.98rem; line-height: 1.2; }
+	.nq-card__sub { font-size: 0.72rem; margin-bottom: 10px; }
+	.nq-card__foot { flex-wrap: wrap; gap: 6px; }
+	body.noviq .nq-card__price { font-size: 1.02rem; }
+	body.noviq .nq-card__atc { padding: 12px; font-size: 0.82rem; }
+}
+
+/* ===================================================== 9. media / vials === */
+
+.nq-media {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.nq-media__grid {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	color: rgba( 10, 18, 32, 0.06 );
+}
+
+.nq-media__art {
+	position: relative;
+	height: 78%;
+	width: auto;
+}
+
+.nq-media__sku {
+	position: absolute;
+	left: 12px;
+	bottom: 10px;
+	font-family: var( --nq-font-mono );
+	font-size: 0.56rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var( --nq-text-subtle );
+}
+
+.nq-media--photo img {
+	width: 78%;
+	object-fit: contain;
+	mix-blend-mode: multiply;
+}
+
+/* ================================================= 10. archive / listing === */
+
+.nq-coll-head {
+	padding: 34px 0 26px;
+}
+
+.nq-crumb {
+	font-size: 0.82rem;
+	color: var( --nq-text-subtle );
+	margin-bottom: 14px;
+}
+
+body.noviq .nq-crumb a {
+	color: var( --nq-text-subtle );
+}
+
+body.noviq .nq-crumb a:hover {
+	color: var( --nq-primary );
+}
+
+body.noviq .nq-coll-head h1 {
+	font-size: clamp( 1.9rem, 4vw, 2.7rem );
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.nq-coll-head p {
+	color: var( --nq-text-subtle );
+	max-width: 44rem;
+	margin: 0 0 12px;
+	font-size: 1.02rem;
+}
+
+.nq-coll-count {
+	display: inline-block;
+	font-size: 0.78rem;
+	font-weight: 600;
+	color: var( --nq-primary );
+	background: var( --nq-bg-alt );
+	border-radius: var( --nq-r-pill );
+	padding: 5px 12px;
+}
+
+.nq-coll-head__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 2rem;
+}
+
+body.noviq .nq-coll-head__title {
+	font-size: clamp( 1.9rem, 4vw, 2.7rem );
+	font-weight: 600;
+	margin: 0 0 10px;
+}
+
+.nq-coll-head__lede {
+	color: var( --nq-text-subtle );
+	max-width: 44rem;
+	margin: 0;
+	font-size: 1.02rem;
+}
+
+.nq-coll-head__stats {
+	display: flex;
+	gap: 2.5rem;
+}
+
+.nq-stat__value {
+	margin: 4px 0 0;
+	font-family: var( --nq-font-mono );
+	font-variant-numeric: tabular-nums;
+	font-size: 1.6rem;
+	color: var( --nq-text );
+}
+
+.nq-stat__link {
+	margin: 4px 0 0;
+	font-size: 0.95rem;
+}
+
+.nq-coll-head__rule {
+	margin: clamp( 20px, 3vw, 30px ) 0 clamp( 24px, 4vw, 36px );
+	border: 0;
+	border-top: 1px solid var( --nq-border-soft );
+}
+
+.nq-archive__body {
+	padding-bottom: 60px;
+}
+
+body.noviq .woocommerce-products-header,
+body.noviq .woocommerce-result-count,
+body.noviq .woocommerce-ordering {
+	display: none;
+}
+
+/* =========================================================== 11. footer === */
+
+.nq-footer {
+	background: var( --nq-bg-inverse );
+	color: rgba( 255, 255, 255, 0.72 );
+	padding: 54px 0 30px;
+	font-size: 0.88rem;
+	margin-top: clamp( 48px, 8vw, 90px );
+}
+
+.nq-footer__badges {
+	display: grid;
+	grid-template-columns: repeat( 4, 1fr );
+	gap: 18px;
+	padding-bottom: 34px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid rgba( 255, 255, 255, 0.12 );
+}
+
+.nq-footer__badge-title {
+	font-family: var( --nq-font-mono );
+	font-size: 0.7rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var( --nq-primary-on-inverse );
+	margin: 0 0 6px;
+}
+
+.nq-footer__badge-sub {
+	margin: 0;
+	color: rgba( 255, 255, 255, 0.72 );
+}
+
+/* Brand column plus one column per footer menu group. */
+.nq-footer__grid {
+	display: grid;
+	grid-template-columns: 1.5fr repeat( 4, minmax( 0, 1fr ) );
+	gap: 34px;
+	margin-bottom: 34px;
+}
+
+.nq-footer__tagline {
+	margin: 14px 0 0;
+	max-width: 34ch;
+	color: rgba( 255, 255, 255, 0.72 );
+}
+
+body.noviq .nq-footer__email {
+	display: inline-block;
+	margin-top: 12px;
+	color: var( --nq-primary-on-inverse );
+	font-size: 0.82rem;
+}
+
+.nq-footer__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: contents;
+}
+
+.nq-footer__list > li > a {
+	font-family: var( --nq-font-mono );
+	font-size: 0.72rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var( --nq-white );
+	pointer-events: none;
+	display: block;
+	margin-bottom: 14px;
+}
+
+.nq-footer__list .sub-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.noviq .nq-footer__list .sub-menu a {
+	display: block;
+	color: rgba( 255, 255, 255, 0.72 );
+	margin-bottom: 9px;
+	font-size: 0.86rem;
+}
+
+body.noviq .nq-footer__list .sub-menu a:hover {
+	color: var( --nq-white );
+}
+
+.nq-footer__legal {
+	border-top: 1px solid rgba( 255, 255, 255, 0.12 );
+	padding-top: 24px;
+}
+
+.nq-footer__legal p {
+	margin: 0 0 10px;
+	font-size: 0.74rem;
+	line-height: 1.7;
+	color: rgba( 255, 255, 255, 0.6 );
+}
+
+.nq-footer__logo {
+	display: inline-grid;
+	place-items: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 9px;
+	background: rgba( 255, 255, 255, 0.1 );
+	color: var( --nq-white );
+}
+
+@media ( max-width: 900px ) {
+	.nq-footer__grid { grid-template-columns: 1fr 1fr; }
+	.nq-footer__badges { grid-template-columns: repeat( 2, 1fr ); }
+	.nq-nav { display: none; }
+	.nq-burger { display: flex; }
+	.nq-cart__label { display: none; }
+}
+
+@media ( max-width: 560px ) {
+	.nq-footer__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================== 11b. PDP === */
+
+.nq-pdp {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: clamp( 28px, 4vw, 60px );
+	align-items: start;
+	padding: clamp( 24px, 4vw, 54px ) 0 26px;
+}
+
+.nq-pdp__gallery {
+	position: sticky;
+	top: calc( var( --nq-header-h ) + 18px );
+	align-self: start;
+}
+
+/* The gallery well: light radial so multiplied product art sits correctly. */
+.nq-pdp__gallery .nq-media,
+.nq-gallery .nq-media {
+	aspect-ratio: 1 / 1;
+	border: 1px solid var( --nq-border-soft );
+	border-radius: 20px;
+	background: radial-gradient( 120% 100% at 50% 0, #ffffff 0, #eef1f6 100% );
+	box-shadow: 0 34px 74px -46px rgba( 10, 18, 32, 0.45 );
+	padding: 46px;
+}
+
+/* Analytical facts strip under the gallery, from the linked compound record. */
+.nq-facts {
+	display: grid;
+	grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+	margin: 12px 0 0;
+	border: 1px solid var( --nq-border-soft );
+	border-radius: var( --nq-r-panel );
+	overflow: hidden;
+	background: var( --nq-bg );
+}
+
+.nq-facts__cell {
+	padding: 12px 14px;
+	border-right: 1px solid var( --nq-border-soft );
+	min-width: 0;
+}
+
+.nq-facts__cell:last-child {
+	border-right: 0;
+}
+
+.nq-facts dt {
+	margin: 0 0 4px;
+}
+
+.nq-facts dd {
+	margin: 0;
+	font-size: 0.8rem;
+	overflow-wrap: anywhere;
+	color: var( --nq-text );
+}
+
+@media ( max-width: 620px ) {
+	.nq-facts { grid-template-columns: repeat( 2, minmax( 0, 1fr ) ); }
+	.nq-facts__cell:nth-child( 2n ) { border-right: 0; }
+}
+
+body.noviq .nq-pdp__title {
+	font-size: clamp( 1.9rem, 4vw, 2.6rem );
+	letter-spacing: -0.025em;
+	margin: 0 0 12px;
+}
+
+.nq-badge-tested {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	background: var( --nq-green-50 );
+	color: var( --nq-green-700 );
+	border: 1px solid var( --nq-green-200 );
+	font-weight: 600;
+	font-size: 0.72rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	padding: 6px 13px;
+	border-radius: var( --nq-r-pill );
+}
+
+.nq-pdp__highlights {
+	margin: 16px 0 4px;
+}
+
+.nq-pdp__highlights p {
+	color: var( --nq-text-muted );
+	font-size: 0.95rem;
+	line-height: 1.6;
+	margin: 0 0 10px;
+	max-width: 54ch;
+}
+
+.nq-pills {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.nq-pills li {
+	position: relative;
+	background: var( --nq-bg-alt );
+	color: var( --nq-primary );
+	font-weight: 600;
+	font-size: 0.78rem;
+	border-radius: var( --nq-r-pill );
+	padding: 4px 12px 4px 24px;
+}
+
+.nq-pills li::before {
+	content: "\2713";
+	position: absolute;
+	left: 9px;
+	font-weight: 700;
+}
+
+/* ------------------------------------------------- variant chips (opt-row) */
+
+.nq-visually-hidden {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect( 0 0 0 0 );
+	white-space: nowrap;
+}
+
+.nq-opt-row {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin: 6px 0 4px;
+}
+
+body.noviq .nq-opt-chip {
+	padding: 11px 20px;
+	border-radius: var( --nq-r-chip );
+	border: 1.5px solid var( --nq-border );
+	background: var( --nq-bg );
+	cursor: pointer;
+	font-family: var( --nq-font-mono );
+	font-variant-numeric: tabular-nums;
+	font-weight: 500;
+	font-size: 0.92rem;
+	color: var( --nq-text );
+	transition: all 0.13s;
+}
+
+body.noviq .nq-opt-chip:hover {
+	border-color: var( --nq-bg-inverse );
+}
+
+body.noviq .nq-opt-chip.is-active {
+	border-color: var( --nq-primary );
+	background: rgba( 10, 77, 168, 0.06 );
+	color: var( --nq-primary );
+	box-shadow: 0 8px 20px -12px rgba( 10, 77, 168, 0.55 );
+}
+
+body.noviq div.product form.cart .variations {
+	margin: 18px 0 10px;
+	border: 0;
+}
+
+body.noviq div.product form.cart .variations td,
+body.noviq div.product form.cart .variations th {
+	padding: 0;
+	border: 0;
+	display: block;
+	text-align: left;
+}
+
+body.noviq div.product form.cart .variations label {
+	font-family: var( --nq-font-mono );
+	font-size: 0.72rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var( --nq-text-subtle );
+	font-weight: 400;
+	margin-bottom: 8px;
+	display: block;
+}
+
+body.noviq .reset_variations {
+	font-size: 0.8rem;
+}
+
+/* ------------------------------------------------------------- price ---- */
+
+body.noviq .nq-pdp__info p.price,
+body.noviq .nq-pdp__info .woocommerce-variation-price .price {
+	font-size: clamp( 1.6rem, 3vw, 2.1rem );
+	font-weight: 500;
+	color: var( --nq-text );
+	margin: 14px 0 4px;
+}
+
+body.noviq .nq-pdp__info p.price del {
+	opacity: 0.5;
+	font-size: 0.6em;
+}
+
+.nq-pdp__sku {
+	margin: 18px 0 0;
+	font-size: 0.8rem;
+	color: var( --nq-text-subtle );
+}
+
+/* ------------------------------------------------------- volume pricing - */
+
+.nq-vol {
+	margin: 20px 0 4px;
+	border: 1px solid var( --nq-border );
+	border-radius: var( --nq-r-panel );
+	overflow: hidden;
+	background: var( --nq-bg );
+}
+
+.nq-vol__head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 12px 16px;
+	background: var( --nq-bg-alt );
+}
+
+.nq-vol__title {
+	font-family: var( --nq-font-mono );
+	font-size: 0.7rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var( --nq-primary );
+}
+
+.nq-vol__note {
+	font-size: 0.76rem;
+	color: var( --nq-text-subtle );
+}
+
+.nq-vol__row {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr 0.8fr;
+	gap: 8px;
+	padding: 11px 16px;
+	font-size: 0.9rem;
+	border-top: 1px solid var( --nq-border-soft );
+	align-items: baseline;
+}
+
+.nq-vol__row--head {
+	font-family: var( --nq-font-mono );
+	font-size: 0.66rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var( --nq-text-subtle );
+	border-top: 0;
+}
+
+.nq-vol__off {
+	color: var( --nq-primary );
+	font-weight: 600;
+	text-align: right;
+}
+
+/* ------------------------------------------------- guarantee + trust ---- */
+
+.nq-purity {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	margin: 18px 0 4px;
+	padding: 13px 15px;
+	border: 1px solid rgba( 26, 127, 70, 0.25 );
+	background: #f0f8f2;
+	border-radius: var( --nq-r-btn );
+}
+
+.nq-purity__seal {
+	color: var( --nq-green-700 );
+	flex-shrink: 0;
+}
+
+.nq-purity strong {
+	display: block;
+	font-size: 0.9rem;
+	color: var( --nq-text );
+	margin-bottom: 2px;
+}
+
+.nq-purity span {
+	font-size: 0.82rem;
+	color: #40584a;
+	line-height: 1.45;
+}
+
+.nq-trust {
+	list-style: none;
+	padding: 24px 0 0;
+	margin: 24px 0 0;
+	display: grid;
+	gap: 13px;
+	border-top: 1px solid var( --nq-border-soft );
+}
+
+.nq-trust li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 0.9rem;
+	color: #33415a;
+}
+
+.nq-trust li svg {
+	color: var( --nq-white );
+	background: var( --nq-green-700 );
+	border-radius: 50%;
+	padding: 3px;
+	flex-shrink: 0;
+}
+
+/* --------------------------------------------------- detail split ------- */
+
+.nq-pdp-detail {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr;
+	gap: clamp( 24px, 4vw, 40px );
+	border-top: 1px solid var( --nq-border-soft );
+	padding-top: 48px;
+	margin-top: 42px;
+}
+
+.nq-pdp-detail__prose {
+	max-width: none;
+}
+
+.nq-spec {
+	border: 1px solid var( --nq-border-soft );
+	border-radius: var( --nq-r-panel );
+	padding: 18px 20px;
+	background: var( --nq-bg );
+}
+
+.nq-spec + .nq-spec {
+	margin-top: 18px;
+}
+
+.nq-spec .noviq-spec tr:nth-child( 2n ) {
+	background: #fbfcfe;
+}
+
+.nq-spec__link {
+	margin: 14px 0 0;
+	font-size: 0.88rem;
+}
+
+/* Add-to-cart button on the PDP spans the panel. */
+body.noviq div.product form.cart .single_add_to_cart_button {
+	width: 100%;
+	padding: 16px 26px;
+	font-size: 1rem;
+	box-shadow: 0 16px 38px -16px rgba( 10, 77, 168, 0.6 );
+	margin-top: 12px;
+}
+
+/*
+ * Woo disables the button until a variation is chosen. The default translucent
+ * state reads as a broken colour rather than a disabled control.
+ */
+body.noviq div.product form.cart .single_add_to_cart_button.disabled,
+body.noviq div.product form.cart .single_add_to_cart_button:disabled {
+	background: var( --nq-gray-200 );
+	border-color: var( --nq-gray-200 );
+	color: var( --nq-text-subtle );
+	box-shadow: none;
+	opacity: 1;
+	cursor: not-allowed;
+}
+
+body.noviq div.product form.cart .quantity {
+	margin-right: 12px;
+}
+
+body.noviq div.product form.cart {
+	display: block;
+	margin: 0;
+}
+
+body.noviq .woocommerce-variation-add-to-cart {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+}
+
+body.noviq .woocommerce-variation-add-to-cart .single_add_to_cart_button {
+	flex: 1 1 12rem;
+	margin-top: 0;
+}
+
+@media ( max-width: 860px ) {
+	.nq-pdp {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		padding: 20px 0 10px;
+	}
+
+	.nq-pdp__gallery {
+		position: static;
+	}
+
+	.nq-pdp-detail {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ======================================================= 11c. front page === */
+
+.nq-hero {
+	background: linear-gradient( 180deg, var( --nq-bg-alt ) 0, var( --nq-bg ) 100% );
+	border-bottom: 1px solid var( --nq-border-soft );
+}
+
+.nq-hero__inner {
+	padding-top: clamp( 48px, 8vw, 96px );
+	padding-bottom: clamp( 48px, 8vw, 96px );
+	max-width: 58rem;
+}
+
+body.noviq .nq-hero__title {
+	font-size: clamp( 2.1rem, 5.4vw, 3.8rem );
+	letter-spacing: -0.03em;
+	margin: 0 0 18px;
+}
+
+.nq-hero__lede {
+	font-size: clamp( 1rem, 1.6vw, 1.2rem );
+	color: var( --nq-text-subtle );
+	max-width: 52ch;
+	margin: 0;
+}
+
+.nq-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 28px;
+}
+
+/* ------------------------------------------------------ credibility band */
+
+.nq-cred {
+	background: var( --nq-bg-inverse );
+	color: var( --nq-text-inverse );
+}
+
+.nq-cred__grid {
+	display: grid;
+	grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+	padding-top: clamp( 28px, 4vw, 44px );
+	padding-bottom: clamp( 28px, 4vw, 44px );
+}
+
+.nq-cred__cell {
+	position: relative;
+	padding: 0 20px;
+}
+
+.nq-cred__cell:first-child {
+	padding-left: 0;
+}
+
+.nq-cred__cell:not( :last-child )::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 6px;
+	bottom: 6px;
+	width: 1px;
+	background: rgba( 255, 255, 255, 0.14 );
+}
+
+.nq-cred__num {
+	margin: 0;
+	font-size: clamp( 1.4rem, 2.6vw, 2rem );
+	font-weight: 500;
+	color: var( --nq-white );
+}
+
+.nq-cred__label {
+	margin: 6px 0 0;
+	font-size: 0.78rem;
+	letter-spacing: 0.04em;
+	color: var( --nq-primary-on-inverse );
+}
+
+@media ( max-width: 780px ) {
+	.nq-cred__grid { grid-template-columns: repeat( 2, minmax( 0, 1fr ) ); gap: 24px 0; }
+	.nq-cred__cell:nth-child( 2n )::after { content: none; }
+	.nq-cred__cell:nth-child( odd ) { padding-left: 0; }
+}
+
+/* ------------------------------------------------------- catalog groups */
+
+.nq-jump {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	margin-bottom: clamp( 32px, 5vw, 54px );
+}
+
+body.noviq .nq-jump__link {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 6px;
+	font-size: 0.82rem;
+	font-weight: 600;
+	color: #48566b;
+	background: var( --nq-bg );
+	border: 1px solid var( --nq-border );
+	border-radius: var( --nq-r-pill );
+	padding: 8px 15px;
+	transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+body.noviq .nq-jump__link:hover {
+	background: var( --nq-primary );
+	border-color: var( --nq-primary );
+	color: var( --nq-text-inverse );
+}
+
+.nq-jump__link .noviq-num {
+	font-size: 0.7rem;
+	opacity: 0.7;
+}
+
+.nq-group {
+	margin-bottom: clamp( 40px, 6vw, 70px );
+	scroll-margin-top: calc( var( --nq-header-h ) + 70px );
+}
+
+.nq-group__head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 20px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid var( --nq-border-soft );
+}
+
+body.noviq .nq-group__head h3 {
+	font-size: clamp( 1.15rem, 2vw, 1.5rem );
+	margin: 0;
+}
+
+body.noviq .nq-group__all {
+	font-size: 0.82rem;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+/* The [products] shortcode wraps its grid; keep our grid rules applying. */
+.nq-group .woocommerce {
+	display: block;
+}
+
+/* ------------------------------------------------------------- tiles --- */
+
+.nq-tiles {
+	display: grid;
+	grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+	gap: 18px;
+}
+
+.nq-tile {
+	position: relative;
+	display: block;
+	padding: 26px 24px 24px;
+	background: var( --nq-bg );
+	border: 1px solid var( --nq-border-soft );
+	border-radius: var( --nq-r-card );
+	color: inherit;
+	overflow: hidden;
+	transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.nq-tile::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	background: var( --nq-primary );
+	transform: scaleY( 0 );
+	transform-origin: top;
+	transition: transform 0.25s cubic-bezier( 0.22, 1, 0.36, 1 );
+}
+
+.nq-tile:hover {
+	border-color: var( --nq-border );
+	box-shadow: 0 22px 48px -28px rgba( 10, 20, 38, 0.45 );
+	transform: translateY( -3px );
+}
+
+.nq-tile:hover::before {
+	transform: scaleY( 1 );
+}
+
+.nq-tile__n {
+	font-size: 0.72rem;
+	letter-spacing: 0.16em;
+	color: var( --nq-primary );
+}
+
+body.noviq .nq-tile h3 {
+	font-size: 1.08rem;
+	margin: 10px 0 8px;
+}
+
+.nq-tile p {
+	margin: 0;
+	font-size: 0.9rem;
+	color: var( --nq-text-subtle );
+	line-height: 1.55;
+}
+
+@media ( max-width: 900px ) {
+	.nq-tiles { grid-template-columns: repeat( 2, minmax( 0, 1fr ) ); }
+}
+
+@media ( max-width: 560px ) {
+	.nq-tiles { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------- FAQ --- */
+
+.nq-faq-wrap {
+	max-width: 56rem;
+}
+
+.nq-faq__item {
+	border: 1px solid var( --nq-border );
+	border-radius: var( --nq-r-panel );
+	background: var( --nq-bg );
+	margin-bottom: 12px;
+	overflow: hidden;
+}
+
+.nq-faq__item summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	list-style: none;
+	cursor: pointer;
+	padding: 18px 20px;
+	font-family: var( --nq-font-display );
+	font-size: 1.02rem;
+	font-weight: 500;
+}
+
+.nq-faq__item summary::-webkit-details-marker {
+	display: none;
+}
+
+.nq-faq__item summary::after {
+	content: "+";
+	color: var( --nq-primary );
+	font-size: 1.4rem;
+	line-height: 1;
+	flex: 0 0 auto;
+}
+
+.nq-faq__item[open] summary::after {
+	content: "−";
+}
+
+.nq-faq__item p {
+	margin: 0;
+	padding: 0 20px 20px;
+	color: var( --nq-text-subtle );
+	font-size: 0.94rem;
+	line-height: 1.65;
+}
+
+/* ================================================ 12. Woo furniture ===== */
+
+body.noviq .button,
+body.noviq button.button,
+body.noviq input.button,
+body.noviq a.button,
+body.noviq .wp-element-button,
+body.noviq .wp-block-button__link,
+body.noviq #respond input#submit {
+	font-family: var( --nq-font-body );
+	font-size: 0.95rem;
+	font-weight: 600;
+	line-height: 1;
+	border-radius: var( --nq-r-btn );
+	box-shadow: none;
+	padding: 14px 26px;
+	background: var( --nq-primary );
+	color: var( --nq-text-inverse );
+	border: 1px solid var( --nq-primary );
+	text-transform: none;
+	letter-spacing: 0;
+}
+
+body.noviq .button:hover,
+body.noviq button.button:hover,
+body.noviq input.button:hover,
+body.noviq a.button:hover,
+body.noviq .wp-element-button:hover,
+body.noviq .wp-block-button__link:hover,
+body.noviq #respond input#submit:hover {
+	background: var( --nq-primary-hover );
+	border-color: var( --nq-primary-hover );
+	color: var( --nq-text-inverse );
+}
+
+body.noviq .wp-block-button.is-style-outline > .wp-block-button__link {
+	background: transparent;
+	color: var( --nq-primary );
+	border-color: var( --nq-border );
+}
+
+body.noviq input[type="text"],
+body.noviq input[type="email"],
+body.noviq input[type="tel"],
+body.noviq input[type="number"],
+body.noviq input[type="password"],
+body.noviq input[type="search"],
+body.noviq select,
+body.noviq textarea {
+	border: 1.5px solid var( --nq-border );
+	border-radius: var( --nq-r-chip );
+	padding: 12px 14px;
+	background: var( --nq-bg );
+	color: var( --nq-text );
+	font-family: inherit;
+	font-size: 0.95rem;
+}
+
+body.noviq table.shop_table {
+	border: 1px solid var( --nq-border );
+	border-radius: var( --nq-r-panel );
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+}
+
+body.noviq table.shop_table th {
+	font-family: var( --nq-font-mono );
+	font-size: 0.68rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var( --nq-text-subtle );
+	font-weight: 400;
+}
+
+body.noviq .woocommerce-message,
+body.noviq .woocommerce-info {
+	border-top-color: var( --nq-primary );
+	background: var( --nq-bg-alt );
+	border-radius: var( --nq-r-panel );
+}
+
+body.noviq .woocommerce-error {
+	border-top-color: var( --nq-red-700 );
+	background: var( --nq-red-50 );
+	color: var( --nq-red-700 );
+	border-radius: var( --nq-r-panel );
+}
+
+/* Cart / checkout get the store measure, not the prose measure. */
+.nq-main--commerce .entry-content {
+	max-width: none;
+}
+
+body.noviq .cart-collaterals,
+body.noviq .cart_totals {
+	border-radius: var( --nq-r-panel );
+}
+
+/* woocommerce-layout.css is dropped, so the coupon row needs its own layout. */
+body.noviq .woocommerce table.cart td.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px;
+}
+
+body.noviq .woocommerce table.cart td.actions .coupon {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex: 1 1 auto;
+	float: none;
+}
+
+body.noviq .woocommerce table.cart td.actions .coupon input[type="text"] {
+	width: auto;
+	min-width: 12rem;
+}
+
+body.noviq .woocommerce table.cart td.actions > .button {
+	float: none;
+	flex: 0 0 auto;
+}
+
+/* ===================================================== 13. plugin panels === */
+
+.noviq-tiers,
+.noviq-empty,
+.noviq-bundle,
+.noviq-attestation,
+.noviq-verify__result,
+.noviq-calc__out {
+	border-radius: var( --nq-r-panel );
+}
+
+.noviq-tiers__head,
+.noviq-bundle__heading,
+.noviq-verify__label,
+.noviq-calc__row dt {
+	font-family: var( --nq-font-mono );
+	font-size: 0.7rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var( --nq-primary );
+}
+
+.noviq-spec {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.noviq-spec th[scope="row"] {
+	font-family: var( --nq-font-mono );
+	font-size: 0.68rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var( --nq-text-subtle );
+	font-weight: 400;
+	vertical-align: top;
+	width: 40%;
+}
+
+.noviq-spec th,
+.noviq-spec td {
+	padding: 0.85rem 0.9rem;
+	text-align: left;
+	border-bottom: 1px solid var( --nq-border-soft );
+}
+
+body.noviq .noviq-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var( --nq-font-body );
+	font-weight: 600;
+	font-size: 0.95rem;
+	border-radius: var( --nq-r-btn );
+	padding: 14px 26px;
+	background: var( --nq-primary );
+	border: 1px solid var( --nq-primary );
+	color: var( --nq-text-inverse );
+	text-decoration: none;
+}
+
+body.noviq .noviq-btn:hover {
+	background: var( --nq-primary-hover );
+	color: var( --nq-text-inverse );
+}
+
+.noviq-ruo {
+	border-radius: var( --nq-r-panel );
+}
+
+/* The chrome carries the site-wide disclaimer. */
+.noviq-ruo--footer {
+	display: none;
+}
+
+/* ========================================================== 14. content === */
+
+.noviq-page {
+	max-width: var( --nq-maxw );
+	margin: 0 auto;
+	padding: clamp( 28px, 4vw, 48px ) var( --nq-gutter ) clamp( 48px, 7vw, 80px );
+}
+
+.nq-page-head {
+	margin-bottom: clamp( 24px, 4vw, 40px );
+}
+
+body.noviq .nq-page-head__title {
+	font-size: clamp( 1.9rem, 4.5vw, 2.9rem );
+}
+
+.noviq-page__lede,
+.nq-lede {
+	font-size: 1.05rem;
+	color: var( --nq-text-subtle );
+	max-width: 60ch;
+}
+
+/* -------------------------------------------------------------- prose --- */
+
+.prose-noviq {
+	font-size: 1.0625rem;
+	line-height: 1.75;
+	color: var( --nq-text-muted );
+	max-width: 74ch;
+}
+
+.prose-noviq > * + * {
+	margin-top: 1.25em;
+}
+
+.prose-noviq h2 {
+	margin-top: 2.5em;
+	margin-bottom: 0.6em;
+	font-size: 1.6rem;
+	color: var( --nq-text );
+}
+
+.prose-noviq h3 {
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+	font-size: 1.2rem;
+	color: var( --nq-text );
+}
+
+.prose-noviq strong {
+	color: var( --nq-text );
+	font-weight: 600;
+}
+
+.prose-noviq ul {
+	list-style: none;
+	padding-left: 1.25em;
+}
+
+.prose-noviq ul > li {
+	position: relative;
+}
+
+.prose-noviq ul > li::before {
+	content: "";
+	position: absolute;
+	left: -1em;
+	top: 0.75em;
+	width: 5px;
+	height: 1px;
+	background: var( --nq-primary );
+}
+
+.prose-noviq ol {
+	padding-left: 1.25em;
+}
+
+.prose-noviq li + li {
+	margin-top: 0.4em;
+}
+
+.prose-noviq blockquote {
+	border-left: 2px solid var( --nq-primary );
+	padding-left: 1.25em;
+	margin-left: 0;
+	color: var( --nq-text );
+}
+
+.prose-noviq table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.9375rem;
+}
+
+.prose-noviq th {
+	text-align: left;
+	font-family: var( --nq-font-mono );
+	font-size: 0.68rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var( --nq-text-subtle );
+	padding: 0.75rem 1rem 0.75rem 0;
+	border-bottom: 1px solid var( --nq-border-soft );
+}
+
+.prose-noviq td {
+	padding: 0.75rem 1rem 0.75rem 0;
+	border-bottom: 1px solid var( --nq-border-soft );
+	vertical-align: top;
+}
+
+/* ------------------------------------------------------------ listings --- */
+
+.nq-postlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 12px;
+}
+
+.nq-postlist__item a {
+	display: grid;
+	grid-template-columns: minmax( 0, 24rem ) minmax( 0, 1fr ) auto;
+	gap: 20px;
+	align-items: baseline;
+	padding: 18px 20px;
+	border: 1px solid var( --nq-border-soft );
+	border-radius: var( --nq-r-panel );
+	background: var( --nq-bg );
+	color: inherit;
+	transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+
+.nq-postlist__item a:hover {
+	border-color: var( --nq-border );
+	box-shadow: 0 14px 34px -22px rgba( 10, 20, 38, 0.5 );
+	transform: translateY( -2px );
+}
+
+.nq-postlist__title {
+	font-family: var( --nq-font-display );
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: var( --nq-text );
+}
+
+.nq-postlist__excerpt {
+	color: var( --nq-text-subtle );
+	font-size: 0.92rem;
+}
+
+.nq-postlist__date {
+	font-size: 0.75rem;
+	color: var( --nq-text-subtle );
+}
+
+@media ( max-width: 780px ) {
+	.nq-postlist__item a {
+		grid-template-columns: 1fr;
+		gap: 6px;
+	}
+}
+
+.nq-article {
+	max-width: 74ch;
+	margin-inline: auto;
+}
+
+.nq-article__standfirst {
+	margin: 1.1rem 0 0;
+	font-size: 1.15rem;
+	line-height: 1.6;
+	color: var( --nq-text-subtle );
+}
+
+.nq-article__meta {
+	margin: 0.75rem 0 0;
+	font-size: 0.78rem;
+	color: var( --nq-text-subtle );
+}
+
+.noviq-scroll-x {
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+	.nq-marquee__track { animation: none; }
+	.nq-card:hover { transform: none; }
+	html { scroll-behavior: auto; }
+}
