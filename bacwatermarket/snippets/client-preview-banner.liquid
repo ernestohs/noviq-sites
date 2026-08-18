@@ -1,0 +1,36 @@
+{% comment %}
+  Client feedback banner. Auto-shown on *.demo-purposes-only.com.
+  Theme setting client_preview_banner forces it on (e.g. myshopify.com before DNS).
+  Turn the setting off and leave production brand domains before launch.
+{% endcomment %}
+{%- liquid
+  assign show_client_preview_banner = false
+  if settings.client_preview_banner
+    assign show_client_preview_banner = true
+  endif
+  if request.host contains 'demo-purposes-only.com'
+    assign show_client_preview_banner = true
+  endif
+-%}
+{%- if show_client_preview_banner -%}
+  <div class="client-preview-banner" role="status">
+    <p class="client-preview-banner__text">CLIENT PREVIEW - NOT LIVE - FOR FEEDBACK ONLY</p>
+  </div>
+  <style>
+    .client-preview-banner {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #121212;
+      color: #ffffff;
+      text-align: center;
+      padding: 0.5rem 1rem;
+    }
+    .client-preview-banner__text {
+      margin: 0;
+      font-size: 0.8125rem;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+  </style>
+{%- endif -%}

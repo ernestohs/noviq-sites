@@ -1,9 +1,8 @@
-# Environments filled from intake A1/A2 once store access exists.
-# Never use a bare `shopify theme push`. Always --unpublished first.
+# Preview stores only. Production env stays empty until launch.
 
 [environments.development]
-# store = "STORE_HANDLE.myshopify.com"
-# theme = ""
+store = "srgkrj-ij.myshopify.com"
+theme = "fpt-preview"
 
 [environments.production]
 # store = "STORE_HANDLE.myshopify.com"

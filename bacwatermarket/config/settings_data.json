@@ -191,8 +191,9 @@
           }
         }
       },
-      "brand_name": "",
-      "accent_color": "#16A34A"
+      "brand_name": "Bac Water Market",
+      "accent_color": "#16A34A",
+      "client_preview_banner": true
     }
   }
 }

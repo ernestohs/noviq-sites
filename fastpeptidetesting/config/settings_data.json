@@ -192,7 +192,8 @@
         }
       },
       "brand_name": "March Analytics",
-      "accent_color": "#16A34A"
+      "accent_color": "#16A34A",
+      "client_preview_banner": true
     }
   }
 }

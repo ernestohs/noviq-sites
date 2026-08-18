@@ -48,6 +48,13 @@
         "label": "Accent color",
         "default": "#16A34A",
         "info": "Used only for small icon accents. Never for large fills."
+      },
+      {
+        "type": "checkbox",
+        "id": "client_preview_banner",
+        "label": "Show client preview banner",
+        "default": false,
+        "info": "Forces the CLIENT PREVIEW banner on (useful on *.myshopify.com before DNS). Always shown automatically on *.demo-purposes-only.com. Disable before production brand domains."
       }
     ]
   },
