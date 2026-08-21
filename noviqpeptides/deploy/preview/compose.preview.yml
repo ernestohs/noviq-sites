@@ -1,0 +1,53 @@
+# Client preview stack: one droplet, three ports, vanity URLs via demo-purposes-only.com.
+#
+# From noviqpeptides/local:
+#   docker compose -f docker-compose.yml -f ../deploy/preview/compose.preview.yml \
+#     --env-file ../deploy/preview/.env --env-file .env up -d
+#
+# Register vanities (mask target is the port root, no path prefix):
+#   noviqpeptides      → DROPLET_IP:8080
+#   noviq              → DROPLET_IP:8080
+#   bacwatermarket     → DROPLET_IP:8081
+#   fastpeptidetesting → DROPLET_IP:8082
+
+services:
+  wordpress:
+    environment:
+      WORDPRESS_CONFIG_EXTRA: |
+        define('NOVIQ_CLIENT_PREVIEW', true);
+        $$fwd = strtolower(trim(explode(',', $$_SERVER['HTTP_X_FORWARDED_HOST'] ?? '')[0]));
+        $$fwd = preg_replace('/:\\d+$/', '', $$fwd);
+        $$ok = array('noviqpeptides.demo-purposes-only.com', 'noviq.demo-purposes-only.com');
+        if (in_array($$fwd, $$ok, true)) {
+          define('WP_HOME', 'https://' . $$fwd);
+          define('WP_SITEURL', 'https://' . $$fwd);
+        } else {
+          define('WP_HOME', 'http://165.227.95.66:8080');
+          define('WP_SITEURL', 'http://165.227.95.66:8080');
+        }
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "${NOVIQ_PREVIEW_PORT:-8080}:${NOVIQ_PREVIEW_PORT:-8080}"
+      - "${BAC_PREVIEW_PORT:-8081}:${BAC_PREVIEW_PORT:-8081}"
+      - "${FPT_PREVIEW_PORT:-8082}:${FPT_PREVIEW_PORT:-8082}"
+    environment:
+      NOVIQ_PREVIEW_PORT: ${NOVIQ_PREVIEW_PORT:-8080}
+      BAC_PREVIEW_PORT: ${BAC_PREVIEW_PORT:-8081}
+      FPT_PREVIEW_PORT: ${FPT_PREVIEW_PORT:-8082}
+      PREVIEW_BASIC_AUTH_USER: ${PREVIEW_BASIC_AUTH_USER:-client}
+      PREVIEW_BASIC_AUTH_HASH: ${PREVIEW_BASIC_AUTH_HASH:-unused}
+      BAC_SHOPIFY_HOST: ${BAC_SHOPIFY_HOST:-pending}
+      FPT_SHOPIFY_HOST: ${FPT_SHOPIFY_HOST:-pending}
+    volumes:
+      - ../deploy/preview/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - wordpress
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -55,6 +55,33 @@
         "label": "Show client preview banner",
         "default": false,
         "info": "Forces the CLIENT PREVIEW banner on (useful on *.myshopify.com before DNS). Always shown automatically on *.demo-purposes-only.com. Disable before production brand domains."
+      },
+      {
+        "type": "select",
+        "id": "quantity_style",
+        "label": "Quantity style",
+        "options": [
+          {
+            "value": "stepper",
+            "label": "Stepper"
+          },
+          {
+            "value": "dropdown",
+            "label": "Dropdown"
+          }
+        ],
+        "default": "stepper",
+        "info": "Product page quantity. Duplicate the unpublished theme and set Dropdown on the copy for client comparison."
+      },
+      {
+        "type": "range",
+        "id": "dropdown_max",
+        "min": 2,
+        "max": 50,
+        "step": 1,
+        "default": 10,
+        "label": "Dropdown maximum",
+        "info": "Used when Quantity style is Dropdown. Capped further by the variant quantity rule maximum."
       }
     ]
   },

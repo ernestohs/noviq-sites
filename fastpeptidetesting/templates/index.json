@@ -69,6 +69,9 @@
           "type": "sample_intake",
           "settings": {}
         },
+        "quantity_selector": {
+          "type": "quantity_selector"
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -83,6 +86,7 @@
         "text_includes",
         "testing_options",
         "sample_intake",
+        "quantity_selector",
         "buy_buttons"
       ],
       "settings": {

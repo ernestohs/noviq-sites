@@ -23,9 +23,9 @@ node import.mjs
 
 `import.mjs` upserts by handle:
 
-- 30 non-physical testing products (shipping and inventory tracking off)
+- 30 non-physical testing products (shipping and inventory tracking off), including Admin `seo.title` / `seo.description`
 - collection `order-testing`
-- pages: how-it-works, methods, turnaround, contact-us, about, attestation, terms, privacy, refund-policy
+- pages: how-it-works, methods, turnaround, contact-us, about, attestation, terms, privacy, refund-policy (with SEO fields)
 - menus: `main-menu`, `footer`
 
 Prefer `npx shopify theme push --unpublished --theme fpt-preview` from `fastpeptidetesting/`.

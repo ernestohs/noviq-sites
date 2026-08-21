@@ -240,6 +240,12 @@ function productInput(product) {
       },
     ],
   };
+  if (product.seo_title || product.seo_description) {
+    input.seo = {
+      title: product.seo_title || null,
+      description: product.seo_description || null,
+    };
+  }
   return input;
 }
 
@@ -308,6 +314,12 @@ async function upsertPages(pages) {
       isPublished: true,
       templateSuffix: page.template_suffix || null,
     };
+    if (page.seo_title || page.seo_description) {
+      input.seo = {
+        title: page.seo_title || null,
+        description: page.seo_description || null,
+      };
+    }
     if (byHandle[page.handle]) {
       const updated = await gql(PAGE_UPDATE, { id: byHandle[page.handle].id, page: input });
       userErrors(updated.pageUpdate, `pageUpdate ${page.handle}`);

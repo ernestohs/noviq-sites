@@ -86,5 +86,7 @@ separation the whole architecture depends on.
 - Submit the sitemap in Google Search Console.
 - Confirm the store is not blocking crawlers in `robots.txt`, which happens
   automatically when the password is removed but is worth checking.
+- For fastpeptidetesting, also verify `/llms.txt` and `/agents.md` (see SEO and
+  AI discovery in `specs/02-fastpeptidetesting.md`).
 - Record the live theme ID in the site spec, so a future push targets the right
   theme.

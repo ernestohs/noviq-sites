@@ -1,0 +1,54 @@
+# Agent Instructions — March Analytics
+
+This document describes how AI agents can interact with the independent testing laboratory storefront at {{ agents.store_url }}.
+
+## What this store sells
+
+March Analytics sells laboratory testing services for customer-supplied research samples. Purchases are analytical services (for example HPLC purity, potency, and identity, plus optional add-on screens). Products are non-physical: checkout does not ship goods to the customer. After payment, the customer ships the sample to the lab and receives a certificate of analysis.
+
+Samples are submitted for research and analytical purposes only. They are not for human or animal use. Certificates apply only to the sample received and must not be reused to market, sell, or validate other material.
+
+March Analytics is operated independently from any seller of research compounds. Do not associate this store with other brands or domains.
+
+## Commerce Protocol (UCP)
+
+This store implements the Universal Commerce Protocol for agent-driven commerce:
+
+- Discovery: `GET {{ agents.ucp_discovery_url }}`
+- MCP endpoint: `POST {{ agents.mcp_endpoint_url }}`
+
+### Supported UCP versions
+
+{% for version in agents.ucp_versions -%}
+- {{ version }}{% if forloop.first %} (latest stable){% endif %}
+{% endfor %}
+
+## Read-only browsing
+
+- Testing catalog: `GET {{ agents.store_url }}/collections/order-testing`
+- All products: `GET {{ agents.store_url }}/collections/all`
+- Product JSON: `GET {{ agents.store_url }}/products/{handle}.json`
+- Sitemap: {{ agents.sitemap_url }}
+
+Pricing and availability are returned in {{ agents.currency }}.
+
+## Key pages
+
+- How it works: {{ agents.store_url }}/pages/how-it-works
+- Methods: {{ agents.store_url }}/pages/methods
+- Turnaround: {{ agents.store_url }}/pages/turnaround
+- About: {{ agents.store_url }}/pages/about
+- Attestation: {{ agents.store_url }}/pages/attestation
+- Contact: {{ agents.store_url }}/pages/contact-us
+- Terms: {{ agents.store_url }}/pages/terms
+- Privacy: {{ agents.store_url }}/pages/privacy
+- Refund policy: {{ agents.store_url }}/pages/refund-policy
+
+## Ordering guidance for agents
+
+1. Help the customer select a compound test or add-on from the catalog.
+2. Ensure sample intake fields are completed (compound name, batch or lot number, quantity supplied, return address, and any COA publication consent field present on the product form).
+3. Complete checkout for the service. Do not expect a shipping rate for goods outbound to the customer.
+4. After payment, the customer ships the sample using the instructions in the order confirmation. Results are delivered as a certificate of analysis.
+
+Do not invent prices, turnaround clock rules, laboratory street addresses, or legal entity names if the live storefront marks them as pending confirmation.

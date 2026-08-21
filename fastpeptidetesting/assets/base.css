@@ -2008,6 +2008,17 @@ input[type='checkbox'] {
   -moz-appearance: textfield;
 }
 
+.select.quantity-dropdown {
+  max-width: 12rem;
+}
+
+.select.quantity-dropdown .quantity__input {
+  text-align: start;
+  opacity: 1;
+  padding: 0 calc(var(--inputs-border-width) + 3rem) 0 2rem;
+  flex-grow: 0;
+}
+
 .quantity__rules {
   margin-top: 0.5rem;
   position: relative;

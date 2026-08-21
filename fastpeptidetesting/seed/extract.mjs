@@ -128,6 +128,53 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
+function truncateMeta(value, max) {
+  const text = String(value).replace(/\s+/g, ' ').trim();
+  if (text.length <= max) return text;
+  const sliced = text.slice(0, max - 1);
+  const lastSpace = sliced.lastIndexOf(' ');
+  return `${(lastSpace > 40 ? sliced.slice(0, lastSpace) : sliced).trim()}…`;
+}
+
+function productSeo(title, kind, compound) {
+  const seo_title = truncateMeta(`${title} | March Analytics`, 60);
+  const seo_description =
+    kind === 'compound'
+      ? truncateMeta(
+          `HPLC purity and potency analysis for ${compound}. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March Analytics.`,
+          155,
+        )
+      : truncateMeta(
+          `${title} for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March Analytics.`,
+          155,
+        );
+  return { seo_title, seo_description };
+}
+
+function pageSeo(handle, title) {
+  const descriptions = {
+    'how-it-works':
+      'Order a March Analytics test, ship your sample to the lab, and receive a certificate of analysis. Checkout is for the service only.',
+    methods:
+      'HPLC purity, potency, and identity methods used by March Analytics, plus optional add-on screens for research samples.',
+    turnaround:
+      'Standard and expedited laboratory turnaround options for March Analytics testing services.',
+    'contact-us': 'Contact March Analytics about an order, sample submission, or certificate of analysis.',
+    about:
+      'March Analytics is an independent laboratory for analytical testing of customer-supplied research samples.',
+    attestation:
+      'Research-use attestation for March Analytics testing orders: samples are for research and analytical purposes only.',
+    terms: 'Terms of service for March Analytics laboratory testing (client-supplied final copy before launch).',
+    privacy: 'Privacy policy for March Analytics order and sample data (client-supplied final copy before launch).',
+    'refund-policy':
+      'Refund policy for March Analytics laboratory services (client-supplied final copy before launch).',
+  };
+  return {
+    seo_title: truncateMeta(`${title} | March Analytics`, 60),
+    seo_description: truncateMeta(descriptions[handle] || `${title} | March Analytics`, 155),
+  };
+}
+
 function mapProduct(product) {
   const kind = kindFor(product);
   const handle = marchHandle(product, kind);
@@ -143,6 +190,8 @@ function mapProduct(product) {
   if (multi && (optionName === 'Title' || !optionName)) {
     optionName = 'Number of Vials';
   }
+  const name = compoundName(product.title);
+  const seo = productSeo(title, kind, name);
 
   return {
     source_handle: product.handle,
@@ -152,7 +201,9 @@ function mapProduct(product) {
     product_type: 'Testing Service',
     status: 'ACTIVE',
     tags: ['testing', kind],
-    description_html: kind === 'compound' ? compoundBody(compoundName(product.title), basePrice) : addonBody(handle, title),
+    description_html: kind === 'compound' ? compoundBody(name, basePrice) : addonBody(handle, title),
+    seo_title: seo.seo_title,
+    seo_description: seo.seo_description,
     option_name: multi ? optionName : null,
     variants: variants.map((variant, index) => ({
       title: variant.title,
@@ -166,7 +217,7 @@ function mapProduct(product) {
 }
 
 function pages() {
-  return [
+  const list = [
     {
       handle: 'how-it-works',
       title: 'How it works',
@@ -263,6 +314,7 @@ function pages() {
       ].join('\n'),
     },
   ];
+  return list.map((page) => ({ ...page, ...pageSeo(page.handle, page.title) }));
 }
 
 function collection() {

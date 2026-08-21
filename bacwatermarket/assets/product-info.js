@@ -331,13 +331,27 @@ if (!customElements.get('product-info')) {
           cartQuantity: this.quantityInput.dataset.cartQuantity ? parseInt(this.quantityInput.dataset.cartQuantity) : 0,
           min: this.quantityInput.dataset.min ? parseInt(this.quantityInput.dataset.min) : 1,
           max: this.quantityInput.dataset.max ? parseInt(this.quantityInput.dataset.max) : null,
-          step: this.quantityInput.step ? parseInt(this.quantityInput.step) : 1,
+          step: this.quantityInput.step
+            ? parseInt(this.quantityInput.step)
+            : this.quantityInput.dataset.step
+              ? parseInt(this.quantityInput.dataset.step)
+              : 1,
+          dropdownMax: this.quantityInput.dataset.dropdownMax
+            ? parseInt(this.quantityInput.dataset.dropdownMax)
+            : 10,
         };
 
         let min = data.min;
         const max = data.max === null ? data.max : data.max - data.cartQuantity;
         if (max !== null) min = Math.min(min, max);
         if (data.cartQuantity >= data.min) min = Math.min(min, data.step);
+
+        if (this.quantityInput.tagName === 'SELECT') {
+          this.rebuildQuantityDropdown(min, max, data.step, data.dropdownMax);
+          this.quantityInput.value = min;
+          publish(PUB_SUB_EVENTS.quantityUpdate, undefined);
+          return;
+        }
 
         this.quantityInput.min = min;
 
@@ -349,6 +363,19 @@ if (!customElements.get('product-info')) {
         this.quantityInput.value = min;
 
         publish(PUB_SUB_EVENTS.quantityUpdate, undefined);
+      }
+
+      rebuildQuantityDropdown(min, max, step, dropdownMax) {
+        const cap = max != null && max > 0 ? Math.min(max, dropdownMax) : dropdownMax;
+        const select = this.quantityInput;
+        select.replaceChildren();
+        const safeStep = step > 0 ? step : 1;
+        for (let qty = min; qty <= cap; qty += safeStep) {
+          const option = document.createElement('option');
+          option.value = String(qty);
+          option.textContent = String(qty);
+          select.appendChild(option);
+        }
       }
 
       fetchQuantityRules() {
@@ -377,7 +404,14 @@ if (!customElements.get('product-info')) {
           const updated = quantityFormUpdated.querySelector(selector);
           if (!current || !updated) continue;
           if (selector === '.quantity__input') {
-            const attributes = ['data-cart-quantity', 'data-min', 'data-max', 'step'];
+            const attributes = [
+              'data-cart-quantity',
+              'data-min',
+              'data-max',
+              'data-step',
+              'data-dropdown-max',
+              'step',
+            ];
             for (let attribute of attributes) {
               const valueUpdated = updated.getAttribute(attribute);
               if (valueUpdated !== null) {
@@ -385,6 +419,9 @@ if (!customElements.get('product-info')) {
               } else {
                 current.removeAttribute(attribute);
               }
+            }
+            if (current.tagName === 'SELECT') {
+              this.setQuantityBoundries();
             }
           } else {
             current.innerHTML = updated.innerHTML;

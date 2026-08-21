@@ -99,6 +99,35 @@ implying common ownership with any peptide seller.
 If the client wants Noviq products tested by March Analytics, that is a
 commercial relationship the sites do not advertise.
 
+## SEO and AI discovery
+
+Theme already emits titles, meta descriptions, canonicals, Open Graph / Twitter
+tags, and product structured data. Custom agent instructions live in
+`fastpeptidetesting/templates/agents.md.liquid` and are served at `/agents.md`,
+`/llms.txt`, and `/llms-full.txt`.
+
+### Admin checklist (before and after password removal)
+
+1. **Online Store → Preferences:** homepage title and meta description for March
+   Analytics. Do not invent final copy until intake allows; structure is enough
+   for preview.
+2. **Search engine listing** on each product and page (or re-run
+   `fastpeptidetesting/seed/import.mjs` after `extract.mjs` so `seo_title` /
+   `seo_description` land in Admin).
+3. After the storefront password is off and `fastpeptidetesting.com` is primary:
+   - Open `/robots.txt` and confirm crawlers are not blocked.
+   - Open `/sitemap.xml`.
+   - Open `/llms.txt` and `/agents.md`; confirm lab-service wording and no
+     cross-brand references.
+4. **Google Search Console:** verify the live domain, submit `sitemap.xml`.
+5. **Google Analytics 4:** install Google & YouTube channel, connect one GA4
+   property for this store only. Optional ads pixels via **Settings → Customer
+   events**, not theme scripts.
+6. Confirm footer, meta, and agent files never link to other client brands.
+
+Sitemap and robots stay Shopify-managed. Do not add a custom `robots.txt.liquid`
+unless there is a concrete crawl rule to change.
+
 ## Brand assets needed
 
 | Asset | Status |

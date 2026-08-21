@@ -15,10 +15,11 @@ namespace Noviq\Child;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '0.2.0';
+const VERSION = '0.2.1';
 
 require_once __DIR__ . '/inc/vial-image.php';
 require_once __DIR__ . '/inc/pdp-parts.php';
+require_once __DIR__ . '/inc/quantity-style.php';
 
 /**
  * Segmented variant selector on the product page.

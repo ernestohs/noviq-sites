@@ -1,0 +1,31 @@
+# Serve on droplet IP ports.
+# Bac/FPT: do not reverse-proxy Shopify (it 302s and drops preview_theme_id).
+# Redirect to the unpublished theme URL so the query string survives.
+#
+# Demoserve sets X-Forwarded-Host / X-Forwarded-Proto on the vanity hop.
+# Pass those through so WordPress generates https://*.demo-purposes-only.com URLs.
+
+:{$NOVIQ_PREVIEW_PORT:8080} {
+	encode gzip
+
+	@from_vanity header X-Forwarded-Host *
+	handle @from_vanity {
+		reverse_proxy wordpress:80 {
+			header_up Host {http.request.header.X-Forwarded-Host}
+			header_up X-Forwarded-Host {http.request.header.X-Forwarded-Host}
+			header_up X-Forwarded-Proto {http.request.header.X-Forwarded-Proto}
+		}
+	}
+
+	handle {
+		reverse_proxy wordpress:80
+	}
+}
+
+:{$BAC_PREVIEW_PORT:8081} {
+	redir https://0pa8dd-ec.myshopify.com/?preview_theme_id=157879304347 302
+}
+
+:{$FPT_PREVIEW_PORT:8082} {
+	redir https://srgkrj-ij.myshopify.com/?preview_theme_id=190235246665 302
+}
