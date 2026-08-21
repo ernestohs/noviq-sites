@@ -9,7 +9,24 @@ cd fastpeptidetesting/seed
 node extract.mjs
 ```
 
-Writes `catalog.json` (30 testing products, pages, menus). Re-run when the source catalog changes.
+Writes `catalog.json` (30 testing products, pages, menus, SEO fields). Re-run when the source catalog changes.
+
+## Audit SEO fields
+
+From the repo root:
+
+```bash
+npm run seo-audit:fpt
+```
+
+Or:
+
+```bash
+cd fastpeptidetesting/seed
+node audit-seo.mjs
+```
+
+Fails if any product, page, or the collection is missing meta, exceeds title/description length limits, truncates with an ellipsis, embeds demo pricing or intake codes, or contains cross-brand terms.
 
 ## Import into the preview store
 
@@ -23,9 +40,9 @@ node import.mjs
 
 `import.mjs` upserts by handle:
 
-- 30 non-physical testing products (shipping and inventory tracking off), including Admin `seo.title` / `seo.description`
-- collection `order-testing`
-- pages: how-it-works, methods, turnaround, contact-us, about, attestation, terms, privacy, refund-policy (with SEO fields)
+- 30 non-physical testing products (shipping and inventory tracking off). Search engine listing uses Admin `seo.title` / `seo.description` on `ProductSetInput`.
+- collection `order-testing` with Admin `seo.title` / `seo.description` on `CollectionInput`
+- pages: how-it-works, methods, turnaround, contact-us, about, attestation, terms, privacy, refund-policy. Page Search engine listing uses Shopify SEO metafields `global.title_tag` and `global.description_tag` (`PageCreateInput` / `PageUpdateInput` have no `seo` field)
 - menus: `main-menu`, `footer`
 
 Prefer `npx shopify theme push --unpublished --theme fpt-preview` from `fastpeptidetesting/`.
@@ -36,4 +53,4 @@ Required Admin scopes: `write_products`, `write_content`, `write_online_store_pa
 
 ## Demo vs launch
 
-Prices and turnaround add-ons are placeholders pending intake C8-C13. Do not copy them to production without client confirmation. Page legal stubs are preview-only (intake D3).
+Prices and turnaround add-ons are placeholders pending intake C8-C13. Do not copy them to production without client confirmation. Page legal stubs are preview-only (intake D3). Product body HTML may still mention identity confirmation; Search engine listing meta deliberately does not until the lab confirms that claim.

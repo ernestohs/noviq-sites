@@ -85,6 +85,8 @@ difference generates chargebacks.
 | `how-it-works` | Ordering and sample submission process |
 | `methods` | Instrumentation and methodology, factual |
 | `turnaround` | Timing and what starts the clock |
+| `about` | Independent lab positioning |
+| `attestation` | Research-use attestation |
 | `contact-us` | Dawn `contact-form` section |
 | `terms` | TBD, client supplies |
 | `privacy` | TBD, client supplies |
@@ -106,24 +108,36 @@ tags, and product structured data. Custom agent instructions live in
 `fastpeptidetesting/templates/agents.md.liquid` and are served at `/agents.md`,
 `/llms.txt`, and `/llms-full.txt`.
 
+Product body HTML in the seed still says identity confirmation is included.
+That claim is pending lab confirmation (see Mass spectrometry identity in the
+service catalog). Search engine listing meta deliberately omits it. Do not put
+identity inclusion into Admin SEO fields until intake confirms it.
+
+Offline gate: `npm run seo-audit:fpt` after regenerating `catalog.json`.
+
 ### Admin checklist (before and after password removal)
 
 1. **Online Store → Preferences:** homepage title and meta description for March
    Analytics. Do not invent final copy until intake allows; structure is enough
    for preview.
-2. **Search engine listing** on each product and page (or re-run
-   `fastpeptidetesting/seed/import.mjs` after `extract.mjs` so `seo_title` /
-   `seo_description` land in Admin).
-3. After the storefront password is off and `fastpeptidetesting.com` is primary:
+2. **Search engine listing** on each product, the `order-testing` collection,
+   and each page. Re-run `fastpeptidetesting/seed/import.mjs` after
+   `extract.mjs` to push seed meta: products and the collection use Admin
+   `seo`; pages use metafields `global.title_tag` and `global.description_tag`.
+3. **Theme assets that affect SEO and AI surfaces** (still TBD in Brand assets):
+   favicon, logo (Organization JSON-LD `logo` only renders when `settings.logo`
+   is set), and a social share image. `config/settings_data.json` currently has
+   no favicon or logo bound and all social links blank.
+4. After the storefront password is off and `fastpeptidetesting.com` is primary:
    - Open `/robots.txt` and confirm crawlers are not blocked.
    - Open `/sitemap.xml`.
    - Open `/llms.txt` and `/agents.md`; confirm lab-service wording and no
      cross-brand references.
-4. **Google Search Console:** verify the live domain, submit `sitemap.xml`.
-5. **Google Analytics 4:** install Google & YouTube channel, connect one GA4
+5. **Google Search Console:** verify the live domain, submit `sitemap.xml`.
+6. **Google Analytics 4:** install Google & YouTube channel, connect one GA4
    property for this store only. Optional ads pixels via **Settings → Customer
    events**, not theme scripts.
-6. Confirm footer, meta, and agent files never link to other client brands.
+7. Confirm footer, meta, and agent files never link to other client brands.
 
 Sitemap and robots stay Shopify-managed. Do not add a custom `robots.txt.liquid`
 unless there is a concrete crawl rule to change.
@@ -146,5 +160,5 @@ typography, minimal colour, no lifestyle imagery.
   checkout never asks for a shipping method.
 - Sample intake fields appear on the order in the admin.
 - Turnaround language matches whatever the client confirms about the clock.
-- All seven pages exist with the handles above.
+- All nine pages exist with the handles above.
 - Test order completes end to end with intake fields populated.

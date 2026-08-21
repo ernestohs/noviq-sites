@@ -1,11 +1,13 @@
 {
-  "generated_at": "2026-08-21T01:11:42.715Z",
+  "generated_at": "2026-08-21T01:49:22.560Z",
   "source": "https://peptidetest.com",
   "note": "Demo catalog for March Analytics preview. Prices copied as placeholders pending intake C8. Copy is original, not a Peptide Test reprint.",
   "collection": {
     "handle": "order-testing",
     "title": "Order Testing",
-    "body_html": "<p>Select a compound test or an add-on service. Each purchase is a laboratory analysis of a sample you ship to March Analytics after checkout.</p>"
+    "body_html": "<p>Select a compound test or an add-on service. Each purchase is a laboratory analysis of a sample you ship to March Analytics after checkout.</p>",
+    "seo_title": "Order Testing | March Analytics",
+    "seo_description": "Browse March Analytics compound tests and add-on screens. Order online, ship your sample after checkout, and receive a certificate of analysis."
   },
   "products": [
     {
@@ -21,7 +23,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Benzyl Alcohol. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Benzyl Alcohol Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Benzyl Alcohol. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for Benzyl Alcohol. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -111,7 +113,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "BPC-157 and TB-500 (TB4) Blend Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Identity confirmation included. Ship your sample after checkout for a certificate of…",
+      "seo_description": "HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -201,7 +203,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for BPC-157 Arginate. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "BPC-157 Arginate Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for BPC-157 Arginate. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for BPC-157 Arginate. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -291,7 +293,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for BPC-157. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "BPC-157 Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for BPC-157. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for BPC-157. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -381,7 +383,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Cagrilintide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Cagrilintide Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Cagrilintide. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for Cagrilintide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -471,7 +473,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for CagriReta. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $800.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "CagriReta Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for CagriReta. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for CagriReta. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -561,7 +563,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for CagriSema. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $700.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "CagriSema Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for CagriSema. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for CagriSema. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -651,7 +653,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for CJC-1295 (no DAC). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "CJC-1295 (no DAC) Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for CJC-1295 (no DAC). Identity confirmation included. Ship your sample after checkout for a certificate of analysis…",
+      "seo_description": "HPLC purity and potency analysis for CJC-1295 (no DAC). Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -741,7 +743,7 @@
       ],
       "description_html": "<p>Scoped analytical work after intake. The listed amount is a demo placeholder, not a final quote.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Custom Analytical Service | March Analytics",
-      "seo_description": "Custom Analytical Service for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis…",
+      "seo_description": "Custom Analytical Service for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": null,
       "variants": [
         {
@@ -767,7 +769,7 @@
       ],
       "description_html": "<p>Endotoxin screen for the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Endotoxin Test | March Analytics",
-      "seo_description": "Endotoxin Test for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March…",
+      "seo_description": "Endotoxin Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -985,7 +987,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for GHK-Cu. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "GHK-Cu Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for GHK-Cu. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for GHK-Cu. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1075,7 +1077,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for GLOW Blend - GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $600.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "GLOW Blend Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for GLOW Blend - GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation included. Ship your sample after checkout for a…",
+      "seo_description": "HPLC purity and potency analysis for GLOW Blend - GHK-Cu, BPC-157 and TB-500 (TB4). Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1165,7 +1167,7 @@
       ],
       "description_html": "<p>Elemental screen for specified metals on the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Heavy Metals Test | March Analytics",
-      "seo_description": "Heavy Metals Test for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March…",
+      "seo_description": "Heavy Metals Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1383,7 +1385,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Ipamorelin and CJC-1295 (no DAC) Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Identity confirmation included. Ship your sample after checkout for a certificate…",
+      "seo_description": "HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1473,7 +1475,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $450.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Ipamorelin and Tesamorelin Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Identity confirmation included. Ship your sample after checkout for a certificate of…",
+      "seo_description": "HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1563,7 +1565,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Ipamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Ipamorelin Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Ipamorelin. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for Ipamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1653,7 +1655,7 @@
       ],
       "description_html": "<p>Karl Fischer moisture determination for the submitted sample.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Karl Fischer Water Analysis | March Analytics",
-      "seo_description": "Karl Fischer Water Analysis for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis…",
+      "seo_description": "Karl Fischer Water Analysis for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1871,7 +1873,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for KLOW Blend - KPV, GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $800.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "KLOW Blend Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for KLOW Blend - KPV, GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation included. Ship your sample after checkout…",
+      "seo_description": "HPLC purity and potency analysis for KLOW Blend - KPV, GHK-Cu, BPC-157 and TB-500 (TB4). Certificate of analysis issued after testing.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -1961,7 +1963,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for KPV. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "KPV Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for KPV. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for KPV. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2051,7 +2053,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Mazdutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Mazdutide Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Mazdutide. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for Mazdutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2141,7 +2143,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for MOTS-c. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "MOTS-c Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for MOTS-c. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for MOTS-c. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2231,7 +2233,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for NAD+. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "NAD+ Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for NAD+. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March…",
+      "seo_description": "HPLC purity and potency analysis for NAD+. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2321,7 +2323,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Retatrutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Retatrutide Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Retatrutide. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for Retatrutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2411,7 +2413,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Semaglutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $300.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Semaglutide Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Semaglutide. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for Semaglutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2501,7 +2503,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for SS-31 Elamipretide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "SS-31 Elamipretide Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for SS-31 Elamipretide. Identity confirmation included. Ship your sample after checkout for a certificate of analysis…",
+      "seo_description": "HPLC purity and potency analysis for SS-31 Elamipretide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2591,7 +2593,7 @@
       ],
       "description_html": "<p>Sterility screen for the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Sterility Test | March Analytics",
-      "seo_description": "Sterility Test for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March…",
+      "seo_description": "Sterility Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": null,
       "variants": [
         {
@@ -2617,7 +2619,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "TB-500 (TB4) Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for TB-500 (TB4). Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for TB-500 (TB4). Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2707,7 +2709,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Tesamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Tesamorelin Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Tesamorelin. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for Tesamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2797,7 +2799,7 @@
       ],
       "description_html": "<p>HPLC purity and potency analysis for Tirzepatide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $300.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Tirzepatide Testing | March Analytics",
-      "seo_description": "HPLC purity and potency analysis for Tirzepatide. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from…",
+      "seo_description": "HPLC purity and potency analysis for Tirzepatide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -2887,7 +2889,7 @@
       ],
       "description_html": "<p>Vial vacuum integrity check. Typically added to a compound purity order.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
       "seo_title": "Vial Vacuum Test | March Analytics",
-      "seo_description": "Vial Vacuum Test for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March…",
+      "seo_description": "Vial Vacuum Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
       "variants": [
         {
@@ -3108,7 +3110,7 @@
       "template_suffix": "methods",
       "body_html": "<p>Base compound tests measure purity, potency, and identity. HPLC is the primary purity and potency method. Methods follow USP &lt;1225&gt; validation principles. Specific identity instruments are named only after the lab confirms them.</p>\n<p>Optional add-on services: heavy metal screen, sterility screen, endotoxin screen, Karl Fischer moisture, and vial vacuum integrity. These can be ordered with a compound test or as standalone services.</p>\n<p>Reports translate instrument output into a certificate of analysis. Photography of instrumentation is pending; storefront images remain IMAGE TBD until client assets arrive.</p>",
       "seo_title": "Methods | March Analytics",
-      "seo_description": "HPLC purity, potency, and identity methods used by March Analytics, plus optional add-on screens for research samples."
+      "seo_description": "HPLC purity and potency methods used by March Analytics, plus optional add-on screens for research samples."
     },
     {
       "handle": "turnaround",
@@ -3148,7 +3150,7 @@
       "template_suffix": "terms",
       "body_html": "<p>This preview uses placeholder terms of service. Client counsel supplies the live version (intake D3).</p>\n<p>Testing is a laboratory service. The customer ships the sample to the lab. Results apply only to the sample received.</p>",
       "seo_title": "Terms of service | March Analytics",
-      "seo_description": "Terms of service for March Analytics laboratory testing (client-supplied final copy before launch)."
+      "seo_description": "Terms of service for March Analytics laboratory testing services."
     },
     {
       "handle": "privacy",
@@ -3156,7 +3158,7 @@
       "template_suffix": "privacy",
       "body_html": "<p>This preview uses a placeholder privacy policy. Client counsel supplies the live version (intake D3).</p>\n<p>Order forms collect compound name, batch or lot number, quantity, and a return address so the lab can process the sample. Contact details are used to deliver the report.</p>",
       "seo_title": "Privacy policy | March Analytics",
-      "seo_description": "Privacy policy for March Analytics order and sample data (client-supplied final copy before launch)."
+      "seo_description": "Privacy policy for March Analytics order and sample data."
     },
     {
       "handle": "refund-policy",
@@ -3164,7 +3166,7 @@
       "template_suffix": "refund-policy",
       "body_html": "<p>This preview uses a placeholder refund policy for a laboratory service. Client counsel supplies the live version (intake D3). Goods-style restocking language does not apply.</p>\n<p>Once a sample has been logged for analysis, the test fee is generally not refundable. Requests received before sample receipt are reviewed case by case.</p>",
       "seo_title": "Refund policy | March Analytics",
-      "seo_description": "Refund policy for March Analytics laboratory services (client-supplied final copy before launch)."
+      "seo_description": "Refund policy for March Analytics laboratory testing services."
     }
   ],
   "menus": {

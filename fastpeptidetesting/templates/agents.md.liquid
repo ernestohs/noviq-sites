@@ -21,7 +21,7 @@ This store implements the Universal Commerce Protocol for agent-driven commerce:
 
 {% for version in agents.ucp_versions -%}
 - {{ version }}{% if forloop.first %} (latest stable){% endif %}
-{% endfor %}
+{%- endfor %}
 
 ## Read-only browsing
 

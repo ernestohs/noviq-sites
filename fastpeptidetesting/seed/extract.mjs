@@ -128,24 +128,38 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
-function truncateMeta(value, max) {
-  const text = String(value).replace(/\s+/g, ' ').trim();
-  if (text.length <= max) return text;
-  const sliced = text.slice(0, max - 1);
-  const lastSpace = sliced.lastIndexOf(' ');
-  return `${(lastSpace > 40 ? sliced.slice(0, lastSpace) : sliced).trim()}…`;
+function pickMeta(candidates, max) {
+  for (const candidate of candidates) {
+    const text = String(candidate).replace(/\s+/g, ' ').trim();
+    if (text && text.length <= max) return text;
+  }
+  throw new Error(`No SEO candidate fits within ${max} characters: ${candidates.join(' | ')}`);
+}
+
+function seoTitle(title) {
+  return pickMeta([`${title} | March Analytics`, title], 60);
 }
 
 function productSeo(title, kind, compound) {
-  const seo_title = truncateMeta(`${title} | March Analytics`, 60);
+  const seo_title = seoTitle(title);
   const seo_description =
     kind === 'compound'
-      ? truncateMeta(
-          `HPLC purity and potency analysis for ${compound}. Identity confirmation included. Ship your sample after checkout for a certificate of analysis from March Analytics.`,
+      ? pickMeta(
+          [
+            `HPLC purity and potency analysis for ${compound}. Ship your sample to March Analytics after checkout and receive a certificate of analysis.`,
+            `HPLC purity and potency analysis for ${compound}. Ship your sample after checkout and receive a certificate of analysis.`,
+            `HPLC purity and potency analysis for ${compound}. Certificate of analysis issued after testing.`,
+            `HPLC purity and potency analysis for ${compound}.`,
+          ],
           155,
         )
-      : truncateMeta(
-          `${title} for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March Analytics.`,
+      : pickMeta(
+          [
+            `${title} for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March Analytics.`,
+            `${title} for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.`,
+            `${title} for customer-supplied research samples. Certificate of analysis issued after testing.`,
+            `${title} for customer-supplied research samples.`,
+          ],
           155,
         );
   return { seo_title, seo_description };
@@ -156,22 +170,20 @@ function pageSeo(handle, title) {
     'how-it-works':
       'Order a March Analytics test, ship your sample to the lab, and receive a certificate of analysis. Checkout is for the service only.',
     methods:
-      'HPLC purity, potency, and identity methods used by March Analytics, plus optional add-on screens for research samples.',
-    turnaround:
-      'Standard and expedited laboratory turnaround options for March Analytics testing services.',
+      'HPLC purity and potency methods used by March Analytics, plus optional add-on screens for research samples.',
+    turnaround: 'Standard and expedited laboratory turnaround options for March Analytics testing services.',
     'contact-us': 'Contact March Analytics about an order, sample submission, or certificate of analysis.',
     about:
       'March Analytics is an independent laboratory for analytical testing of customer-supplied research samples.',
     attestation:
       'Research-use attestation for March Analytics testing orders: samples are for research and analytical purposes only.',
-    terms: 'Terms of service for March Analytics laboratory testing (client-supplied final copy before launch).',
-    privacy: 'Privacy policy for March Analytics order and sample data (client-supplied final copy before launch).',
-    'refund-policy':
-      'Refund policy for March Analytics laboratory services (client-supplied final copy before launch).',
+    terms: 'Terms of service for March Analytics laboratory testing services.',
+    privacy: 'Privacy policy for March Analytics order and sample data.',
+    'refund-policy': 'Refund policy for March Analytics laboratory testing services.',
   };
   return {
-    seo_title: truncateMeta(`${title} | March Analytics`, 60),
-    seo_description: truncateMeta(descriptions[handle] || `${title} | March Analytics`, 155),
+    seo_title: seoTitle(title),
+    seo_description: pickMeta([descriptions[handle] || `${title} | March Analytics`], 155),
   };
 }
 
@@ -323,6 +335,9 @@ function collection() {
     title: 'Order Testing',
     body_html:
       '<p>Select a compound test or an add-on service. Each purchase is a laboratory analysis of a sample you ship to March Analytics after checkout.</p>',
+    seo_title: 'Order Testing | March Analytics',
+    seo_description:
+      'Browse March Analytics compound tests and add-on screens. Order online, ship your sample after checkout, and receive a certificate of analysis.',
   };
 }
 

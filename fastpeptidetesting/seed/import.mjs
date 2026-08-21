@@ -204,6 +204,35 @@ async function gqlCli(query, variables) {
 
 const gql = TOKEN ? gqlHttp : gqlCli;
 
+function seoMetafields({ seo_title, seo_description }) {
+  const fields = [];
+  if (seo_title) {
+    fields.push({
+      namespace: 'global',
+      key: 'title_tag',
+      type: 'single_line_text_field',
+      value: seo_title,
+    });
+  }
+  if (seo_description) {
+    fields.push({
+      namespace: 'global',
+      key: 'description_tag',
+      type: 'single_line_text_field',
+      value: seo_description,
+    });
+  }
+  return fields;
+}
+
+function collectionSeo(spec) {
+  if (!spec.seo_title && !spec.seo_description) return undefined;
+  return {
+    title: spec.seo_title || null,
+    description: spec.seo_description || null,
+  };
+}
+
 function productInput(product) {
   const multi = Boolean(product.option_name);
   const optionName = multi ? product.option_name : 'Title';
@@ -273,25 +302,26 @@ async function upsertProduct(product) {
 async function upsertCollection(spec, productIds) {
   const lookups = await gql(LOOKUPS, { collectionQuery: `handle:${spec.handle}` });
   const existing = lookups.collections.nodes.find((node) => node.handle === spec.handle);
+  const seo = collectionSeo(spec);
   if (!existing) {
-    const created = await gql(COLLECTION_CREATE, {
-      input: {
-        title: spec.title,
-        handle: spec.handle,
-        descriptionHtml: spec.body_html,
-        products: productIds,
-      },
-    });
+    const input = {
+      title: spec.title,
+      handle: spec.handle,
+      descriptionHtml: spec.body_html,
+      products: productIds,
+    };
+    if (seo) input.seo = seo;
+    const created = await gql(COLLECTION_CREATE, { input });
     userErrors(created.collectionCreate, 'collectionCreate');
     return created.collectionCreate.collection;
   }
-  const updated = await gql(COLLECTION_UPDATE, {
-    input: {
-      id: existing.id,
-      title: spec.title,
-      descriptionHtml: spec.body_html,
-    },
-  });
+  const updateInput = {
+    id: existing.id,
+    title: spec.title,
+    descriptionHtml: spec.body_html,
+  };
+  if (seo) updateInput.seo = seo;
+  const updated = await gql(COLLECTION_UPDATE, { input: updateInput });
   userErrors(updated.collectionUpdate, 'collectionUpdate');
   const added = await gql(COLLECTION_ADD, { id: existing.id, productIds });
   const addErrors = added.collectionAddProducts?.userErrors || [];
@@ -314,12 +344,8 @@ async function upsertPages(pages) {
       isPublished: true,
       templateSuffix: page.template_suffix || null,
     };
-    if (page.seo_title || page.seo_description) {
-      input.seo = {
-        title: page.seo_title || null,
-        description: page.seo_description || null,
-      };
-    }
+    const metafields = seoMetafields(page);
+    if (metafields.length) input.metafields = metafields;
     if (byHandle[page.handle]) {
       const updated = await gql(PAGE_UPDATE, { id: byHandle[page.handle].id, page: input });
       userErrors(updated.pageUpdate, `pageUpdate ${page.handle}`);
