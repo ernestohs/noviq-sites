@@ -28,7 +28,7 @@
           "type": "column",
           "settings": {
             "title": "3. Receive the report",
-            "text": "<p>Results are issued as a certificate of analysis by email. Public COA publication is optional and requires consent at checkout.</p>"
+            "text": "<p>Results are issued as a certificate of analysis by email. Certificates are delivered only to the customer and are never published publicly.</p>"
           }
         }
       },

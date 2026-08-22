@@ -50,7 +50,6 @@ Default fields, pending client confirmation:
 2. Batch or lot number
 3. Quantity supplied
 4. Customer return address
-5. Whether the customer consents to the result being published as a public COA
 
 Mark required fields as required in the markup. A test with no batch number
 generates a support email for every order.
@@ -61,7 +60,7 @@ generates a support email for every order.
 | --- | --- |
 | Receiving address for samples | TBD |
 | What the customer ships, and packaging requirements | TBD |
-| Result delivery method | TBD, emailed PDF, portal login, or public COA page |
+| Result delivery method | TBD: emailed PDF and/or private portal. Never public. |
 | Turnaround clock start, on payment or on sample receipt | TBD |
 
 The turnaround clock question matters for the copy. "3 day turnaround" means

@@ -63,8 +63,8 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | C10 | Whether turnaround starts at payment or at sample receipt | TBD |
 | C11 | Lab receiving address for samples | TBD |
 | C12 | What the customer ships and any packaging requirements | TBD |
-| C13 | How results are delivered | TBD |
-| C14 | Sample intake fields to capture at checkout | TBD |
+| C13 | How results are delivered | TBD: emailed PDF and/or private portal. Never public. |
+| C14 | Sample intake fields to capture at checkout | Compound name, batch or lot number, quantity supplied, customer return address. No public COA consent field. |
 
 ## D. Legal and operational
 

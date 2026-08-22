@@ -62,18 +62,4 @@
     ></textarea>
     <label class="form__label field__label" for="SampleReturnAddress-{{ sid }}">Customer return address</label>
   </div>
-
-  <div style="margin-bottom: 1rem;">
-    <label for="SamplePublicCoa-{{ sid }}" style="display: flex; gap: 0.8rem; align-items: flex-start;">
-      <input
-        type="checkbox"
-        id="SamplePublicCoa-{{ sid }}"
-        name="properties[Public COA consent]"
-        {% if form_id != blank %}form="{{ form_id }}"{% endif %}
-        value="Yes"
-        style="margin-top: 0.3rem;"
-      >
-      <span>I consent to this result being published as a public COA</span>
-    </label>
-  </div>
 </div>
