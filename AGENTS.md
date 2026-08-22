@@ -21,7 +21,6 @@ When these files exist, read them in order before building:
 1. `specs/00-overview.md` (architecture and cross-site constraints)
 2. `specs/10-intake.md` (TBDs; do not invent answers)
 3. Site spec: `specs/01-bacwatermarket.md`, `specs/02-fastpeptidetesting.md`, or `specs/03-noviqpeptides.md`
-4. `specs/20-launch.md` before any go-live step
 
 If `PROMPT.md` or `specs/` are missing from the working tree, restore them from git before inventing architecture. Specs are the contract; chat history is not.
 

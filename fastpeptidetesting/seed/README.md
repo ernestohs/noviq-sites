@@ -53,4 +53,4 @@ Required Admin scopes: `write_products`, `write_content`, `write_online_store_pa
 
 ## Demo vs launch
 
-Prices and turnaround add-ons are placeholders pending intake C8-C13. Do not copy them to production without client confirmation. Page legal stubs are preview-only (intake D3). Product body HTML may still mention identity confirmation; Search engine listing meta deliberately does not until the lab confirms that claim.
+Prices and turnaround add-ons are placeholders pending intake C8-C13. Do not copy them to production without client confirmation. Legal policies are uploaded in store admin (Mar 2026); do not overwrite them from `catalog.json`. Product body HTML may still mention identity confirmation; Search engine listing meta deliberately does not until the lab confirms that claim.

@@ -68,11 +68,17 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 
 ## D. Legal and operational
 
+**Status (Mar 2026):** Approved terms, privacy, refund, and shipping policies
+are uploaded to all three storefronts (Shopify **Settings → Policies** plus
+matching Online Store pages for bac and FPT; Noviq policy pages on the host).
+Repo seed stubs are obsolete for legal copy. Transcribe D1 and D2 from the live
+policies into this table when auditing intake.
+
 | # | Item | Answer |
 | --- | --- | --- |
-| D1 | Legal entity name and business address per site | TBD |
-| D2 | Support email per domain, three different addresses | TBD |
-| D3 | Who writes terms, privacy, refund, and shipping policies | TBD |
+| D1 | Legal entity name and business address per site | TBD (in uploaded policies) |
+| D2 | Support email per domain, three different addresses | TBD (in uploaded policies) |
+| D3 | Who writes terms, privacy, refund, and shipping policies | Client counsel; approved and uploaded Mar 2026 |
 | D4 | RUO disclaimer text, verbatim | TBD |
 | D5 | Where order notification emails go, per store | TBD |
 | D6 | High-risk gateway for bacwatermarket, if selected | TBD |

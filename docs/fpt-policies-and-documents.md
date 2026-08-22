@@ -4,9 +4,11 @@ Brand: March Analytics
 Site: `fastpeptidetesting/` → fastpeptidetesting.com  
 Platform: Shopify (Dawn)
 
-This note describes every legal policy and storefront document needed before go-live. It does **not** invent final legal wording. Live copy waits on intake D1–D4 and counsel (see `specs/10-intake.md`). Preview stubs in `fastpeptidetesting/seed/catalog.json` are placeholders only.
+This note describes every legal policy and storefront document needed before go-live. It does **not** invent final legal wording.
 
-Launch requires terms, privacy, refund, and shipping to be filled in **both** places:
+**Status (Mar 2026):** Client-approved terms, privacy, refund, and shipping policies are uploaded to the FPT Shopify store (**Settings → Policies** and matching Online Store pages). Repo preview stubs in `fastpeptidetesting/seed/catalog.json` are obsolete for legal copy. Remaining work is verification and operational pages still blocked on intake C7–C13.
+
+Launch requires terms, privacy, refund, and shipping to match in **both** places:
 
 1. **Settings → Policies** (checkout footer and theme policy links)
 2. **Online Store → Pages** for the matching handles (footer menu and public URLs)
@@ -56,10 +58,10 @@ Keep Settings → Policies text identical to the matching Online Store page bodi
 - Results are delivered only to the customer; certificates are never published as a public COA
 - Relationship to turnaround, refund, and sample handling rules (cross-reference; do not contradict)
 
-**Who writes it:** Client counsel (intake D3).  
-**Blocked on:** Legal entity name and address (D1), support contact (D2).
+**Who writes it:** Client counsel (intake D3; upload complete Mar 2026).  
+**Verify:** Entity name, address, and support contact appear in live copy (transcribe into intake D1–D2 when auditing).
 
-**Preview stub today:** Placeholder only. Notes that testing is a service, the customer ships the sample, and results apply only to the sample received.
+**Repo seed:** Placeholder only; do not re-import for launch.
 
 ---
 
@@ -84,10 +86,10 @@ Keep Settings → Policies text identical to the matching Online Store page bodi
 - Customer rights and how to request access, correction, or deletion
 - Cross-border transfer language if applicable (counsel)
 
-**Who writes it:** Client counsel (D3).  
-**Blocked on:** D1, D2, and final result-delivery method (C13).
+**Who writes it:** Client counsel (intake D3; upload complete Mar 2026).  
+**Verify:** Controller identity and support email in live copy; result-delivery language aligns with intake C13 when confirmed.
 
-**Preview stub today:** Placeholder. Notes that order forms collect compound, lot, quantity, and return address so the lab can process the sample, and that contact details are used to deliver the report.
+**Repo seed:** Placeholder only; do not re-import for launch.
 
 **Separation rule:** Support email and legal entity must be unique to this domain. Do not reuse bacwatermarket or noviqpeptides contacts.
 
@@ -109,10 +111,10 @@ Keep Settings → Policies text identical to the matching Online Store page bodi
 - How to request a refund (channel and email from D2)
 - Chargeback / dispute posture at a high level (counsel)
 
-**Who writes it:** Client counsel (D3).  
-**Blocked on:** D1, D2, and turnaround clock rules (C10) so refund windows match operations.
+**Who writes it:** Client counsel (intake D3; upload complete Mar 2026).  
+**Verify:** Refund windows align with turnaround clock rules (intake C10) when confirmed.
 
-**Preview stub today:** Generally non-refundable once a sample is logged for analysis; requests before sample receipt reviewed case by case. Goods-style restocking language explicitly called out as not applicable.
+**Repo seed:** Placeholder only; do not re-import for launch.
 
 ---
 
@@ -268,34 +270,34 @@ Covered under section 5. Page body plus Dawn contact form. Live support email re
 
 | Intake | Blocks |
 | --- | --- |
-| D1 | Legal entity name and business address on every legal document |
-| D2 | Support email on contact page and policies |
-| D3 | Who drafts and approves terms, privacy, refund, and shipping policies |
-| D4 | Final RUO disclaimer text if supplied separately from attestation |
+| D1 | Transcribe legal entity name and business address from uploaded policies into `specs/10-intake.md` |
+| D2 | Transcribe support email per domain from uploaded policies into intake |
+| D4 | Final RUO disclaimer text if supplied separately from attestation (Noviq) |
 | C7 | Which tests appear on Methods and product pages |
 | C8–C9 | Prices and turnaround numbers on Turnaround and products |
-| C10 | Clock start language on Turnaround, How it works, Refund |
+| C10 | Clock start language on Turnaround, How it works, Refund (verify against uploaded refund policy) |
 | C11–C12 | Receiving address and packaging on Shipping policy and How it works |
-| C13 | Result delivery language on Privacy, How it works, and order emails |
+| C13 | Result delivery language on Privacy, How it works, and order emails (verify against uploaded privacy policy) |
+
+Legal policies (intake D3): uploaded Mar 2026.
 
 ---
 
-## D. Setup checklist (when counsel copy exists)
+## D. Verification checklist (policies uploaded Mar 2026)
 
-1. Paste approved text into **Settings → Policies** for Terms, Privacy, Refund, and Shipping.
-2. Create or update Online Store pages with handles `terms`, `privacy`, `refund-policy` (and keep bodies identical to the policy fields).
-3. Update `attestation`, `how-it-works`, `methods`, `turnaround`, `about`, and `contact-us` with non-placeholder operational copy once C/D intake lands.
-4. Confirm footer menu links: attestation, terms, privacy, refund-policy, contact-us (seed already wires these handles).
-5. Confirm checkout footer shows the four Shopify policies.
-6. Confirm no page links to noviqpeptides.com or bacwatermarket.com.
-7. Re-run seed import only if using `fastpeptidetesting/seed/import.mjs` to push page bodies; do not treat demo legal stubs as launch copy.
+1. Confirm **Settings → Policies** for Terms, Privacy, Refund, and Shipping match the Online Store pages with handles `terms`, `privacy`, and `refund-policy`.
+2. Confirm checkout footer shows all four Shopify policies.
+3. Confirm footer menu links: attestation, terms, privacy, refund-policy, contact-us.
+4. Confirm no page links to noviqpeptides.com or bacwatermarket.com.
+5. Do **not** re-run `fastpeptidetesting/seed/import.mjs` for legal page bodies; live admin copy is source of truth.
+6. Update `attestation`, `how-it-works`, `methods`, `turnaround`, `about`, and `contact-us` with non-placeholder operational copy once C intake lands.
 
 ---
 
 ## E. Related specs
 
-- `specs/02-fastpeptidetesting.md` — page handles and service model
+- `specs/02-fastpeptidetesting.md` — page handles, service model, SEO checklist
 - `specs/10-intake.md` — D1–D4, C7–C14
-- `specs/20-launch.md` — legal pages before domain and password removal
+- `docs/client-preview.md` — FPT demo URL and preview teardown
 - `specs/00-overview.md` — no cross-branding constraint
 - `fastpeptidetesting/seed/README.md` — preview stubs vs launch

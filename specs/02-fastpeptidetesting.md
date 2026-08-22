@@ -87,9 +87,9 @@ difference generates chargebacks.
 | `about` | Independent lab positioning |
 | `attestation` | Research-use attestation |
 | `contact-us` | Dawn `contact-form` section |
-| `terms` | TBD, client supplies |
-| `privacy` | TBD, client supplies |
-| `refund-policy` | TBD, client supplies. Services need a different refund policy than goods. |
+| `terms` | Uploaded Mar 2026; verify Settings → Policies matches `/pages/terms` |
+| `privacy` | Uploaded Mar 2026; verify Settings → Policies matches `/pages/privacy` |
+| `refund-policy` | Uploaded Mar 2026; service refund policy; verify matches Settings → Policies |
 
 ## Independence
 

@@ -49,6 +49,12 @@ must not share branding with them. See `specs/00-overview.md`.
 Outbound links from here to the Shopify sites are lower risk than the reverse,
 but stay out until the client accepts the tradeoff in writing.
 
+## Policy pages
+
+Terms, privacy, shipping, and cancellation policies are uploaded on the
+production host (Mar 2026). Local seed content in `plugin/data/noviq/pages.json`
+is for dev only; do not rsync it over live policy pages.
+
 ## What this repository holds for this site
 
 `noviqpeptides/` contains notes, exports, and any child theme files we own.
