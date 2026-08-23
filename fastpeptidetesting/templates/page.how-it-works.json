@@ -43,6 +43,8 @@
         "background_style": "none",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
+        "button_label": "Order Testing",
+        "button_link": "shopify://collections/order-testing",
         "color_scheme": "scheme-1",
         "padding_top": 16,
         "padding_bottom": 48
