@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-metaobject-certificate",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,251 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .certificate-purity {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.25rem;
+  }
+
+  .certificate-purity__unit {
+    font-size: 0.45em;
+    font-weight: 600;
+  }
+
+  .certificate-meta {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 1fr;
+    margin: 2.4rem 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .certificate-meta {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .certificate-meta dt {
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin: 0 0 0.2rem;
+  }
+
+  .certificate-meta dd {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+  }
+
+  .certificate-verify-banner {
+    border: 1px solid rgba(var(--color-foreground), 0.15);
+    padding: 1.6rem 2rem;
+    margin: 0 0 2.4rem;
+  }
+
+  .certificate-chromatogram {
+    margin: 2.4rem 0;
+    max-width: 64rem;
+  }
+
+  .certificate-chromatogram img {
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign brand_name = settings.brand_name | default: shop.name
+  assign cert_id = metaobject.cert_id.value
+  assign purity = metaobject.hplc_purity.value
+  assign compound = metaobject.compound.value
+  assign compound_name = compound.name.value
+  assign verify_page = pages.verify
+-%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <p class="caption-with-letter-spacing">Certificate of analysis</p>
+  <h1 class="main-page-title page-title h0">
+    {{ cert_id | default: metaobject.system.handle | escape }}
+  </h1>
+
+  <div class="certificate-verify-banner">
+    <p class="rte">
+      Independently measured by {{ brand_name | escape }}.
+      Results are reported as measured. We do not sell peptides and hold no stake in any vendor.
+      {%- if verify_page != blank -%}
+        <a href="{{ verify_page.url }}">Verify another certificate</a>
+      {%- endif -%}
+    </p>
+  </div>
+
+  {%- if purity != blank -%}
+    <p class="certificate-purity">
+      {{ purity | escape }}<span class="certificate-purity__unit">% HPLC purity</span>
+    </p>
+  {%- endif -%}
+
+  {%- if compound_name != blank -%}
+    <p class="h3">
+      {%- if compound.system.url != blank -%}
+        <a href="{{ compound.system.url }}">{{ compound_name | escape }}</a>
+      {%- else -%}
+        {{ compound_name | escape }}
+      {%- endif -%}
+    </p>
+  {%- endif -%}
+
+  <dl class="certificate-meta">
+    {%- if metaobject.sample_received.value != blank -%}
+      <div>
+        <dt>Sample received</dt>
+        <dd>{{ metaobject.sample_received.value | date: '%b %-d, %Y' }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if metaobject.reported.value != blank -%}
+      <div>
+        <dt>Reported</dt>
+        <dd>{{ metaobject.reported.value | date: '%b %-d, %Y' }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if metaobject.observed_mass.value != blank -%}
+      <div>
+        <dt>Observed mass</dt>
+        <dd>{{ metaobject.observed_mass.value | escape }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if metaobject.expected_mass.value != blank -%}
+      <div>
+        <dt>Expected mass</dt>
+        <dd>{{ metaobject.expected_mass.value | escape }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if metaobject.method_summary.value != blank -%}
+      <div>
+        <dt>Method</dt>
+        <dd>
+          {{ metaobject.method_summary.value | escape }}
+          {%- if pages.methods != blank -%}
+            · <a href="{{ pages.methods.url }}">Methods</a>
+          {%- endif -%}
+        </dd>
+      </div>
+    {%- endif -%}
+    {%- if metaobject.display_submitter.value and metaobject.submitter_name.value != blank -%}
+      <div>
+        <dt>Submitter</dt>
+        <dd>
+          {{ metaobject.submitter_name.value | escape }}
+          {%- if metaobject.submitter_type.value != blank -%}
+            ({{ metaobject.submitter_type.value | escape }})
+          {%- endif -%}
+        </dd>
+      </div>
+    {%- endif -%}
+  </dl>
+
+  {%- if metaobject.chromatogram.value != blank -%}
+    <div class="certificate-chromatogram">
+      {{
+        metaobject.chromatogram.value
+        | image_url: width: 1600
+        | image_tag:
+          loading: 'lazy',
+          widths: '400, 800, 1200, 1600',
+          sizes: '(min-width: 750px) 640px, 100vw',
+          alt: 'Chromatogram for ' | append: cert_id
+      }}
+    </div>
+  {%- endif -%}
+
+  {%- if metaobject.pdf.value != blank -%}
+    <p>
+      <a class="button" href="{{ metaobject.pdf.value.url }}" target="_blank" rel="noopener">
+        Download PDF certificate
+      </a>
+    </p>
+  {%- endif -%}
+
+  {%- if compound.linked_tests.value != blank and compound.linked_tests.value.size > 0 -%}
+    <div class="rte" style="margin-top: 3rem;">
+      <h2 class="h3">Order testing for {{ compound_name | escape }}</h2>
+      <ul>
+        {%- for product in compound.linked_tests.value -%}
+          <li><a href="{{ product.url }}">{{ product.title | escape }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DigitalDocument",
+  "name": {{ cert_id | default: metaobject.system.handle | json }},
+  "description": {{ metaobject.seo_description.value | default: page_description | json }},
+  "url": {{ request.origin | append: metaobject.system.url | json }},
+  "provider": {
+    "@type": "Organization",
+    "name": {{ brand_name | json }},
+    "url": {{ request.origin | json }}
+  }
+  {%- if purity != blank -%}
+  ,"about": {
+    "@type": "PropertyValue",
+    "name": "HPLC purity",
+    "value": {{ purity | json }}
+  }
+  {%- endif -%}
+}
+</script>
+
+{% schema %}
+{
+  "name": "Certificate page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

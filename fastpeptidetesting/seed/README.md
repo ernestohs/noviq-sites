@@ -11,6 +11,30 @@ node extract.mjs
 
 Writes `catalog.json` (30 testing products, pages, menus, SEO fields). Re-run when the source catalog changes.
 
+## Metaobjects (certificates + compounds)
+
+Creates Online Store metaobject definitions used for indexable COA and compound pages.
+
+```bash
+cd fastpeptidetesting/seed
+node setup-metaobjects.mjs
+```
+
+Requires Admin scopes `write_metaobject_definitions` and `read_metaobject_definitions` (token in `.env`).
+
+To create **entries** (sample compound + certificate), the app also needs `write_metaobjects` and `read_metaobjects`. Without those, run entries by hand in Admin, or add the scopes, Release, re-approve the app, mint a new client-credentials token, then:
+
+```bash
+cd fastpeptidetesting/seed
+node finish-seo-pages.mjs
+```
+
+That script also upserts pages `verify` and `sample-coa` (already created on the preview store).
+
+Public URLs: `/pages/certificates/{handle}`, `/pages/compounds/{handle}`
+
+Vendor embed badge asset: `assets/vendor-coa-badge.svg`
+
 ## Audit SEO fields
 
 From the repo root:
