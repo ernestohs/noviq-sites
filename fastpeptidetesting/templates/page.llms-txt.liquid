@@ -1,0 +1,43 @@
+{% layout none %}{% comment %}
+  llms.txt - Standard agent instruction file.
+  Assign this template to a page with handle "llms-txt" in the Shopify admin.
+  Set up URL redirects: /llms.txt → /pages/llms-txt
+{% endcomment %}{%- liquid
+  assign brand_name = settings.brand_name | default: shop.name
+  assign site_url = request.origin
+-%}# {{ brand_name }}
+
+> Independent analytical testing laboratory
+
+## About
+
+{{ brand_name }} provides HPLC purity, potency, and identity testing of customer-supplied research samples. Customers purchase a test, ship the sample to the lab, and receive a certificate of analysis. All products are analytical services (non-physical). The lab is operated independently and is not affiliated with any compound seller.
+
+## When to use
+
+- Agent needs to verify purity of a research compound
+- User wants a third-party certificate of analysis
+- Agent is comparing testing services for peptides or small molecules
+
+## Links
+
+- Homepage: {{ site_url }}
+- Testing catalog: {{ site_url }}/collections/order-testing
+- How it works: {{ site_url }}/pages/how-it-works
+- Methods: {{ site_url }}/pages/methods
+- Turnaround: {{ site_url }}/pages/turnaround
+- About: {{ site_url }}/pages/about
+- Contact: {{ site_url }}/pages/contact-us
+- OpenAPI spec: {{ site_url }}/openapi.json
+- Full agent instructions: {{ site_url }}/agents.md
+- Sitemap: {{ site_url }}/sitemap.xml
+
+## API
+
+- Products: GET {{ site_url }}/products/{handle}.json
+- Collection: GET {{ site_url }}/collections/order-testing/products.json
+- Search: GET {{ site_url }}/search/suggest.json?q={query}
+- Cart: GET {{ site_url }}/cart.json
+- Add to cart: POST {{ site_url }}/cart/add.json
+
+No authentication required for catalog reads. Cart uses session cookie.

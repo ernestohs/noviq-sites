@@ -103,9 +103,26 @@ commercial relationship the sites do not advertise.
 ## SEO and AI discovery
 
 Theme already emits titles, meta descriptions, canonicals, Open Graph / Twitter
-tags, and product structured data. Custom agent instructions live in
-`fastpeptidetesting/templates/agents.md.liquid` and are served at `/agents.md`,
-`/llms.txt`, and `/llms-full.txt`.
+tags, and product structured data (including homepage Organization / WebSite /
+Service JSON-LD).
+
+Agent surfaces (Shopify-native paths plus OpenAPI):
+
+| Path | Source |
+| --- | --- |
+| `/agents.md` | `templates/agents.md.liquid` (when-to-use, permissions, API) |
+| `/llms.txt` | `templates/llms.txt.liquid` (short discovery) |
+| `/llms-full.txt` | Falls back to `agents.md.liquid` |
+| `/openapi.json` | URL redirect → `/pages/openapi` (`templates/page.openapi.liquid`) |
+| `/pages/llms-txt`, `/pages/agents-md` | Page mirrors of the agent files |
+
+Shopify serves `/llms.txt` and `/agents.md` as `text/markdown` with `Vary: Accept`.
+`/pages/openapi` returns a valid OpenAPI 3.1 body but Shopify still labels it
+`text/html`; deploy `fastpeptidetesting/edge/` (Cloudflare Worker) to set
+`Content-Type: application/json` and reinforce `Vary: Accept`. See
+[docs/fpt-agentic-readiness.md](../docs/fpt-agentic-readiness.md).
+
+Verify live: `npm run verify-agentic:fpt`.
 
 Product body HTML in the seed still says identity confirmation is included.
 That claim is pending lab confirmation (see Mass spectrometry identity in the
@@ -113,6 +130,7 @@ service catalog). Search engine listing meta deliberately omits it. Do not put
 identity inclusion into Admin SEO fields until intake confirms it.
 
 Offline gate: `npm run seo-audit:fpt` after regenerating `catalog.json`.
+
 
 ### Admin checklist (before and after password removal)
 
@@ -136,7 +154,11 @@ Offline gate: `npm run seo-audit:fpt` after regenerating `catalog.json`.
 6. **Google Analytics 4:** install Google & YouTube channel, connect one GA4
    property for this store only. Optional ads pixels via **Settings → Customer
    events**, not theme scripts.
-7. Confirm footer, meta, and agent files never link to other client brands.
+7. **Measurement runbook:** execute
+   [docs/fpt-analytics.md](../docs/fpt-analytics.md) for GA4, Search Console,
+   GTM (custom pixel), Microsoft Clarity, and optional ad pixels. All IDs are
+   intake block F in `specs/10-intake.md`; do not embed IDs in the theme.
+8. Confirm footer, meta, and agent files never link to other client brands.
 
 Sitemap and robots stay Shopify-managed. Do not add a custom `robots.txt.liquid`
 unless there is a concrete crawl rule to change.

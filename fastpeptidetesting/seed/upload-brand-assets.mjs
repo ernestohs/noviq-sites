@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Upload March Analytics logo + favicon to Shopify Files and bind them in the
- * live theme settings (logo + favicon image_picker fields).
+ * Upload March Analytics logo, favicon, and homepage hero to Shopify Files and
+ * bind logo + favicon in live theme settings (image_picker fields). Hero image
+ * is referenced from templates/index.json via shopify://shop_images/.
  */
 import { execFile } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs';
@@ -17,6 +18,7 @@ const STORE = (process.env.SHOPIFY_STORE || 'srgkrj-ij.myshopify.com').replace(/
 const THEME_ID = process.env.SHOPIFY_THEME_ID || 'gid://shopify/OnlineStoreTheme/190297342025';
 const LOGO_PATH = join(THEME_ROOT, 'assets/march-analytics-logo.svg');
 const FAVICON_PATH = join(THEME_ROOT, 'assets/favicon.png');
+const HERO_PATH = join(THEME_ROOT, 'assets/hero-hplc-lab.jpg');
 
 const STAGED = `mutation stagedUploadsCreate($input: [StagedUploadInput!]!) {
   stagedUploadsCreate(input: $input) {
@@ -139,7 +141,7 @@ async function main() {
   const logoBuffer = readFileSync(LOGO_PATH);
   const faviconBuffer = readFileSync(FAVICON_PATH);
 
-  console.log('Uploading logo and favicon to Shopify Files...');
+  console.log('Uploading logo, favicon, and hero image to Shopify Files...');
   const logo = await uploadShopFile({
     filename: 'march-analytics-logo.svg',
     mimeType: 'image/svg+xml',
@@ -150,17 +152,26 @@ async function main() {
     mimeType: 'image/png',
     buffer: faviconBuffer,
   });
+  const heroBuffer = readFileSync(HERO_PATH);
+  const hero = await uploadShopFile({
+    filename: 'hero-hplc-lab.jpg',
+    mimeType: 'image/jpeg',
+    buffer: heroBuffer,
+  });
 
   const logoRef = `shopify://shop_images/${logo.filename}`;
   const faviconRef = `shopify://shop_images/${favicon.filename}`;
+  const heroRef = `shopify://shop_images/${hero.filename}`;
   console.log('Logo ref:', logoRef);
   console.log('Favicon ref:', faviconRef);
+  console.log('Hero ref:', heroRef);
 
   const themeData = await gql(THEME_FILES, { id: THEME_ID });
   const content = themeData.theme?.files?.nodes?.[0]?.body?.content;
   if (!content) throw new Error('Could not read config/settings_data.json from theme');
 
   const updated = patchSettingsData(content, { logoRef, faviconRef });
+  const indexJson = readFileSync(join(THEME_ROOT, 'templates/index.json'), 'utf8');
   const upsert = await gql(
     UPSERT,
     {
@@ -169,6 +180,10 @@ async function main() {
         {
           filename: 'config/settings_data.json',
           body: { type: 'TEXT', value: updated },
+        },
+        {
+          filename: 'templates/index.json',
+          body: { type: 'TEXT', value: indexJson },
         },
       ],
     },
@@ -179,7 +194,7 @@ async function main() {
     throw new Error(upsertErrors.map((e) => e.message).join('; '));
   }
 
-  console.log('Theme settings updated on', THEME_ID);
+  console.log('Theme settings and homepage template updated on', THEME_ID);
   console.log('Preview:', `https://${STORE}/`);
 }
 

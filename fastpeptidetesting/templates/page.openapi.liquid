@@ -1,0 +1,376 @@
+{% layout none %}{% comment %}
+  OpenAPI spec for the March Analytics storefront.
+  Assign this template to a page with handle "openapi" in the Shopify admin.
+  Set up a URL redirect: /openapi.json → /pages/openapi
+{% endcomment %}{%- liquid
+  assign site_url = request.origin
+  assign brand_name = settings.brand_name | default: shop.name
+-%}{
+  "openapi": "3.1.0",
+  "info": {
+    "title": {{ brand_name | append: ' Storefront API' | json }},
+    "version": "1.0.0",
+    "description": "Read-only storefront API for {{ brand_name }}, an independent analytical testing laboratory. This API exposes product catalog, collection browsing, cart operations, and predictive search. All product data represents laboratory testing services, not physical goods.",
+    "contact": {
+      "name": {{ brand_name | json }},
+      "url": "{{ site_url }}/pages/contact-us"
+    },
+    "license": {
+      "name": "Shopify Terms of Service",
+      "url": "https://www.shopify.com/legal/terms"
+    }
+  },
+  "servers": [
+    {
+      "url": {{ site_url | json }},
+      "description": "Production storefront"
+    }
+  ],
+  "security": [
+    { "public": [] }
+  ],
+  "paths": {
+    "/products/{handle}.json": {
+      "get": {
+        "operationId": "getProduct",
+        "summary": "Retrieve a single product by handle",
+        "description": "Returns full product details including variants, pricing, and options. No authentication required for published products.",
+        "security": [{ "public": [] }],
+        "parameters": [
+          {
+            "name": "handle",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "URL-safe product handle (e.g. bpc-157-testing)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ProductResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/collections/{handle}/products.json": {
+      "get": {
+        "operationId": "listCollectionProducts",
+        "summary": "List products in a collection",
+        "description": "Returns paginated products within the specified collection. The primary testing catalog is at handle 'order-testing'.",
+        "security": [{ "public": [] }],
+        "parameters": [
+          {
+            "name": "handle",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Collection handle (e.g. order-testing)"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 1 },
+            "description": "Page number for pagination"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 30, "maximum": 250 },
+            "description": "Products per page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collection products returned",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CollectionProductsResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "Collection not found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart.json": {
+      "get": {
+        "operationId": "getCart",
+        "summary": "Retrieve current cart",
+        "description": "Returns the current session cart contents. Requires a session cookie.",
+        "security": [{ "sessionCookie": [] }],
+        "responses": {
+          "200": {
+            "description": "Cart contents",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CartResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart/add.json": {
+      "post": {
+        "operationId": "addToCart",
+        "summary": "Add item to cart",
+        "description": "Adds a product variant to the session cart. For testing services, include line item properties for sample intake (compound name, batch/lot number, quantity supplied, return address).",
+        "security": [{ "sessionCookie": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CartAddRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Item added",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CartLineItem" }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation error (e.g. invalid variant, missing required properties)",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/suggest.json": {
+      "get": {
+        "operationId": "predictiveSearch",
+        "summary": "Predictive search",
+        "description": "Returns search suggestions for products, pages, and collections matching the query.",
+        "security": [{ "public": [] }],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Search query"
+          },
+          {
+            "name": "resources[type]",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string", "default": "product,page,collection" },
+            "description": "Resource types to search"
+          },
+          {
+            "name": "resources[limit]",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 4 },
+            "description": "Results per resource type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search suggestions",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SearchResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "public": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Public-Access",
+        "description": "No authentication required. All published catalog data is publicly accessible without credentials. This scheme exists to explicitly declare that these endpoints require no secrets."
+      },
+      "sessionCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "cart",
+        "description": "Session-scoped cart cookie. Automatically set by the storefront on first cart interaction. Grants read/write access to the visitor's own cart only. No cross-session access. No admin privileges."
+      }
+    },
+    "schemas": {
+      "ErrorResponse": {
+        "type": "object",
+        "required": ["status", "message"],
+        "properties": {
+          "status": { "type": "integer", "description": "HTTP status code" },
+          "message": { "type": "string", "description": "Human-readable error description" },
+          "description": { "type": "string", "description": "Additional context for resolution" },
+          "errors": {
+            "type": "object",
+            "additionalProperties": { "type": "array", "items": { "type": "string" } },
+            "description": "Field-level validation errors"
+          }
+        },
+        "example": {
+          "status": 422,
+          "message": "Cart Error",
+          "description": "The variant specified is not available.",
+          "errors": { "variant_id": ["is invalid"] }
+        }
+      },
+      "ProductResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "title": { "type": "string" },
+              "handle": { "type": "string" },
+              "body_html": { "type": "string" },
+              "vendor": { "type": "string" },
+              "product_type": { "type": "string" },
+              "tags": { "type": "array", "items": { "type": "string" } },
+              "variants": { "type": "array", "items": { "$ref": "#/components/schemas/Variant" } },
+              "options": { "type": "array", "items": { "$ref": "#/components/schemas/ProductOption" } },
+              "images": { "type": "array", "items": { "$ref": "#/components/schemas/Image" } }
+            }
+          }
+        }
+      },
+      "Variant": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "title": { "type": "string" },
+          "price": { "type": "string", "description": "Price in cents as string" },
+          "available": { "type": "boolean" },
+          "sku": { "type": "string" },
+          "requires_shipping": { "type": "boolean", "description": "Always false for testing services" }
+        }
+      },
+      "ProductOption": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "position": { "type": "integer" },
+          "values": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "Image": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "src": { "type": "string", "format": "uri" },
+          "alt": { "type": "string" },
+          "width": { "type": "integer" },
+          "height": { "type": "integer" }
+        }
+      },
+      "CollectionProductsResponse": {
+        "type": "object",
+        "properties": {
+          "products": { "type": "array", "items": { "$ref": "#/components/schemas/ProductResponse" } }
+        }
+      },
+      "CartResponse": {
+        "type": "object",
+        "properties": {
+          "token": { "type": "string" },
+          "note": { "type": "string" },
+          "item_count": { "type": "integer" },
+          "total_price": { "type": "integer" },
+          "currency": { "type": "string" },
+          "items": { "type": "array", "items": { "$ref": "#/components/schemas/CartLineItem" } }
+        }
+      },
+      "CartAddRequest": {
+        "type": "object",
+        "required": ["items"],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "quantity"],
+              "properties": {
+                "id": { "type": "integer", "description": "Variant ID" },
+                "quantity": { "type": "integer", "minimum": 1 },
+                "properties": {
+                  "type": "object",
+                  "description": "Line item properties for sample intake fields",
+                  "properties": {
+                    "Compound name": { "type": "string" },
+                    "Batch or lot number": { "type": "string" },
+                    "Quantity supplied": { "type": "string" },
+                    "Return address": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "CartLineItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "title": { "type": "string" },
+          "quantity": { "type": "integer" },
+          "price": { "type": "integer" },
+          "variant_id": { "type": "integer" },
+          "product_id": { "type": "integer" },
+          "properties": { "type": "object" }
+        }
+      },
+      "SearchResponse": {
+        "type": "object",
+        "properties": {
+          "resources": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "object",
+                "properties": {
+                  "products": { "type": "array", "items": { "type": "object" } },
+                  "pages": { "type": "array", "items": { "type": "object" } },
+                  "collections": { "type": "array", "items": { "type": "object" } }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Agent instructions and when-to-use guidance",
+    "url": "{{ site_url }}/llms.txt"
+  }
+}

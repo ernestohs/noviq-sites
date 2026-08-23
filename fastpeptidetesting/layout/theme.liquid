@@ -29,6 +29,10 @@
 
     {% render 'meta-tags' %}
 
+    <link rel="author" href="{{ request.origin }}/pages/about">
+    <link rel="alternate" type="text/markdown" href="{{ request.origin }}/llms.txt" title="Agent instructions">
+    <link rel="alternate" type="application/json" href="{{ request.origin }}/openapi.json" title="OpenAPI specification">
+
     <script type="module">
       import * as StandardEvents from 'https://cdn.shopify.com/storefront/standard-events.js';
 

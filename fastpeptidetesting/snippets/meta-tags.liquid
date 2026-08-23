@@ -39,3 +39,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | escape }}">
 <meta name="twitter:description" content="{{ og_description | escape }}">
+
+{%- if request.page_type == 'index' -%}
+  {% render 'json-ld-organization' %}
+{%- endif -%}

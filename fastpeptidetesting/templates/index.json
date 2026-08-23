@@ -31,10 +31,12 @@
       },
       "block_order": ["heading", "text", "buttons"],
       "settings": {
+        "image": "shopify://shop_images/hero-hplc-lab.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "content_box_opacity": 80,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-2",
         "mobile_content_alignment": "center",

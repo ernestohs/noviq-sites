@@ -6,7 +6,9 @@
     "theme-check:bac": "shopify theme check --path bacwatermarket",
     "theme-check:fpt": "shopify theme check --path fastpeptidetesting",
     "theme-check": "npm run theme-check:bac && npm run theme-check:fpt",
-    "seo-audit:fpt": "node fastpeptidetesting/seed/audit-seo.mjs"
+    "seo-audit:fpt": "node fastpeptidetesting/seed/audit-seo.mjs",
+    "verify-agentic:fpt": "bash fastpeptidetesting/seed/verify-agentic.sh",
+    "test:agentic-edge": "node --test fastpeptidetesting/edge/worker.test.mjs"
   },
   "type": "commonjs",
   "devDependencies": {

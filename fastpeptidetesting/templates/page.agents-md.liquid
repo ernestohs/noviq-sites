@@ -1,6 +1,5 @@
 {% layout none %}{% comment %}
-  Native Shopify template for /agents.md (canonical agent discovery).
-  /llms.txt uses templates/llms.txt.liquid; /llms-full.txt falls back here.
+  Page template for /pages/agents-md (optional mirror of /agents.md).
 {% endcomment %}{%- liquid
   assign brand_name = settings.brand_name | default: shop.name
   assign site_url = request.origin

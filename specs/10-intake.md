@@ -94,6 +94,20 @@ policies into this table when auditing intake.
 | E4 | Scope for noviqpeptides: alignment only or rebuild | TBD |
 | E5 | Wants Shopify stores transferred to his ownership at launch | TBD |
 
+## F. Analytics and measurement (fastpeptidetesting)
+
+Separate from noviqpeptides and bacwatermarket. Execute
+[docs/fpt-analytics.md](../docs/fpt-analytics.md) once these are filled.
+
+| # | Item | Answer |
+| --- | --- | --- |
+| F1 | Google account for March Analytics / fastpeptidetesting only | TBD |
+| F2 | GA4 measurement ID (`G-…`) | TBD |
+| F3 | GTM container ID (`GTM-…`), if used | TBD |
+| F4 | Microsoft Clarity project ID | TBD |
+| F5 | Google Ads tag / conversion IDs, if ads pursued | TBD |
+| F6 | Meta Pixel ID, if ads pursued | TBD |
+
 ---
 
 ## Self-serve
