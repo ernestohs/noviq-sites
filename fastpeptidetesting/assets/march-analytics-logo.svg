@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   width="100%"
+   height="100%"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="fast-peptides-testing.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs17" />
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.4453125"
+     inkscape:cx="380.54054"
+     inkscape:cy="278.14054"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg17" />
+  <!-- Background -->
+  <!-- Speed Lines and Motion Debris -->
+  <!-- Tilted Flask & Molecule -->
+  <g
+     id="g18"
+     transform="translate(52.846542,-21.998048)">
+    <path
+       d="m 60,390 240,-15 v 30 z"
+       id="path1"
+       style="fill:#000000" />
+    <path
+       d="m 87.254054,444.95676 239.999996,-15 v 30 z"
+       id="path1-6"
+       style="fill:#000000" />
+    <path
+       d="m 30,330 270,-15 v 30 z"
+       id="path2"
+       style="fill:#000000" />
+    <path
+       d="m 80,270 220,-15 v 30 z"
+       id="path3"
+       style="fill:#000000" />
+    <path
+       d="m 110,210 190,-15 v 30 z"
+       id="path4"
+       style="fill:#000000" />
+    <path
+       d="m 150,150 150,-15 v 30 z"
+       id="path5"
+       style="fill:#000000" />
+    <circle
+       cx="90"
+       cy="180"
+       r="5"
+       id="circle6"
+       style="fill:#000000" />
+    <circle
+       cx="50"
+       cy="250"
+       r="7"
+       id="circle7"
+       style="fill:#000000" />
+    <circle
+       cx="120"
+       cy="320"
+       r="4"
+       id="circle8"
+       style="fill:#000000" />
+    <circle
+       cx="80"
+       cy="420"
+       r="6"
+       id="circle9"
+       style="fill:#000000" />
+    <circle
+       cx="170"
+       cy="120"
+       r="5"
+       id="circle10"
+       style="fill:#000000" />
+    <g
+       transform="rotate(25,256,256)"
+       id="g17">
+      <!-- Flask Body -->
+      <path
+         d="M 216,124 V 230 L 116,410 H 396 L 296,230 V 124 Z"
+         fill="#ffffff"
+         stroke="#000000"
+         stroke-width="24"
+         stroke-linejoin="round"
+         id="path10" />
+      <!-- Flask Rim -->
+      <rect
+         x="196"
+         y="100"
+         width="120"
+         height="24"
+         fill="#000000"
+         id="rect10" />
+      <!-- Molecule Inside Flask -->
+      <g
+         stroke="#000000"
+         stroke-width="12"
+         stroke-linecap="round"
+         id="g13">
+        <line
+           x1="206"
+           y1="340"
+           x2="256"
+           y2="300"
+           id="line10" />
+        <line
+           x1="256"
+           y1="300"
+           x2="316"
+           y2="330"
+           id="line11" />
+        <line
+           x1="256"
+           y1="300"
+           x2="240"
+           y2="250"
+           id="line12" />
+        <line
+           x1="316"
+           y1="330"
+           x2="300"
+           y2="380"
+           id="line13" />
+      </g>
+      <!-- Molecule Atoms -->
+      <circle
+         cx="206"
+         cy="340"
+         r="16"
+         fill="#000000"
+         id="circle13" />
+      <circle
+         cx="256"
+         cy="300"
+         r="16"
+         fill="#000000"
+         id="circle14" />
+      <circle
+         cx="316"
+         cy="330"
+         r="16"
+         fill="#000000"
+         id="circle15" />
+      <circle
+         cx="240"
+         cy="250"
+         r="16"
+         fill="#000000"
+         id="circle16" />
+      <circle
+         cx="300"
+         cy="380"
+         r="16"
+         fill="#000000"
+         id="circle17" />
+    </g>
+  </g>
+</svg>
