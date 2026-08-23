@@ -13,10 +13,10 @@ Page templates with `{% layout none %}` still return `Content-Type: text/html` f
 | Hostname | Worker | Notes |
 | --- | --- | --- |
 | `www.fastpeptidetesting.com` | Runs (`fpt-agentic-headers`) | OpenAPI Content-Type fixed here |
-| `fastpeptidetesting.com` (apex) | Often bypasses customer Workers | Shopify + Cloudflare dual-proxy conflict; use www or follow redirects to www |
+| `fastpeptidetesting.com` (apex) | Usually no Worker | Shopify primary is apex; set **www as primary** in Admin so apex 301s to www |
 
 Worker name: `fpt-agentic-headers`  
-Origin fetches: `https://srgkrj-ij.myshopify.com` (avoids same-zone recursion)
+OpenAPI: same-host fetch of `/pages/openapi` (do not chase myshopify→primary redirects; that loops).
 
 ## Prerequisites
 

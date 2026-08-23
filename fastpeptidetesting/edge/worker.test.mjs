@@ -22,13 +22,18 @@ describe('fpt agentic edge worker source', () => {
     assert.match(source, /Accept-Encoding/);
   });
 
-  it('handles markdown Accept negotiation', () => {
+  it('handles markdown paths', () => {
     assert.match(source, /text\/markdown/);
-    assert.match(source, /prefersMarkdown/);
+    assert.match(source, /llms\.txt/);
   });
 
   it('synthesizes JSON error bodies for empty API 404s', () => {
     assert.match(source, /Not Found/);
     assert.match(source, /recovery/);
+  });
+
+  it('uses same-host origin fetch for OpenAPI', () => {
+    assert.match(source, /\/pages\/openapi/);
+    assert.match(source, /openApiJson/);
   });
 });
