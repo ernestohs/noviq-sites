@@ -10,5 +10,3 @@ Thumbs.db
 .shopify
 node_modules
 *.zip
-scripts/venv/
-scripts/generated_test_images/
