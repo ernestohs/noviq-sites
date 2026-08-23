@@ -1,0 +1,27 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_url = request.origin | append: product.url
+  assign org_id = request.origin | append: '/#organization'
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | truncate: 300 | json }},
+  "brand": { "@id": {{ org_id | json }} },
+  "url": {{ product_url | json }},
+  {%- if product.featured_image %}
+  "image": {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }},
+  {%- endif %}
+  "additionalType": "https://schema.org/Service",
+  "offers": {
+    "@type": "Offer",
+    "price": {{ current_variant.price | money_without_currency | remove: ',' | json }},
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "availability": "https://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}",
+    "url": {{ product_url | json }},
+    "seller": { "@id": {{ org_id | json }} }
+  }
+}
+</script>

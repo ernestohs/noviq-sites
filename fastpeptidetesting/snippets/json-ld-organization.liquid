@@ -10,6 +10,7 @@
       "@type": "Organization",
       "@id": "{{ site_url }}/#organization",
       "name": {{ brand_name | json }},
+      "legalName": "March Analytics",
       "url": {{ site_url | json }},
       "description": "Independent analytical testing laboratory offering HPLC purity, potency, and identity testing of customer-supplied research samples. Certificates of analysis issued for each tested vial.",
       {% if settings.logo -%}
@@ -18,6 +19,14 @@
         "url": {{ settings.logo | image_url: width: 512 | prepend: 'https:' | json }}
       },
       {%- endif %}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4030 W 1st Ave, Suite 100",
+        "addressLocality": "Eugene",
+        "addressRegion": "OR",
+        "postalCode": "97402",
+        "addressCountry": "US"
+      },
       "sameAs": [
         {%- if settings.social_twitter_link != blank %}{{ settings.social_twitter_link | json }}{% endif -%}
         {%- if settings.social_facebook_link != blank %},{{ settings.social_facebook_link | json }}{% endif -%}

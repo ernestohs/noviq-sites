@@ -719,9 +719,7 @@
         <script src="{{ 'product-model.js' | asset_url }}" defer></script>
       {%- endif -%}
 
-      <script type="application/ld+json">
-        {{ product | structured_data }}
-      </script>
+      {% render 'json-ld-product' %}
     </div>
   </product-component>
 </product-info>

@@ -49,7 +49,16 @@
         "padding_top": 16,
         "padding_bottom": 48
       }
+    },
+    "howto_schema": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'json-ld-howto' %}",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
-  "order": ["main", "steps"]
+  "order": ["main", "steps", "howto_schema"]
 }

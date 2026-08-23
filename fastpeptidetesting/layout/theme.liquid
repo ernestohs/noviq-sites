@@ -27,6 +27,10 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
+    {%- if current_tags or template contains 'search' or request.path contains '/collections/all' -%}
+      <meta name="robots" content="noindex,follow">
+    {%- endif -%}
+
     {% render 'meta-tags' %}
 
     <link rel="author" href="{{ request.origin }}/pages/about">

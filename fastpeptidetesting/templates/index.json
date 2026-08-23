@@ -6,14 +6,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Fast, clear, reliable results for informed research decisions",
+            "heading": "Independent peptide purity testing by HPLC",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Independent HPLC purity, potency, and identity testing of customer-supplied samples. Results issued as a certificate of analysis.",
+            "text": "HPLC purity, LC-MS identity, and optional add-on screens for customer-supplied research samples. Results issued as a certificate of analysis.",
             "text_style": "body"
           }
         },
@@ -303,6 +303,7 @@
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
+        "enable_faq_schema": true,
         "padding_top": 36,
         "padding_bottom": 48
       }
