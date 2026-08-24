@@ -1,0 +1,216 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .verify-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+    margin: 2.4rem 0;
+  }
+
+  .verify-form__field {
+    flex: 1 1 24rem;
+  }
+
+  .verify-form__field label {
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .verify-form__field input {
+    width: 100%;
+  }
+
+  .verify-note {
+    opacity: 0.75;
+    font-size: 1.4rem;
+  }
+
+  .verify-error {
+    margin: 1.6rem 0 0;
+    color: rgb(var(--color-foreground));
+    border-left: 3px solid rgba(var(--color-foreground), 0.35);
+    padding-left: 1.2rem;
+  }
+
+  .verify-error[hidden] {
+    display: none;
+  }
+{%- endstyle -%}
+
+{%- assign brand_name = settings.brand_name | default: shop.name -%}
+
+{%- comment -%}
+  Build a cert_id → public URL index so verify does not guess Shopify handles.
+{%- endcomment -%}
+{%- capture certificate_index_json -%}
+  {%- if metaobjects.certificate.values_count > 0 -%}
+    {%- assign index_first = true -%}
+    {%- for entry in metaobjects.certificate.values -%}
+      {%- if entry.cert_id.value != blank and entry.system.url != blank -%}
+        {%- unless index_first -%},{%- endunless -%}
+        {%- assign index_first = false -%}
+        {"id":{{ entry.cert_id.value | json }},"handle":{{ entry.system.handle | json }},"url":{{ entry.system.url | json }}}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+<script type="application/json" id="CertificateIndex">[{{ certificate_index_json | strip }}]</script>
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">{{ page.title | escape }}</h1>
+  {%- if page.content != blank -%}
+    <div class="rte">{{ page.content }}</div>
+  {%- else -%}
+    <div class="rte">
+      <p>
+        Enter a certificate ID to open the public certificate page for that report.
+        Issued by {{ brand_name | escape }}.
+      </p>
+    </div>
+  {%- endif -%}
+
+  <form class="verify-form" id="CertificateVerifyForm" action="{{ page.url }}" method="get">
+    <div class="verify-form__field">
+      <label for="CertificateId">Certificate ID</label>
+      <input
+        id="CertificateId"
+        name="id"
+        type="text"
+        required
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="FPT-DEMO-BPC157-001"
+        pattern="[A-Za-z0-9._-]+"
+      >
+    </div>
+    <button type="submit" class="button">Verify certificate</button>
+  </form>
+
+  <p class="verify-error" id="CertificateVerifyError" hidden role="alert"></p>
+
+  <p class="verify-note">
+    Demo example:
+    <code>FPT-DEMO-BPC157-001</code>
+    →
+    <a href="/pages/certificates/fpt-demo-bpc-157-001">/pages/certificates/fpt-demo-bpc-157-001</a>
+  </p>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById('CertificateVerifyForm');
+    var errorEl = document.getElementById('CertificateVerifyError');
+    if (!form) return;
+
+    function normalizeId(value) {
+      return String(value || '')
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '');
+    }
+
+    function loadIndex() {
+      var node = document.getElementById('CertificateIndex');
+      if (!node) return [];
+      try {
+        var parsed = JSON.parse(node.textContent || '[]');
+        return Array.isArray(parsed) ? parsed.filter(Boolean) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function showError(message) {
+      if (!errorEl) return;
+      errorEl.hidden = false;
+      errorEl.textContent = message;
+    }
+
+    function clearError() {
+      if (!errorEl) return;
+      errorEl.hidden = true;
+      errorEl.textContent = '';
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      clearError();
+
+      var input = document.getElementById('CertificateId');
+      var raw = (input && input.value ? input.value : '').trim();
+      if (!raw) return;
+
+      var needle = normalizeId(raw);
+      var index = loadIndex();
+      var match = null;
+
+      for (var i = 0; i < index.length; i++) {
+        var row = index[i];
+        if (!row) continue;
+        if (normalizeId(row.id) === needle || normalizeId(row.handle) === needle) {
+          match = row;
+          break;
+        }
+      }
+
+      if (match && match.url) {
+        window.location.assign(match.url);
+        return;
+      }
+
+      showError(
+        'No active certificate matched “' +
+          raw +
+          '”. Check the ID, or open the demo link below.'
+      );
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Verify certificate",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

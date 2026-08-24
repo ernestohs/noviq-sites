@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-sample-coa",
+      "settings": {
+        "sample_pdf_url": "",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": ["main"]
+}

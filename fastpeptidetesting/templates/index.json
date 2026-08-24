@@ -150,7 +150,7 @@
           "settings": {
             "icon": "biotech",
             "heading": "Quality-control background",
-            "text": "<p>Testing is performed on laboratory instrumentation operated by March Analytics, with methods drawn from pharmaceutical QC practice.</p>"
+            "text": "<p>Testing is performed on laboratory instrumentation operated by Fast Peptide Testing, with methods drawn from pharmaceutical QC practice.</p>"
           }
         },
         "col3": {
@@ -166,7 +166,7 @@
           "settings": {
             "icon": "verified_user",
             "heading": "Independent lab",
-            "text": "<p>March Analytics is operated as an independent testing laboratory. We do not sell the compounds we test.</p>"
+            "text": "<p>Fast Peptide Testing is operated as an independent laboratory. We do not sell the compounds we test.</p>"
           }
         }
       },

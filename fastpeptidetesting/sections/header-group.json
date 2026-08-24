@@ -8,7 +8,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Independent analytical testing. Demo preview.",
+            "text": "Independent analytical testing.",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": ""

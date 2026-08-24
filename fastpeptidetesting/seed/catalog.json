@@ -3140,9 +3140,25 @@
       "handle": "attestation",
       "title": "Attestation",
       "template_suffix": "attestation",
-      "body_html": "<p>By placing an order you confirm:</p>\n<ul>\n<li>The sample is submitted for research and analytical purposes only.</li>\n<li>It is not for human or animal use.</li>\n<li>The certificate of analysis is valid only for the tested sample and may not be reused for any other material.</li>\n<li>Certificates may not be used to market, sell, or validate untested products.</li>\n<li>You will comply with all applicable laws.</li>\n<li>You indemnify March Analytics and its laboratory partners from liability related to misuse, misrepresentation, or unlawful submission.</li>\n</ul>\n<p>Legal entity name for this attestation is pending client intake (D1).</p>",
-      "seo_title": "Attestation | March Analytics",
-      "seo_description": "Research-use attestation for March Analytics testing orders: samples are for research and analytical purposes only."
+      "body_html": "<p>By placing an order you confirm:</p>\n<ul>\n<li>The sample is submitted for research and analytical purposes only.</li>\n<li>It is not for human or animal use.</li>\n<li>The certificate of analysis is valid only for the tested sample and may not be reused for any other material.</li>\n<li>Certificates may not be used to market, sell, or validate untested products.</li>\n<li>You will comply with all applicable laws.</li>\n<li>You indemnify Fast Peptide Testing and its laboratory partners from liability related to misuse, misrepresentation, or unlawful submission.</li>\n</ul>\n<p>Legal entity name for this attestation is pending client intake (D1). Public brand: Fast Peptide Testing. Legal name: March Analytics.</p>",
+      "seo_title": "Attestation | Fast Peptide Testing",
+      "seo_description": "Research-use attestation for Fast Peptide Testing orders: samples are for research and analytical purposes only."
+    },
+    {
+      "handle": "verify",
+      "title": "Verify a certificate",
+      "template_suffix": "verify",
+      "body_html": "<p>Enter a certificate ID to open the public certificate page. Vendors and researchers can confirm that a report was issued by Fast Peptide Testing.</p>",
+      "seo_title": "Verify a Certificate of Analysis | Fast Peptide Testing",
+      "seo_description": "Look up a Fast Peptide Testing certificate of analysis by certificate ID."
+    },
+    {
+      "handle": "sample-coa",
+      "title": "Sample certificate of analysis",
+      "template_suffix": "sample-coa",
+      "body_html": "<p>Example peptide certificate of analysis from Fast Peptide Testing. Shows purity by peak area, chromatogram, peak table, method summary, and verification ID.</p>",
+      "seo_title": "Sample Peptide Certificate of Analysis (PDF) | Fast Peptide Testing",
+      "seo_description": "View a sample Fast Peptide Testing certificate of analysis with chromatogram and method summary."
     },
     {
       "handle": "terms",
