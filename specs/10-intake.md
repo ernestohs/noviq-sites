@@ -63,16 +63,22 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | C10 | Whether turnaround starts at payment or at sample receipt | TBD |
 | C11 | Lab receiving address for samples | TBD |
 | C12 | What the customer ships and any packaging requirements | TBD |
-| C13 | How results are delivered | TBD |
-| C14 | Sample intake fields to capture at checkout | TBD |
+| C13 | How results are delivered | TBD: emailed PDF and/or private portal. Never public. |
+| C14 | Sample intake fields to capture at checkout | Compound name, batch or lot number, quantity supplied, customer return address. No public COA consent field. |
 
 ## D. Legal and operational
 
+**Status (Mar 2026):** Approved terms, privacy, refund, and shipping policies
+are uploaded to all three storefronts (Shopify **Settings → Policies** plus
+matching Online Store pages for bac and FPT; Noviq policy pages on the host).
+Repo seed stubs are obsolete for legal copy. Transcribe D1 and D2 from the live
+policies into this table when auditing intake.
+
 | # | Item | Answer |
 | --- | --- | --- |
-| D1 | Legal entity name and business address per site | TBD |
-| D2 | Support email per domain, three different addresses | TBD |
-| D3 | Who writes terms, privacy, refund, and shipping policies | TBD |
+| D1 | Legal entity name and business address per site | TBD (in uploaded policies) |
+| D2 | Support email per domain, three different addresses | TBD (in uploaded policies) |
+| D3 | Who writes terms, privacy, refund, and shipping policies | Client counsel; approved and uploaded Mar 2026 |
 | D4 | RUO disclaimer text, verbatim | TBD |
 | D5 | Where order notification emails go, per store | TBD |
 | D6 | High-risk gateway for bacwatermarket, if selected | TBD |
@@ -87,6 +93,20 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | E3 | Accepts the no-cross-linking constraint | TBD |
 | E4 | Scope for noviqpeptides: alignment only or rebuild | TBD |
 | E5 | Wants Shopify stores transferred to his ownership at launch | TBD |
+
+## F. Analytics and measurement (fastpeptidetesting)
+
+Separate from noviqpeptides and bacwatermarket. Execute
+[docs/fpt-analytics.md](../docs/fpt-analytics.md) once these are filled.
+
+| # | Item | Answer |
+| --- | --- | --- |
+| F1 | Google account for March Analytics / fastpeptidetesting only | TBD |
+| F2 | GA4 measurement ID (`G-…`) | TBD |
+| F3 | GTM container ID (`GTM-…`), if used | TBD |
+| F4 | Microsoft Clarity project ID | TBD |
+| F5 | Google Ads tag / conversion IDs, if ads pursued | TBD |
+| F6 | Meta Pixel ID, if ads pursued | TBD |
 
 ---
 

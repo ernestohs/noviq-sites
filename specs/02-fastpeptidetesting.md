@@ -50,7 +50,6 @@ Default fields, pending client confirmation:
 2. Batch or lot number
 3. Quantity supplied
 4. Customer return address
-5. Whether the customer consents to the result being published as a public COA
 
 Mark required fields as required in the markup. A test with no batch number
 generates a support email for every order.
@@ -61,7 +60,7 @@ generates a support email for every order.
 | --- | --- |
 | Receiving address for samples | TBD |
 | What the customer ships, and packaging requirements | TBD |
-| Result delivery method | TBD, emailed PDF, portal login, or public COA page |
+| Result delivery method | TBD: emailed PDF and/or private portal. Never public. |
 | Turnaround clock start, on payment or on sample receipt | TBD |
 
 The turnaround clock question matters for the copy. "3 day turnaround" means
@@ -85,10 +84,12 @@ difference generates chargebacks.
 | `how-it-works` | Ordering and sample submission process |
 | `methods` | Instrumentation and methodology, factual |
 | `turnaround` | Timing and what starts the clock |
+| `about` | Independent lab positioning |
+| `attestation` | Research-use attestation |
 | `contact-us` | Dawn `contact-form` section |
-| `terms` | TBD, client supplies |
-| `privacy` | TBD, client supplies |
-| `refund-policy` | TBD, client supplies. Services need a different refund policy than goods. |
+| `terms` | Uploaded Mar 2026; verify Settings → Policies matches `/pages/terms` |
+| `privacy` | Uploaded Mar 2026; verify Settings → Policies matches `/pages/privacy` |
+| `refund-policy` | Uploaded Mar 2026; service refund policy; verify matches Settings → Policies |
 
 ## Independence
 
@@ -98,6 +99,69 @@ implying common ownership with any peptide seller.
 
 If the client wants Noviq products tested by March Analytics, that is a
 commercial relationship the sites do not advertise.
+
+## SEO and AI discovery
+
+Theme already emits titles, meta descriptions, canonicals, Open Graph / Twitter
+tags, and product structured data (including homepage Organization / WebSite /
+Service JSON-LD).
+
+Agent surfaces (Shopify-native paths plus OpenAPI):
+
+| Path | Source |
+| --- | --- |
+| `/agents.md` | `templates/agents.md.liquid` (when-to-use, permissions, API) |
+| `/llms.txt` | `templates/llms.txt.liquid` (short discovery) |
+| `/llms-full.txt` | Falls back to `agents.md.liquid` |
+| `/openapi.json` | URL redirect → `/pages/openapi` (`templates/page.openapi.liquid`) |
+| `/pages/llms-txt`, `/pages/agents-md` | Page mirrors of the agent files |
+
+Shopify serves `/llms.txt` and `/agents.md` as `text/markdown` with `Vary: Accept`.
+`/pages/openapi` returns a valid OpenAPI 3.1 body but Shopify still labels it
+`text/html`; deploy `fastpeptidetesting/edge/` (Cloudflare Worker) to set
+`Content-Type: application/json` and reinforce `Vary: Accept`. See
+[docs/fpt-agentic-readiness.md](../docs/fpt-agentic-readiness.md).
+
+Verify live: `npm run verify-agentic:fpt`.
+
+Product body HTML in the seed still says identity confirmation is included.
+That claim is pending lab confirmation (see Mass spectrometry identity in the
+service catalog). Search engine listing meta deliberately omits it. Do not put
+identity inclusion into Admin SEO fields until intake confirms it.
+
+Offline gate: `npm run seo-audit:fpt` after regenerating `catalog.json`.
+
+
+### Admin checklist (before and after password removal)
+
+1. **Online Store → Preferences:** homepage title and meta description for March
+   Analytics. Do not invent final copy until intake allows; structure is enough
+   for preview.
+2. **Search engine listing** on each product, the `order-testing` collection,
+   and each page. Re-run `fastpeptidetesting/seed/import.mjs` after
+   `extract.mjs` to push seed meta: products and the collection use Admin
+   `seo`; pages use metafields `global.title_tag` and `global.description_tag`.
+3. **Theme assets that affect SEO and AI surfaces** (still TBD in Brand assets):
+   favicon, logo (Organization JSON-LD `logo` only renders when `settings.logo`
+   is set), and a social share image. `config/settings_data.json` currently has
+   no favicon or logo bound and all social links blank.
+4. After the storefront password is off and `fastpeptidetesting.com` is primary:
+   - Open `/robots.txt` and confirm crawlers are not blocked.
+   - Open `/sitemap.xml`.
+   - Open `/llms.txt` and `/agents.md`; confirm lab-service wording and no
+     cross-brand references.
+5. **Google Search Console:** verify the live domain, submit `sitemap.xml`.
+6. **Google Analytics 4:** install Google & YouTube channel, connect one GA4
+   property for this store only. Optional ads pixels via **Settings → Customer
+   events**, not theme scripts.
+7. **Measurement runbook:** execute
+   [docs/fpt-analytics.md](../docs/fpt-analytics.md) for GA4, Search Console,
+   GTM (custom pixel), Microsoft Clarity, and optional ad pixels. All IDs are
+   intake block F in `specs/10-intake.md`; do not embed IDs in the theme.
+8. Confirm footer, meta, and agent files never link to other client brands.
+
+Sitemap and robots stay Shopify-managed. Do not add a custom `robots.txt.liquid`
+unless there is a concrete crawl rule to change.
 
 ## Brand assets needed
 
@@ -117,5 +181,5 @@ typography, minimal colour, no lifestyle imagery.
   checkout never asks for a shipping method.
 - Sample intake fields appear on the order in the admin.
 - Turnaround language matches whatever the client confirms about the clock.
-- All seven pages exist with the handles above.
+- All nine pages exist with the handles above.
 - Test order completes end to end with intake fields populated.

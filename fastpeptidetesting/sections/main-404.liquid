@@ -1,3 +1,7 @@
+{%- liquid
+  assign brand_name = settings.brand_name | default: shop.name
+  assign site_url = request.origin
+-%}
 <style type="text/css">
   .template-404 .title + * {
     margin-top: 1rem;
@@ -8,16 +12,91 @@
       margin-top: 2rem;
     }
   }
+
+  .template-404 .recovery-links {
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .template-404 .recovery-links h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .template-404 .recovery-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .template-404 .recovery-links li {
+    margin-bottom: 0.4rem;
+  }
+
+  .template-404 .recovery-links a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
 </style>
 
 <div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
   <h1 class="title">
     {{ 'templates.404.title' | t }}
   </h1>
+  <p>
+    {{ 'templates.404.subtext' | t }}
+  </p>
   <a href="{{ routes.all_products_collection_url }}" class="button">
     {{ 'general.continue_shopping' | t }}
   </a>
+
+  <div class="recovery-links">
+    <h2>Where to look next</h2>
+    <ul>
+      <li><a href="{{ site_url }}/collections/order-testing">Testing catalog</a></li>
+      <li><a href="{{ site_url }}/pages/how-it-works">How it works</a></li>
+      <li><a href="{{ site_url }}/pages/methods">Methods</a></li>
+      <li><a href="{{ site_url }}/pages/turnaround">Turnaround times</a></li>
+      <li><a href="{{ site_url }}/pages/about">About {{ brand_name }}</a></li>
+      <li><a href="{{ site_url }}/pages/contact-us">Contact</a></li>
+      <li><a href="{{ site_url }}/sitemap.xml">Sitemap (XML)</a></li>
+      <li><a href="{{ site_url }}/llms.txt">Agent instructions (llms.txt)</a></li>
+      <li><a href="{{ site_url }}/openapi.json">API specification (OpenAPI)</a></li>
+    </ul>
+  </div>
 </div>
+
+<!--
+# 404 Not Found
+
+The page you requested does not exist at {{ brand_name }} ({{ site_url }}).
+
+## Try these instead
+
+- Testing catalog: {{ site_url }}/collections/order-testing
+- How it works: {{ site_url }}/pages/how-it-works
+- Methods: {{ site_url }}/pages/methods
+- Turnaround: {{ site_url }}/pages/turnaround
+- About: {{ site_url }}/pages/about
+- Contact: {{ site_url }}/pages/contact-us
+- Sitemap: {{ site_url }}/sitemap.xml
+- Agent instructions: {{ site_url }}/llms.txt
+- OpenAPI spec: {{ site_url }}/openapi.json
+-->
+
+<script type="application/json" id="error-recovery">
+{
+  "status": 404,
+  "error": "not_found",
+  "message": "The requested path does not exist.",
+  "recovery": {
+    "sitemap": "{{ site_url }}/sitemap.xml",
+    "agent_instructions": "{{ site_url }}/llms.txt",
+    "openapi_spec": "{{ site_url }}/openapi.json",
+    "catalog": "{{ site_url }}/collections/order-testing",
+    "homepage": "{{ site_url }}/"
+  }
+}
+</script>

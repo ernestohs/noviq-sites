@@ -17,7 +17,9 @@ decisions, the money, and the domains.
    - `specs/01-bacwatermarket.md`
    - `specs/02-fastpeptidetesting.md`
    - `specs/03-noviqpeptides.md`
-4. `specs/20-launch.md` before any go-live step.
+
+For FPT go-live checks, use `docs/fpt-policies-and-documents.md` and
+`docs/client-preview.md` rather than a separate launch spec.
 
 ## Hard constraints
 

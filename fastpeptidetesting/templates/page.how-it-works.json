@@ -28,7 +28,7 @@
           "type": "column",
           "settings": {
             "title": "3. Receive the report",
-            "text": "<p>Results are issued as a certificate of analysis by email. Public COA publication is optional and requires consent at checkout.</p>"
+            "text": "<p>Results are issued as a certificate of analysis by email. Certificates are delivered only to the customer and are never published publicly.</p>"
           }
         }
       },
@@ -43,11 +43,22 @@
         "background_style": "none",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
+        "button_label": "Order Testing",
+        "button_link": "shopify://collections/order-testing",
         "color_scheme": "scheme-1",
         "padding_top": 16,
         "padding_bottom": 48
       }
+    },
+    "howto_schema": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'json-ld-howto' %}",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
-  "order": ["main", "steps"]
+  "order": ["main", "steps", "howto_schema"]
 }

@@ -1,0 +1,22 @@
+name = "fpt-agentic-headers"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+workers_dev = true
+
+# Production routes (www is reliable; apex often bypasses customer Workers with Shopify):
+#   www.fastpeptidetesting.com/*
+#   fastpeptidetesting.com/*
+#
+# Deploy: npx wrangler login && npx wrangler deploy
+
+[[routes]]
+pattern = "www.fastpeptidetesting.com/*"
+zone_name = "fastpeptidetesting.com"
+
+[[routes]]
+pattern = "fastpeptidetesting.com/*"
+zone_name = "fastpeptidetesting.com"
+
+[vars]
+ORIGIN = "https://fastpeptidetesting.com"
+SHOPIFY_ORIGIN = "https://srgkrj-ij.myshopify.com"

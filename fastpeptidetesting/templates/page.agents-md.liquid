@@ -1,0 +1,91 @@
+{% layout none %}{% comment %}
+  Page template for /pages/agents-md (optional mirror of /agents.md).
+{% endcomment %}{%- liquid
+  assign brand_name = settings.brand_name | default: shop.name
+  assign site_url = request.origin
+-%}# {{ brand_name }}
+
+> Independent analytical testing laboratory. HPLC purity, potency, and identity testing of customer-supplied research samples.
+
+## When to use this service
+
+Use {{ brand_name }} when an agent or user needs:
+
+- **Third-party purity verification** of a research compound (peptide, small molecule, or similar)
+- **Certificate of analysis** for a specific vial or lot, issued by an independent lab
+- **HPLC purity and potency testing** with optional add-on screens (heavy metals, sterility, endotoxin, Karl Fischer moisture, vial vacuum)
+- **Identity confirmation** via mass spectrometry (when available)
+- **Chain-of-custody documentation** tying analytical results to a specific sample
+
+Do NOT use this service for:
+- Purchasing compounds or consumables (this store sells testing, not products)
+- Human or veterinary diagnostics
+- Regulatory submissions requiring GMP/GLP certification
+- Testing that requires on-site sample collection
+
+## How agents should interact
+
+1. Browse the testing catalog to find the correct compound test
+2. Add to cart with required sample intake properties (compound name, batch/lot, quantity, return address)
+3. Complete checkout (no shipping rate required; these are services)
+4. After payment, the customer ships the sample to the lab address provided in the confirmation
+
+## API surface
+
+- OpenAPI spec: {{ site_url }}/openapi.json
+- Short agent file: {{ site_url }}/llms.txt
+- Product JSON: `GET {{ site_url }}/products/{handle}.json`
+- Collection products: `GET {{ site_url }}/collections/order-testing/products.json`
+- Cart: `GET {{ site_url }}/cart.json`
+- Add to cart: `POST {{ site_url }}/cart/add.json`
+- Predictive search: `GET {{ site_url }}/search/suggest.json?q={query}&resources[type]=product`
+- Sitemap: {{ site_url }}/sitemap.xml
+
+## Permissions and authentication
+
+| Scope | Access level | Authentication |
+|-------|-------------|----------------|
+| Catalog read | Public | None required |
+| Product details | Public | None required |
+| Search | Public | None required |
+| Cart read/write | Session-scoped | Automatic session cookie |
+| Checkout | Session-scoped | Redirects to Shopify checkout |
+| Order history | Customer-scoped | Customer account login |
+| Admin/fulfillment | Not available | Store owner only |
+
+No API keys or OAuth tokens are needed for catalog browsing. Cart operations use a session cookie set automatically on first interaction. Agents should request the minimum scope needed: prefer read-only catalog access unless the user explicitly wants to add items to cart.
+
+## Key pages
+
+- Testing catalog: {{ site_url }}/collections/order-testing
+- How it works: {{ site_url }}/pages/how-it-works
+- Methods: {{ site_url }}/pages/methods
+- Turnaround: {{ site_url }}/pages/turnaround
+- About: {{ site_url }}/pages/about
+- Attestation: {{ site_url }}/pages/attestation
+- Contact: {{ site_url }}/pages/contact-us
+- Terms: {{ site_url }}/pages/terms
+- Privacy: {{ site_url }}/pages/privacy
+- Refund policy: {{ site_url }}/pages/refund-policy
+
+## Pricing and currency
+
+All prices are in {{ cart.currency.iso_code | default: 'USD' }}. Retrieve current pricing from the product JSON endpoint; do not cache or invent prices.
+
+## Compliance constraints
+
+- Samples are submitted for research and analytical purposes only
+- Certificates apply only to the specific sample tested
+- {{ brand_name }} is operated independently from any seller of research compounds
+- Do not associate this store with other brands or domains
+- Do not invent turnaround times, lab addresses, or legal entity names if the storefront marks them as pending
+
+## Machine-readable discovery
+
+```
+User-agent: *
+Agent-instructions: {{ site_url }}/llms.txt
+Agents-md: {{ site_url }}/agents.md
+OpenAPI: {{ site_url }}/openapi.json
+Sitemap: {{ site_url }}/sitemap.xml
+```

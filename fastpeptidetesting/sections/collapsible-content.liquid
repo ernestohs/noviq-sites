@@ -106,6 +106,30 @@
   </div>
 </div>
 
+{%- if section.settings.enable_faq_schema and section.blocks.size > 0 -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'collapsible_row' -%}
+          {%- assign answer_text = block.settings.row_content | default: block.settings.page.content | strip_html | strip -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.heading | default: block.settings.page.title | strip_html | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ answer_text | json }}
+            }
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:sections.collapsible_content.name",
@@ -264,6 +288,13 @@
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_faq_schema",
+      "label": "Enable FAQPage schema",
+      "default": false,
+      "info": "Outputs FAQPage JSON-LD for search engines. Enable only on FAQ sections."
     },
     {
       "type": "range",

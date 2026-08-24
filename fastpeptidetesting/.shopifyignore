@@ -13,3 +13,5 @@ release-notes.md
 .prettierrc.json
 .theme-check.yml
 seed/
+edge/
+

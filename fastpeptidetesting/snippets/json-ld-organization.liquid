@@ -1,0 +1,71 @@
+{%- liquid
+  assign brand_name = settings.brand_name | default: shop.name
+  assign site_url = request.origin
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site_url }}/#organization",
+      "name": {{ brand_name | json }},
+      "legalName": "March Analytics",
+      "url": {{ site_url | json }},
+      "description": "Independent analytical testing laboratory offering HPLC purity, potency, and identity testing of customer-supplied research samples. Certificates of analysis issued for each tested vial.",
+      {% if settings.logo -%}
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ settings.logo | image_url: width: 512 | prepend: 'https:' | json }}
+      },
+      {%- endif %}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4030 W 1st Ave, Suite 100",
+        "addressLocality": "Eugene",
+        "addressRegion": "OR",
+        "postalCode": "97402",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        {%- if settings.social_twitter_link != blank %}{{ settings.social_twitter_link | json }}{% endif -%}
+        {%- if settings.social_facebook_link != blank %},{{ settings.social_facebook_link | json }}{% endif -%}
+        {%- if settings.social_instagram_link != blank %},{{ settings.social_instagram_link | json }}{% endif -%}
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "{{ site_url }}/pages/contact-us"
+      },
+      "areaServed": "US"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site_url }}/#website",
+      "url": {{ site_url | json }},
+      "name": {{ brand_name | json }},
+      "publisher": { "@id": "{{ site_url }}/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ site_url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "{{ site_url }}/#service",
+      "serviceType": "Analytical Testing",
+      "provider": { "@id": "{{ site_url }}/#organization" },
+      "name": "HPLC Purity Testing",
+      "description": "High-performance liquid chromatography purity, potency, and identity testing for customer-supplied research samples. Optional add-on screens include heavy metals, sterility, endotoxin, Karl Fischer moisture, and vial vacuum testing.",
+      "url": "{{ site_url }}/collections/order-testing",
+      "areaServed": "US",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "{{ site_url }}/collections/order-testing",
+        "serviceType": "Online ordering"
+      }
+    }
+  ]
+}
+</script>

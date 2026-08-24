@@ -128,6 +128,65 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;');
 }
 
+function pickMeta(candidates, max) {
+  for (const candidate of candidates) {
+    const text = String(candidate).replace(/\s+/g, ' ').trim();
+    if (text && text.length <= max) return text;
+  }
+  throw new Error(`No SEO candidate fits within ${max} characters: ${candidates.join(' | ')}`);
+}
+
+function seoTitle(title) {
+  return pickMeta([`${title} | March Analytics`, title], 60);
+}
+
+function productSeo(title, kind, compound) {
+  const seo_title = seoTitle(title);
+  const seo_description =
+    kind === 'compound'
+      ? pickMeta(
+          [
+            `HPLC purity and potency analysis for ${compound}. Ship your sample to March Analytics after checkout and receive a certificate of analysis.`,
+            `HPLC purity and potency analysis for ${compound}. Ship your sample after checkout and receive a certificate of analysis.`,
+            `HPLC purity and potency analysis for ${compound}. Certificate of analysis issued after testing.`,
+            `HPLC purity and potency analysis for ${compound}.`,
+          ],
+          155,
+        )
+      : pickMeta(
+          [
+            `${title} for customer-supplied research samples. Order online, ship the sample after checkout, and receive a certificate of analysis from March Analytics.`,
+            `${title} for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.`,
+            `${title} for customer-supplied research samples. Certificate of analysis issued after testing.`,
+            `${title} for customer-supplied research samples.`,
+          ],
+          155,
+        );
+  return { seo_title, seo_description };
+}
+
+function pageSeo(handle, title) {
+  const descriptions = {
+    'how-it-works':
+      'Order a March Analytics test, ship your sample to the lab, and receive a certificate of analysis. Checkout is for the service only.',
+    methods:
+      'HPLC purity and potency methods used by March Analytics, plus optional add-on screens for research samples.',
+    turnaround: 'Standard and expedited laboratory turnaround options for March Analytics testing services.',
+    'contact-us': 'Contact March Analytics about an order, sample submission, or certificate of analysis.',
+    about:
+      'March Analytics is an independent laboratory for analytical testing of customer-supplied research samples.',
+    attestation:
+      'Research-use attestation for March Analytics testing orders: samples are for research and analytical purposes only.',
+    terms: 'Terms of service for March Analytics laboratory testing services.',
+    privacy: 'Privacy policy for March Analytics order and sample data.',
+    'refund-policy': 'Refund policy for March Analytics laboratory testing services.',
+  };
+  return {
+    seo_title: seoTitle(title),
+    seo_description: pickMeta([descriptions[handle] || `${title} | March Analytics`], 155),
+  };
+}
+
 function mapProduct(product) {
   const kind = kindFor(product);
   const handle = marchHandle(product, kind);
@@ -143,6 +202,8 @@ function mapProduct(product) {
   if (multi && (optionName === 'Title' || !optionName)) {
     optionName = 'Number of Vials';
   }
+  const name = compoundName(product.title);
+  const seo = productSeo(title, kind, name);
 
   return {
     source_handle: product.handle,
@@ -152,7 +213,9 @@ function mapProduct(product) {
     product_type: 'Testing Service',
     status: 'ACTIVE',
     tags: ['testing', kind],
-    description_html: kind === 'compound' ? compoundBody(compoundName(product.title), basePrice) : addonBody(handle, title),
+    description_html: kind === 'compound' ? compoundBody(name, basePrice) : addonBody(handle, title),
+    seo_title: seo.seo_title,
+    seo_description: seo.seo_description,
     option_name: multi ? optionName : null,
     variants: variants.map((variant, index) => ({
       title: variant.title,
@@ -166,14 +229,14 @@ function mapProduct(product) {
 }
 
 function pages() {
-  return [
+  const list = [
     {
       handle: 'how-it-works',
       title: 'How it works',
       template_suffix: 'how-it-works',
       body_html: [
         '<p>March Analytics tests customer-supplied samples and returns a certificate of analysis. Checkout does not ship anything to you. After payment you receive the lab receiving address and packaging notes for the sample you send in.</p>',
-        '<ol><li>Select a compound test or add-on. Fill in compound name, batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email. Portal or public COA publication is confirmed with the client before launch (intake C13).</li></ol>',
+        '<ol><li>Select a compound test or add-on. Fill in compound name, batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email to the customer only. Certificates are never published publicly. Whether a private portal is also used is confirmed before launch (intake C13).</li></ol>',
         '<p>The receiving street address is issued after checkout (intake C11). Packaging requirements are confirmed with the lab (intake C12).</p>',
       ].join('\n'),
     },
@@ -263,6 +326,7 @@ function pages() {
       ].join('\n'),
     },
   ];
+  return list.map((page) => ({ ...page, ...pageSeo(page.handle, page.title) }));
 }
 
 function collection() {
@@ -271,6 +335,9 @@ function collection() {
     title: 'Order Testing',
     body_html:
       '<p>Select a compound test or an add-on service. Each purchase is a laboratory analysis of a sample you ship to March Analytics after checkout.</p>',
+    seo_title: 'Order Testing | March Analytics',
+    seo_description:
+      'Browse March Analytics compound tests and add-on screens. Order online, ship your sample after checkout, and receive a certificate of analysis.',
   };
 }
 

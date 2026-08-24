@@ -55,9 +55,9 @@ Create with these exact handles:
 | `about` | Who the company is. No mention of peptides or the other sites. |
 | `shipping` | Ship-from, carriers, transit times, restricted destinations |
 | `contact-us` | Dawn `contact-form` section |
-| `terms` | TBD, client supplies |
-| `privacy` | TBD, client supplies |
-| `refund-policy` | TBD, client supplies |
+| `terms` | Uploaded Mar 2026; verify in store admin |
+| `privacy` | Uploaded Mar 2026; verify in store admin |
+| `refund-policy` | Uploaded Mar 2026; verify in store admin |
 
 ## Shipping
 

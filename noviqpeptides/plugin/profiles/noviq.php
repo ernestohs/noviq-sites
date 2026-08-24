@@ -34,7 +34,7 @@ return array(
 	'site' => array(
 		'name'            => 'Noviq Peptides',
 		'short_name'      => 'Noviq',
-		'domain'          => 'noviq.demo-purposes-only.com',
+		'domain'          => 'noviqpeptides.demo-purposes-only.com',
 		'tagline'         => 'Analytical documentation on every lot.',
 		'description'     => 'Research-grade peptides supplied with lot-matched analytical documentation. For laboratory research use only — not for human or veterinary use.',
 		'legal_entity'    => 'Noviq Labs, Inc.',

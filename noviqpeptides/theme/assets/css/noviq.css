@@ -1444,6 +1444,10 @@ body.noviq div.product form.cart .quantity {
 	margin-right: 12px;
 }
 
+body.noviq div.product form.cart .quantity select {
+	min-width: 5.5rem;
+}
+
 body.noviq div.product form.cart {
 	display: block;
 	margin: 0;

@@ -6,14 +6,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Fast, clear, reliable results for informed research decisions",
+            "heading": "Independent peptide purity testing by HPLC",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Independent HPLC purity, potency, and identity testing of customer-supplied samples. Results issued as a certificate of analysis.",
+            "text": "HPLC purity, LC-MS identity, and optional add-on screens for customer-supplied research samples. Results issued as a certificate of analysis.",
             "text_style": "body"
           }
         },
@@ -31,10 +31,12 @@
       },
       "block_order": ["heading", "text", "buttons"],
       "settings": {
+        "image": "shopify://shop_images/hero-hplc-lab.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "content_box_opacity": 80,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-2",
         "mobile_content_alignment": "center",
@@ -69,6 +71,9 @@
           "type": "sample_intake",
           "settings": {}
         },
+        "quantity_selector": {
+          "type": "quantity_selector"
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -83,6 +88,7 @@
         "text_includes",
         "testing_options",
         "sample_intake",
+        "quantity_selector",
         "buy_buttons"
       ],
       "settings": {
@@ -212,7 +218,7 @@
           "type": "column",
           "settings": {
             "title": "3. Receive report",
-            "text": "<p>Results are issued as a certificate of analysis by email. Public COA publication is optional and requires consent at checkout.</p>",
+            "text": "<p>Results are issued as a certificate of analysis by email. Certificates are delivered only to the customer and are never published publicly.</p>",
             "link_label": "",
             "link": ""
           }
@@ -297,6 +303,7 @@
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
+        "enable_faq_schema": true,
         "padding_top": 36,
         "padding_bottom": 48
       }
