@@ -228,7 +228,8 @@ async function main() {
     },
   ]);
 
-  await upsertMetaobject('certificate', 'fpt-demo-bpc157-001', [
+  // Handle must match Shopify slug rules (letter/digit boundaries → hyphens).
+  await upsertMetaobject('certificate', 'fpt-demo-bpc-157-001', [
     { key: 'cert_id', value: 'FPT-DEMO-BPC157-001' },
     {
       key: 'seo_title',
@@ -256,7 +257,7 @@ Done.
 Verify:     https://${STORE}/pages/verify
 Sample COA: https://${STORE}/pages/sample-coa
 Compound:   https://${STORE}/pages/compounds/bpc-157
-Certificate:https://${STORE}/pages/certificates/fpt-demo-bpc157-001
+Certificate:https://${STORE}/pages/certificates/fpt-demo-bpc-157-001
 `);
 }
 
