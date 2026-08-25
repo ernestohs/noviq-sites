@@ -2509,7 +2509,7 @@
       "handle": "contact-us",
       "title": "Contact",
       "template_suffix": "contact",
-      "body_html": "<p>Questions about an order, a sample, or a report can be sent with the form below.</p>\n<p>Support email and legal entity details are pending client intake (D1, D2). Do not treat any address on this preview as a live lab location.</p>",
+      "body_html": "<p>Questions about an order, a sample, or a report can be sent with the form below.</p>\n<p>Legal entity: Lavagoat Wholesale LLC. Support email is pending client intake (D2). Do not treat any address on this page as a live lab location until the business address is published.</p>",
       "seo_title": "Contact | March Analytics",
       "seo_description": "Contact March Analytics about an order, sample submission, or certificate of analysis."
     },
@@ -2525,7 +2525,7 @@
       "handle": "attestation",
       "title": "Attestation",
       "template_suffix": "attestation",
-      "body_html": "<p>By placing an order you confirm:</p>\n<ul>\n<li>The sample is submitted for research and analytical purposes only.</li>\n<li>It is not for human or animal use.</li>\n<li>The certificate of analysis is valid only for the tested sample and may not be reused for any other material.</li>\n<li>Certificates may not be used to market, sell, or validate untested products.</li>\n<li>You will comply with all applicable laws.</li>\n<li>You indemnify Fast Peptide Testing and its laboratory partners from liability related to misuse, misrepresentation, or unlawful submission.</li>\n</ul>\n<p>Legal entity name for this attestation is pending client intake (D1). Public brand: Fast Peptide Testing. Legal name: March Analytics.</p>",
+      "body_html": "<p>By placing an order you confirm:</p>\n<ul>\n<li>The sample is submitted for research and analytical purposes only.</li>\n<li>It is not for human or animal use.</li>\n<li>The certificate of analysis is valid only for the tested sample and may not be reused for any other material.</li>\n<li>Certificates may not be used to market, sell, or validate untested products.</li>\n<li>You will comply with all applicable laws.</li>\n<li>You indemnify Lavagoat Wholesale LLC and its laboratory partners from liability related to misuse, misrepresentation, or unlawful submission.</li>\n</ul>\n<p>Legal entity: Lavagoat Wholesale LLC. Public brand: Fast Peptide Testing.</p>",
       "seo_title": "Attestation | Fast Peptide Testing",
       "seo_description": "Research-use attestation for Fast Peptide Testing orders: samples are for research and analytical purposes only."
     },

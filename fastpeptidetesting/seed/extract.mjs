@@ -265,7 +265,7 @@ function pages() {
       template_suffix: 'contact',
       body_html: [
         '<p>Questions about an order, a sample, or a report can be sent with the form below.</p>',
-        '<p>Support email and legal entity details are pending client intake (D1, D2). Do not treat any address on this preview as a live lab location.</p>',
+        '<p>Legal entity: Lavagoat Wholesale LLC. Support email is pending client intake (D2). Do not treat any address on this page as a live lab location until the business address is published.</p>',
       ].join('\n'),
     },
     {
@@ -290,9 +290,9 @@ function pages() {
         '<li>The certificate of analysis is valid only for the tested sample and may not be reused for any other material.</li>',
         '<li>Certificates may not be used to market, sell, or validate untested products.</li>',
         '<li>You will comply with all applicable laws.</li>',
-        '<li>You indemnify March Analytics and its laboratory partners from liability related to misuse, misrepresentation, or unlawful submission.</li>',
+        '<li>You indemnify Lavagoat Wholesale LLC and its laboratory partners from liability related to misuse, misrepresentation, or unlawful submission.</li>',
         '</ul>',
-        '<p>Legal entity name for this attestation is pending client intake (D1).</p>',
+        '<p>Legal entity: Lavagoat Wholesale LLC. Public brand: Fast Peptide Testing.</p>',
       ].join('\n'),
     },
   ];

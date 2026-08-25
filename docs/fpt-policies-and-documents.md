@@ -186,11 +186,12 @@ These are Online Store pages from `specs/02-fastpeptidetesting.md`. Attestation 
 - Certificate of analysis is valid only for the tested sample and may not be reused for other material
 - Certificates may not be used to market, sell, or validate untested products
 - Customer will comply with applicable law
-- Customer indemnifies March Analytics and laboratory partners for misuse, misrepresentation, or unlawful submission
+- Customer indemnifies Lavagoat Wholesale LLC and laboratory partners for misuse, misrepresentation, or unlawful submission
+- Legal entity named as Lavagoat Wholesale LLC; public brand Fast Peptide Testing
 
 **Still needs:**
 
-- Legal entity name in the indemnity clause (D1)
+- Business address on contact / policy surfaces (remainder of D1)
 - Final RUO disclaimer text if the client supplies a verbatim string (D4)
 
 **Tone:** Clinical and factual. No health claims, dosage guidance, or therapeutic language.
@@ -270,7 +271,7 @@ Covered under section 5. Page body plus Dawn contact form. Live support email re
 
 | Intake | Blocks |
 | --- | --- |
-| D1 | Transcribe legal entity name and business address from uploaded policies into `specs/10-intake.md` |
+| D1 | fastpeptidetesting legal entity: Lavagoat Wholesale LLC (done). Transcribe business address when available; bac/noviq still TBD |
 | D2 | Transcribe support email per domain from uploaded policies into intake |
 | D4 | Final RUO disclaimer text if supplied separately from attestation (Noviq) |
 | C7 | Which tests appear on Methods and product pages |
