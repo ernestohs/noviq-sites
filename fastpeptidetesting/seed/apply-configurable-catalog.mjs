@@ -317,9 +317,6 @@ function main() {
       { title: 'Methods', type: 'PAGE', handle: 'methods' },
       { title: 'Custom analytical', type: 'PAGE', handle: 'custom-analytical' },
       { title: 'Attestation', type: 'PAGE', handle: 'attestation' },
-      { title: 'Terms of service', type: 'PAGE', handle: 'terms' },
-      { title: 'Privacy policy', type: 'PAGE', handle: 'privacy' },
-      { title: 'Refund policy', type: 'PAGE', handle: 'refund-policy' },
       { title: 'Contact', type: 'PAGE', handle: 'contact-us' },
     ],
   };

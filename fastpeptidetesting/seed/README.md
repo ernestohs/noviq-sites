@@ -75,3 +75,14 @@ Prefer `npx shopify theme push --theme fpt-preview` from `fastpeptidetesting/` w
 ## Demo vs launch
 
 Prices above are client-confirmed for preview (Mar 2026 model). Turnaround clock start remains intake C10. Legal policies are uploaded in store admin; do not overwrite them from `catalog.json`.
+
+## Retire placeholder policy pages
+
+If `/pages/terms`, `/pages/privacy`, or `/pages/refund-policy` still exist and duplicate Settings → Policies, remove them and redirect:
+
+```bash
+cd fastpeptidetesting/seed
+node retire-policy-pages.mjs --cli
+```
+
+Footer "Information" should link only to How it works, Methods, Custom analytical, Attestation, and Contact. Policy URLs stay in the theme's `show_policy` bar.

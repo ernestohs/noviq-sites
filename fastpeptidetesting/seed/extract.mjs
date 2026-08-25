@@ -177,9 +177,6 @@ function pageSeo(handle, title) {
       'March Analytics is an independent laboratory for analytical testing of customer-supplied research samples.',
     attestation:
       'Research-use attestation for March Analytics testing orders: samples are for research and analytical purposes only.',
-    terms: 'Terms of service for March Analytics laboratory testing services.',
-    privacy: 'Privacy policy for March Analytics order and sample data.',
-    'refund-policy': 'Refund policy for March Analytics laboratory testing services.',
   };
   return {
     seo_title: seoTitle(title),
@@ -298,33 +295,6 @@ function pages() {
         '<p>Legal entity name for this attestation is pending client intake (D1).</p>',
       ].join('\n'),
     },
-    {
-      handle: 'terms',
-      title: 'Terms of service',
-      template_suffix: 'terms',
-      body_html: [
-        '<p>This preview uses placeholder terms of service. Client counsel supplies the live version (intake D3).</p>',
-        '<p>Testing is a laboratory service. The customer ships the sample to the lab. Results apply only to the sample received.</p>',
-      ].join('\n'),
-    },
-    {
-      handle: 'privacy',
-      title: 'Privacy policy',
-      template_suffix: 'privacy',
-      body_html: [
-        '<p>This preview uses a placeholder privacy policy. Client counsel supplies the live version (intake D3).</p>',
-        '<p>Order forms collect compound name, batch or lot number, quantity, and a return address so the lab can process the sample. Contact details are used to deliver the report.</p>',
-      ].join('\n'),
-    },
-    {
-      handle: 'refund-policy',
-      title: 'Refund policy',
-      template_suffix: 'refund-policy',
-      body_html: [
-        '<p>This preview uses a placeholder refund policy for a laboratory service. Client counsel supplies the live version (intake D3). Goods-style restocking language does not apply.</p>',
-        '<p>Once a sample has been logged for analysis, the test fee is generally not refundable. Requests received before sample receipt are reviewed case by case.</p>',
-      ].join('\n'),
-    },
   ];
   return list.map((page) => ({ ...page, ...pageSeo(page.handle, page.title) }));
 }
@@ -355,9 +325,6 @@ function menus() {
       { title: 'How it works', type: 'PAGE', handle: 'how-it-works' },
       { title: 'Methods', type: 'PAGE', handle: 'methods' },
       { title: 'Attestation', type: 'PAGE', handle: 'attestation' },
-      { title: 'Terms of service', type: 'PAGE', handle: 'terms' },
-      { title: 'Privacy policy', type: 'PAGE', handle: 'privacy' },
-      { title: 'Refund policy', type: 'PAGE', handle: 'refund-policy' },
       { title: 'Contact', type: 'PAGE', handle: 'contact-us' },
     ],
   };
