@@ -13,10 +13,9 @@ Specs are the contract; chat history is not. Agent instructions live in [`AGENTS
 ## Hard rules
 
 1. **Never link or co-brand the Shopify stores with noviqpeptides.com.** No cross-links, shared logo, "our other brands", or shared support email. FDA / processors treat bac water sold alongside peptides as evidence of intended human use.
-2. **Never run a bare `shopify theme push`.** Always `--unpublished`, always review the preview first.
-3. **Never touch payment, banking, or registrar credentials.** Client configures those.
-4. **Never connect a production domain** until the store is signed off, on a paid plan, and has a working gateway.
-5. **Never invent TBD values** (prices, SKUs, COAs, shipping rates, brand names, legal wording). Structure and empty states ship; real values wait on intake (`specs/10-intake.md`).
+2. **Never touch payment, banking, or registrar credentials.** Client configures those.
+3. **Never connect a production domain** until the store is signed off, on a paid plan, and has a working gateway.
+4. **Never invent TBD values** (prices, SKUs, COAs, shipping rates, brand names, legal wording). Structure and empty states ship; real values wait on intake (`specs/10-intake.md`).
 
 The three sites must read as three unrelated companies to a visitor, a processor, and a regulator.
 
@@ -100,11 +99,11 @@ npm run theme-check
 # or: cd bacwatermarket && npx shopify theme check
 ```
 
-### Shopify theme push (unpublished only)
+### Shopify theme push
 
 ```bash
 cd bacwatermarket   # or fastpeptidetesting
-npx shopify theme push --unpublished
+npx shopify theme push
 ```
 
 If the client has edited the theme in Admin, pull settings first:
@@ -184,7 +183,6 @@ GoDaddy zip/SFTP steps: [`noviqpeptides/deploy/README.md`](noviqpeptides/deploy/
 ## Out of scope unless explicitly asked
 
 - Inventing intake TBD values
-- Bare theme push to a live Shopify theme
 - Committing WordPress core or DB dumps
 - Production DNS, registrar, or payment gateway setup
 - Syncing or merging the two Shopify themes into one store

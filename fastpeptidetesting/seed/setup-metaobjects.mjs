@@ -45,10 +45,15 @@ function loadEnv(path) {
 loadEnv(join(DIR, '.env'));
 loadEnv(join(DIR, '..', '.env'));
 
+const USE_CLI =
+  process.argv.includes('--cli') ||
+  process.env.SHOPIFY_USE_CLI === '1' ||
+  process.env.SHOPIFY_USE_CLI === 'true';
+
 const STORE = (process.env.SHOPIFY_STORE || DEFAULT_STORE)
   .replace(/^https?:\/\//, '')
   .replace(/\/$/, '');
-const TOKEN = process.env.SHOPIFY_ADMIN_TOKEN || process.env.SHOPIFY_ACCESS_TOKEN || '';
+const TOKEN = USE_CLI ? '' : process.env.SHOPIFY_ADMIN_TOKEN || process.env.SHOPIFY_ACCESS_TOKEN || '';
 
 async function gqlHttp(query, variables) {
   const res = await fetch(`https://${STORE}/admin/api/${API_VERSION}/graphql.json`, {
@@ -92,7 +97,16 @@ async function gqlCli(query, variables) {
       writeFileSync(variableFile, JSON.stringify(variables));
       args.push('--variable-file', variableFile);
     }
-    await execFileAsync('npx', args, { maxBuffer: 10 * 1024 * 1024 });
+    if (/\bmutation\b/.test(query)) args.push('--allow-mutations');
+    await execFileAsync('npx', args, {
+      cwd: join(DIR, '..'),
+      env: {
+        ...process.env,
+        SHOPIFY_CLI_AGENT_INFO: 'n:cursor|v:none|p:none|m:none',
+        SHOPIFY_FLAG_NO_COLOR: '1',
+      },
+      maxBuffer: 10 * 1024 * 1024,
+    });
     return JSON.parse(readFileSync(outFile, 'utf8')).data;
   } finally {
     rmSync(dir, { recursive: true, force: true });

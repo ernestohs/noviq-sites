@@ -3,10 +3,14 @@
  * Finish SEO pages: verify + sample-coa, all compound metaobjects linked to Peptide Test,
  * and a demo certificate. Uses SHOPIFY_ADMIN_TOKEN from seed/.env
  */
-import { existsSync, readFileSync } from 'node:fs';
+import { execFile } from 'node:child_process';
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
 
+const execFileAsync = promisify(execFile);
 const DIR = dirname(fileURLToPath(import.meta.url));
 const API_VERSION = '2026-04';
 
@@ -31,17 +35,22 @@ function loadEnv(path) {
 
 loadEnv(join(DIR, '.env'));
 
+const USE_CLI =
+  process.argv.includes('--cli') ||
+  process.env.SHOPIFY_USE_CLI === '1' ||
+  process.env.SHOPIFY_USE_CLI === 'true';
+
 const STORE = (process.env.SHOPIFY_STORE || 'srgkrj-ij.myshopify.com')
   .replace(/^https?:\/\//, '')
   .replace(/\/$/, '');
-const TOKEN = process.env.SHOPIFY_ADMIN_TOKEN || '';
+const TOKEN = USE_CLI ? '' : process.env.SHOPIFY_ADMIN_TOKEN || '';
 
-if (!TOKEN) {
-  console.error('Missing SHOPIFY_ADMIN_TOKEN in seed/.env');
+if (!TOKEN && !USE_CLI) {
+  console.error('Missing SHOPIFY_ADMIN_TOKEN in seed/.env (or pass --cli)');
   process.exit(1);
 }
 
-async function gql(query, variables = {}) {
+async function gqlHttp(query, variables = {}) {
   const res = await fetch(`https://${STORE}/admin/api/${API_VERSION}/graphql.json`, {
     method: 'POST',
     headers: {
@@ -56,6 +65,52 @@ async function gql(query, variables = {}) {
   }
   return json.data;
 }
+
+async function gqlCli(query, variables = {}) {
+  const dir = mkdtempSync(join(tmpdir(), 'fpt-seo-'));
+  const queryFile = join(dir, 'query.graphql');
+  const outFile = join(dir, 'out.json');
+  writeFileSync(queryFile, query);
+  const args = [
+    'shopify',
+    'store',
+    'execute',
+    '--store',
+    STORE,
+    '--query-file',
+    queryFile,
+    '--output-file',
+    outFile,
+    '--json',
+    '--no-color',
+    '--version',
+    API_VERSION,
+  ];
+  if (variables && Object.keys(variables).length) {
+    const variableFile = join(dir, 'variables.json');
+    writeFileSync(variableFile, JSON.stringify(variables));
+    args.push('--variable-file', variableFile);
+  }
+  if (/\bmutation\b/.test(query)) args.push('--allow-mutations');
+  try {
+    await execFileAsync('npx', args, {
+      cwd: join(DIR, '..'),
+      env: {
+        ...process.env,
+        SHOPIFY_CLI_AGENT_INFO: 'n:cursor|v:none|p:none|m:none',
+        SHOPIFY_FLAG_NO_COLOR: '1',
+      },
+      maxBuffer: 10 * 1024 * 1024,
+    });
+    const json = JSON.parse(readFileSync(outFile, 'utf8'));
+    if (json.errors) throw new Error(JSON.stringify(json.errors, null, 2));
+    return json.data || json;
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+const gql = TOKEN ? gqlHttp : gqlCli;
 
 function assertOk(payload, label) {
   const errors = payload?.userErrors || [];

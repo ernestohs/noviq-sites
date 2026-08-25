@@ -42,8 +42,13 @@ function loadEnv(path) {
 loadEnv(join(DIR, '.env'));
 loadEnv(join(DIR, '..', '.env'));
 
+const USE_CLI =
+  process.argv.includes('--cli') ||
+  process.env.SHOPIFY_USE_CLI === '1' ||
+  process.env.SHOPIFY_USE_CLI === 'true';
+
 const STORE = (process.env.SHOPIFY_STORE || DEFAULT_STORE).replace(/^https?:\/\//, '').replace(/\/$/, '');
-const TOKEN = process.env.SHOPIFY_ADMIN_TOKEN || process.env.SHOPIFY_ACCESS_TOKEN || '';
+const TOKEN = USE_CLI ? '' : process.env.SHOPIFY_ADMIN_TOKEN || process.env.SHOPIFY_ACCESS_TOKEN || '';
 
 const PRODUCT_SET = `mutation ProductSet($identifier: ProductSetIdentifiers, $input: ProductSetInput!) {
   productSet(identifier: $identifier, input: $input) {

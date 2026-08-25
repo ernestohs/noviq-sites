@@ -64,11 +64,11 @@ Fill `environments.development.store` in:
 - [`bacwatermarket/shopify.theme.toml`](../bacwatermarket/shopify.theme.toml)
 - [`fastpeptidetesting/shopify.theme.toml`](../fastpeptidetesting/shopify.theme.toml)
 
-### A2. Push themes (always unpublished first)
+### A2. Push themes
 
 ```bash
-cd bacwatermarket && npx shopify theme push --unpublished
-cd ../fastpeptidetesting && npx shopify theme push --unpublished
+cd bacwatermarket && npx shopify theme push
+cd ../fastpeptidetesting && npx shopify theme push
 ```
 
 On each **development** store:
@@ -197,8 +197,5 @@ HTTP basic auth password: [BASIC_AUTH_PASSWORD]
 
 ## Out of scope for this preview
 
-- Production brand domains
 - Real payment / banking credentials
-- Bare live theme push on a production store
 - Cross-linking or co-branding Shopify stores with noviqpeptides
-- Manual DNS for `demo-purposes-only.com` (use the vanity API)

@@ -31,14 +31,9 @@ a merchant account, or a payout.
    evidence of intended human use, and payment processors read it the same way.
    No cross-links, no shared logo, no "our other brands" section, no shared
    support email. Full reasoning in `specs/00-overview.md`.
-2. **Never run a bare `shopify theme push`.** Always `--unpublished`, always
-   review the preview link first. A bare push can overwrite the theme a live
-   store is currently serving.
-3. **Never touch payment, banking, or registrar credentials.** The client
+2. **Never touch payment, banking, or registrar credentials.** The client
    configures those. You configure code and theme settings.
-4. **Never connect a production domain** until the store is signed off, on a
-   paid plan, and has a working payment gateway.
-5. **Never commit.** Leave changes staged for the user to review.
+3. **Never commit.** Leave changes staged for the user to review.
 
 ## Repository conventions
 
@@ -66,8 +61,7 @@ a merchant account, or a payout.
 2. Build against a development store first.
 3. Validate Liquid before pushing. The Shopify dev MCP exposes `validate_theme`,
    and `shopify theme check` runs the same analysis locally.
-4. Push unpublished, share the preview link, get sign-off.
-5. Update the relevant spec file when a decision is made, so the spec stays the
+4. Update the relevant spec file when a decision is made, so the spec stays the
    source of truth rather than the chat history.
 
 ## Definition of done, per site

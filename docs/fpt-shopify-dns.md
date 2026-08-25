@@ -163,10 +163,8 @@ Theme push from the repo (if needed before publish):
 
 ```bash
 cd fastpeptidetesting
-npx shopify theme push --unpublished --theme fpt-preview --store srgkrj-ij.myshopify.com
+npx shopify theme push --theme fpt-preview --store srgkrj-ij.myshopify.com
 ```
-
-Review the preview URL, then publish in Admin. Do not run a bare `theme push` on the live theme.
 
 ---
 

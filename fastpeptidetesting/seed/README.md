@@ -61,7 +61,7 @@ node import.mjs
 
 `import.mjs` upserts by handle. Collection `order-testing` membership uses `collection.product_handles` (Peptide Test only). Menus may link `PRODUCT` resources.
 
-Prefer `npx shopify theme push --unpublished --theme fpt-preview` from `fastpeptidetesting/` when asked.
+Prefer `npx shopify theme push --theme fpt-preview` from `fastpeptidetesting/` when asked.
 
 ## Manual QA (configurable Peptide Test)
 

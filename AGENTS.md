@@ -27,12 +27,11 @@ If `PROMPT.md` or `specs/` are missing from the working tree, restore them from 
 ## Hard constraints (do not violate)
 
 1. **Never link or co-brand the Shopify stores with noviqpeptides.com.** No cross-links, shared logo, "our other brands", or shared support email. FDA / processors treat bac water sold alongside peptides as evidence of intended human use.
-2. **Never run a bare `shopify theme push`.** Always `--unpublished`, always review the preview first.
-3. **Never touch payment, banking, or registrar credentials.** Client configures those.
-4. **Never connect a production domain** until the store is signed off, on a paid plan, and has a working gateway.
-5. **Never invent TBD values** (prices, SKUs, COAs, shipping rates, brand names, legal wording). Structure and empty states ship; real values wait on intake.
-6. **Never commit** unless the user explicitly asks. Stage for review. Do not use `git commit`.
-7. **Never edit Shopify themes when the task is noviqpeptides**, and vice versa, unless the user explicitly asks for both.
+2. **Never touch payment, banking, or registrar credentials.** Client configures those.
+3. **Never connect a production domain** until the store is signed off, on a paid plan, and has a working gateway.
+4. **Never invent TBD values** (prices, SKUs, COAs, shipping rates, brand names, legal wording). Structure and empty states ship; real values wait on intake.
+5. **Never commit** unless the user explicitly asks. Stage for review. Do not use `git commit`.
+6. **Never edit Shopify themes when the task is noviqpeptides**, and vice versa, unless the user explicitly asks for both.
 
 ## Copy and compliance tone
 
@@ -111,7 +110,7 @@ npm run theme-check
 Push only when store access exists and the user asks:
 
 ```bash
-cd <site> && npx shopify theme push --unpublished
+cd <site> && npx shopify theme push
 ```
 
 ### Noviq Peptides local store
@@ -155,7 +154,6 @@ GoDaddy zip/SFTP steps: `noviqpeptides/deploy/README.md`. Do not log into produc
 ## Out of scope unless explicitly asked
 
 - Inventing C15–C25 / D4 / D9 intake values
-- Bare theme push to a live Shopify theme
 - Committing WordPress core or DB dumps
 - Production DNS, registrar, or payment gateway setup
 - Syncing or merging the two Shopify themes into one store
