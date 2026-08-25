@@ -37,7 +37,7 @@ class PeptideTestConfigurator extends HTMLElement {
   }
 
   get variantInput() {
-    const form = this.getForm();
+    const form = this.form;
     return form?.querySelector('input[name="id"]') || document.querySelector(`#${this.formId} input[name="id"], product-form input[name="id"]`);
   }
 
@@ -82,7 +82,7 @@ class PeptideTestConfigurator extends HTMLElement {
       variantInput.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
-    const form = this.getForm();
+    const form = this.form;
     const qty = form?.querySelector('input[name="quantity"]');
     if (qty) qty.value = '1';
 
@@ -166,7 +166,7 @@ class PeptideTestConfigurator extends HTMLElement {
   }
 
   bindProductForm() {
-    const form = this.getForm();
+    const form = this.form;
     if (!form || form.dataset.peptideConfigBound === 'true') return;
     form.dataset.peptideConfigBound = 'true';
 
