@@ -1,15 +1,23 @@
 # March Analytics catalog seed
 
-Demo catalog for the Fast Peptide Testing Shopify preview. Source prices come from [peptidetest.com](https://peptidetest.com/) public JSON. Copy is rewritten for March Analytics. Lab supplies are excluded.
+Demo catalog for the Fast Peptide Testing Shopify preview. Compound names originate from [peptidetest.com](https://peptidetest.com/) public JSON. Commerce is a single configurable **Peptide Test** product. Copy is rewritten for March Analytics. Lab supplies are excluded.
 
-## Generate catalog.json
+## Generate / refresh catalog.json
 
 ```bash
 cd fastpeptidetesting/seed
-node extract.mjs
+node extract.mjs                  # optional: refresh from source (legacy multi-product shape)
+node apply-configurable-catalog.mjs   # required: Peptide Test model + peptide-option-list.liquid
 ```
 
-Writes `catalog.json` (30 testing products, pages, menus, SEO fields). Re-run when the source catalog changes.
+`apply-configurable-catalog.mjs` writes:
+
+- Primary product `peptide-testing` ($199 × 1–5 vials)
+- Checkout helpers: rush next/same day; endotoxin, sterility, heavy metals, Karl Fischer, vial vacuum (unit prices per vial)
+- Compound products retained for SEO (not in `order-testing` collection membership list)
+- `custom-analytical-service` as DRAFT / quote-only
+- Page `custom-analytical` and menus pointing at Peptide Test
+- `snippets/peptide-option-list.liquid` for the storefront dropdown
 
 ## Metaobjects (certificates + compounds)
 
@@ -22,18 +30,15 @@ node setup-metaobjects.mjs
 
 Requires Admin scopes `write_metaobject_definitions` and `read_metaobject_definitions` (token in `.env`).
 
-To create **entries** (sample compound + certificate), the app also needs `write_metaobjects` and `read_metaobjects`. Without those, run entries by hand in Admin, or add the scopes, Release, re-approve the app, mint a new client-credentials token, then:
+To create **entries** (all compounds from `catalog.compounds` linked to Peptide Test, plus sample certificate):
 
 ```bash
 cd fastpeptidetesting/seed
 node finish-seo-pages.mjs
 ```
 
-That script also upserts pages `verify` and `sample-coa` (already created on the preview store).
-
-Public URLs: `/pages/certificates/{handle}`, `/pages/compounds/{handle}`
-
-Vendor embed badge asset: `assets/vendor-coa-badge.svg`
+Public URLs: `/pages/certificates/{handle}`, `/pages/compounds/{handle}`  
+Purchase CTA: `/products/peptide-testing?compound={handle}`
 
 ## Audit SEO fields
 
@@ -43,15 +48,6 @@ From the repo root:
 npm run seo-audit:fpt
 ```
 
-Or:
-
-```bash
-cd fastpeptidetesting/seed
-node audit-seo.mjs
-```
-
-Fails if any product, page, or the collection is missing meta, exceeds title/description length limits, truncates with an ellipsis, embeds demo pricing or intake codes, or contains cross-brand terms.
-
 ## Import into the preview store
 
 Store default: `srgkrj-ij.myshopify.com` (from `shopify.theme.toml`).
@@ -59,22 +55,23 @@ Store default: `srgkrj-ij.myshopify.com` (from `shopify.theme.toml`).
 ```bash
 cd fastpeptidetesting/seed
 cp .env.example .env   # once; add SHOPIFY_ADMIN_TOKEN
+node apply-configurable-catalog.mjs
 node import.mjs
 ```
 
-`import.mjs` upserts by handle:
+`import.mjs` upserts by handle. Collection `order-testing` membership uses `collection.product_handles` (Peptide Test only). Menus may link `PRODUCT` resources.
 
-- 30 non-physical testing products (shipping and inventory tracking off). Search engine listing uses Admin `seo.title` / `seo.description` on `ProductSetInput`.
-- collection `order-testing` with Admin `seo.title` / `seo.description` on `CollectionInput`
-- pages: how-it-works, methods, turnaround, contact-us, about, attestation, terms, privacy, refund-policy. Page Search engine listing uses Shopify SEO metafields `global.title_tag` and `global.description_tag` (`PageCreateInput` / `PageUpdateInput` have no `seo` field)
-- menus: `main-menu`, `footer`
+Prefer `npx shopify theme push --unpublished --theme fpt-preview` from `fastpeptidetesting/` when asked.
 
-Prefer `npx shopify theme push --unpublished --theme fpt-preview` from `fastpeptidetesting/`.
+## Manual QA (configurable Peptide Test)
 
-`push-theme.mjs` is a fallback that upserts files via Admin API. It reads `SHOPIFY_STORE` and looks up theme `fpt-preview` by name. Do not hardcode a theme GID.
-
-Required Admin scopes: `write_products`, `write_content`, `write_online_store_pages`, `write_online_store_navigation`, `write_publications`. The importer publishes products to the Online Store sales channel. Without that step the theme shows Dawn apparel placeholders.
+1. `/products/peptide-testing`: change vial count 1–5; peptide selects appear/hide; estimated total updates
+2. Select add-ons; totals scale by vial count (e.g. 2 vials + endotoxin = $398 + $150)
+3. Select Next-Day / Same-Day; rush fee appears in estimate
+4. Add to cart: Peptide Test line has properties for peptides, add-ons, turnaround, fees; helper lines match quantity
+5. `/pages/compounds/bpc-157` CTA opens Peptide Test with Vial 1 prefilled
+6. `/pages/custom-analytical` quote form has no add-to-cart
 
 ## Demo vs launch
 
-Prices and turnaround add-ons are placeholders pending intake C8-C13. Do not copy them to production without client confirmation. Legal policies are uploaded in store admin (Mar 2026); do not overwrite them from `catalog.json`. Product body HTML may still mention identity confirmation; Search engine listing meta deliberately does not until the lab confirms that claim.
+Prices above are client-confirmed for preview (Mar 2026 model). Turnaround clock start remains intake C10. Legal policies are uploaded in store admin; do not overwrite them from `catalog.json`.

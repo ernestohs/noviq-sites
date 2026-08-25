@@ -1,0 +1,298 @@
+{%- comment -%}
+  Peptide Test configurator: vial count, per-vial peptides, add-ons, turnaround.
+  Prices charge via variant + AJAX-added addon/rush line items; properties document the order.
+{%- endcomment -%}
+{%- liquid
+  assign sid = section_id | default: section.id
+  assign form_id = product_form_id
+  assign primary = product
+  assign rush_next = all_products['checkout-rush-next-day']
+  assign rush_same = all_products['checkout-rush-same-day']
+  assign addon_endotoxin = all_products['endotoxin-testing']
+  assign addon_sterility = all_products['sterility-testing']
+  assign addon_heavy = all_products['heavy-metals-testing']
+  assign addon_karl = all_products['karl-fischer-testing']
+  assign addon_vacuum = all_products['vial-vacuum-testing']
+-%}
+
+<script src="{{ 'peptide-test-configurator.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .peptide-test-config {
+    display: grid;
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+  .peptide-test-config__section {
+    display: grid;
+    gap: 0.8rem;
+  }
+  .peptide-test-config__vials {
+    display: grid;
+    gap: 0.8rem;
+  }
+  .peptide-test-config__addons {
+    display: grid;
+    gap: 0.8rem;
+  }
+  .peptide-test-config__addons label {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  .peptide-test-config__addons input[type='checkbox'] {
+    margin-top: 0.3rem;
+  }
+  .peptide-test-config__total {
+    border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    border-radius: 0.4rem;
+    padding: 1.2rem 1.6rem;
+    background: #ececec;
+  }
+  .peptide-test-config__total dl {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+  }
+  .peptide-test-config__total dt,
+  .peptide-test-config__total dd {
+    margin: 0;
+  }
+  .peptide-test-config__total .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1.4rem;
+  }
+  .peptide-test-config__total .row--grand {
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  }
+  .peptide-test-config__hint {
+    color: #6b6b6b;
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<peptide-test-configurator
+  class="peptide-test-config"
+  data-section-id="{{ sid }}"
+  data-form-id="{{ form_id }}"
+  data-price-per-vial="19900"
+  data-currency="{{ cart.currency.iso_code }}"
+  data-money-format="{{ shop.money_format | escape }}"
+>
+  <div class="peptide-test-config__section">
+    <h3 class="h4">Number of vials</h3>
+    <div class="select">
+      <select
+        id="PeptideVialCount-{{ sid }}"
+        class="select__select"
+        data-vial-count
+        aria-label="Number of vials"
+        required
+      >
+        {%- for variant in primary.variants -%}
+          <option
+            value="{{ forloop.index }}"
+            data-variant-id="{{ variant.id }}"
+            data-price="{{ variant.price }}"
+            {% if variant == primary.selected_or_first_available_variant %}
+              selected
+            {% endif %}
+          >
+            {{ variant.title }} — {{ variant.price | money }}
+          </option>
+        {%- endfor -%}
+      </select>
+      <span class="svg-wrapper">
+        {{- 'icon-caret.svg' | inline_asset_content -}}
+      </span>
+    </div>
+  </div>
+
+  <div class="peptide-test-config__section">
+    <h3 class="h4">Peptides</h3>
+    <p class="caption peptide-test-config__hint">Select the peptide for each vial.</p>
+    <div class="peptide-test-config__vials" data-vial-peptide-list>
+      {%- for i in (1..5) -%}
+        <div
+          class="select{% unless forloop.first %} hidden{% endunless %}"
+          data-vial-peptide-row
+          data-vial-index="{{ i }}"
+          {% unless forloop.first %}
+            hidden
+          {% endunless %}
+        >
+          <label class="form__label" for="VialPeptide-{{ i }}-{{ sid }}">Vial {{ i }} peptide</label>
+          <select
+            id="VialPeptide-{{ i }}-{{ sid }}"
+            class="select__select"
+            name="properties[Vial {{ i }} peptide]"
+            data-vial-peptide
+            data-vial-index="{{ i }}"
+            {% if form_id != blank %}
+              form="{{ form_id }}"
+            {% endif %}
+            {% if forloop.first %}
+              required
+            {% endif %}
+          >
+            <option value="">Select peptide</option>
+            {% render 'peptide-option-list' %}
+          </select>
+          <span class="svg-wrapper">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="peptide-test-config__section">
+    <h3 class="h4">Optional screens</h3>
+    <p class="caption peptide-test-config__hint">Priced per vial. Total updates with vial count.</p>
+    <div class="peptide-test-config__addons">
+      {%- if addon_endotoxin != blank -%}
+        <label>
+          <input
+            type="checkbox"
+            data-addon-toggle
+            data-addon-handle="endotoxin-testing"
+            data-addon-label="Endotoxin"
+            data-unit-cents="7500"
+            data-variant-id="{{ addon_endotoxin.selected_or_first_available_variant.id }}"
+          >
+          <span>Endotoxin (+{{ 7500 | money }} per vial)</span>
+        </label>
+      {%- endif -%}
+      {%- if addon_sterility != blank -%}
+        <label>
+          <input
+            type="checkbox"
+            data-addon-toggle
+            data-addon-handle="sterility-testing"
+            data-addon-label="Sterility"
+            data-unit-cents="7500"
+            data-variant-id="{{ addon_sterility.selected_or_first_available_variant.id }}"
+          >
+          <span>Sterility (+{{ 7500 | money }} per vial)</span>
+        </label>
+      {%- endif -%}
+      {%- if addon_heavy != blank -%}
+        <label>
+          <input
+            type="checkbox"
+            data-addon-toggle
+            data-addon-handle="heavy-metals-testing"
+            data-addon-label="Heavy metals"
+            data-unit-cents="10000"
+            data-variant-id="{{ addon_heavy.selected_or_first_available_variant.id }}"
+          >
+          <span>Heavy metals (+{{ 10000 | money }} per vial)</span>
+        </label>
+      {%- endif -%}
+      {%- if addon_karl != blank -%}
+        <label>
+          <input
+            type="checkbox"
+            data-addon-toggle
+            data-addon-handle="karl-fischer-testing"
+            data-addon-label="Karl Fischer"
+            data-unit-cents="25000"
+            data-variant-id="{{ addon_karl.selected_or_first_available_variant.id }}"
+          >
+          <span>Karl Fischer (+{{ 25000 | money }} per vial)</span>
+        </label>
+      {%- endif -%}
+      {%- if addon_vacuum != blank -%}
+        <label>
+          <input
+            type="checkbox"
+            data-addon-toggle
+            data-addon-handle="vial-vacuum-testing"
+            data-addon-label="Vial vacuum"
+            data-unit-cents="2500"
+            data-variant-id="{{ addon_vacuum.selected_or_first_available_variant.id }}"
+          >
+          <span>Vial vacuum (+{{ 2500 | money }} per vial)</span>
+        </label>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="peptide-test-config__section">
+    <h3 class="h4">Turnaround</h3>
+    <div class="select">
+      <select
+        id="PeptideTurnaround-{{ sid }}"
+        class="select__select"
+        name="properties[Turnaround]"
+        data-turnaround
+        {% if form_id != blank %}
+          form="{{ form_id }}"
+        {% endif %}
+        required
+      >
+        <option value="Standard (3 business days)" data-rush-handle="" data-fee-cents="0" selected>
+          Standard (3 business days, included)
+        </option>
+        {%- if rush_next != blank -%}
+          <option
+            value="Next-Day (+$199)"
+            data-rush-handle="checkout-rush-next-day"
+            data-variant-id="{{ rush_next.selected_or_first_available_variant.id }}"
+            data-fee-cents="19900"
+          >
+            Next-Day (+{{ 19900 | money }})
+          </option>
+        {%- endif -%}
+        {%- if rush_same != blank -%}
+          <option
+            value="Same-Day (+$449)"
+            data-rush-handle="checkout-rush-same-day"
+            data-variant-id="{{ rush_same.selected_or_first_available_variant.id }}"
+            data-fee-cents="44900"
+          >
+            Same-Day (+{{ 44900 | money }})
+          </option>
+        {%- endif -%}
+      </select>
+      <span class="svg-wrapper">
+        {{- 'icon-caret.svg' | inline_asset_content -}}
+      </span>
+    </div>
+  </div>
+
+  <div class="peptide-test-config__total" aria-live="polite">
+    <h3 class="h4" style="margin: 0 0 0.8rem;">Estimated total</h3>
+    <div data-price-breakdown>
+      <div class="row">
+        <span>Base testing</span>
+        <span data-line="base">{{ primary.selected_or_first_available_variant.price | money }}</span>
+      </div>
+      <div class="row" data-line-row="addons" hidden>
+        <span>Optional screens</span>
+        <span data-line="addons">{{ 0 | money }}</span>
+      </div>
+      <div class="row" data-line-row="rush" hidden>
+        <span>Turnaround</span>
+        <span data-line="rush">{{ 0 | money }}</span>
+      </div>
+      <div class="row row--grand">
+        <span>Total</span>
+        <span data-line="total">{{ primary.selected_or_first_available_variant.price | money }}</span>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" name="properties[Base price]" value="" data-prop-base {% if form_id != blank %}form="{{ form_id }}"{% endif %}>
+  <input type="hidden" name="properties[Selected add-ons]" value="" data-prop-addons {% if form_id != blank %}form="{{ form_id }}"{% endif %}>
+  <input type="hidden" name="properties[Additional fees]" value="" data-prop-fees {% if form_id != blank %}form="{{ form_id }}"{% endif %}>
+  <input type="hidden" name="properties[Final price]" value="" data-prop-final {% if form_id != blank %}form="{{ form_id }}"{% endif %}>
+  <input type="hidden" name="properties[_configured]" value="1" {% if form_id != blank %}form="{{ form_id }}"{% endif %}>
+</peptide-test-configurator>

@@ -3,6 +3,7 @@
   Required fields reduce support email volume on incomplete orders.
   Configure the service product as non-physical with inventory tracking off
   (store admin; blocked until intake A1-A4).
+  Pass hide_compound_name: true when peptides are selected in the configurator.
 {%- endcomment -%}
 {%- liquid
   assign sid = section_id | default: section.id
@@ -11,18 +12,20 @@
 <div class="sample-intake product-form__input">
   <h3 class="h4" style="margin-bottom: 1rem;">Sample details</h3>
 
-  <div class="field" style="margin-bottom: 1rem;">
-    <input
-      class="field__input"
-      type="text"
-      id="SampleCompound-{{ sid }}"
-      name="properties[Compound name]"
-      {% if form_id != blank %}form="{{ form_id }}"{% endif %}
-      required
-      placeholder="Compound name"
-    >
-    <label class="field__label" for="SampleCompound-{{ sid }}">Compound name</label>
-  </div>
+  {%- unless hide_compound_name -%}
+    <div class="field" style="margin-bottom: 1rem;">
+      <input
+        class="field__input"
+        type="text"
+        id="SampleCompound-{{ sid }}"
+        name="properties[Compound name]"
+        {% if form_id != blank %}form="{{ form_id }}"{% endif %}
+        required
+        placeholder="Compound name"
+      >
+      <label class="field__label" for="SampleCompound-{{ sid }}">Compound name</label>
+    </div>
+  {%- endunless -%}
 
   <div class="field" style="margin-bottom: 1rem;">
     <input

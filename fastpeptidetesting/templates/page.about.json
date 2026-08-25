@@ -20,7 +20,7 @@
           "type": "button",
           "settings": {
             "button_label": "Order Testing",
-            "button_link": "shopify://collections/order-testing",
+            "button_link": "shopify://products/peptide-testing",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",

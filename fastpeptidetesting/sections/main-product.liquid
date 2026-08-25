@@ -216,9 +216,13 @@
                       {% render 'testing-options', product_form_id: product_form_id, section_id: section.id %}
                     </div>
                   {%- endunless -%}
+                {%- when 'peptide_test_configurator' -%}
+                  <div {{ block.shopify_attributes }}>
+                    {% render 'peptide-test-configurator', product: product, product_form_id: product_form_id, section_id: section.id %}
+                  </div>
                 {%- when 'sample_intake' -%}
                   <div {{ block.shopify_attributes }}>
-                    {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id %}
+                    {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id, hide_compound_name: product.tags contains 'primary' %}
                   </div>
                 {%- when 'collapsible_tab' -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
@@ -951,7 +955,18 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Add-ons and turnaround selectors attached to the order as line item properties."
+          "content": "Legacy add-ons and turnaround as line item properties only. Prefer Peptide Test configurator."
+        }
+      ]
+    },
+    {
+      "type": "peptide_test_configurator",
+      "name": "Peptide Test configurator",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Vial count, per-vial peptides, priced add-ons, and turnaround for the Peptide Test product."
         }
       ]
     },

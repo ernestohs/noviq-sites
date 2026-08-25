@@ -14,7 +14,7 @@
           "type": "column",
           "settings": {
             "title": "1. Place your order",
-            "text": "<p>Choose the compound test, add-ons, and turnaround. Complete sample details on the product form so they attach to the order.</p>"
+            "text": "<p>Open Peptide Test. Choose vial count, select a peptide for each vial, optional screens, and turnaround. Complete sample details so they attach to the order.</p>"
           }
         },
         "step2": {
@@ -44,7 +44,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "button_label": "Order Testing",
-        "button_link": "shopify://collections/order-testing",
+        "button_link": "shopify://products/peptide-testing",
         "color_scheme": "scheme-1",
         "padding_top": 16,
         "padding_bottom": 48

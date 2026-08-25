@@ -21,7 +21,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Order Testing",
-            "button_link_1": "shopify://collections/order-testing",
+            "button_link_1": "shopify://products/peptide-testing",
             "button_style_secondary_1": false,
             "button_label_2": "How it works",
             "button_link_2": "shopify://pages/how-it-works",
@@ -59,20 +59,17 @@
         "text_includes": {
           "type": "text",
           "settings": {
-            "text": "Base test includes purity, potency, and identity.",
+            "text": "$199 per vial. Configure peptides, optional screens, and turnaround on this page.",
             "text_style": "subtitle"
           }
         },
-        "testing_options": {
-          "type": "testing_options",
+        "peptide_test_configurator": {
+          "type": "peptide_test_configurator",
           "settings": {}
         },
         "sample_intake": {
           "type": "sample_intake",
           "settings": {}
-        },
-        "quantity_selector": {
-          "type": "quantity_selector"
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -86,13 +83,12 @@
         "title",
         "price",
         "text_includes",
-        "testing_options",
+        "peptide_test_configurator",
         "sample_intake",
-        "quantity_selector",
         "buy_buttons"
       ],
       "settings": {
-        "product": "bpc-157-testing",
+        "product": "peptide-testing",
         "color_scheme": "scheme-1",
         "secondary_background": false,
         "media_size": "medium",
@@ -100,7 +96,7 @@
         "media_fit": "contain",
         "media_position": "left",
         "image_zoom": "none",
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 28,
         "padding_bottom": 28
@@ -110,11 +106,11 @@
       "type": "featured-collection",
       "settings": {
         "collection": "order-testing",
-        "products_to_show": 8,
-        "title": "Popular tests",
+        "products_to_show": 4,
+        "title": "Order testing",
         "heading_size": "h1",
-        "description": "<p>Compound purity tests and optional add-on screens. Select a test, complete sample details, then ship the vial after checkout.</p>",
-        "show_description": false,
+        "description": "<p>Configure Peptide Test: choose vials, peptides, optional screens, and turnaround.</p>",
+        "show_description": true,
         "description_style": "body",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
@@ -200,7 +196,7 @@
           "type": "column",
           "settings": {
             "title": "1. Order",
-            "text": "<p>Select the compound test, any add-ons, and turnaround. Provide sample details on the product form so they attach to the order.</p>",
+            "text": "<p>Open Peptide Test. Choose vial count, select a peptide for each vial, optional screens, and turnaround. Provide sample details so they attach to the order.</p>",
             "link_label": "",
             "link": ""
           }
@@ -236,7 +232,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "button_label": "Order Testing",
-        "button_link": "shopify://collections/order-testing",
+        "button_link": "shopify://products/peptide-testing",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
@@ -250,16 +246,16 @@
           "settings": {
             "heading": "What does the base test include?",
             "icon": "none",
-            "row_content": "<p>Purity, potency, and identity as one purchase. Heavy metal, sterility, endotoxin, Karl Fischer moisture, and vial vacuum are optional add-ons or standalone services.</p>",
+            "row_content": "<p>Purity, potency, and identity as one purchase. Heavy metal, sterility, endotoxin, Karl Fischer moisture, and vial vacuum are optional add-ons priced per vial. Custom analytical work uses a quote form, not self-serve checkout.</p>",
             "page": ""
           }
         },
         "faq2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I send extra vials from the same lot?",
+            "heading": "Can I test more than one vial?",
             "icon": "none",
-            "row_content": "<p>Yes. Additional vials must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>",
+            "row_content": "<p>Yes. Choose 1 to 5 vials on Peptide Test and select the peptide for each vial. Base testing is $199 per vial.</p>",
             "page": ""
           }
         },
@@ -268,7 +264,7 @@
           "settings": {
             "heading": "What are the turnaround options?",
             "icon": "none",
-            "row_content": "<p>Standard is 3 business days, included. 1 business day is +$300. Same day is +$500. Whether the clock starts at payment or at sample receipt is confirmed with the client before launch.</p>",
+            "row_content": "<p>Standard is 3 business days, included in the $199 per vial test price. Next-Day is +$199 per order. Same-Day is +$449 per order. Select turnaround on the Peptide Test page before adding to cart.</p>",
             "page": ""
           }
         },

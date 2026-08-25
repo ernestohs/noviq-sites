@@ -203,7 +203,7 @@ These are Online Store pages from `specs/02-fastpeptidetesting.md`. Attestation 
 
 **Process the page should describe:**
 
-1. Select a compound test or add-on; complete sample intake fields (compound, lot, quantity, return address)
+1. Open Peptide Test; choose vial count, peptide per vial, optional screens, and turnaround; complete sample intake fields (lot, quantity, return address)
 2. Complete checkout (non-physical products; no shipping method charged)
 3. Ship the sample to the address in the confirmation materials; mark the order number on the package
 4. Receive results as a certificate of analysis privately (delivery method per C13; never published publicly)

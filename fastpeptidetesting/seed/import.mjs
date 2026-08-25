@@ -269,6 +269,9 @@ function productInput(product) {
       },
     ],
   };
+  if (product.template_suffix) {
+    input.templateSuffix = product.template_suffix;
+  }
   if (product.seo_title || product.seo_description) {
     input.seo = {
       title: product.seo_title || null,
@@ -282,6 +285,9 @@ function menuItems(spec, ids) {
   return spec.map((item) => {
     if (item.type === 'COLLECTION') {
       return { title: item.title, type: 'COLLECTION', resourceId: ids.collections[item.handle] };
+    }
+    if (item.type === 'PRODUCT') {
+      return { title: item.title, type: 'PRODUCT', resourceId: ids.products[item.handle] };
     }
     if (item.type === 'PAGE') {
       return { title: item.title, type: 'PAGE', resourceId: ids.pages[item.handle] };
@@ -299,7 +305,9 @@ async function upsertProduct(product) {
   return data.productSet.product;
 }
 
-async function upsertCollection(spec, productIds) {
+async function upsertCollection(spec, productIdsByHandle) {
+  const handles = spec.product_handles || Object.keys(productIdsByHandle);
+  const productIds = handles.map((handle) => productIdsByHandle[handle]).filter(Boolean);
   const lookups = await gql(LOOKUPS, { collectionQuery: `handle:${spec.handle}` });
   const existing = lookups.collections.nodes.find((node) => node.handle === spec.handle);
   const seo = collectionSeo(spec);
@@ -323,11 +331,13 @@ async function upsertCollection(spec, productIds) {
   if (seo) updateInput.seo = seo;
   const updated = await gql(COLLECTION_UPDATE, { input: updateInput });
   userErrors(updated.collectionUpdate, 'collectionUpdate');
-  const added = await gql(COLLECTION_ADD, { id: existing.id, productIds });
-  const addErrors = added.collectionAddProducts?.userErrors || [];
-  const unexpected = addErrors.filter((err) => !/already/i.test(err.message));
-  if (unexpected.length) {
-    throw new Error(`collectionAddProducts: ${unexpected.map((err) => err.message).join('; ')}`);
+  if (productIds.length) {
+    const added = await gql(COLLECTION_ADD, { id: existing.id, productIds });
+    const addErrors = added.collectionAddProducts?.userErrors || [];
+    const unexpected = addErrors.filter((err) => !/already/i.test(err.message));
+    if (unexpected.length) {
+      throw new Error(`collectionAddProducts: ${unexpected.map((err) => err.message).join('; ')}`);
+    }
   }
   return updated.collectionUpdate.collection;
 }
@@ -394,14 +404,16 @@ async function main() {
   const catalog = JSON.parse(readFileSync(join(DIR, 'catalog.json'), 'utf8'));
   console.log(`Importing ${catalog.products.length} products into ${STORE} via ${TOKEN ? 'Admin token' : 'Shopify CLI'}`);
 
+  const productIdsByHandle = {};
   const productIds = [];
   for (const product of catalog.products) {
     const saved = await upsertProduct(product);
+    productIdsByHandle[saved.handle] = saved.id;
     productIds.push(saved.id);
     console.log(`product ${saved.handle}`);
   }
 
-  const collection = await upsertCollection(catalog.collection, productIds);
+  const collection = await upsertCollection(catalog.collection, productIdsByHandle);
   console.log(`collection ${collection.handle}`);
 
   await publishOnlineStore(productIds, collection.id);
@@ -413,6 +425,7 @@ async function main() {
   const ids = {
     collections: { [catalog.collection.handle]: collection.id },
     pages: pageIds,
+    products: productIdsByHandle,
   };
   await upsertMenu('main-menu', 'Main menu', menuItems(catalog.menus.main, ids));
   await upsertMenu('footer', 'Footer menu', menuItems(catalog.menus.footer, ids));

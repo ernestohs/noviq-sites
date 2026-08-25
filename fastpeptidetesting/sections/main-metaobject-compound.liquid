@@ -109,21 +109,23 @@
     <div class="rte">{{ metaobject.common_synthesis_impurities.value }}</div>
   {%- endif -%}
 
-  {%- if metaobject.linked_tests.value != blank and metaobject.linked_tests.value.size > 0 -%}
+  {%- liquid
+    assign peptide_test = all_products['peptide-testing']
+    assign order_url = ''
+    if peptide_test != blank
+      assign order_url = peptide_test.url | append: '?compound=' | append: metaobject.system.handle
+    elsif metaobject.linked_tests.value != blank and metaobject.linked_tests.value.size > 0
+      assign linked = metaobject.linked_tests.value | first
+      assign order_url = linked.url | append: '?compound=' | append: metaobject.system.handle
+    elsif order_collection != blank
+      assign order_url = order_collection.url
+    endif
+  -%}
+  {%- if order_url != blank -%}
     <h2 class="h3">Order testing</h2>
-    <ul>
-      {%- for product in metaobject.linked_tests.value -%}
-        <li>
-          <a href="{{ product.url }}?compound={{ metaobject.system.handle | url_encode }}">
-            {{ product.title | escape }}
-          </a>
-        </li>
-      {%- endfor -%}
-    </ul>
-  {%- elsif order_collection != blank -%}
     <p>
-      <a class="button" href="{{ order_collection.url }}">
-        Order HPLC test for {{ compound_name | escape }}
+      <a class="button" href="{{ order_url }}">
+        Order Peptide Test for {{ compound_name | escape }}
       </a>
     </p>
   {%- endif -%}

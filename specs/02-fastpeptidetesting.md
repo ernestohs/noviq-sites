@@ -27,29 +27,41 @@ common way this kind of store ships broken.
 
 ## Service catalog
 
-| Service | Price | Turnaround, business days | Status |
-| --- | --- | --- | --- |
-| HPLC purity | TBD | TBD | TBD |
-| Mass spectrometry identity | TBD | TBD | Confirm whether offered |
-| Sterility | TBD | TBD | Confirm whether offered |
-| Endotoxin | TBD | TBD | Confirm whether offered |
+Commerce uses a single configurable product. Compound-specific URLs may remain
+for SEO; purchase CTAs point at Peptide Test.
 
-Confirm which of these the lab actually runs before building product pages for
-them. Advertising a test the lab cannot perform is worse than a thin catalog.
+| Service | Price | Notes | Status |
+| --- | --- | --- | --- |
+| Peptide Test (`peptide-testing`) | $199 per vial (1–5 vials) | Per-vial peptide dropdown; no differentiated/non-differentiated UI | Confirmed preview pricing |
+| Endotoxin add-on | +$75 per vial | Configurator checkbox | Confirmed preview pricing |
+| Sterility add-on | +$75 per vial | Configurator checkbox | Confirmed preview pricing |
+| Heavy metals add-on | +$100 per vial | Configurator checkbox | Confirmed preview pricing |
+| Karl Fischer add-on | +$250 per vial | Configurator checkbox | Confirmed preview pricing |
+| Vial vacuum add-on | +$25 per vial | Configurator checkbox | Confirmed preview pricing |
+| Next-Day turnaround | +$199 per order | Configurator select | Confirmed preview pricing |
+| Same-Day turnaround | +$449 per order | Configurator select | Confirmed preview pricing |
+| Custom analytical | Quote only | `/pages/custom-analytical` contact form; not self-serve checkout | Confirmed |
+| Mass spectrometry identity | TBD | Confirm whether included in base Peptide Test | Confirm before SEO claims |
+
+Standard turnaround is 3 business days, included. Clock start (payment vs
+sample receipt) remains intake C10.
+
+Confirm which optional screens the lab actually runs before launch. Advertising
+a test the lab cannot perform is worse than a thin catalog.
 
 ## Sample intake
 
-Sample details are captured at checkout using cart line item properties on the
-product page, so they arrive attached to the order. No app required; this is a
-form in the product template plus the `properties[...]` input naming
-convention.
+Sample details are captured as cart line item properties on the Peptide Test
+product page, so they arrive attached to the order. No app required.
 
-Default fields, pending client confirmation:
+Configurator fields:
 
-1. Compound name
-2. Batch or lot number
-3. Quantity supplied
-4. Customer return address
+1. Number of vials (1–5) as product variants at $199 × n
+2. Peptide name per vial (required dropdowns; list from `snippets/peptide-option-list.liquid` / catalog compounds)
+3. Optional screens and turnaround (priced via helper products added with the order)
+4. Batch or lot number
+5. Quantity supplied
+6. Customer return address
 
 Mark required fields as required in the markup. A test with no batch number
 generates a support email for every order.
@@ -84,6 +96,7 @@ difference generates chargebacks.
 | `how-it-works` | Ordering and sample submission process |
 | `methods` | Instrumentation and methodology, factual |
 | `turnaround` | Timing and what starts the clock |
+| `custom-analytical` | Quote request for custom analytical work (not checkout) |
 | `about` | Independent lab positioning |
 | `attestation` | Research-use attestation |
 | `contact-us` | Dawn `contact-form` section |

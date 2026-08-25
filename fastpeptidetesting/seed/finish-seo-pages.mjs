@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Finish Phase 6 store setup: verify + sample-coa pages, sample compound + certificate.
- * Uses SHOPIFY_ADMIN_TOKEN from seed/.env
+ * Finish SEO pages: verify + sample-coa, all compound metaobjects linked to Peptide Test,
+ * and a demo certificate. Uses SHOPIFY_ADMIN_TOKEN from seed/.env
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -110,7 +110,6 @@ async function ensurePage({ handle, title, body, templateSuffix, seoTitle, seoDe
     console.log(`Created page: /pages/${handle}`);
   }
 
-  // Page SEO uses metafields global.title_tag / global.description_tag
   const meta = await gql(
     `mutation ($metafields: [MetafieldsSetInput!]!) {
       metafieldsSet(metafields: $metafields) {
@@ -165,8 +164,20 @@ async function upsertMetaobject(type, handle, fields) {
   return obj;
 }
 
+async function findProductId(handle) {
+  const data = await gql(
+    `query ($q: String!) {
+      products(first: 1, query: $q) { nodes { id handle } }
+    }`,
+    { q: `handle:${handle}` }
+  );
+  return data.products.nodes[0]?.id || null;
+}
+
 async function main() {
   console.log(`Store: ${STORE}`);
+  const catalog = JSON.parse(readFileSync(join(DIR, 'catalog.json'), 'utf8'));
+  const compounds = catalog.compounds || [];
 
   await ensurePage({
     handle: 'verify',
@@ -174,8 +185,7 @@ async function main() {
     templateSuffix: 'verify',
     body: '<p>Enter a certificate ID to open the public certificate page. Vendors and researchers can confirm that a report was issued by Fast Peptide Testing.</p>',
     seoTitle: 'Verify a Certificate of Analysis | Fast Peptide Testing',
-    seoDescription:
-      'Look up a Fast Peptide Testing certificate of analysis by certificate ID.',
+    seoDescription: 'Look up a Fast Peptide Testing certificate of analysis by certificate ID.',
   });
 
   await ensurePage({
@@ -188,75 +198,64 @@ async function main() {
       'View a sample Fast Peptide Testing certificate of analysis with chromatogram and method summary.',
   });
 
-  const compound = await upsertMetaobject('compound', 'bpc-157', [
-    { key: 'name', value: 'BPC-157' },
-    {
-      key: 'seo_title',
-      value: 'BPC-157 Purity Testing: HPLC Analytical Reference | Fast Peptide Testing',
-    },
-    {
-      key: 'seo_description',
-      value:
-        'Analytical reference for BPC-157 peptide testing: sequence, mass, detection wavelength, and HPLC sample requirements.',
-    },
-    {
-      key: 'sequence',
-      value: 'GEPPPGKPADDAGLV',
-    },
-    { key: 'molecular_formula', value: 'C62H98N16O22' },
-    { key: 'monoisotopic_mass', value: '1418.7' },
-    { key: 'average_mass', value: '1419.5' },
-    { key: 'detection_wavelength', value: '214' },
-    { key: 'typical_sample_amount_mg', value: '2' },
-    {
-      key: 'common_synthesis_impurities',
-      value: JSON.stringify({
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value:
-                  'Common SPPS-related impurities for this sequence class include deletion sequences, incomplete deprotection, and oxidation of susceptible residues. Report only impurities observed for the tested lot.',
-              },
-            ],
-          },
-        ],
-      }),
-    },
-  ]);
+  const peptideTestId = await findProductId('peptide-testing');
+  if (!peptideTestId) {
+    console.warn('peptide-testing product not found; compound linked_tests will be empty until import.');
+  }
 
-  // Handle must match Shopify slug rules (letter/digit boundaries → hyphens).
-  await upsertMetaobject('certificate', 'fpt-demo-bpc-157-001', [
-    { key: 'cert_id', value: 'FPT-DEMO-BPC157-001' },
-    {
-      key: 'seo_title',
-      value: 'COA FPT-DEMO-BPC157-001: BPC-157 HPLC Purity | Fast Peptide Testing',
-    },
-    {
-      key: 'seo_description',
-      value:
-        'Public certificate of analysis for BPC-157 sample FPT-DEMO-BPC157-001. HPLC purity reported as measured by Fast Peptide Testing.',
-    },
-    { key: 'compound', value: compound.id },
-    { key: 'sample_received', value: '2026-08-01' },
-    { key: 'reported', value: '2026-08-04' },
-    { key: 'hplc_purity', value: '98.7' },
-    { key: 'observed_mass', value: '1418.6' },
-    { key: 'expected_mass', value: '1418.7' },
-    { key: 'method_summary', value: 'RP-HPLC-UV at 214 nm' },
-    { key: 'submitter_type', value: 'vendor' },
-    { key: 'display_submitter', value: 'false' },
-    { key: 'submitter_name', value: '' },
-  ]);
+  let bpcCompound = null;
+  for (const compound of compounds) {
+    const fields = [
+      { key: 'name', value: compound.name },
+      {
+        key: 'seo_title',
+        value: `${compound.name} Purity Testing: HPLC Analytical Reference | Fast Peptide Testing`.slice(0, 60),
+      },
+      {
+        key: 'seo_description',
+        value: `Analytical reference for ${compound.name} peptide testing. Order HPLC analysis via Peptide Test.`.slice(
+          0,
+          155
+        ),
+      },
+    ];
+    if (peptideTestId) {
+      fields.push({ key: 'linked_tests', value: JSON.stringify([peptideTestId]) });
+    }
+    const obj = await upsertMetaobject('compound', compound.handle, fields);
+    if (compound.handle === 'bpc-157') bpcCompound = obj;
+  }
+
+  if (bpcCompound) {
+    await upsertMetaobject('certificate', 'fpt-demo-bpc-157-001', [
+      { key: 'cert_id', value: 'FPT-DEMO-BPC157-001' },
+      {
+        key: 'seo_title',
+        value: 'COA FPT-DEMO-BPC157-001: BPC-157 HPLC Purity | Fast Peptide Testing',
+      },
+      {
+        key: 'seo_description',
+        value:
+          'Public certificate of analysis for BPC-157 sample FPT-DEMO-BPC157-001. HPLC purity reported as measured by Fast Peptide Testing.',
+      },
+      { key: 'compound', value: bpcCompound.id },
+      { key: 'sample_received', value: '2026-08-01' },
+      { key: 'reported', value: '2026-08-04' },
+      { key: 'hplc_purity', value: '98.7' },
+      { key: 'observed_mass', value: '1418.6' },
+      { key: 'expected_mass', value: '1418.7' },
+      { key: 'method_summary', value: 'RP-HPLC-UV at 214 nm' },
+      { key: 'submitter_type', value: 'vendor' },
+      { key: 'display_submitter', value: 'false' },
+      { key: 'submitter_name', value: '' },
+    ]);
+  }
 
   console.log(`
 Done.
 Verify:     https://${STORE}/pages/verify
 Sample COA: https://${STORE}/pages/sample-coa
-Compound:   https://${STORE}/pages/compounds/bpc-157
+Compounds:  ${compounds.length} upserted under /pages/compounds/{handle}
 Certificate:https://${STORE}/pages/certificates/fpt-demo-bpc-157-001
 `);
 }

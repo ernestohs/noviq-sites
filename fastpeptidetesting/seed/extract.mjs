@@ -384,6 +384,7 @@ async function main() {
   const catalogPath = join(dir, 'catalog.json');
   await writeFile(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`);
   console.log(`Wrote ${catalog.products.length} products to ${catalogPath}`);
+  console.log('Next: node apply-configurable-catalog.mjs  # Peptide Test commerce model');
 }
 
 main().catch((error) => {

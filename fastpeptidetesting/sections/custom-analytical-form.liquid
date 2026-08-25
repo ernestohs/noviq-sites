@@ -1,0 +1,176 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+    {%- form 'contact', id: 'CustomAnalyticalForm', class: 'isolate' -%}
+      <input type="hidden" name="contact[inquiry_type]" value="Custom Analytical Services">
+      {%- if form.posted_successfully? -%}
+        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+          {{- 'icon-success.svg' | inline_asset_content -}}
+          {{ 'templates.contact.form.post_success' | t }}
+        </h2>
+      {%- elsif form.errors -%}
+        <div class="form__message">
+          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+            {{- 'icon-error.svg' | inline_asset_content -}}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+        </div>
+      {%- endif -%}
+
+      <div class="contact__fields">
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            type="text"
+            id="CustomAnalytical-name"
+            name="contact[name]"
+            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            placeholder="Name"
+            required
+          >
+          <label class="field__label" for="CustomAnalytical-name">Name</label>
+        </div>
+        <div class="field">
+          <input
+            autocomplete="email"
+            type="email"
+            id="CustomAnalytical-email"
+            class="field__input"
+            name="contact[email]"
+            spellcheck="false"
+            autocapitalize="off"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            aria-required="true"
+            required
+            placeholder="Email"
+          >
+          <label class="field__label" for="CustomAnalytical-email">Email <span aria-hidden="true">*</span></label>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top: 1rem;">
+        <input
+          class="field__input"
+          type="text"
+          id="CustomAnalytical-compound"
+          name="contact[compound]"
+          required
+          placeholder="Compound or material"
+        >
+        <label class="field__label" for="CustomAnalytical-compound">Compound or material</label>
+      </div>
+
+      <div class="field" style="margin-top: 1rem;">
+        <textarea
+          rows="4"
+          id="CustomAnalytical-methods"
+          class="text-area field__input"
+          name="contact[methods_requested]"
+          required
+          placeholder="Methods requested"
+        ></textarea>
+        <label class="form__label field__label" for="CustomAnalytical-methods">Methods requested</label>
+      </div>
+
+      <div class="field" style="margin-top: 1rem;">
+        <input
+          class="field__input"
+          type="text"
+          id="CustomAnalytical-timeline"
+          name="contact[timeline]"
+          placeholder="Desired timeline"
+        >
+        <label class="field__label" for="CustomAnalytical-timeline">Desired timeline</label>
+      </div>
+
+      <div class="field" style="margin-top: 1rem;">
+        <textarea
+          rows="6"
+          id="CustomAnalytical-body"
+          class="text-area field__input"
+          name="contact[body]"
+          placeholder="Additional details"
+        ></textarea>
+        <label class="form__label field__label" for="CustomAnalytical-body">Additional details</label>
+      </div>
+
+      <div class="contact__button" style="margin-top: 1.6rem;">
+        <button type="submit" class="button">Request quote</button>
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom analytical form",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Custom analytical inquiry"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h2",
+      "label": "Heading size"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 48
+    }
+  ]
+}
+{% endschema %}

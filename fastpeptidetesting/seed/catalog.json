@@ -1,15 +1,78 @@
 {
-  "generated_at": "2026-08-21T01:49:22.560Z",
+  "generated_at": "2026-08-24T23:56:20.950Z",
   "source": "https://peptidetest.com",
-  "note": "Demo catalog for March Analytics preview. Prices copied as placeholders pending intake C8. Copy is original, not a Peptide Test reprint.",
+  "note": "March Analytics catalog. Commerce uses Peptide Test ($199/vial). Compound products retained for SEO. Rush and screens are checkout helpers.",
   "collection": {
     "handle": "order-testing",
     "title": "Order Testing",
-    "body_html": "<p>Select a compound test or an add-on service. Each purchase is a laboratory analysis of a sample you ship to March Analytics after checkout.</p>",
+    "body_html": "<p>Configure Peptide Test: choose vials, peptides, optional screens, and turnaround. Ship your sample to March Analytics after checkout.</p>",
     "seo_title": "Order Testing | March Analytics",
-    "seo_description": "Browse March Analytics compound tests and add-on screens. Order online, ship your sample after checkout, and receive a certificate of analysis."
+    "seo_description": "Order HPLC peptide testing. Configure vials, optional screens, and turnaround online, then ship your sample after checkout.",
+    "product_handles": [
+      "peptide-testing"
+    ]
   },
   "products": [
+    {
+      "source_handle": null,
+      "handle": "peptide-testing",
+      "title": "Peptide Test",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "primary"
+      ],
+      "template_suffix": "peptide-testing",
+      "description_html": "<p>HPLC purity and potency analysis for customer-supplied peptide samples. Select how many vials to test, choose the peptide for each vial, optional screens, and turnaround.</p>\n<p>Base testing is $199.00 per vial. Optional screens are priced per vial. Expedited turnaround is priced per order.</p>\n<p>After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
+      "seo_title": "Peptide Test | March Analytics",
+      "seo_description": "Order HPLC peptide testing online. Configure vials, optional screens, and turnaround, then ship your sample after checkout.",
+      "option_name": "Number of Vials",
+      "variants": [
+        {
+          "title": "1 Vial",
+          "price": "199.00",
+          "sku": "MA-PEPTIDETEST-1",
+          "option_value": "1 Vial",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "2 Vials",
+          "price": "398.00",
+          "sku": "MA-PEPTIDETEST-2",
+          "option_value": "2 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "3 Vials",
+          "price": "597.00",
+          "sku": "MA-PEPTIDETEST-3",
+          "option_value": "3 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "4 Vials",
+          "price": "796.00",
+          "sku": "MA-PEPTIDETEST-4",
+          "option_value": "4 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        },
+        {
+          "title": "5 Vials",
+          "price": "995.00",
+          "sku": "MA-PEPTIDETEST-5",
+          "option_value": "5 Vials",
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ],
+      "collection": true
+    },
     {
       "source_handle": "benzyl-alcohol-purity-and-mass-testing",
       "handle": "benzyl-alcohol-testing",
@@ -21,7 +84,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Benzyl Alcohol. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Benzyl Alcohol. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=benzyl-alcohol\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Benzyl Alcohol Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Benzyl Alcohol. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -98,7 +161,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "blend-assay-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
@@ -111,7 +175,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=bpc-157-and-tb-500-tb4\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "BPC-157 and TB-500 (TB4) Blend Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -188,7 +252,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "bpc-157-arginate-assay-purity-and-mass-testing",
@@ -201,7 +266,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for BPC-157 Arginate. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for BPC-157 Arginate. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=bpc-157-arginate\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "BPC-157 Arginate Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for BPC-157 Arginate. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -278,7 +343,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "bpc-157-purity-and-mass-testing",
@@ -291,7 +357,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for BPC-157. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for BPC-157. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=bpc-157\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "BPC-157 Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for BPC-157. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -368,7 +434,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "cagrilintide-purity-and-mass-testing",
@@ -381,7 +448,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Cagrilintide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Cagrilintide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=cagrilintide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Cagrilintide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Cagrilintide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -458,7 +525,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "blend-assay-cagrireta-purity-and-mass-testing",
@@ -471,7 +539,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for CagriReta. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $800.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for CagriReta. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=cagrireta\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "CagriReta Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for CagriReta. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -548,7 +616,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "blend-assay-cagrisema-purity-and-mass-testing",
@@ -561,7 +630,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for CagriSema. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $700.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for CagriSema. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=cagrisema\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "CagriSema Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for CagriSema. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -638,7 +707,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "cjc-1295-no-dac-purity-and-mass-testing",
@@ -651,7 +721,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for CJC-1295 (no DAC). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for CJC-1295 (no DAC). Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=cjc-1295-no-dac\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "CJC-1295 (no DAC) Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for CJC-1295 (no DAC). Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -728,7 +798,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "custom-analytical-service",
@@ -736,12 +807,13 @@
       "title": "Custom Analytical Service",
       "vendor": "March Analytics",
       "product_type": "Testing Service",
-      "status": "ACTIVE",
+      "status": "DRAFT",
       "tags": [
         "testing",
-        "addon"
+        "addon",
+        "quote-only"
       ],
-      "description_html": "<p>Scoped analytical work after intake. The listed amount is a demo placeholder, not a final quote.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>Custom analytical work is quoted manually. Use the Custom Analytical Services page to request a quote.</p>\n<p><a href=\"/pages/custom-analytical\">Request a custom analytical quote</a></p>",
       "seo_title": "Custom Analytical Service | March Analytics",
       "seo_description": "Custom Analytical Service for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": null,
@@ -754,225 +826,36 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "endotoxin-test",
       "handle": "endotoxin-testing",
-      "title": "Endotoxin Test",
+      "title": "Endotoxin Testing",
       "vendor": "March Analytics",
       "product_type": "Testing Service",
       "status": "ACTIVE",
       "tags": [
         "testing",
-        "addon"
+        "addon",
+        "checkout-addon"
       ],
-      "description_html": "<p>Endotoxin screen for the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
-      "seo_title": "Endotoxin Test | March Analytics",
-      "seo_description": "Endotoxin Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "description_html": "<p>Endotoxin Testing for the submitted sample. When ordered with Peptide Test, this screen is selected in the product configurator and charged per vial.</p>\n<p>Unit price: $75.00 per vial.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
+      "seo_title": "Endotoxin Testing | March Analytics",
+      "seo_description": "Endotoxin Testing add-on for March Analytics peptide testing. Priced per vial when ordered with Peptide Test.",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "300.00",
+          "title": "Default Title",
+          "price": "75.00",
           "sku": "MA-ENDOTOXIN-1",
-          "option_value": "1 Vial",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials",
-          "price": "600.00",
-          "sku": "MA-ENDOTOXIN-2",
-          "option_value": "2 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials",
-          "price": "900.00",
-          "sku": "MA-ENDOTOXIN-3",
-          "option_value": "3 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials",
-          "price": "1200.00",
-          "sku": "MA-ENDOTOXIN-4",
-          "option_value": "4 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials",
-          "price": "1500.00",
-          "sku": "MA-ENDOTOXIN-5",
-          "option_value": "5 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "6 Vials",
-          "price": "1800.00",
-          "sku": "MA-ENDOTOXIN-6",
-          "option_value": "6 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "7 Vials",
-          "price": "2100.00",
-          "sku": "MA-ENDOTOXIN-7",
-          "option_value": "7 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "8 Vials",
-          "price": "2400.00",
-          "sku": "MA-ENDOTOXIN-8",
-          "option_value": "8 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "9 Vials",
-          "price": "2700.00",
-          "sku": "MA-ENDOTOXIN-9",
-          "option_value": "9 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "10 Vials",
-          "price": "3000.00",
-          "sku": "MA-ENDOTOXIN-10",
-          "option_value": "10 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "11 Vials",
-          "price": "3300.00",
-          "sku": "MA-ENDOTOXIN-11",
-          "option_value": "11 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "12 Vials",
-          "price": "3600.00",
-          "sku": "MA-ENDOTOXIN-12",
-          "option_value": "12 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "13 Vials",
-          "price": "3900.00",
-          "sku": "MA-ENDOTOXIN-13",
-          "option_value": "13 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "14 Vials",
-          "price": "4200.00",
-          "sku": "MA-ENDOTOXIN-14",
-          "option_value": "14 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "15 Vials",
-          "price": "4500.00",
-          "sku": "MA-ENDOTOXIN-15",
-          "option_value": "15 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "16 Vials",
-          "price": "4800.00",
-          "sku": "MA-ENDOTOXIN-16",
-          "option_value": "16 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "17 Vials",
-          "price": "5100.00",
-          "sku": "MA-ENDOTOXIN-17",
-          "option_value": "17 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "18 Vials",
-          "price": "5400.00",
-          "sku": "MA-ENDOTOXIN-18",
-          "option_value": "18 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "19 Vials",
-          "price": "5700.00",
-          "sku": "MA-ENDOTOXIN-19",
-          "option_value": "19 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "20 Vials",
-          "price": "6000.00",
-          "sku": "MA-ENDOTOXIN-20",
-          "option_value": "20 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "21 Vials",
-          "price": "6300.00",
-          "sku": "MA-ENDOTOXIN-21",
-          "option_value": "21 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "22 Vials",
-          "price": "6600.00",
-          "sku": "MA-ENDOTOXIN-22",
-          "option_value": "22 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "23 Vials",
-          "price": "6900.00",
-          "sku": "MA-ENDOTOXIN-23",
-          "option_value": "23 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "24 Vials",
-          "price": "7200.00",
-          "sku": "MA-ENDOTOXIN-24",
-          "option_value": "24 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "25 Vials",
-          "price": "7500.00",
-          "sku": "MA-ENDOTOXIN-25",
-          "option_value": "25 Vials",
+          "option_value": null,
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "ghk-cu-purity-and-mass-testing",
@@ -985,7 +868,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for GHK-Cu. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for GHK-Cu. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=ghk-cu\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "GHK-Cu Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for GHK-Cu. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -1062,7 +945,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "glow-blend-assay-ghk-cu-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
@@ -1075,7 +959,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for GLOW Blend - GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $600.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for GLOW Blend. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=glow-blend\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "GLOW Blend Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for GLOW Blend - GHK-Cu, BPC-157 and TB-500 (TB4). Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -1152,225 +1036,36 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "metals-analysis-epa-methods",
       "handle": "heavy-metals-testing",
-      "title": "Heavy Metals Test",
+      "title": "Heavy Metals Testing",
       "vendor": "March Analytics",
       "product_type": "Testing Service",
       "status": "ACTIVE",
       "tags": [
         "testing",
-        "addon"
+        "addon",
+        "checkout-addon"
       ],
-      "description_html": "<p>Elemental screen for specified metals on the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
-      "seo_title": "Heavy Metals Test | March Analytics",
-      "seo_description": "Heavy Metals Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "description_html": "<p>Heavy Metals Testing for the submitted sample. When ordered with Peptide Test, this screen is selected in the product configurator and charged per vial.</p>\n<p>Unit price: $100.00 per vial.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
+      "seo_title": "Heavy Metals Testing | March Analytics",
+      "seo_description": "Heavy Metals Testing add-on for March Analytics peptide testing. Priced per vial when ordered with Peptide Test.",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "250.00",
+          "title": "Default Title",
+          "price": "100.00",
           "sku": "MA-HEAVYMETALS-1",
-          "option_value": "1 Vial",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials",
-          "price": "500.00",
-          "sku": "MA-HEAVYMETALS-2",
-          "option_value": "2 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials",
-          "price": "750.00",
-          "sku": "MA-HEAVYMETALS-3",
-          "option_value": "3 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials",
-          "price": "1000.00",
-          "sku": "MA-HEAVYMETALS-4",
-          "option_value": "4 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials",
-          "price": "1250.00",
-          "sku": "MA-HEAVYMETALS-5",
-          "option_value": "5 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "6 Vials",
-          "price": "1500.00",
-          "sku": "MA-HEAVYMETALS-6",
-          "option_value": "6 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "7 Vials",
-          "price": "1750.00",
-          "sku": "MA-HEAVYMETALS-7",
-          "option_value": "7 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "8 Vials",
-          "price": "2000.00",
-          "sku": "MA-HEAVYMETALS-8",
-          "option_value": "8 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "9 Vials",
-          "price": "2250.00",
-          "sku": "MA-HEAVYMETALS-9",
-          "option_value": "9 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "10 Vials",
-          "price": "2500.00",
-          "sku": "MA-HEAVYMETALS-10",
-          "option_value": "10 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "11 Vials",
-          "price": "2750.00",
-          "sku": "MA-HEAVYMETALS-11",
-          "option_value": "11 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "12 Vials",
-          "price": "3000.00",
-          "sku": "MA-HEAVYMETALS-12",
-          "option_value": "12 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "13 Vials",
-          "price": "3250.00",
-          "sku": "MA-HEAVYMETALS-13",
-          "option_value": "13 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "14 Vials",
-          "price": "3500.00",
-          "sku": "MA-HEAVYMETALS-14",
-          "option_value": "14 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "15 Vials",
-          "price": "3750.00",
-          "sku": "MA-HEAVYMETALS-15",
-          "option_value": "15 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "16 Vials",
-          "price": "4000.00",
-          "sku": "MA-HEAVYMETALS-16",
-          "option_value": "16 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "17 Vials",
-          "price": "4250.00",
-          "sku": "MA-HEAVYMETALS-17",
-          "option_value": "17 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "18 Vials",
-          "price": "4500.00",
-          "sku": "MA-HEAVYMETALS-18",
-          "option_value": "18 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "19 Vials",
-          "price": "4750.00",
-          "sku": "MA-HEAVYMETALS-19",
-          "option_value": "19 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "20 Vials",
-          "price": "5000.00",
-          "sku": "MA-HEAVYMETALS-20",
-          "option_value": "20 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "21 Vials",
-          "price": "5250.00",
-          "sku": "MA-HEAVYMETALS-21",
-          "option_value": "21 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "22 Vials",
-          "price": "5500.00",
-          "sku": "MA-HEAVYMETALS-22",
-          "option_value": "22 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "23 Vials",
-          "price": "5750.00",
-          "sku": "MA-HEAVYMETALS-23",
-          "option_value": "23 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "24 Vials",
-          "price": "6000.00",
-          "sku": "MA-HEAVYMETALS-24",
-          "option_value": "24 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "25 Vials",
-          "price": "6250.00",
-          "sku": "MA-HEAVYMETALS-25",
-          "option_value": "25 Vials",
+          "option_value": null,
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "blend-assay-ipamorelin-and-cjc-1295-no-dac-purity-and-mass-testing",
@@ -1383,7 +1078,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=ipamorelin-and-cjc-1295-no-dac\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Ipamorelin and CJC-1295 (no DAC) Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Ship your sample after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -1460,7 +1155,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "blend-assay-ipamorelin-and-tesamorelin-purity-and-mass-testing-copy",
@@ -1473,7 +1169,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $450.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=ipamorelin-and-tesamorelin\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Ipamorelin and Tesamorelin Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -1550,7 +1246,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "ipamorelin-purity-and-mass-testing",
@@ -1563,7 +1260,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Ipamorelin. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=ipamorelin\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Ipamorelin Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Ipamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -1640,225 +1337,36 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "karl-fischer-water-analysis",
       "handle": "karl-fischer-testing",
-      "title": "Karl Fischer Water Analysis",
+      "title": "Karl Fischer Testing",
       "vendor": "March Analytics",
       "product_type": "Testing Service",
       "status": "ACTIVE",
       "tags": [
         "testing",
-        "addon"
+        "addon",
+        "checkout-addon"
       ],
-      "description_html": "<p>Karl Fischer moisture determination for the submitted sample.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
-      "seo_title": "Karl Fischer Water Analysis | March Analytics",
-      "seo_description": "Karl Fischer Water Analysis for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "description_html": "<p>Karl Fischer Testing for the submitted sample. When ordered with Peptide Test, this screen is selected in the product configurator and charged per vial.</p>\n<p>Unit price: $250.00 per vial.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
+      "seo_title": "Karl Fischer Testing | March Analytics",
+      "seo_description": "Karl Fischer Testing add-on for March Analytics peptide testing. Priced per vial when ordered with Peptide Test.",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
+          "title": "Default Title",
           "price": "250.00",
           "sku": "MA-KARLFISCHER-1",
-          "option_value": "1 Vial",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials",
-          "price": "500.00",
-          "sku": "MA-KARLFISCHER-2",
-          "option_value": "2 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials",
-          "price": "750.00",
-          "sku": "MA-KARLFISCHER-3",
-          "option_value": "3 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials",
-          "price": "1000.00",
-          "sku": "MA-KARLFISCHER-4",
-          "option_value": "4 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials",
-          "price": "1250.00",
-          "sku": "MA-KARLFISCHER-5",
-          "option_value": "5 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "6 Vials",
-          "price": "1500.00",
-          "sku": "MA-KARLFISCHER-6",
-          "option_value": "6 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "7 Vials",
-          "price": "1750.00",
-          "sku": "MA-KARLFISCHER-7",
-          "option_value": "7 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "8 Vials",
-          "price": "2000.00",
-          "sku": "MA-KARLFISCHER-8",
-          "option_value": "8 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "9 Vials",
-          "price": "2250.00",
-          "sku": "MA-KARLFISCHER-9",
-          "option_value": "9 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "10 Vials",
-          "price": "2500.00",
-          "sku": "MA-KARLFISCHER-10",
-          "option_value": "10 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "11 Vials",
-          "price": "2750.00",
-          "sku": "MA-KARLFISCHER-11",
-          "option_value": "11 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "12 Vials",
-          "price": "3000.00",
-          "sku": "MA-KARLFISCHER-12",
-          "option_value": "12 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "13 Vials",
-          "price": "3250.00",
-          "sku": "MA-KARLFISCHER-13",
-          "option_value": "13 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "14 Vials",
-          "price": "3500.00",
-          "sku": "MA-KARLFISCHER-14",
-          "option_value": "14 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "15 Vials",
-          "price": "3750.00",
-          "sku": "MA-KARLFISCHER-15",
-          "option_value": "15 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "16 Vials",
-          "price": "4000.00",
-          "sku": "MA-KARLFISCHER-16",
-          "option_value": "16 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "17 Vials",
-          "price": "4250.00",
-          "sku": "MA-KARLFISCHER-17",
-          "option_value": "17 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "18 Vials",
-          "price": "4500.00",
-          "sku": "MA-KARLFISCHER-18",
-          "option_value": "18 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "19 Vials",
-          "price": "4750.00",
-          "sku": "MA-KARLFISCHER-19",
-          "option_value": "19 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "20 Vials",
-          "price": "5000.00",
-          "sku": "MA-KARLFISCHER-20",
-          "option_value": "20 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "21 Vials",
-          "price": "5250.00",
-          "sku": "MA-KARLFISCHER-21",
-          "option_value": "21 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "22 Vials",
-          "price": "5500.00",
-          "sku": "MA-KARLFISCHER-22",
-          "option_value": "22 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "23 Vials",
-          "price": "5750.00",
-          "sku": "MA-KARLFISCHER-23",
-          "option_value": "23 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "24 Vials",
-          "price": "6000.00",
-          "sku": "MA-KARLFISCHER-24",
-          "option_value": "24 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "25 Vials",
-          "price": "6250.00",
-          "sku": "MA-KARLFISCHER-25",
-          "option_value": "25 Vials",
+          "option_value": null,
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "kpv-ghk-cu-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
@@ -1871,7 +1379,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for KLOW Blend - KPV, GHK-Cu, BPC-157 and TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $800.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for KLOW Blend. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=klow-blend\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "KLOW Blend Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for KLOW Blend - KPV, GHK-Cu, BPC-157 and TB-500 (TB4). Certificate of analysis issued after testing.",
       "option_name": "Number of Vials",
@@ -1948,7 +1456,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "kpv-purity-and-mass-testing",
@@ -1961,7 +1470,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for KPV. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for KPV. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=kpv\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "KPV Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for KPV. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2038,7 +1547,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "mazdutide-purity-and-mass-testing",
@@ -2051,7 +1561,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Mazdutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Mazdutide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=mazdutide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Mazdutide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Mazdutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2128,7 +1638,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "mots-c-purity-and-mass-testing",
@@ -2141,7 +1652,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for MOTS-c. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for MOTS-c. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=mots-c\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "MOTS-c Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for MOTS-c. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2218,7 +1729,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "nad-purity-and-mass-testing",
@@ -2231,7 +1743,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for NAD+. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for NAD+. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=nad\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "NAD+ Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for NAD+. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2308,7 +1820,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "retatrutide-purity-and-mass-testing",
@@ -2321,7 +1834,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Retatrutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Retatrutide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=retatrutide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Retatrutide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Retatrutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2398,7 +1911,62 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
+    },
+    {
+      "source_handle": null,
+      "handle": "checkout-rush-next-day",
+      "title": "Rush Turnaround — Next Day",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "checkout-addon"
+      ],
+      "description_html": "<p>Next business day turnaround fee for a Peptide Test order. Added from the product configurator.</p>",
+      "seo_title": "Rush Turnaround Next Day | March Analytics",
+      "seo_description": "Next business day rush fee for March Analytics peptide testing orders.",
+      "option_name": null,
+      "variants": [
+        {
+          "title": "Default Title",
+          "price": "199.00",
+          "sku": "MA-RUSH-NEXT",
+          "option_value": null,
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ],
+      "collection": false
+    },
+    {
+      "source_handle": null,
+      "handle": "checkout-rush-same-day",
+      "title": "Rush Turnaround — Same Day",
+      "vendor": "March Analytics",
+      "product_type": "Testing Service",
+      "status": "ACTIVE",
+      "tags": [
+        "testing",
+        "checkout-addon"
+      ],
+      "description_html": "<p>Same-day turnaround fee for a Peptide Test order. Added from the product configurator.</p>",
+      "seo_title": "Rush Turnaround Same Day | March Analytics",
+      "seo_description": "Same-day rush fee for March Analytics peptide testing orders.",
+      "option_name": null,
+      "variants": [
+        {
+          "title": "Default Title",
+          "price": "449.00",
+          "sku": "MA-RUSH-SAME",
+          "option_value": null,
+          "requires_shipping": false,
+          "tracked": false
+        }
+      ],
+      "collection": false
     },
     {
       "source_handle": "semaglutide-purity-and-mass-testing",
@@ -2411,7 +1979,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Semaglutide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $300.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Semaglutide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=semaglutide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Semaglutide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Semaglutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2488,7 +2056,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "ss-31-elamipretide-purity-and-mass-testing-copy",
@@ -2501,7 +2070,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for SS-31 Elamipretide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $400.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for SS-31 Elamipretide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=ss-31-elamipretide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "SS-31 Elamipretide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for SS-31 Elamipretide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2578,33 +2147,36 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "sterility-test",
       "handle": "sterility-testing",
-      "title": "Sterility Test",
+      "title": "Sterility Testing",
       "vendor": "March Analytics",
       "product_type": "Testing Service",
       "status": "ACTIVE",
       "tags": [
         "testing",
-        "addon"
+        "addon",
+        "checkout-addon"
       ],
-      "description_html": "<p>Sterility screen for the submitted sample. Ordered as a standalone service or alongside a compound purity test.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
-      "seo_title": "Sterility Test | March Analytics",
-      "seo_description": "Sterility Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
+      "description_html": "<p>Sterility Testing for the submitted sample. When ordered with Peptide Test, this screen is selected in the product configurator and charged per vial.</p>\n<p>Unit price: $75.00 per vial.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
+      "seo_title": "Sterility Testing | March Analytics",
+      "seo_description": "Sterility Testing add-on for March Analytics peptide testing. Priced per vial when ordered with Peptide Test.",
       "option_name": null,
       "variants": [
         {
           "title": "Default Title",
-          "price": "300.00",
+          "price": "75.00",
           "sku": "MA-STERILITY-1",
           "option_value": null,
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "tb-500-tb4-purity-and-mass-testing",
@@ -2617,7 +2189,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for TB-500 (TB4). Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $200.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for TB-500 (TB4). Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=tb-500-tb4\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "TB-500 (TB4) Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for TB-500 (TB4). Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2694,7 +2266,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "tesamorelin-purity-and-mass-testing",
@@ -2707,7 +2280,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Tesamorelin. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $250.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Tesamorelin. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=tesamorelin\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Tesamorelin Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Tesamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2784,7 +2357,8 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "tirzepatide-purity-and-mass-testing",
@@ -2797,7 +2371,7 @@
         "testing",
         "compound"
       ],
-      "description_html": "<p>HPLC purity and potency analysis for Tirzepatide. Identity confirmation is included. Methods follow USP &lt;1225&gt; validation principles. Specific instrument names are published after lab confirmation.</p>\n<p>The first vial is $300.00. Additional vials from the same lot may be added for batch variation testing. Every additional vial must match compound, label claim, manufacturer, and packaging. Differentiated results list each vial on the certificate of analysis. Non-differentiated results combine the lot into one report.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "description_html": "<p>HPLC purity and potency analysis for Tirzepatide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $199.00 per vial via <a href=\"/products/peptide-testing?compound=tirzepatide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Tirzepatide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Tirzepatide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
       "option_name": "Number of Vials",
@@ -2874,225 +2448,36 @@
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     },
     {
       "source_handle": "vial-vacuum-test-add-on-test",
       "handle": "vial-vacuum-testing",
-      "title": "Vial Vacuum Test",
+      "title": "Vial Vacuum Testing",
       "vendor": "March Analytics",
       "product_type": "Testing Service",
       "status": "ACTIVE",
       "tags": [
         "testing",
-        "addon"
+        "addon",
+        "checkout-addon"
       ],
-      "description_html": "<p>Vial vacuum integrity check. Typically added to a compound purity order.</p>\n<p>Complete sample details on this page, then add to cart. After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
-      "seo_title": "Vial Vacuum Test | March Analytics",
-      "seo_description": "Vial Vacuum Test for customer-supplied research samples. Ship your sample after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "description_html": "<p>Vial Vacuum Testing for the submitted sample. When ordered with Peptide Test, this screen is selected in the product configurator and charged per vial.</p>\n<p>Unit price: $25.00 per vial.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
+      "seo_title": "Vial Vacuum Testing | March Analytics",
+      "seo_description": "Vial Vacuum Testing add-on for March Analytics peptide testing. Priced per vial when ordered with Peptide Test.",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
+          "title": "Default Title",
           "price": "25.00",
           "sku": "MA-VIALVACUUM-1",
-          "option_value": "1 Vial",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials",
-          "price": "50.00",
-          "sku": "MA-VIALVACUUM-2",
-          "option_value": "2 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials",
-          "price": "75.00",
-          "sku": "MA-VIALVACUUM-3",
-          "option_value": "3 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials",
-          "price": "100.00",
-          "sku": "MA-VIALVACUUM-4",
-          "option_value": "4 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials",
-          "price": "125.00",
-          "sku": "MA-VIALVACUUM-5",
-          "option_value": "5 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "6 Vials",
-          "price": "150.00",
-          "sku": "MA-VIALVACUUM-6",
-          "option_value": "6 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "7 Vials",
-          "price": "175.00",
-          "sku": "MA-VIALVACUUM-7",
-          "option_value": "7 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "8 Vials",
-          "price": "200.00",
-          "sku": "MA-VIALVACUUM-8",
-          "option_value": "8 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "9 Vials",
-          "price": "225.00",
-          "sku": "MA-VIALVACUUM-9",
-          "option_value": "9 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "10 Vials",
-          "price": "250.00",
-          "sku": "MA-VIALVACUUM-10",
-          "option_value": "10 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "11 Vials",
-          "price": "275.00",
-          "sku": "MA-VIALVACUUM-11",
-          "option_value": "11 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "12 Vials",
-          "price": "300.00",
-          "sku": "MA-VIALVACUUM-12",
-          "option_value": "12 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "13 Vials",
-          "price": "325.00",
-          "sku": "MA-VIALVACUUM-13",
-          "option_value": "13 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "14 Vials",
-          "price": "350.00",
-          "sku": "MA-VIALVACUUM-14",
-          "option_value": "14 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "15 Vials",
-          "price": "375.00",
-          "sku": "MA-VIALVACUUM-15",
-          "option_value": "15 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "16 Vials",
-          "price": "400.00",
-          "sku": "MA-VIALVACUUM-16",
-          "option_value": "16 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "17 Vials",
-          "price": "425.00",
-          "sku": "MA-VIALVACUUM-17",
-          "option_value": "17 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "18 Vials",
-          "price": "450.00",
-          "sku": "MA-VIALVACUUM-18",
-          "option_value": "18 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "19 Vials",
-          "price": "475.00",
-          "sku": "MA-VIALVACUUM-19",
-          "option_value": "19 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "20 Vials",
-          "price": "500.00",
-          "sku": "MA-VIALVACUUM-20",
-          "option_value": "20 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "21 Vials",
-          "price": "525.00",
-          "sku": "MA-VIALVACUUM-21",
-          "option_value": "21 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "22 Vials",
-          "price": "550.00",
-          "sku": "MA-VIALVACUUM-22",
-          "option_value": "22 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "23 Vials",
-          "price": "575.00",
-          "sku": "MA-VIALVACUUM-23",
-          "option_value": "23 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "24 Vials",
-          "price": "600.00",
-          "sku": "MA-VIALVACUUM-24",
-          "option_value": "24 Vials",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "25 Vials",
-          "price": "625.00",
-          "sku": "MA-VIALVACUUM-25",
-          "option_value": "25 Vials",
+          "option_value": null,
           "requires_shipping": false,
           "tracked": false
         }
-      ]
+      ],
+      "collection": false
     }
   ],
   "pages": [
@@ -3100,7 +2485,7 @@
       "handle": "how-it-works",
       "title": "How it works",
       "template_suffix": "how-it-works",
-      "body_html": "<p>March Analytics tests customer-supplied samples and returns a certificate of analysis. Checkout does not ship anything to you. After payment you receive the lab receiving address and packaging notes for the sample you send in.</p>\n<ol><li>Select a compound test or add-on. Fill in compound name, batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email to the customer only. Certificates are never published publicly. Whether a private portal is also used is confirmed before launch (intake C13).</li></ol>\n<p>The receiving street address is issued after checkout (intake C11). Packaging requirements are confirmed with the lab (intake C12).</p>",
+      "body_html": "<p>March Analytics tests customer-supplied samples and returns a certificate of analysis. Checkout does not ship anything to you. After payment you receive the lab receiving address and packaging notes for the sample you send in.</p>\n<ol><li>Open Peptide Test. Choose vial count, select a peptide for each vial, optional screens, and turnaround. Provide batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email to the customer only. Certificates are never published publicly. Whether a private portal is also used is confirmed before launch (intake C13).</li></ol>\n<p>The receiving street address is issued after checkout (intake C11). Packaging requirements are confirmed with the lab (intake C12).</p>",
       "seo_title": "How it works | March Analytics",
       "seo_description": "Order a March Analytics test, ship your sample to the lab, and receive a certificate of analysis. Checkout is for the service only."
     },
@@ -3108,7 +2493,7 @@
       "handle": "methods",
       "title": "Methods",
       "template_suffix": "methods",
-      "body_html": "<p>Base compound tests measure purity, potency, and identity. HPLC is the primary purity and potency method. Methods follow USP &lt;1225&gt; validation principles. Specific identity instruments are named only after the lab confirms them.</p>\n<p>Optional add-on services: heavy metal screen, sterility screen, endotoxin screen, Karl Fischer moisture, and vial vacuum integrity. These can be ordered with a compound test or as standalone services.</p>\n<p>Reports translate instrument output into a certificate of analysis. Photography of instrumentation is pending; storefront images remain IMAGE TBD until client assets arrive.</p>",
+      "body_html": "<p>Base Peptide Test measures purity, potency, and identity. HPLC is the primary purity and potency method. Methods follow USP &lt;1225&gt; validation principles. Specific identity instruments are named only after the lab confirms them.</p>\n<p>Optional add-on screens (priced per vial): heavy metals, sterility, endotoxin, Karl Fischer moisture, and vial vacuum integrity.</p>\n<p>Custom analytical requests outside this list use the <a href=\"/pages/custom-analytical\">Custom Analytical Services</a> quote form.</p>\n<p>Reports translate instrument output into a certificate of analysis. Photography of instrumentation is pending; storefront images remain IMAGE TBD until client assets arrive.</p>",
       "seo_title": "Methods | March Analytics",
       "seo_description": "HPLC purity and potency methods used by March Analytics, plus optional add-on screens for research samples."
     },
@@ -3116,7 +2501,7 @@
       "handle": "turnaround",
       "title": "Turnaround",
       "template_suffix": "turnaround",
-      "body_html": "<p>Standard turnaround is 3 business days and is included in the test price.</p>\n<p>1 business day: +$300.</p>\n<p>Same day: +$500.</p>\n<p>Whether the clock starts at payment or at sample receipt is pending client confirmation (intake C10). Storefront copy will match that decision before launch.</p>\n<p><em>Demo pricing for client review. Confirm before launch (intake C8-C13).</em></p>",
+      "body_html": "<p>Standard turnaround is 3 business days and is included in the Peptide Test price.</p>\n<p>Next-Day: +$199 per order.</p>\n<p>Same-Day: +$449 per order.</p>\n<p>Select turnaround on the Peptide Test product page before adding to cart.</p>\n<p>Whether the clock starts at payment or at sample receipt is pending client confirmation (intake C10). Storefront copy will match that decision before launch.</p>",
       "seo_title": "Turnaround | March Analytics",
       "seo_description": "Standard and expedited laboratory turnaround options for March Analytics testing services."
     },
@@ -3183,14 +2568,22 @@
       "body_html": "<p>This preview uses a placeholder refund policy for a laboratory service. Client counsel supplies the live version (intake D3). Goods-style restocking language does not apply.</p>\n<p>Once a sample has been logged for analysis, the test fee is generally not refundable. Requests received before sample receipt are reviewed case by case.</p>",
       "seo_title": "Refund policy | March Analytics",
       "seo_description": "Refund policy for March Analytics laboratory testing services."
+    },
+    {
+      "handle": "custom-analytical",
+      "title": "Custom Analytical Services",
+      "template_suffix": "custom-analytical",
+      "body_html": "<p>Need a method outside the standard Peptide Test configurator? Describe the compound, methods, and timeline. The lab replies with a quote. Custom work is not available as self-serve checkout.</p>\n<p>For standard HPLC peptide testing, use <a href=\"/products/peptide-testing\">Peptide Test</a>.</p>",
+      "seo_title": "Custom Analytical Services | March Analytics",
+      "seo_description": "Request a quote for custom analytical work from March Analytics. Standard peptide testing uses the Peptide Test product."
     }
   ],
   "menus": {
     "main": [
       {
         "title": "Order Testing",
-        "type": "COLLECTION",
-        "handle": "order-testing"
+        "type": "PRODUCT",
+        "handle": "peptide-testing"
       },
       {
         "title": "How it works",
@@ -3206,6 +2599,11 @@
         "title": "Turnaround",
         "type": "PAGE",
         "handle": "turnaround"
+      },
+      {
+        "title": "Custom analytical",
+        "type": "PAGE",
+        "handle": "custom-analytical"
       },
       {
         "title": "About",
@@ -3228,6 +2626,11 @@
         "title": "Methods",
         "type": "PAGE",
         "handle": "methods"
+      },
+      {
+        "title": "Custom analytical",
+        "type": "PAGE",
+        "handle": "custom-analytical"
       },
       {
         "title": "Attestation",
@@ -3255,5 +2658,127 @@
         "handle": "contact-us"
       }
     ]
-  }
+  },
+  "compounds": [
+    {
+      "name": "Benzyl Alcohol",
+      "handle": "benzyl-alcohol",
+      "product_handle": "benzyl-alcohol-testing"
+    },
+    {
+      "name": "BPC-157",
+      "handle": "bpc-157",
+      "product_handle": "bpc-157-testing"
+    },
+    {
+      "name": "BPC-157 and TB-500 (TB4) Blend",
+      "handle": "bpc-157-and-tb-500-tb4",
+      "product_handle": "bpc-157-and-tb-500-tb4-testing"
+    },
+    {
+      "name": "BPC-157 Arginate",
+      "handle": "bpc-157-arginate",
+      "product_handle": "bpc-157-arginate-testing"
+    },
+    {
+      "name": "Cagrilintide",
+      "handle": "cagrilintide",
+      "product_handle": "cagrilintide-testing"
+    },
+    {
+      "name": "CagriReta",
+      "handle": "cagrireta",
+      "product_handle": "cagrireta-testing"
+    },
+    {
+      "name": "CagriSema",
+      "handle": "cagrisema",
+      "product_handle": "cagrisema-testing"
+    },
+    {
+      "name": "CJC-1295 (no DAC)",
+      "handle": "cjc-1295-no-dac",
+      "product_handle": "cjc-1295-no-dac-testing"
+    },
+    {
+      "name": "GHK-Cu",
+      "handle": "ghk-cu",
+      "product_handle": "ghk-cu-testing"
+    },
+    {
+      "name": "GLOW Blend",
+      "handle": "glow-blend",
+      "product_handle": "glow-blend-testing"
+    },
+    {
+      "name": "Ipamorelin",
+      "handle": "ipamorelin",
+      "product_handle": "ipamorelin-testing"
+    },
+    {
+      "name": "Ipamorelin and CJC-1295 (no DAC)",
+      "handle": "ipamorelin-and-cjc-1295-no-dac",
+      "product_handle": "ipamorelin-and-cjc-1295-no-dac-testing"
+    },
+    {
+      "name": "Ipamorelin and Tesamorelin",
+      "handle": "ipamorelin-and-tesamorelin",
+      "product_handle": "ipamorelin-and-tesamorelin-testing"
+    },
+    {
+      "name": "KLOW Blend",
+      "handle": "klow-blend",
+      "product_handle": "klow-blend-testing"
+    },
+    {
+      "name": "KPV",
+      "handle": "kpv",
+      "product_handle": "kpv-testing"
+    },
+    {
+      "name": "Mazdutide",
+      "handle": "mazdutide",
+      "product_handle": "mazdutide-testing"
+    },
+    {
+      "name": "MOTS-c",
+      "handle": "mots-c",
+      "product_handle": "mots-c-testing"
+    },
+    {
+      "name": "NAD+",
+      "handle": "nad",
+      "product_handle": "nad-testing"
+    },
+    {
+      "name": "Retatrutide",
+      "handle": "retatrutide",
+      "product_handle": "retatrutide-testing"
+    },
+    {
+      "name": "Semaglutide",
+      "handle": "semaglutide",
+      "product_handle": "semaglutide-testing"
+    },
+    {
+      "name": "SS-31 Elamipretide",
+      "handle": "ss-31-elamipretide",
+      "product_handle": "ss-31-elamipretide-testing"
+    },
+    {
+      "name": "TB-500 (TB4)",
+      "handle": "tb-500-tb4",
+      "product_handle": "tb-500-tb4-testing"
+    },
+    {
+      "name": "Tesamorelin",
+      "handle": "tesamorelin",
+      "product_handle": "tesamorelin-testing"
+    },
+    {
+      "name": "Tirzepatide",
+      "handle": "tirzepatide",
+      "product_handle": "tirzepatide-testing"
+    }
+  ]
 }
