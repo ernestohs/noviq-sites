@@ -1,0 +1,19 @@
+{
+  "name": "march-analytics-portal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "March Analytics client portal (App Proxy) for order status, packing slips, COA profiles, and QR certificates",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "setup-metafields": "node ../seed/setup-portal-metafields.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4"
+  }
+}

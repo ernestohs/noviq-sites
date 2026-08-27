@@ -399,12 +399,19 @@
                   {%- endunless -%}
                 {%- when 'peptide_test_configurator' -%}
                   <div {{ block.shopify_attributes }}>
-                    {% render 'peptide-test-configurator', product: product, product_form_id: product_form_id, section_id: section.id %}
+                    {% render 'order-login-gate' %}
+                    {%- unless customer == blank and shop.customer_accounts_enabled -%}
+                      <div class="order-wizard-locked">
+                        {% render 'peptide-test-configurator', product: product, product_form_id: product_form_id, section_id: section.id %}
+                      </div>
+                    {%- endunless -%}
                   </div>
                 {%- when 'sample_intake' -%}
-                  <div {{ block.shopify_attributes }}>
-                    {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id, hide_compound_name: product.tags contains 'primary' %}
-                  </div>
+                  {%- unless product.template_suffix == 'peptide-testing' or product.handle == 'peptide-testing' -%}
+                    <div {{ block.shopify_attributes }}>
+                      {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id, hide_compound_name: product.tags contains 'primary' %}
+                    </div>
+                  {%- endunless -%}
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">

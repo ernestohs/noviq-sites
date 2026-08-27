@@ -1,7 +1,7 @@
 /**
- * Peptide Test product configurator.
- * Sets vial variant, shows per-vial peptide selects, live price, and after the
- * primary add-to-cart succeeds, AJAX-adds add-on and rush lines at vial quantity.
+ * Peptide Test multi-step order wizard.
+ * Sets vial variant, shows per-vial peptide selects, live price, step navigation,
+ * and after the primary add-to-cart succeeds, AJAX-adds add-on and rush lines.
  */
 class PeptideTestConfigurator extends HTMLElement {
   static HELPER_HANDLES = [
@@ -21,6 +21,9 @@ class PeptideTestConfigurator extends HTMLElement {
     this.turnaroundSelect = this.querySelector('[data-turnaround]');
     this.formId = this.dataset.formId;
     this.pendingHelpers = null;
+    this.currentStep = 1;
+    this.maxStep = 5;
+    this.isWizard = this.dataset.wizard === 'true';
 
     this.vialSelect?.addEventListener('change', () => this.onVialCountChange());
     this.addonInputs.forEach((input) => input.addEventListener('change', () => this.updateTotals()));
@@ -29,6 +32,12 @@ class PeptideTestConfigurator extends HTMLElement {
     this.prefillFromQuery();
     this.onVialCountChange();
     this.bindProductForm();
+    this.initCoaProfiles();
+
+    if (this.isWizard) {
+      this.bindWizard();
+      this.goToStep(1);
+    }
   }
 
   get form() {
@@ -38,7 +47,10 @@ class PeptideTestConfigurator extends HTMLElement {
 
   get variantInput() {
     const form = this.form;
-    return form?.querySelector('input[name="id"]') || document.querySelector(`#${this.formId} input[name="id"], product-form input[name="id"]`);
+    return (
+      form?.querySelector('input[name="id"]') ||
+      document.querySelector(`#${this.formId} input[name="id"], product-form input[name="id"]`)
+    );
   }
 
   get vialCount() {
@@ -61,13 +73,15 @@ class PeptideTestConfigurator extends HTMLElement {
     if (!firstSelect) return;
 
     const match = Array.from(firstSelect.options).find(
-      (opt) => opt.dataset.compoundHandle === compound || opt.value.toLowerCase() === compound.replace(/-/g, ' ')
+      (opt) =>
+        opt.dataset.compoundHandle === compound ||
+        opt.value.toLowerCase() === compound.replace(/-/g, ' ')
     );
     if (match) {
       firstSelect.value = match.value;
     } else {
-      const byHandle = Array.from(firstSelect.options).find((opt) =>
-        (opt.dataset.compoundHandle || '').toLowerCase() === compound.toLowerCase()
+      const byHandle = Array.from(firstSelect.options).find(
+        (opt) => (opt.dataset.compoundHandle || '').toLowerCase() === compound.toLowerCase()
       );
       if (byHandle) firstSelect.value = byHandle.value;
     }
@@ -163,6 +177,194 @@ class PeptideTestConfigurator extends HTMLElement {
       propFees.value = feeParts.length ? feeParts.join('; ') : 'None';
     }
     if (propFinal) propFinal.value = this.formatMoney(totals.total);
+
+    this.updateReviewSummary(totals);
+  }
+
+  /**
+   * Sample/COA inputs live inside this element but use the HTML form= attribute
+   * to attach to the product form, so form.querySelector cannot see them.
+   */
+  fieldByName(name) {
+    return (
+      this.querySelector(`[name="${name}"]`) ||
+      this.form?.querySelector(`[name="${name}"]`) ||
+      document.querySelector(`[name="${name}"][form="${this.formId}"]`) ||
+      null
+    );
+  }
+
+  updateReviewSummary(totals) {
+    const list = this.querySelector('[data-review-summary]');
+    if (!list) return;
+    const peptides = [];
+    const count = this.vialCount;
+    for (let i = 1; i <= count; i += 1) {
+      const select = this.querySelector(`[data-vial-peptide][data-vial-index="${i}"]`);
+      if (select?.value) peptides.push(`Vial ${i}: ${select.value}`);
+    }
+    const batch = this.fieldByName('properties[Batch or lot number]')?.value || '';
+    const company = this.querySelector('[data-coa-company]')?.value || '';
+    const rows = [
+      ['Vials', String(count)],
+      ['Peptides', peptides.join('; ') || '—'],
+      ['Add-ons', totals.addonLabels.length ? totals.addonLabels.join('; ') : 'None'],
+      ['Turnaround', totals.turnaroundLabel],
+      ['Batch / lot', batch || '—'],
+      ['COA company', company || '—'],
+      ['Total', this.formatMoney(totals.total)],
+    ];
+    list.innerHTML = rows
+      .map(([label, value]) => `<li><span>${label}</span><span>${this.escapeHtml(value)}</span></li>`)
+      .join('');
+  }
+
+  escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  initCoaProfiles() {
+    const select = this.querySelector('[data-coa-profile-select]');
+    const company = this.querySelector('[data-coa-company]');
+    const profileId = this.querySelector('[data-coa-profile-id]');
+    if (!select) return;
+
+    let profiles = [];
+    try {
+      profiles = JSON.parse(this.dataset.coaProfiles || '[]');
+    } catch (e) {
+      profiles = [];
+    }
+    if (!Array.isArray(profiles)) profiles = [];
+
+    profiles.forEach((profile) => {
+      if (!profile?.id || !profile?.company) return;
+      const option = document.createElement('option');
+      option.value = profile.id;
+      option.textContent = profile.company;
+      option.dataset.company = profile.company;
+      select.appendChild(option);
+    });
+
+    select.addEventListener('change', () => {
+      const option = select.selectedOptions?.[0];
+      if (option?.value && company) {
+        company.value = option.dataset.company || option.textContent;
+        if (profileId) profileId.value = option.value;
+      } else if (profileId) {
+        profileId.value = '';
+      }
+    });
+  }
+
+  bindWizard() {
+    this.nextBtn = this.querySelector('[data-wizard-next]');
+    this.backBtn = this.querySelector('[data-wizard-back]');
+    this.nextBtn?.addEventListener('click', () => this.onNext());
+    this.backBtn?.addEventListener('click', () => this.goToStep(this.currentStep - 1));
+    this.querySelectorAll('[data-goto-step]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const step = parseInt(btn.dataset.gotoStep, 10);
+        if (step < this.currentStep || this.validateThrough(step - 1)) {
+          this.goToStep(step);
+        }
+      });
+    });
+  }
+
+  goToStep(step) {
+    if (step < 1 || step > this.maxStep) return;
+    this.currentStep = step;
+    this.querySelectorAll('[data-wizard-step]').forEach((panel) => {
+      const panelStep = parseInt(panel.dataset.wizardStep, 10);
+      panel.hidden = panelStep !== step;
+    });
+    this.querySelectorAll('[data-goto-step]').forEach((btn) => {
+      const btnStep = parseInt(btn.dataset.gotoStep, 10);
+      btn.setAttribute('aria-current', btnStep === step ? 'step' : 'false');
+      btn.classList.toggle('is-complete', btnStep < step);
+    });
+    if (this.backBtn) this.backBtn.hidden = step === 1;
+    if (this.nextBtn) {
+      this.nextBtn.hidden = step === this.maxStep;
+      this.nextBtn.textContent = 'Continue';
+    }
+    this.toggleBuyButtons(step === this.maxStep);
+    this.updateTotals();
+    this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  toggleBuyButtons(show) {
+    const section = this.closest('.product__info-container') || document;
+    section.querySelectorAll('[data-wizard-buy-buttons]').forEach((el) => {
+      el.hidden = !show;
+    });
+  }
+
+  onNext() {
+    if (!this.validateStep(this.currentStep)) return;
+    this.goToStep(this.currentStep + 1);
+  }
+
+  validateThrough(upToStep) {
+    for (let step = 1; step <= upToStep; step += 1) {
+      if (!this.validateStep(step, false)) return false;
+    }
+    return true;
+  }
+
+  validateStep(step, focus = true) {
+    if (step === 1) {
+      const count = this.vialCount;
+      for (let i = 1; i <= count; i += 1) {
+        const select = this.querySelector(`[data-vial-peptide][data-vial-index="${i}"]`);
+        if (!select?.value) {
+          if (focus) {
+            this.goToStep(1);
+            select?.focus();
+            select?.reportValidity?.();
+          }
+          return false;
+        }
+      }
+      return true;
+    }
+    if (step === 3) {
+      const requiredNames = [
+        'properties[Batch or lot number]',
+        'properties[Quantity supplied]',
+        'properties[Customer return address]',
+      ];
+      for (const name of requiredNames) {
+        const field = this.fieldByName(name);
+        if (!field?.value?.trim()) {
+          if (focus) {
+            this.goToStep(3);
+            field?.focus();
+            field?.reportValidity?.();
+          }
+          return false;
+        }
+      }
+      return true;
+    }
+    if (step === 4) {
+      const company = this.querySelector('[data-coa-company]');
+      if (!company?.value?.trim()) {
+        if (focus) {
+          this.goToStep(4);
+          company?.focus();
+          company?.reportValidity?.();
+        }
+        return false;
+      }
+      return true;
+    }
+    return true;
   }
 
   bindProductForm() {
@@ -183,13 +385,11 @@ class PeptideTestConfigurator extends HTMLElement {
     document.addEventListener('cart:updated', () => this.flushHelpers());
     document.addEventListener('product-ajax:success', () => this.flushHelpers());
 
-    // Dawn product-form fires after successful /cart/add.js
     const productForm = form.closest('product-form') || form.querySelector('product-form');
     if (productForm) {
-      const original = productForm.onSubmitHandler?.bind(productForm);
       productForm.addEventListener(
         'submit',
-        async (event) => {
+        (event) => {
           if (!this.validate()) {
             event.preventDefault();
             event.stopImmediatePropagation();
@@ -199,11 +399,16 @@ class PeptideTestConfigurator extends HTMLElement {
       );
     }
 
-    // Hook fetch for cart/add from this form
     this.interceptCartAdd();
   }
 
   validate() {
+    if (this.isWizard) {
+      for (let step = 1; step <= this.maxStep; step += 1) {
+        if (!this.validateStep(step)) return false;
+      }
+      return true;
+    }
     const count = this.vialCount;
     for (let i = 1; i <= count; i += 1) {
       const select = this.querySelector(`[data-vial-peptide][data-vial-index="${i}"]`);

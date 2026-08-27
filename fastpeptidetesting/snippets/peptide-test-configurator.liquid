@@ -1,5 +1,6 @@
 {%- comment -%}
-  Peptide Test configurator: vial count, per-vial peptides, add-ons, turnaround.
+  Peptide Test multi-step order wizard (Accumark-style flow).
+  Steps: Package → Add-ons → Sample Details → COA Info → Review.
   Prices charge via variant + AJAX-added addon/rush line items; properties document the order.
 {%- endcomment -%}
 {%- liquid
@@ -13,6 +14,7 @@
   assign addon_heavy = all_products['heavy-metals-testing']
   assign addon_karl = all_products['karl-fischer-testing']
   assign addon_vacuum = all_products['vial-vacuum-testing']
+  assign coa_profiles_json = customer.metafields.march_analytics.coa_profiles.value | default: '[]'
 -%}
 
 <script src="{{ 'peptide-test-configurator.js' | asset_url }}" defer="defer"></script>
@@ -22,6 +24,58 @@
     display: grid;
     gap: 1.6rem;
     margin-bottom: 1.6rem;
+  }
+  .peptide-wizard__steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    list-style: none;
+    margin: 0 0 0.8rem;
+    padding: 0;
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    padding-bottom: 1.2rem;
+  }
+  .peptide-wizard__step-btn {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    color: #6b6b6b;
+    font: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .peptide-wizard__step-btn[aria-current='step'] {
+    color: #121212;
+    font-weight: 600;
+  }
+  .peptide-wizard__step-btn.is-complete {
+    color: #121212;
+  }
+  .peptide-wizard__step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    border: 0.1rem solid currentColor;
+    font-size: 1.2rem;
+  }
+  .peptide-wizard__step-btn[aria-current='step'] .peptide-wizard__step-num {
+    background: #121212;
+    color: #fff;
+    border-color: #121212;
+  }
+  .peptide-wizard__step-btn.is-complete .peptide-wizard__step-num {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #fff;
+  }
+  .peptide-wizard__panel[hidden] {
+    display: none !important;
   }
   .peptide-test-config__section {
     display: grid;
@@ -55,10 +109,6 @@
     gap: 0.4rem;
     margin: 0;
   }
-  .peptide-test-config__total dt,
-  .peptide-test-config__total dd {
-    margin: 0;
-  }
   .peptide-test-config__total .row {
     display: flex;
     justify-content: space-between;
@@ -76,6 +126,35 @@
     color: #6b6b6b;
     margin: 0;
   }
+  .peptide-wizard__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+  }
+  .peptide-wizard__review-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .peptide-wizard__review-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1.4rem;
+  }
+  .peptide-wizard__shipping {
+    border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    padding: 1.2rem 1.6rem;
+    background: #fff;
+  }
+  .peptide-wizard__shipping summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
 {%- endstyle -%}
 
 <peptide-test-configurator
@@ -85,209 +164,334 @@
   data-price-per-vial="19900"
   data-currency="{{ cart.currency.iso_code }}"
   data-money-format="{{ shop.money_format | escape }}"
+  data-wizard="true"
+  data-coa-profiles="{{ coa_profiles_json | escape }}"
 >
-  <div class="peptide-test-config__section">
-    <h3 class="h4">Number of vials</h3>
-    <div class="select">
-      <select
-        id="PeptideVialCount-{{ sid }}"
-        class="select__select"
-        data-vial-count
-        aria-label="Number of vials"
-        required
-      >
-        {%- for variant in primary.variants -%}
-          <option
-            value="{{ forloop.index }}"
-            data-variant-id="{{ variant.id }}"
-            data-price="{{ variant.price }}"
-            {% if variant == primary.selected_or_first_available_variant %}
-              selected
-            {% endif %}
-          >
-            {{ variant.title }} — {{ variant.price | money }}
-          </option>
-        {%- endfor -%}
-      </select>
-      <span class="svg-wrapper">
-        {{- 'icon-caret.svg' | inline_asset_content -}}
-      </span>
-    </div>
-  </div>
+  <nav aria-label="Order steps">
+    <ol class="peptide-wizard__steps">
+      <li>
+        <button type="button" class="peptide-wizard__step-btn" data-goto-step="1" aria-current="step">
+          <span class="peptide-wizard__step-num">1</span>
+          <span>Package</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="peptide-wizard__step-btn" data-goto-step="2">
+          <span class="peptide-wizard__step-num">2</span>
+          <span>Add-ons</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="peptide-wizard__step-btn" data-goto-step="3">
+          <span class="peptide-wizard__step-num">3</span>
+          <span>Sample details</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="peptide-wizard__step-btn" data-goto-step="4">
+          <span class="peptide-wizard__step-num">4</span>
+          <span>COA info</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="peptide-wizard__step-btn" data-goto-step="5">
+          <span class="peptide-wizard__step-num">5</span>
+          <span>Review</span>
+        </button>
+      </li>
+    </ol>
+  </nav>
 
-  <div class="peptide-test-config__section">
-    <h3 class="h4">Peptides</h3>
-    <p class="caption peptide-test-config__hint">Select the peptide for each vial.</p>
-    <div class="peptide-test-config__vials" data-vial-peptide-list>
-      {%- for i in (1..5) -%}
-        <div
-          class="select{% unless forloop.first %} hidden{% endunless %}"
-          data-vial-peptide-row
-          data-vial-index="{{ i }}"
-          {% unless forloop.first %}
-            hidden
-          {% endunless %}
+  {%- comment -%} Step 1: Package {%- endcomment -%}
+  <div class="peptide-wizard__panel" data-wizard-step="1">
+    <div class="peptide-test-config__section">
+      <h3 class="h4">Choose test package</h3>
+      <p class="caption peptide-test-config__hint">Select vial count, then name each peptide.</p>
+      <div class="select">
+        <select
+          id="PeptideVialCount-{{ sid }}"
+          class="select__select"
+          data-vial-count
+          aria-label="Number of vials"
+          required
         >
-          <label class="form__label" for="VialPeptide-{{ i }}-{{ sid }}">Vial {{ i }} peptide</label>
-          <select
-            id="VialPeptide-{{ i }}-{{ sid }}"
-            class="select__select"
-            name="properties[Vial {{ i }} peptide]"
-            data-vial-peptide
+          {%- for variant in primary.variants -%}
+            <option
+              value="{{ forloop.index }}"
+              data-variant-id="{{ variant.id }}"
+              data-price="{{ variant.price }}"
+              {% if variant == primary.selected_or_first_available_variant %}
+                selected
+              {% endif %}
+            >
+              {{ variant.title }} — {{ variant.price | money }}
+            </option>
+          {%- endfor -%}
+        </select>
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </div>
+    </div>
+
+    <div class="peptide-test-config__section">
+      <h3 class="h4">Peptides</h3>
+      <p class="caption peptide-test-config__hint">Select the peptide for each vial.</p>
+      <div class="peptide-test-config__vials" data-vial-peptide-list>
+        {%- for i in (1..5) -%}
+          <div
+            class="select{% unless forloop.first %} hidden{% endunless %}"
+            data-vial-peptide-row
             data-vial-index="{{ i }}"
-            {% if form_id != blank %}
-              form="{{ form_id }}"
-            {% endif %}
-            {% if forloop.first %}
-              required
-            {% endif %}
+            {% unless forloop.first %}
+              hidden
+            {% endunless %}
           >
-            <option value="">Select peptide</option>
-            {% render 'peptide-option-list' %}
-          </select>
-          <span class="svg-wrapper">
-            {{- 'icon-caret.svg' | inline_asset_content -}}
-          </span>
-        </div>
-      {%- endfor -%}
+            <label class="form__label" for="VialPeptide-{{ i }}-{{ sid }}">Vial {{ i }} peptide</label>
+            <select
+              id="VialPeptide-{{ i }}-{{ sid }}"
+              class="select__select"
+              name="properties[Vial {{ i }} peptide]"
+              data-vial-peptide
+              data-vial-index="{{ i }}"
+              {% if form_id != blank %}
+                form="{{ form_id }}"
+              {% endif %}
+              {% if forloop.first %}
+                required
+              {% endif %}
+            >
+              <option value="">Select peptide</option>
+              {% render 'peptide-option-list' %}
+            </select>
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </div>
+        {%- endfor -%}
+      </div>
     </div>
   </div>
 
-  <div class="peptide-test-config__section">
-    <h3 class="h4">Optional screens</h3>
-    <p class="caption peptide-test-config__hint">Priced per vial. Total updates with vial count.</p>
-    <div class="peptide-test-config__addons">
-      {%- if addon_endotoxin != blank -%}
-        <label>
-          <input
-            type="checkbox"
-            data-addon-toggle
-            data-addon-handle="endotoxin-testing"
-            data-addon-label="Endotoxin"
-            data-unit-cents="7500"
-            data-variant-id="{{ addon_endotoxin.selected_or_first_available_variant.id }}"
-          >
-          <span>Endotoxin (+{{ 7500 | money }} per vial)</span>
-        </label>
-      {%- endif -%}
-      {%- if addon_sterility != blank -%}
-        <label>
-          <input
-            type="checkbox"
-            data-addon-toggle
-            data-addon-handle="sterility-testing"
-            data-addon-label="Sterility"
-            data-unit-cents="7500"
-            data-variant-id="{{ addon_sterility.selected_or_first_available_variant.id }}"
-          >
-          <span>Sterility (+{{ 7500 | money }} per vial)</span>
-        </label>
-      {%- endif -%}
-      {%- if addon_heavy != blank -%}
-        <label>
-          <input
-            type="checkbox"
-            data-addon-toggle
-            data-addon-handle="heavy-metals-testing"
-            data-addon-label="Heavy metals"
-            data-unit-cents="10000"
-            data-variant-id="{{ addon_heavy.selected_or_first_available_variant.id }}"
-          >
-          <span>Heavy metals (+{{ 10000 | money }} per vial)</span>
-        </label>
-      {%- endif -%}
-      {%- if addon_karl != blank -%}
-        <label>
-          <input
-            type="checkbox"
-            data-addon-toggle
-            data-addon-handle="karl-fischer-testing"
-            data-addon-label="Karl Fischer"
-            data-unit-cents="25000"
-            data-variant-id="{{ addon_karl.selected_or_first_available_variant.id }}"
-          >
-          <span>Karl Fischer (+{{ 25000 | money }} per vial)</span>
-        </label>
-      {%- endif -%}
-      {%- if addon_vacuum != blank -%}
-        <label>
-          <input
-            type="checkbox"
-            data-addon-toggle
-            data-addon-handle="vial-vacuum-testing"
-            data-addon-label="Vial vacuum"
-            data-unit-cents="2500"
-            data-variant-id="{{ addon_vacuum.selected_or_first_available_variant.id }}"
-          >
-          <span>Vial vacuum (+{{ 2500 | money }} per vial)</span>
-        </label>
-      {%- endif -%}
+  {%- comment -%} Step 2: Add-ons {%- endcomment -%}
+  <div class="peptide-wizard__panel" data-wizard-step="2" hidden>
+    <div class="peptide-test-config__section">
+      <h3 class="h4">Optional screens</h3>
+      <p class="caption peptide-test-config__hint">Priced per vial. Total updates with vial count.</p>
+      <div class="peptide-test-config__addons">
+        {%- if addon_endotoxin != blank -%}
+          <label>
+            <input
+              type="checkbox"
+              data-addon-toggle
+              data-addon-handle="endotoxin-testing"
+              data-addon-label="Endotoxin"
+              data-unit-cents="7500"
+              data-variant-id="{{ addon_endotoxin.selected_or_first_available_variant.id }}"
+            >
+            <span>Endotoxin (+{{ 7500 | money }} per vial)</span>
+          </label>
+        {%- endif -%}
+        {%- if addon_sterility != blank -%}
+          <label>
+            <input
+              type="checkbox"
+              data-addon-toggle
+              data-addon-handle="sterility-testing"
+              data-addon-label="Sterility"
+              data-unit-cents="7500"
+              data-variant-id="{{ addon_sterility.selected_or_first_available_variant.id }}"
+            >
+            <span>Sterility (+{{ 7500 | money }} per vial)</span>
+          </label>
+        {%- endif -%}
+        {%- if addon_heavy != blank -%}
+          <label>
+            <input
+              type="checkbox"
+              data-addon-toggle
+              data-addon-handle="heavy-metals-testing"
+              data-addon-label="Heavy metals"
+              data-unit-cents="10000"
+              data-variant-id="{{ addon_heavy.selected_or_first_available_variant.id }}"
+            >
+            <span>Heavy metals (+{{ 10000 | money }} per vial)</span>
+          </label>
+        {%- endif -%}
+        {%- if addon_karl != blank -%}
+          <label>
+            <input
+              type="checkbox"
+              data-addon-toggle
+              data-addon-handle="karl-fischer-testing"
+              data-addon-label="Karl Fischer"
+              data-unit-cents="25000"
+              data-variant-id="{{ addon_karl.selected_or_first_available_variant.id }}"
+            >
+            <span>Karl Fischer (+{{ 25000 | money }} per vial)</span>
+          </label>
+        {%- endif -%}
+        {%- if addon_vacuum != blank -%}
+          <label>
+            <input
+              type="checkbox"
+              data-addon-toggle
+              data-addon-handle="vial-vacuum-testing"
+              data-addon-label="Vial vacuum"
+              data-unit-cents="2500"
+              data-variant-id="{{ addon_vacuum.selected_or_first_available_variant.id }}"
+            >
+            <span>Vial vacuum (+{{ 2500 | money }} per vial)</span>
+          </label>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="peptide-test-config__section">
+      <h3 class="h4">Turnaround</h3>
+      <div class="select">
+        <select
+          id="PeptideTurnaround-{{ sid }}"
+          class="select__select"
+          name="properties[Turnaround]"
+          data-turnaround
+          {% if form_id != blank %}
+            form="{{ form_id }}"
+          {% endif %}
+          required
+        >
+          <option value="Standard (3 business days)" data-rush-handle="" data-fee-cents="0" selected>
+            Standard (3 business days, included)
+          </option>
+          {%- if rush_next != blank -%}
+            <option
+              value="Next-Day (+$199)"
+              data-rush-handle="checkout-rush-next-day"
+              data-variant-id="{{ rush_next.selected_or_first_available_variant.id }}"
+              data-fee-cents="19900"
+            >
+              Next-Day (+{{ 19900 | money }})
+            </option>
+          {%- endif -%}
+          {%- if rush_same != blank -%}
+            <option
+              value="Same-Day (+$449)"
+              data-rush-handle="checkout-rush-same-day"
+              data-variant-id="{{ rush_same.selected_or_first_available_variant.id }}"
+              data-fee-cents="44900"
+            >
+              Same-Day (+{{ 44900 | money }})
+            </option>
+          {%- endif -%}
+        </select>
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </div>
     </div>
   </div>
 
-  <div class="peptide-test-config__section">
-    <h3 class="h4">Turnaround</h3>
-    <div class="select">
-      <select
-        id="PeptideTurnaround-{{ sid }}"
-        class="select__select"
-        name="properties[Turnaround]"
-        data-turnaround
+  {%- comment -%} Step 3: Sample details {%- endcomment -%}
+  <div class="peptide-wizard__panel" data-wizard-step="3" hidden>
+    <div class="peptide-test-config__section" data-wizard-sample-intake>
+      {% render 'sample-intake-fields',
+        product_form_id: form_id,
+        section_id: sid,
+        hide_compound_name: true
+      %}
+    </div>
+  </div>
+
+  {%- comment -%} Step 4: COA branding {%- endcomment -%}
+  <div class="peptide-wizard__panel" data-wizard-step="4" hidden>
+    <div class="peptide-test-config__section">
+      <h3 class="h4">COA branding</h3>
+      <p class="caption peptide-test-config__hint">
+        Choose a saved profile or enter a company name for the certificate. Manage profiles in your portal after checkout.
+      </p>
+      <div class="select" style="margin-bottom: 1rem;">
+        <label class="form__label" for="CoaProfile-{{ sid }}">Saved COA profile</label>
+        <select
+          id="CoaProfile-{{ sid }}"
+          class="select__select"
+          data-coa-profile-select
+          aria-label="Saved COA profile"
+        >
+          <option value="">Enter manually</option>
+        </select>
+        <span class="svg-wrapper">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </span>
+      </div>
+      <div class="field">
+        <input
+          class="field__input"
+          type="text"
+          id="CoaCompany-{{ sid }}"
+          name="properties[COA company]"
+          data-coa-company
+          {% if form_id != blank %}
+            form="{{ form_id }}"
+          {% endif %}
+          required
+          placeholder="Company name on COA"
+          value="{{ customer.company | default: customer.name | escape }}"
+        >
+        <label class="field__label" for="CoaCompany-{{ sid }}">Company name on COA</label>
+      </div>
+      <input
+        type="hidden"
+        name="properties[COA profile id]"
+        value=""
+        data-coa-profile-id
         {% if form_id != blank %}
           form="{{ form_id }}"
         {% endif %}
-        required
       >
-        <option value="Standard (3 business days)" data-rush-handle="" data-fee-cents="0" selected>
-          Standard (3 business days, included)
-        </option>
-        {%- if rush_next != blank -%}
-          <option
-            value="Next-Day (+$199)"
-            data-rush-handle="checkout-rush-next-day"
-            data-variant-id="{{ rush_next.selected_or_first_available_variant.id }}"
-            data-fee-cents="19900"
-          >
-            Next-Day (+{{ 19900 | money }})
-          </option>
-        {%- endif -%}
-        {%- if rush_same != blank -%}
-          <option
-            value="Same-Day (+$449)"
-            data-rush-handle="checkout-rush-same-day"
-            data-variant-id="{{ rush_same.selected_or_first_available_variant.id }}"
-            data-fee-cents="44900"
-          >
-            Same-Day (+{{ 44900 | money }})
-          </option>
-        {%- endif -%}
-      </select>
-      <span class="svg-wrapper">
-        {{- 'icon-caret.svg' | inline_asset_content -}}
-      </span>
     </div>
   </div>
 
-  <div class="peptide-test-config__total" aria-live="polite">
-    <h3 class="h4" style="margin: 0 0 0.8rem;">Estimated total</h3>
-    <div data-price-breakdown>
-      <div class="row">
-        <span>Base testing</span>
-        <span data-line="base">{{ primary.selected_or_first_available_variant.price | money }}</span>
-      </div>
-      <div class="row" data-line-row="addons" hidden>
-        <span>Optional screens</span>
-        <span data-line="addons">{{ 0 | money }}</span>
-      </div>
-      <div class="row" data-line-row="rush" hidden>
-        <span>Turnaround</span>
-        <span data-line="rush">{{ 0 | money }}</span>
-      </div>
-      <div class="row row--grand">
-        <span>Total</span>
-        <span data-line="total">{{ primary.selected_or_first_available_variant.price | money }}</span>
+  {%- comment -%} Step 5: Review {%- endcomment -%}
+  <div class="peptide-wizard__panel" data-wizard-step="5" hidden>
+    <div class="peptide-test-config__section">
+      <h3 class="h4">Review order</h3>
+      <ul class="peptide-wizard__review-list" data-review-summary></ul>
+    </div>
+
+    <div class="peptide-test-config__total" aria-live="polite">
+      <h3 class="h4" style="margin: 0 0 0.8rem;">Estimated total</h3>
+      <div data-price-breakdown>
+        <div class="row">
+          <span>Base testing</span>
+          <span data-line="base">{{ primary.selected_or_first_available_variant.price | money }}</span>
+        </div>
+        <div class="row" data-line-row="addons" hidden>
+          <span>Optional screens</span>
+          <span data-line="addons">{{ 0 | money }}</span>
+        </div>
+        <div class="row" data-line-row="rush" hidden>
+          <span>Turnaround</span>
+          <span data-line="rush">{{ 0 | money }}</span>
+        </div>
+        <div class="row row--grand">
+          <span>Total</span>
+          <span data-line="total">{{ primary.selected_or_first_available_variant.price | money }}</span>
+        </div>
       </div>
     </div>
+
+    <details class="peptide-wizard__shipping">
+      <summary>Shipping and packing instructions</summary>
+      <p class="caption peptide-test-config__hint" style="margin-top: 0.8rem;">
+        After checkout you receive a printable packing slip. Ship samples to the lab address on that slip.
+        Include the packing slip in the box and label each vial with the lot code from this order.
+      </p>
+    </details>
+  </div>
+
+  <div class="peptide-wizard__nav">
+    <button type="button" class="button button--secondary" data-wizard-back hidden>Back</button>
+    <button type="button" class="button" data-wizard-next>Continue</button>
   </div>
 
   <input type="hidden" name="properties[Base price]" value="" data-prop-base {% if form_id != blank %}form="{{ form_id }}"{% endif %}>

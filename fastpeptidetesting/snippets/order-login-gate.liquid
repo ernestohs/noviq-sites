@@ -1,0 +1,81 @@
+{%- comment -%}
+  Login gate for the Peptide Test order wizard.
+  Requires a signed-in customer before sample configuration.
+  Header uses Shopify new customer accounts (<shopify-account>).
+  Classic password accounts remain optional in Admin → Customer accounts.
+{%- endcomment -%}
+{%- liquid
+  assign brand = settings.brand_name | default: shop.name
+  assign return_path = request.path
+  if request.query_string != blank
+    assign return_path = request.path | append: '?' | append: request.query_string
+  endif
+-%}
+
+{%- style -%}
+  .order-login-gate {
+    border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    background: #ececec;
+    padding: 2.4rem 2rem;
+    margin-bottom: 2rem;
+    max-width: 52rem;
+  }
+  .order-login-gate__title {
+    margin: 0 0 0.8rem;
+  }
+  .order-login-gate__copy {
+    margin: 0 0 1.6rem;
+    color: #6b6b6b;
+  }
+  .order-login-gate__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .order-login-gate[hidden] {
+    display: none !important;
+  }
+  .order-wizard-locked[hidden] {
+    display: none !important;
+  }
+{%- endstyle -%}
+
+{%- if customer == blank -%}
+  <div class="order-login-gate" id="OrderLoginGate" data-order-login-gate>
+    <h2 class="order-login-gate__title h3">Sign in to submit a sample</h2>
+    <p class="order-login-gate__copy">
+      Create a free {{ brand }} account to configure tests, track orders, and access certificates.
+      No payment is required to register.
+    </p>
+    <div class="order-login-gate__actions">
+      {%- if shop.customer_accounts_enabled -%}
+        <a
+          href="{{ routes.account_login_url }}"
+          class="button"
+          data-order-login-link
+        >
+          Sign in
+        </a>
+        <a
+          href="{{ routes.account_register_url | default: routes.account_login_url }}"
+          class="button button--secondary"
+        >
+          Create account
+        </a>
+      {%- else -%}
+        <p class="order-login-gate__copy" style="margin: 0;">
+          Customer accounts are not enabled. Enable them in Shopify Admin → Settings → Customer accounts.
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+  <script>
+    (function () {
+      var returnUrl = {{ return_path | json }};
+      try {
+        sessionStorage.setItem('fpt_order_return', returnUrl);
+      } catch (e) {}
+    })();
+  </script>
+{%- endif -%}

@@ -1,0 +1,23 @@
+# Learn more: https://shopify.dev/docs/apps/tools/cli/configuration
+name = "March Analytics Portal"
+client_id = "REPLACE_WITH_API_KEY"
+application_url = "https://REPLACE_WITH_TUNNEL_HOST"
+embedded = false
+
+[access_scopes]
+scopes = "read_orders,write_orders,read_customers,write_customers,read_metaobjects,write_metaobjects,read_products"
+
+[auth]
+redirect_urls = [ "https://REPLACE_WITH_TUNNEL_HOST/auth/callback" ]
+
+[app_proxy]
+url = "https://REPLACE_WITH_TUNNEL_HOST/proxy"
+subpath = "portal"
+prefix = "apps"
+
+[webhooks]
+api_version = "2026-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "orders/paid" ]
+  uri = "/webhooks/orders-paid"

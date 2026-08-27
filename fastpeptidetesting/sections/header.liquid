@@ -306,6 +306,16 @@
       {%- endif -%}
 
       {%- if shop.customer_accounts_enabled -%}
+        {%- if customer != blank -%}
+          <a
+            href="/apps/portal"
+            class="header__icon link focus-inset"
+            title="Client portal"
+          >
+            <span class="visually-hidden">Client portal</span>
+            <span aria-hidden="true" style="font-size: 1.2rem; font-weight: 600;">Portal</span>
+          </a>
+        {%- endif -%}
         <shopify-account
           menu="{{ settings.customer_account_menu | default: 'customer-account-main-menu' }}"
           class="header__icon header__icon--account link focus-inset"

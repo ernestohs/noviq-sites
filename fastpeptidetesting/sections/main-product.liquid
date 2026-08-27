@@ -218,12 +218,23 @@
                   {%- endunless -%}
                 {%- when 'peptide_test_configurator' -%}
                   <div {{ block.shopify_attributes }}>
-                    {% render 'peptide-test-configurator', product: product, product_form_id: product_form_id, section_id: section.id %}
+                    {% render 'order-login-gate' %}
+                    {%- unless customer == blank and shop.customer_accounts_enabled -%}
+                      <div class="order-wizard-locked">
+                        {% render 'peptide-test-configurator', product: product, product_form_id: product_form_id, section_id: section.id %}
+                      </div>
+                    {%- endunless -%}
                   </div>
                 {%- when 'sample_intake' -%}
-                  <div {{ block.shopify_attributes }}>
-                    {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id, hide_compound_name: product.tags contains 'primary' %}
-                  </div>
+                  {%- comment -%}
+                    Sample intake lives inside the Peptide Test wizard (step 3).
+                    Keep this block for non-wizard products that still use testing_options.
+                  {%- endcomment -%}
+                  {%- unless product.template_suffix == 'peptide-testing' or product.handle == 'peptide-testing' -%}
+                    <div {{ block.shopify_attributes }}>
+                      {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id, hide_compound_name: product.tags contains 'primary' %}
+                    </div>
+                  {%- endunless -%}
                 {%- when 'collapsible_tab' -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                     <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -477,13 +488,27 @@
                     product_form_id: product_form_id
                   %}
                 {%- when 'buy_buttons' -%}
-                  {%- render 'buy-buttons',
-                    block: block,
-                    product: product,
-                    product_form_id: product_form_id,
-                    section_id: section.id,
-                    show_pickup_availability: true
+                  {%- liquid
+                    assign wizard_product = false
+                    if product.template_suffix == 'peptide-testing' or product.handle == 'peptide-testing'
+                      assign wizard_product = true
+                    endif
                   -%}
+                  <div
+                    {% if wizard_product %}
+                      data-wizard-buy-buttons
+                      hidden
+                    {% endif %}
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- render 'buy-buttons',
+                      block: block,
+                      product: product,
+                      product_form_id: product_form_id,
+                      section_id: section.id,
+                      show_pickup_availability: true
+                    -%}
+                  </div>
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">

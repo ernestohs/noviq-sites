@@ -108,6 +108,9 @@
     →
     <a href="/pages/certificates/fpt-demo-bpc-157-001">/pages/certificates/fpt-demo-bpc-157-001</a>
   </p>
+  <p class="verify-note">
+    QR codes on issued certificates open the same public certificate URL. Looking up a certificate ID here is the AccuVerify-style fallback when a phone cannot scan.
+  </p>
 </div>
 
 <script>
@@ -146,14 +149,8 @@
       errorEl.textContent = '';
     }
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+    function lookup(raw) {
       clearError();
-
-      var input = document.getElementById('CertificateId');
-      var raw = (input && input.value ? input.value : '').trim();
-      if (!raw) return;
-
       var needle = normalizeId(raw);
       var index = loadIndex();
       var match = null;
@@ -169,7 +166,7 @@
 
       if (match && match.url) {
         window.location.assign(match.url);
-        return;
+        return true;
       }
 
       showError(
@@ -177,7 +174,24 @@
           raw +
           '”. Check the ID, or open the demo link below.'
       );
+      return false;
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var input = document.getElementById('CertificateId');
+      var raw = (input && input.value ? input.value : '').trim();
+      if (!raw) return;
+      lookup(raw);
     });
+
+    var params = new URLSearchParams(window.location.search);
+    var preset = (params.get('id') || '').trim();
+    if (preset) {
+      var input = document.getElementById('CertificateId');
+      if (input) input.value = preset;
+      lookup(preset);
+    }
   })();
 </script>
 

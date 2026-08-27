@@ -68,6 +68,36 @@
     height: auto;
     border: 1px solid rgba(var(--color-foreground), 0.08);
   }
+
+  .certificate-verify-qr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    align-items: center;
+    margin: 2.4rem 0;
+    padding: 1.6rem;
+    background: #ececec;
+    border: 1px solid rgba(var(--color-foreground), 0.12);
+  }
+
+  .certificate-verify-qr img {
+    width: 14rem;
+    height: 14rem;
+    background: #fff;
+    padding: 0.6rem;
+  }
+
+  .certificate-verify-qr__copy {
+    flex: 1 1 20rem;
+  }
+
+  .certificate-verify-qr__copy p {
+    margin: 0 0 0.6rem;
+  }
+
+  .certificate-verify-qr__copy .caption {
+    color: #6b6b6b;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -77,6 +107,10 @@
   assign compound = metaobject.compound.value
   assign compound_name = compound.name.value
   assign verify_page = pages.verify
+  assign cert_public_url = request.origin | append: metaobject.system.url
+  if metaobject.qr_target_url.value != blank
+    assign cert_public_url = metaobject.qr_target_url.value
+  endif
 -%}
 
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
@@ -158,7 +192,43 @@
         </dd>
       </div>
     {%- endif -%}
+    {%- if metaobject.lot_code.value != blank -%}
+      <div>
+        <dt>Lot code</dt>
+        <dd>{{ metaobject.lot_code.value | escape }}</dd>
+      </div>
+    {%- endif -%}
+    {%- if metaobject.verification_code.value != blank -%}
+      <div>
+        <dt>Verification code</dt>
+        <dd>{{ metaobject.verification_code.value | escape }}</dd>
+      </div>
+    {%- endif -%}
   </dl>
+
+  <div class="certificate-verify-qr">
+    {% # theme-check-disable RemoteAsset %}
+    <img
+      src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data={{ cert_public_url | url_encode }}"
+      alt="QR code to verify certificate {{ cert_id | escape }}"
+      width="280"
+      height="280"
+      loading="lazy"
+    >
+    {% # theme-check-enable RemoteAsset %}
+    <div class="certificate-verify-qr__copy">
+      <p class="h4" style="margin-top: 0;">Verify this certificate</p>
+      <p class="caption">
+        Scan to open this public certificate page. Or look up the ID on
+        {%- if verify_page != blank -%}
+          <a href="{{ verify_page.url }}?id={{ cert_id | url_encode }}">{{ verify_page.title | escape }}</a>.
+        {%- else -%}
+          the verify page.
+        {%- endif -%}
+      </p>
+      <p class="caption"><code>{{ cert_public_url | escape }}</code></p>
+    </div>
+  </div>
 
   {%- if metaobject.chromatogram.value != blank -%}
     <div class="certificate-chromatogram">

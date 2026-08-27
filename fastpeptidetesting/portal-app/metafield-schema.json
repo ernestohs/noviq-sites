@@ -1,0 +1,66 @@
+{
+  "namespace": "march_analytics",
+  "stages": [
+    "Order Submitted",
+    "Sample Received",
+    "Analyzing",
+    "Under Review",
+    "Complete"
+  ],
+  "order": [
+    {
+      "name": "Lab stage",
+      "key": "lab_stage",
+      "type": "single_line_text_field",
+      "description": "Order pipeline stage: Order Submitted | Sample Received | Analyzing | Under Review | Complete"
+    },
+    {
+      "name": "Packing notes",
+      "key": "packing_notes",
+      "type": "multi_line_text_field",
+      "description": "Notes printed on the packing slip"
+    },
+    {
+      "name": "Certificate IDs",
+      "key": "certificate_ids",
+      "type": "list.single_line_text_field",
+      "description": "Public certificate IDs linked to this order"
+    },
+    {
+      "name": "Vials required",
+      "key": "vials_required",
+      "type": "number_integer",
+      "description": "How many vials the customer should ship"
+    }
+  ],
+  "customer": [
+    {
+      "name": "COA profiles",
+      "key": "coa_profiles",
+      "type": "json",
+      "description": "Saved COA branding profiles JSON array"
+    }
+  ],
+  "certificate_extra": [
+    {
+      "key": "order_id",
+      "name": "Shopify order ID",
+      "type": "single_line_text_field"
+    },
+    {
+      "key": "lot_code",
+      "name": "Lot code",
+      "type": "single_line_text_field"
+    },
+    {
+      "key": "verification_code",
+      "name": "Verification code",
+      "type": "single_line_text_field"
+    },
+    {
+      "key": "qr_target_url",
+      "name": "QR target URL",
+      "type": "url"
+    }
+  ]
+}

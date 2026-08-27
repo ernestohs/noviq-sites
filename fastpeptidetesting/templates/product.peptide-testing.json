@@ -15,7 +15,7 @@
         "text_includes": {
           "type": "text",
           "settings": {
-            "text": "$199 per vial. Configure peptides, optional screens, and turnaround below.",
+            "text": "Configure a multi-step sample order: package, add-ons, sample details, COA branding, then review. Sign in required.",
             "text_style": "subtitle"
           }
         },

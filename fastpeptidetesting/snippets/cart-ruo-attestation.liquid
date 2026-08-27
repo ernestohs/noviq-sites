@@ -1,0 +1,68 @@
+{%- comment -%}
+  Required RUO attestation before Shopify checkout.
+  Stores acceptance as cart attribute `ruo_attestation`.
+  Checkout UI extensions would be needed for in-checkout attestation on Shopify Plus;
+  this cart-step gate works on all plans.
+{%- endcomment -%}
+{%- style -%}
+  .cart-ruo-attestation {
+    border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    background: #ececec;
+    padding: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+  .cart-ruo-attestation__label {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  .cart-ruo-attestation__label input {
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+  }
+  .cart-ruo-attestation__error {
+    color: #b91c1c;
+    font-size: 1.3rem;
+    margin: 0.8rem 0 0;
+  }
+  .cart-ruo-attestation__error[hidden] {
+    display: none !important;
+  }
+  .cart-ruo-attestation__note {
+    margin: 0.8rem 0 0;
+    color: #6b6b6b;
+    font-size: 1.2rem;
+  }
+{%- endstyle -%}
+
+<div class="cart-ruo-attestation" data-cart-ruo-attestation>
+  <label class="cart-ruo-attestation__label">
+    <input
+      type="checkbox"
+      name="attributes[ruo_attestation]"
+      value="accepted"
+      form="cart"
+      data-ruo-checkbox
+      {% if cart.attributes.ruo_attestation == 'accepted' %}
+        checked
+      {% endif %}
+      required
+    >
+    <span>
+      I agree that all results and reports are for research use only, not for diagnostic, medical, or therapeutic use, and do not constitute medical advice. I have read the
+      <a href="{{ pages.attestation.url | default: '/pages/attestation' }}">research-use attestation</a>
+      and the store policies.
+    </span>
+  </label>
+  <p class="cart-ruo-attestation__error" data-ruo-error hidden>
+    Confirm the research-use attestation to continue to checkout.
+  </p>
+  <p class="cart-ruo-attestation__note">
+    Shopify Plus stores can move this checkbox into checkout via a Checkout UI extension; this cart gate works without Plus.
+  </p>
+</div>
+
+<script src="{{ 'cart-ruo-attestation.js' | asset_url }}" defer="defer"></script>
