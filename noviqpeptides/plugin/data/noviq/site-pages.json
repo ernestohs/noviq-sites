@@ -52,6 +52,7 @@
     "slug": "contact",
     "title": "Contact",
     "lede": "Technical questions, documentation requests and order enquiries.",
-    "body": "<h2>Email</h2><p>General and order enquiries: <a href=\"mailto:support@noviqpeptides.com\">support@noviqpeptides.com</a></p><p>Wholesale and bulk: <a href=\"mailto:wholesale@noviqpeptides.com\">wholesale@noviqpeptides.com</a></p><p>Partner program: <a href=\"mailto:partners@noviqpeptides.com\">partners@noviqpeptides.com</a></p><h2>Documentation requests</h2><p>If you need the certificate for a lot you already hold, send the lot number printed on the vial label and we will retrieve it. You can also look it up directly on the <a href=\"/verify\">verify page</a>.</p><h2>Damage or error</h2><p>Report shipping damage or a fulfilment error within 72 hours of delivery, with photographs of the packaging and vial, and we will replace or refund.</p><h2>Postal address</h2><p>Our registered address will be published here before launch.</p>"
+    "shortcode": "[noviq_contact_details]",
+    "body": "<h2>Documentation requests</h2><p>If you need the certificate for a lot you already hold, send the lot number printed on the vial label and we will retrieve it. You can also look it up directly on the <a href=\"/verify\">verify page</a>.</p><h2>Damage or error</h2><p>Report shipping damage or a fulfilment error within 72 hours of delivery, with photographs of the packaging and vial, and we will replace or refund.</p>"
   }
 ]

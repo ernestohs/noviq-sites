@@ -30,6 +30,64 @@ final class Shortcodes {
 		add_shortcode( 'noviq_compare_index', array( self::class, 'compare_index' ) );
 		add_shortcode( 'noviq_ticker', array( self::class, 'ticker' ) );
 		add_shortcode( 'noviq_quality_standard', array( self::class, 'quality_standard' ) );
+		add_shortcode( 'noviq_contact_details', array( self::class, 'contact_details' ) );
+	}
+
+	/**
+	 * Contact details from Claims::site(). Null facts are omitted, never
+	 * placeholdered — same pattern as quality_standard().
+	 */
+	public static function contact_details(): string {
+		$site = Claims::site();
+		$out  = '<div class="noviq-contact">';
+
+		$email_rows = array(
+			'support_email'   => __( 'General and order enquiries', 'noviq-core' ),
+			'wholesale_email' => __( 'Wholesale and bulk', 'noviq-core' ),
+			'partner_email'   => __( 'Partner program', 'noviq-core' ),
+		);
+
+		$email_block = '';
+		foreach ( $email_rows as $key => $label ) {
+			$value = $site[ $key ] ?? null;
+			if ( ! is_string( $value ) || '' === $value ) {
+				continue;
+			}
+			$email_block .= sprintf(
+				'<p>%1$s: <a href="mailto:%2$s">%3$s</a></p>',
+				esc_html( $label ),
+				esc_attr( $value ),
+				esc_html( $value )
+			);
+		}
+
+		if ( '' !== $email_block ) {
+			$out .= '<h2>' . esc_html__( 'Email', 'noviq-core' ) . '</h2>' . $email_block;
+		}
+
+		$phone = $site['phone'] ?? null;
+		if ( is_string( $phone ) && '' !== $phone ) {
+			$tel = preg_replace( '/[^\d+]/', '', $phone ) ?? $phone;
+			$out .= sprintf(
+				'<h2>%1$s</h2><p><a class="noviq-num" href="tel:%2$s">%3$s</a></p>',
+				esc_html__( 'Phone', 'noviq-core' ),
+				esc_attr( $tel ),
+				esc_html( $phone )
+			);
+		}
+
+		$address = $site['address'] ?? null;
+		if ( is_string( $address ) && '' !== $address ) {
+			$out .= sprintf(
+				'<h2>%1$s</h2><p class="noviq-num">%2$s</p>',
+				esc_html__( 'Postal address', 'noviq-core' ),
+				esc_html( $address )
+			);
+		}
+
+		$out .= '</div>';
+
+		return $out;
 	}
 
 	/**

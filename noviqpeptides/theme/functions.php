@@ -130,6 +130,49 @@ add_action(
 	1
 );
 
+/**
+ * Theme favicon pack when no Customizer Site Icon is set.
+ *
+ * SVG for modern browsers, PNG sizes for Safari/legacy, ICO for older clients,
+ * apple-touch + webmanifest for home-screen installs.
+ */
+add_action(
+	'wp_head',
+	static function (): void {
+		if ( function_exists( 'has_site_icon' ) && has_site_icon() ) {
+			return;
+		}
+
+		$base = get_stylesheet_directory_uri() . '/assets/';
+
+		printf(
+			'<link rel="icon" href="%s" type="image/svg+xml" />' . "\n",
+			esc_url( $base . 'favicon.svg' )
+		);
+		printf(
+			'<link rel="icon" href="%s" type="image/png" sizes="32x32" />' . "\n",
+			esc_url( $base . 'favicon-32x32.png' )
+		);
+		printf(
+			'<link rel="icon" href="%s" type="image/png" sizes="16x16" />' . "\n",
+			esc_url( $base . 'favicon-16x16.png' )
+		);
+		printf(
+			'<link rel="shortcut icon" href="%s" />' . "\n",
+			esc_url( $base . 'favicon.ico' )
+		);
+		printf(
+			'<link rel="apple-touch-icon" href="%s" sizes="180x180" />' . "\n",
+			esc_url( $base . 'apple-touch-icon.png' )
+		);
+		printf(
+			'<link rel="manifest" href="%s" />' . "\n",
+			esc_url( $base . 'site.webmanifest' )
+		);
+	},
+	1
+);
+
 add_action(
 	'after_setup_theme',
 	static function (): void {

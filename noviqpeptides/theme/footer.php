@@ -84,6 +84,22 @@ if ( $nq_has_core ) {
 						<?php echo esc_html( (string) $nq_site['support_email'] ); ?>
 					</a>
 				<?php endif; ?>
+
+				<?php if ( $nq_has_core && ! empty( $nq_site['phone'] ) ) : ?>
+					<?php
+					$nq_phone = (string) $nq_site['phone'];
+					$nq_tel   = preg_replace( '/[^\d+]/', '', $nq_phone ) ?? $nq_phone;
+					?>
+					<a class="nq-footer__email noviq-num" href="tel:<?php echo esc_attr( $nq_tel ); ?>">
+						<?php echo esc_html( $nq_phone ); ?>
+					</a>
+				<?php endif; ?>
+
+				<?php if ( $nq_has_core && ! empty( $nq_site['address'] ) ) : ?>
+					<p class="nq-footer__tagline noviq-num">
+						<?php echo esc_html( (string) $nq_site['address'] ); ?>
+					</p>
+				<?php endif; ?>
 			</div>
 
 			<?php
@@ -103,11 +119,22 @@ if ( $nq_has_core ) {
 			<p><?php echo esc_html( $nq_has_core ? \Noviq\Core\Claims::ruo_full() : '' ); ?></p>
 			<p class="noviq-num">
 				<?php
-				printf(
-					'© %s %s',
-					esc_html( gmdate( 'Y' ) ),
-					esc_html( $nq_has_core ? (string) $nq_site['legal_entity'] : get_bloginfo( 'name' ) )
-				);
+				$nq_entity = ( $nq_has_core && ! empty( $nq_site['legal_entity'] ) )
+					? (string) $nq_site['legal_entity']
+					: null;
+				if ( null !== $nq_entity ) {
+					printf(
+						'© %s %s',
+						esc_html( gmdate( 'Y' ) ),
+						esc_html( $nq_entity )
+					);
+				} else {
+					printf(
+						/* translators: %s: current year. */
+						esc_html__( '© %s legal entity TBD', 'noviq-child' ),
+						esc_html( gmdate( 'Y' ) )
+					);
+				}
 				?>
 			</p>
 		</div>
