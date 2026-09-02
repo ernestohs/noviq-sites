@@ -171,7 +171,7 @@
         "sku": "DEV-EPITHALON",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 6000
       }
     ],
     "tiers": [],
@@ -231,7 +231,7 @@
         "sku": "DEV-GHRP-2",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 3000
       }
     ],
     "tiers": [],
@@ -323,7 +323,7 @@
         "sku": "DEV-GONADORELIN",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 3500
       }
     ],
     "tiers": [],
@@ -476,7 +476,7 @@
         "sku": "DEV-LIPO-C",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 8000
       }
     ],
     "tiers": [],
@@ -536,7 +536,7 @@
         "sku": "DEV-OXYTOCIN",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 4500
       }
     ],
     "tiers": [],
@@ -597,7 +597,7 @@
         "sku": "DEV-RETA-TIRZ",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 19000
       }
     ],
     "tiers": [],

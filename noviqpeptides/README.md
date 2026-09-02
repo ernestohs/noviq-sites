@@ -24,8 +24,6 @@ docker compose up -d
 
 Open http://localhost:8080 (store) and http://localhost:8080/wp-admin (admin / noviq-local-dev).
 
-The local setup also imports PDFs from `local/seed-coa/` into a separate review page at `http://localhost:8080/coa-review-samples/`. This page and its attachments are processor-review samples only. They are not lot records, do not appear in `/coa` or `/verify`, and must be removed before launch. The local Docker configuration mounts this directory only into the WP-CLI container; the deploy script never copies it.
-
 After a plugin/theme swap, wipe volumes so CPT slugs do not collide:
 
 ```bash
