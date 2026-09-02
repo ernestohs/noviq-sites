@@ -233,7 +233,7 @@ function pages() {
       template_suffix: 'how-it-works',
       body_html: [
         '<p>March Analytics tests customer-supplied samples and returns a certificate of analysis. Checkout does not ship anything to you. After payment you receive the lab receiving address and packaging notes for the sample you send in.</p>',
-        '<ol><li>Select a compound test or add-on. Fill in compound name, batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email to the customer only. Certificates are never published publicly. Whether a private portal is also used is confirmed before launch (intake C13).</li></ol>',
+        '<ol><li>Select a compound test or add-on. Fill in compound name, batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Use protective packaging and a tracked carrier to ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email to the customer only. Certificates are never published publicly. Whether a private portal is also used is confirmed before launch (intake C13).</li></ol>',
         '<p>The receiving street address is issued after checkout (intake C11). Packaging requirements are confirmed with the lab (intake C12).</p>',
       ].join('\n'),
     },
@@ -253,8 +253,8 @@ function pages() {
       template_suffix: 'turnaround',
       body_html: [
         '<p>Standard turnaround is 3 business days and is included in the test price.</p>',
-        '<p>1 business day: +$300.</p>',
-        '<p>Same day: +$500.</p>',
+        '<p>1 business day: +$199.</p>',
+        '<p>Same day: +$449.</p>',
         '<p>Whether the clock starts at payment or at sample receipt is pending client confirmation (intake C10). Storefront copy will match that decision before launch.</p>',
         DEMO_NOTE,
       ].join('\n'),

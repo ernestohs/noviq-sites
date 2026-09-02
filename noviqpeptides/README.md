@@ -20,9 +20,11 @@ docker compose up -d
 ./setup.sh
 ```
 
-`setup.sh` installs WordPress and WooCommerce, activates the theme and plugin, then runs `wp noviq seed`. That seed is idempotent: 28 simple products (DEV-* SKUs, $10 placeholders), 24 compound records, client photos from `local/seed-images/`, pages, and menus.
+`setup.sh` installs WordPress and WooCommerce, activates the theme and plugin, then runs `wp noviq seed`. That seed is idempotent: 28 simple products (DEV-* SKUs, with prices aligned to the public American Peptides catalog where a direct match exists), 24 compound records, client photos from `local/seed-images/`, pages, and menus.
 
 Open http://localhost:8080 (store) and http://localhost:8080/wp-admin (admin / noviq-local-dev).
+
+The local setup also imports PDFs from `local/seed-coa/` into a separate review page at `http://localhost:8080/coa-review-samples/`. This page and its attachments are processor-review samples only. They are not lot records, do not appear in `/coa` or `/verify`, and must be removed before launch. The local Docker configuration mounts this directory only into the WP-CLI container; the deploy script never copies it.
 
 After a plugin/theme swap, wipe volumes so CPT slugs do not collide:
 
@@ -32,7 +34,7 @@ docker compose down -v
 ./setup.sh
 ```
 
-Prices and SKUs in the seed are local-dev placeholders. Do not copy them to production.
+SKUs remain local-dev placeholders. Prices without a direct American Peptides match remain `$10` local-dev placeholders. Confirm all catalog prices and SKUs before copying the seed to production.
 
 ## Catalog rules
 

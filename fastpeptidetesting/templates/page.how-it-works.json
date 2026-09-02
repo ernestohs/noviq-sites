@@ -21,7 +21,7 @@
           "type": "column",
           "settings": {
             "title": "2. Ship the sample",
-            "text": "<p>The confirmation email includes the lab receiving address and the order number to mark on the package. Do not require a signature. Packaging notes are included in that email.</p>"
+            "text": "<p>Use protective packaging and a tracked carrier. The confirmation email includes the lab receiving address and the order number to mark on the package. Do not require a signature. Packaging notes are included in that email.</p>"
           }
         },
         "step3": {

@@ -21,6 +21,23 @@ The script syncs:
 
 Then runs `wp theme activate`, `wp plugin activate`, and `wp rewrite flush` over SSH when `WP_CLI=1`.
 
+## Cloud preview COA samples
+
+The processor-review PDFs are local-only by default. To publish them on the
+configured cloud preview host, run:
+
+```bash
+DEPLOY_LAYOUT=preview \
+REMOTE_WP_PATH=/opt/noviq-sites/noviqpeptides \
+REVIEW_COAS=1 ./rsync-own-server.sh
+```
+
+This opt-in syncs `local/seed-coa/` and the local Compose file, then runs
+`wp noviq review_coas` in the cloud `wpcli` container. It creates the
+`/coa-review-samples/` page and media attachments only. It does not create lot
+records or populate `/coa` and `/verify`. Remove the review page and
+attachments before any production launch.
+
 ## GoDaddy
 
 Confirm the site uses GoDaddy **hosting** (Managed WordPress or cPanel), not only the domain registrar.

@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const DIR = dirname(fileURLToPath(import.meta.url));
 const THEME_DIR = join(DIR, '..');
-const PRICE_PER_VIAL = 199;
+const PRICE_PER_VIAL = 250;
 const ADDON_UNIT_PRICES = {
   'endotoxin-testing': 75,
   'sterility-testing': 75,
@@ -61,7 +61,7 @@ function primaryProduct() {
     description_html: [
       `<p>HPLC purity and potency analysis for customer-supplied peptide samples. Select how many vials to test, choose the peptide for each vial, optional screens, and turnaround.</p>`,
       `<p>Base testing is $${PRICE_PER_VIAL}.00 per vial. Optional screens are priced per vial. Expedited turnaround is priced per order.</p>`,
-      `<p>After checkout you receive shipping instructions for sending the sample. Results are issued as a certificate of analysis.</p>`,
+      `<p>After checkout you receive shipping instructions for sending the sample in protective packaging with tracking. Results are issued as a certificate of analysis.</p>`,
       `<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>`,
     ].join('\n'),
     seo_title: 'Peptide Test | March Analytics',
@@ -243,7 +243,7 @@ function main() {
 
   catalog.generated_at = new Date().toISOString();
   catalog.note =
-    'March Analytics catalog. Commerce uses Peptide Test ($199/vial). Compound products retained for SEO. Rush and screens are checkout helpers.';
+    'March Analytics catalog. Commerce uses Peptide Test ($250/vial). Compound products retained for SEO. Rush and screens are checkout helpers.';
   catalog.collection = {
     handle: 'order-testing',
     title: 'Order Testing',
@@ -275,7 +275,7 @@ function main() {
   if (howItWorks) {
     howItWorks.body_html = [
       '<p>March Analytics tests customer-supplied samples and returns a certificate of analysis. Checkout does not ship anything to you. After payment you receive the lab receiving address and packaging notes for the sample you send in.</p>',
-      '<ol><li>Open Peptide Test. Choose vial count, select a peptide for each vial, optional screens, and turnaround. Provide batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email to the customer only. Certificates are never published publicly. Whether a private portal is also used is confirmed before launch (intake C13).</li></ol>',
+      '<ol><li>Open Peptide Test. Choose vial count, select a peptide for each vial, optional screens, and turnaround. Provide batch or lot number, quantity supplied, and a return address.</li><li>Complete checkout. Service products are non-physical, so no shipping method is charged on the order.</li><li>Use protective packaging and a tracked carrier to ship the sample to the address in the confirmation email. Do not require a signature on delivery. Mark the order number on the outside of the package.</li><li>Results are delivered as a certificate of analysis by email to the customer only. Certificates are never published publicly. Whether a private portal is also used is confirmed before launch (intake C13).</li></ol>',
       '<p>The receiving street address is issued after checkout (intake C11). Packaging requirements are confirmed with the lab (intake C12).</p>',
     ].join('\n');
   }

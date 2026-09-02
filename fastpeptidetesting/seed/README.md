@@ -12,7 +12,7 @@ node apply-configurable-catalog.mjs   # required: Peptide Test model + peptide-o
 
 `apply-configurable-catalog.mjs` writes:
 
-- Primary product `peptide-testing` ($199 × 1–5 vials)
+- Primary product `peptide-testing` ($250 × 1–5 vials)
 - Checkout helpers: rush next/same day; endotoxin, sterility, heavy metals, Karl Fischer, vial vacuum (unit prices per vial)
 - Compound products retained for SEO (not in `order-testing` collection membership list)
 - `custom-analytical-service` as DRAFT / quote-only

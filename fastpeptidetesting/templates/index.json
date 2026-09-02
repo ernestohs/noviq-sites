@@ -59,7 +59,7 @@
         "text_includes": {
           "type": "text",
           "settings": {
-            "text": "$199 per vial. Configure peptides, optional screens, and turnaround on this page.",
+            "text": "$250 per vial. Configure peptides, optional screens, and turnaround on this page.",
             "text_style": "subtitle"
           }
         },
@@ -205,7 +205,7 @@
           "type": "column",
           "settings": {
             "title": "2. Ship sample",
-            "text": "<p>After checkout you receive the lab receiving address. Ship the sample with the order number on the package. Do not require a signature.</p>",
+            "text": "<p>After checkout you receive the lab receiving address. Use protective packaging and a tracked carrier, with the order number on the package. Do not require a signature.</p>",
             "link_label": "",
             "link": ""
           }
@@ -255,7 +255,7 @@
           "settings": {
             "heading": "Can I test more than one vial?",
             "icon": "none",
-            "row_content": "<p>Yes. Choose 1 to 5 vials on Peptide Test and select the peptide for each vial. Base testing is $199 per vial.</p>",
+            "row_content": "<p>Yes. Choose 1 to 5 vials on Peptide Test and select the peptide for each vial. Base testing is $250 per vial.</p>",
             "page": ""
           }
         },
@@ -264,7 +264,7 @@
           "settings": {
             "heading": "What are the turnaround options?",
             "icon": "none",
-            "row_content": "<p>Standard is 3 business days, included in the $199 per vial test price. Next-Day is +$199 per order. Same-Day is +$449 per order. Select turnaround on the Peptide Test page before adding to cart.</p>",
+            "row_content": "<p>Standard is 3 business days, included in the $250 per vial test price. Next-Day is +$199 per order. Same-Day is +$449 per order. Select turnaround on the Peptide Test page before adding to cart.</p>",
             "page": ""
           }
         },
@@ -273,7 +273,7 @@
           "settings": {
             "heading": "Do I need to provide shipping at checkout?",
             "icon": "none",
-            "row_content": "<p>No. Testing products are configured as non-physical services. You ship the sample to the lab after you receive the confirmation email.</p>",
+            "row_content": "<p>No. Testing products are configured as non-physical services. After checkout, use protective packaging and a tracked carrier to ship the sample to the lab address in the confirmation email.</p>",
             "page": ""
           }
         },

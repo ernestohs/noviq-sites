@@ -32,7 +32,7 @@ for SEO; purchase CTAs point at Peptide Test.
 
 | Service | Price | Notes | Status |
 | --- | --- | --- | --- |
-| Peptide Test (`peptide-testing`) | $199 per vial (1–5 vials) | Per-vial peptide dropdown; no differentiated/non-differentiated UI | Confirmed preview pricing |
+| Peptide Test (`peptide-testing`) | $250 per vial (1–5 vials) | Per-vial peptide dropdown; no differentiated/non-differentiated UI | Confirmed pricing |
 | Endotoxin add-on | +$75 per vial | Configurator checkbox | Confirmed preview pricing |
 | Sterility add-on | +$75 per vial | Configurator checkbox | Confirmed preview pricing |
 | Heavy metals add-on | +$100 per vial | Configurator checkbox | Confirmed preview pricing |
@@ -56,7 +56,7 @@ product page, so they arrive attached to the order. No app required.
 
 Configurator fields:
 
-1. Number of vials (1–5) as product variants at $199 × n
+1. Number of vials (1–5) as product variants at $250 × n
 2. Peptide name per vial (required dropdowns; list from `snippets/peptide-option-list.liquid` / catalog compounds)
 3. Optional screens and turnaround (priced via helper products added with the order)
 4. Batch or lot number
@@ -71,7 +71,7 @@ generates a support email for every order.
 | Field | Value |
 | --- | --- |
 | Receiving address for samples | TBD |
-| What the customer ships, and packaging requirements | TBD |
+| What the customer ships, and packaging requirements | Protective packaging and tracked carrier for preview workflow; lab-specific requirements TBD |
 | Result delivery method | TBD: emailed PDF and/or private portal. Never public. |
 | Turnaround clock start, on payment or on sample receipt | TBD |
 

@@ -15,7 +15,7 @@
         "text_includes": {
           "type": "text",
           "settings": {
-            "text": "$199 per vial. Configure peptides, optional screens, and turnaround below.",
+            "text": "$250 per vial. Configure peptides, optional screens, and turnaround below.",
             "text_style": "subtitle"
           }
         },

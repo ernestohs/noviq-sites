@@ -58,11 +58,11 @@ If assets live in Figma, the Figma MCP can pull them once authenticated.
 | # | Item | Answer |
 | --- | --- | --- |
 | C7 | Which tests the lab actually runs | TBD |
-| C8 | Price per test | TBD |
+| C8 | Price per test | $250 per vial |
 | C9 | Turnaround per test, business days | TBD |
 | C10 | Whether turnaround starts at payment or at sample receipt | TBD |
 | C11 | Lab receiving address for samples | TBD |
-| C12 | What the customer ships and any packaging requirements | TBD |
+| C12 | What the customer ships and any packaging requirements | Protective packaging and tracked carrier for preview workflow; lab-specific requirements TBD |
 | C13 | How results are delivered | TBD: emailed PDF and/or private portal. Never public. |
 | C14 | Sample intake fields to capture at checkout | Compound name, batch or lot number, quantity supplied, customer return address. No public COA consent field. |
 

@@ -208,7 +208,7 @@ $nq_shop_url = $nq_shop > 0 ? (string) get_permalink( $nq_shop ) : home_url( '/s
 					),
 					array(
 						__( 'Do you offer volume or wholesale orders?', 'noviq-child' ),
-						__( 'Laboratories placing repeat or bulk orders can request a quote on the wholesale page. Catalog prices on this preview are placeholders.', 'noviq-child' ),
+						__( 'Laboratories placing repeat or bulk orders can request a quote on the wholesale page. Preview prices use the public American Peptides catalog where a direct match exists; unmatched entries remain placeholders.', 'noviq-child' ),
 					),
 				);
 

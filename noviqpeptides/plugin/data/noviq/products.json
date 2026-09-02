@@ -20,7 +20,7 @@
         "sku": "DEV-AOD-9604",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 6000
       }
     ],
     "tiers": [],
@@ -50,7 +50,7 @@
         "sku": "DEV-BPC-157",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 6000
       }
     ],
     "tiers": [],
@@ -80,7 +80,7 @@
         "sku": "DEV-CJC-1295",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 11000
       }
     ],
     "tiers": [],
@@ -111,7 +111,7 @@
         "sku": "DEV-CJC-1295-IPA",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 9000
       }
     ],
     "tiers": [],
@@ -141,7 +141,7 @@
         "sku": "DEV-DSIP",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 5500
       }
     ],
     "tiers": [],
@@ -201,7 +201,7 @@
         "sku": "DEV-GHK-CU",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 5000
       }
     ],
     "tiers": [],
@@ -263,7 +263,7 @@
         "sku": "DEV-GLOW",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 15000
       }
     ],
     "tiers": [],
@@ -293,7 +293,7 @@
         "sku": "DEV-GLUTATHIONE",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 7500
       }
     ],
     "tiers": [],
@@ -353,7 +353,7 @@
         "sku": "DEV-IGF-1-LR3",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 8500
       }
     ],
     "tiers": [],
@@ -383,7 +383,7 @@
         "sku": "DEV-IPAMORELIN",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 4000
       }
     ],
     "tiers": [],
@@ -413,7 +413,7 @@
         "sku": "DEV-KISSPEPTIN-10",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 6000
       }
     ],
     "tiers": [],
@@ -446,7 +446,7 @@
         "sku": "DEV-KLOW",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 20000
       }
     ],
     "tiers": [],
@@ -506,7 +506,7 @@
         "sku": "DEV-MOT-C",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 10000
       }
     ],
     "tiers": [],
@@ -566,7 +566,7 @@
         "sku": "DEV-RETATRUTIDE",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 10500
       }
     ],
     "tiers": [],
@@ -627,7 +627,7 @@
         "sku": "DEV-SEMAGLUTIDE",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 6000
       }
     ],
     "tiers": [],
@@ -657,7 +657,7 @@
         "sku": "DEV-SEMAX",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 6500
       }
     ],
     "tiers": [],
@@ -687,7 +687,7 @@
         "sku": "DEV-SERMORELIN",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 6000
       }
     ],
     "tiers": [],
@@ -717,7 +717,7 @@
         "sku": "DEV-SNAP-8",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 5500
       }
     ],
     "tiers": [],
@@ -747,7 +747,7 @@
         "sku": "DEV-TB-500",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 10000
       }
     ],
     "tiers": [],
@@ -777,7 +777,7 @@
         "sku": "DEV-TESAMORELIN",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 12000
       }
     ],
     "tiers": [],
@@ -807,7 +807,7 @@
         "sku": "DEV-TIRZEPATIDE",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 10000
       }
     ],
     "tiers": [],
@@ -838,7 +838,7 @@
         "sku": "DEV-WOLVERINE",
         "label": "vial",
         "amount_mg": null,
-        "price_cents": 1000
+        "price_cents": 19500
       }
     ],
     "tiers": [],

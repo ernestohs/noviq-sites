@@ -17,6 +17,7 @@ use Noviq\Core\Claims;
 use Noviq\Core\Meta;
 use Noviq\Core\PostTypes;
 use Noviq\Core\Profile;
+use Noviq\Core\Seed\ReviewCoas;
 use Noviq\Core\Taxonomies;
 
 defined( 'ABSPATH' ) || exit;
@@ -174,7 +175,9 @@ final class Shortcodes {
 			)
 		);
 
-		if ( array() === $lots ) {
+		$review_samples = ReviewCoas::attachments();
+
+		if ( array() === $lots && array() === $review_samples ) {
 			return self::empty_state(
 				__( 'No certificates published yet', 'noviq-core' ),
 				__( 'Certificates of Analysis are published on release, one per lot. Every vial ships with the certificate matching its lot number, and it appears here at the same time.', 'noviq-core' ),
@@ -186,15 +189,43 @@ final class Shortcodes {
 		foreach ( $lots as $lot ) {
 			$rows .= self::lot_row( $lot );
 		}
+		foreach ( $review_samples as $sample ) {
+			$rows .= self::review_sample_row( $sample, true );
+		}
+
+		$notice = array() !== $review_samples
+			? '<p class="noviq-verify__note">' . esc_html__( 'Review-only sample documents are shown here to demonstrate this path. They are not released lots and are not used for production verification.', 'noviq-core' ) . '</p>'
+			: '';
 
 		return sprintf(
-			'<table class="noviq-lots"><thead><tr><th>%1$s</th><th>%2$s</th><th>%3$s</th><th>%4$s</th><th>%5$s</th></tr></thead><tbody>%6$s</tbody></table>',
+			'%1$s<table class="noviq-lots"><thead><tr><th>%2$s</th><th>%3$s</th><th>%4$s</th><th>%5$s</th><th>%6$s</th></tr></thead><tbody>%7$s</tbody></table>',
+			$notice,
 			esc_html__( 'Lot', 'noviq-core' ),
 			esc_html__( 'Product', 'noviq-core' ),
 			esc_html__( 'Released', 'noviq-core' ),
 			esc_html__( 'Purity', 'noviq-core' ),
 			esc_html__( 'Documents', 'noviq-core' ),
 			$rows
+		);
+	}
+
+	private static function review_sample_row( \WP_Post $sample, bool $include_verify ): string {
+		$name       = ReviewCoas::sample_name( $sample );
+		$document   = ReviewCoas::sample_url( $sample );
+		$documents  = sprintf( '<a href="%s" download>Download COA</a>', esc_url( $document ) );
+		$verify_url = add_query_arg( 'lot', $name, home_url( '/verify/' ) );
+
+		if ( $include_verify ) {
+			$documents .= sprintf( ' · <a href="%s">Verify sample</a>', esc_url( $verify_url ) );
+		}
+
+		return sprintf(
+			'<tr><td class="noviq-num">%1$s</td><td>%2$s</td><td class="noviq-num">%3$s</td><td class="noviq-num">%4$s</td><td>%5$s</td></tr>',
+			esc_html__( 'Review sample', 'noviq-core' ),
+			esc_html( $name ),
+			esc_html__( 'Review only', 'noviq-core' ),
+			esc_html( Compound::EM_DASH ),
+			$documents
 		);
 	}
 
@@ -247,6 +278,9 @@ final class Shortcodes {
 		$placeholder = Profile::feature( 'compounds' )
 			? __( 'e.g. NVQ-0000', 'noviq-core' )
 			: __( 'e.g. MA-0001 or Acme Research', 'noviq-core' );
+		if ( ReviewCoas::enabled() ) {
+			$placeholder = __( 'e.g. BPC-157_10mg', 'noviq-core' );
+		}
 
 		$form = sprintf(
 			'<form class="noviq-verify__form" method="get" action="%1$s">
@@ -288,6 +322,23 @@ final class Shortcodes {
 			)
 		);
 
+		$sample_matches = ReviewCoas::matches( $query );
+		if ( array() === $matches && array() !== $sample_matches ) {
+			$rows = '';
+			foreach ( $sample_matches as $sample ) {
+				$rows .= self::review_sample_row( $sample, false );
+			}
+
+			$result = sprintf(
+				'<div class="noviq-verify__result" role="status"><h2>%1$s</h2><p>%2$s</p><table class="noviq-lots"><tbody>%3$s</tbody></table></div>',
+				esc_html__( 'Review sample found', 'noviq-core' ),
+				esc_html__( 'This document is available for processor review only. It is not a released lot and cannot verify a production order.', 'noviq-core' ),
+				$rows
+			);
+
+			return '<div class="noviq-verify">' . $form . $result . '</div>';
+		}
+
 		if ( array() === $matches ) {
 			$result = sprintf(
 				'<div class="noviq-verify__result noviq-verify__result--none" role="status"><h2>%1$s</h2><p>%2$s</p></div>',
@@ -326,6 +377,13 @@ final class Shortcodes {
 
 		if ( $count > 0 ) {
 			return '';
+		}
+
+		if ( array() !== ReviewCoas::attachments() ) {
+			return sprintf(
+				'<p class="noviq-verify__note">%s</p>',
+				esc_html__( 'The lot registry is empty. Review-only sample documents are available on the COA page for path demonstration; they are not released lots.', 'noviq-core' )
+			);
 		}
 
 		return sprintf(

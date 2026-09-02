@@ -114,7 +114,7 @@ class PeptideTestConfigurator extends HTMLElement {
   calcTotals() {
     const count = this.vialCount;
     const baseOption = this.vialSelect?.selectedOptions?.[0];
-    const base = parseInt(baseOption?.dataset.price || String(19900 * count), 10);
+    const base = parseInt(baseOption?.dataset.price || String(25000 * count), 10);
     let addons = 0;
     const addonLabels = [];
     this.selectedAddons().forEach((input) => {

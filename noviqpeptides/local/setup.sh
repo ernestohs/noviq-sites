@@ -72,7 +72,7 @@ if ( ! get_option( "woocommerce_placeholder_image" ) ) {
 ' || true
 
 # Host bind mounts are often 770; www-data (33) must read them.
-chmod -R a+rX ../theme ../plugin ./seed-images 2>/dev/null || true
+chmod -R a+rX ../theme ../plugin ./seed-images ./seed-coa 2>/dev/null || true
 
 echo "Activating Noviq Peptides theme and plugin..."
 wp theme activate noviq-peptides
@@ -80,6 +80,9 @@ wp plugin activate noviq-peptides
 
 echo "Seeding catalog, pages, and product images..."
 wp --user=1 noviq seed
+
+echo "Seeding local-only COA samples for processor review..."
+wp --user=1 noviq review_coas
 
 # Use front-page.php as the site home
 wp option update show_on_front page

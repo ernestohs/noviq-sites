@@ -22,8 +22,8 @@ services:
           define('WP_HOME', 'https://' . $$fwd);
           define('WP_SITEURL', 'https://' . $$fwd);
         } else {
-          define('WP_HOME', 'http://165.227.95.66:8080');
-          define('WP_SITEURL', 'http://165.227.95.66:8080');
+          define('WP_HOME', 'https://noviqpeptides.demo-purposes-only.com');
+          define('WP_SITEURL', 'https://noviqpeptides.demo-purposes-only.com');
         }
 
   caddy:

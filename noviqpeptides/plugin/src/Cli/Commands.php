@@ -60,6 +60,26 @@ final class Commands {
 	}
 
 	/**
+	 * Import local-only COA samples for payment processor review.
+	 *
+	 * The `NOVIQ_SEED_COA` environment variable must point to a directory of
+	 * PDFs. The command creates media attachments and a review page only. It
+	 * never creates lot records or changes the public COA and verification
+	 * surfaces.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     NOVIQ_SEED_COA=/seed-coa wp noviq review_coas
+	 *
+	 * @param string[]              $args       Positional arguments.
+	 * @param array<string, string> $assoc_args Flags.
+	 */
+	public function review_coas( array $args, array $assoc_args ): void {
+		( new \Noviq\Core\Seed\ReviewCoas( new Seeder( false, true ) ) )->run();
+		\WP_CLI::success( 'Review COA import complete.' );
+	}
+
+	/**
 	 * Delete everything the seeder creates.
 	 *
 	 * Products, compounds, comparisons, articles and seeded pages are removed.
