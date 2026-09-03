@@ -42,6 +42,10 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 	 * @return array<string, \WC_Email>
 	 */
 	public static function register_email( array $emails ): array {
+		if ( ! class_exists( \WC_Email::class ) ) {
+			return $emails;
+		}
+
 		$emails['Noviq_Paypal_Invoice_Email'] = new PaypalInvoiceEmail();
 
 		return $emails;

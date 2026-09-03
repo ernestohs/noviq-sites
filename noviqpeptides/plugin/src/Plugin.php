@@ -53,7 +53,7 @@ final class Plugin {
 			add_action(
 				'plugins_loaded',
 				static function (): void {
-					if ( ! class_exists( \WC_Payment_Gateway::class ) ) {
+					if ( ! class_exists( \WC_Payment_Gateway::class ) || ! class_exists( \WC_Email::class ) ) {
 						return;
 					}
 					Commerce\PaypalInvoiceGateway::init();
