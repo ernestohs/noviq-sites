@@ -49,6 +49,18 @@ final class Plugin {
 		if ( Profile::feature( 'subscriptions' ) ) {
 			Commerce\Subscriptions::init();
 		}
+		if ( Profile::feature( 'paypal_invoice' ) ) {
+			add_action(
+				'plugins_loaded',
+				static function (): void {
+					if ( ! class_exists( \WC_Payment_Gateway::class ) ) {
+						return;
+					}
+					Commerce\PaypalInvoiceGateway::init();
+				},
+				20
+			);
+		}
 		if ( Profile::feature( 'age_gate' ) ) {
 			Compliance\AgeGate::init();
 		}

@@ -163,9 +163,32 @@ wp rewrite flush --hard
 # Enable cheque/manual payments for local test orders
 wp option update woocommerce_cheque_settings '{"enabled":"yes","title":"Manual payment (local test)","description":"Local development only.","instructions":"Local test order."}' --format=json 2>/dev/null || true
 
+# Route wp_mail through Mailpit for local email testing
+docker compose exec -T wordpress mkdir -p /var/www/html/wp-content/mu-plugins
+docker compose exec -T wordpress tee /var/www/html/wp-content/mu-plugins/mailpit.php >/dev/null <<'EOF'
+<?php
+/**
+ * Local dev only: route WordPress mail through Mailpit.
+ */
+add_action(
+	'phpmailer_init',
+	static function ( $phpmailer ): void {
+		$phpmailer->isSMTP();
+		$phpmailer->Host     = 'mailpit';
+		$phpmailer->Port     = 1025;
+		$phpmailer->SMTPAuth = false;
+	}
+);
+EOF
+
+# Enable PayPal invoice gateway for local test orders
+wp option update woocommerce_noviq_paypal_invoice_settings '{"enabled":"yes","title":"Pay via PayPal","description":"Place your order now. You will receive an email with a PayPal payment link. Your order ships after payment is confirmed.","paypal_handle":"NoviqPeptidesLocal","instructions":"Please complete payment via PayPal using the link below. Include your order number in the PayPal note if prompted."}' --format=json 2>/dev/null || true
+wp option update woocommerce_noviq_paypal_invoice_instructions_settings '{"enabled":"yes"}' --format=json 2>/dev/null || true
+
 echo ""
 echo "Store is ready."
-echo "  Front:  ${WORDPRESS_URL}"
-echo "  Admin:  ${WORDPRESS_URL}/wp-admin"
-echo "  User:   ${WORDPRESS_ADMIN_USER}"
-echo "  Pass:   ${WORDPRESS_ADMIN_PASSWORD}"
+echo "  Front:    ${WORDPRESS_URL}"
+echo "  Admin:    ${WORDPRESS_URL}/wp-admin"
+echo "  Mailpit:  http://localhost:8025"
+echo "  User:     ${WORDPRESS_ADMIN_USER}"
+echo "  Pass:     ${WORDPRESS_ADMIN_PASSWORD}"
