@@ -15,14 +15,17 @@ namespace Noviq\Child;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '0.2.1';
+const VERSION = '0.3.1';
 
 require_once __DIR__ . '/inc/vial-image.php';
 require_once __DIR__ . '/inc/pdp-parts.php';
 require_once __DIR__ . '/inc/quantity-style.php';
+require_once __DIR__ . '/inc/icon.php';
+require_once __DIR__ . '/inc/nav.php';
 
 /**
- * Segmented variant selector on the product page.
+ * Segmented variant selector on the product page. Homepage carousel on the
+ * front page.
  */
 add_action(
 	'wp_enqueue_scripts',
@@ -32,6 +35,16 @@ add_action(
 				'noviq-pdp',
 				get_stylesheet_directory_uri() . '/assets/js/pdp.js',
 				array( 'jquery' ),
+				VERSION,
+				true
+			);
+		}
+
+		if ( is_front_page() ) {
+			wp_enqueue_script(
+				'noviq-home',
+				get_stylesheet_directory_uri() . '/assets/js/home.js',
+				array(),
 				VERSION,
 				true
 			);
@@ -259,10 +272,14 @@ function cart_pill_html(): string {
 		? WC()->cart->get_cart_contents_count()
 		: 0;
 
+	$icon = icon( 'cart', array( 'size' => 24 ) );
+
 	return sprintf(
-		'<a class="nq-cart" href="%1$s"><span class="nq-cart__label">%2$s</span><span class="noviq-num nq-cart__count">%3$d</span></a>',
+		'<a class="nq-cart" href="%1$s"><span class="nq-cart__label">%2$s</span>%3$s<span class="noviq-num nq-cart__count"%4$s>%5$d</span></a>',
 		esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ),
 		esc_html__( 'Cart', 'noviq-child' ),
+		$icon,
+		0 === $count ? ' hidden' : '',
 		(int) $count
 	);
 }

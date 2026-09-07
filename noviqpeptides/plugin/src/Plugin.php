@@ -83,6 +83,9 @@ final class Plugin {
 		if ( Profile::feature( 'seo' ) ) {
 			Content\Seo::init();
 		}
+		if ( Profile::feature( 'newsletter' ) ) {
+			Content\Newsletter::init();
+		}
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 

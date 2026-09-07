@@ -2,10 +2,8 @@
 /**
  * Site header.
  *
- * Four bands, in the reference's order: claims marquee, RUO strip, sticky
- * masthead, category chip bar. The RUO strip lives in the chrome rather than
- * only on commerce pages so it is present on every route without a template
- * having to remember it.
+ * Marquee (claims), masthead (logo / search / account / cart), then the primary
+ * nav bar with dropdown groups. RUO short notice remains in the chrome.
  *
  * @package Noviq\Child
  */
@@ -18,6 +16,7 @@ $nq_has_core = class_exists( \Noviq\Core\Claims::class );
 $nq_ticker   = $nq_has_core ? \Noviq\Core\Claims::ticker_items() : array();
 $nq_ruo      = $nq_has_core ? \Noviq\Core\Claims::ruo_short() : '';
 $nq_name     = $nq_has_core ? (string) \Noviq\Core\Claims::site()['short_name'] : get_bloginfo( 'name' );
+$nq_account  = function_exists( 'wc_get_page_permalink' ) ? (string) wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -36,8 +35,6 @@ $nq_name     = $nq_has_core ? (string) \Noviq\Core\Claims::site()['short_name'] 
 	<div class="nq-marquee" role="complementary" aria-label="<?php esc_attr_e( 'Product claims', 'noviq-child' ); ?>">
 		<div class="nq-marquee__track">
 			<?php
-			// Printed twice so the loop is seamless; the duplicate is hidden
-			// from assistive technology.
 			for ( $nq_pass = 0; $nq_pass < 2; $nq_pass++ ) :
 				foreach ( $nq_ticker as $nq_item ) :
 					?>
@@ -61,33 +58,41 @@ $nq_name     = $nq_has_core ? (string) \Noviq\Core\Claims::site()['short_name'] 
 	<div class="nq-wrap nq-wrap--wide nq-masthead__inner">
 		<a class="nq-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<span class="nq-logo__mark" aria-hidden="true">
-				<svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-					<path d="M2 13h4l2.5-7 3.5 14 3-9 2 2h5" stroke="currentColor" stroke-width="2"
-						stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
+				<?php \Noviq\Child\the_icon( 'pulse', array( 'size' => 28 ) ); ?>
 			</span>
-			<span class="nq-logo__word"><?php echo esc_html( $nq_name ); ?></span>
+			<span class="nq-logo__text">
+				<span class="nq-logo__word"><?php echo esc_html( strtoupper( $nq_name ) ); ?></span>
+				<span class="nq-logo__sub"><?php esc_html_e( 'PEPTIDES', 'noviq-child' ); ?></span>
+			</span>
 		</a>
 
-		<nav class="nq-nav" aria-label="<?php esc_attr_e( 'Primary', 'noviq-child' ); ?>">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'container'      => false,
-					'menu_class'     => 'nq-nav__list',
-					'depth'          => 1,
-					'fallback_cb'    => '__return_empty_string',
-				)
-			);
-			?>
-		</nav>
+		<form class="nq-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<label class="screen-reader-text" for="nq-search-field"><?php esc_html_e( 'Search', 'noviq-child' ); ?></label>
+			<input
+				id="nq-search-field"
+				class="nq-search__input"
+				type="search"
+				name="s"
+				placeholder="<?php esc_attr_e( 'Search peptides, blends or lot #...', 'noviq-child' ); ?>"
+				value="<?php echo esc_attr( get_search_query() ); ?>"
+			/>
+			<?php if ( function_exists( 'WC' ) ) : ?>
+				<input type="hidden" name="post_type" value="product" />
+			<?php endif; ?>
+			<button class="nq-search__btn" type="submit">
+				<span class="screen-reader-text"><?php esc_html_e( 'Search', 'noviq-child' ); ?></span>
+				<?php \Noviq\Child\the_icon( 'search', array( 'size' => 24 ) ); ?>
+			</button>
+		</form>
 
 		<div class="nq-masthead__actions">
+			<a class="nq-account" href="<?php echo esc_url( $nq_account ); ?>">
+				<span><?php esc_html_e( 'Account', 'noviq-child' ); ?></span>
+				<?php \Noviq\Child\the_icon( 'account', array( 'size' => 24 ) ); ?>
+			</a>
+
 			<?php if ( function_exists( 'wc_get_cart_url' ) ) : ?>
 				<?php
-				// Rendered through the same helper the AJAX fragment uses, so the
-				// count refreshes on add-to-cart without a page load.
 				echo \Noviq\Child\cart_pill_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			<?php endif; ?>
@@ -98,89 +103,16 @@ $nq_name     = $nq_has_core ? (string) \Noviq\Core\Claims::site()['short_name'] 
 			</button>
 		</div>
 	</div>
-
-	<div class="nq-mobile-nav" id="nq-mobile-nav" hidden>
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => 'primary',
-				'container'      => false,
-				'menu_class'     => 'nq-mobile-nav__list',
-				'depth'          => 1,
-				'fallback_cb'    => '__return_empty_string',
-			)
-		);
-		?>
-	</div>
 </header>
 
-<?php
-/*
- * Categories in information-architecture order for the peptide catalog. Other
- * profiles (NOVIQ Bio) only have a subset of categories, so fall back to every
- * non-default term that exists.
- */
-$nq_cat_order = array(
-	'metabolic',
-	'peptides',
-	'blends',
-	'sprays',
-	'strips',
-	'bioregulators',
-	'bundles',
-	'supplies',
-	'apparel',
-	'testing',
-);
+<nav class="nq-menubar" aria-label="<?php esc_attr_e( 'Primary', 'noviq-child' ); ?>">
+	<div class="nq-wrap nq-menubar__inner">
+		<?php \Noviq\Child\render_primary_menubar(); ?>
+	</div>
+</nav>
 
-$nq_cats = get_terms(
-	array(
-		'taxonomy'   => 'product_cat',
-		'hide_empty' => false,
-		'exclude'    => array( (int) get_option( 'default_product_cat' ) ),
-	)
-);
-
-if ( is_array( $nq_cats ) && array() !== $nq_cats ) {
-	usort(
-		$nq_cats,
-		static function ( WP_Term $a, WP_Term $b ) use ( $nq_cat_order ): int {
-			$ai = array_search( $a->slug, $nq_cat_order, true );
-			$bi = array_search( $b->slug, $nq_cat_order, true );
-			$ai = false === $ai ? 999 : $ai;
-			$bi = false === $bi ? 999 : $bi;
-
-			return $ai === $bi ? strcasecmp( $a->name, $b->name ) : $ai <=> $bi;
-		}
-	);
-}
-
-if ( is_array( $nq_cats ) && array() !== $nq_cats ) :
-	$nq_shop = (int) wc_get_page_id( 'shop' );
-	?>
-	<nav class="nq-collbar" aria-label="<?php esc_attr_e( 'Product categories', 'noviq-child' ); ?>">
-		<div class="nq-collbar__track">
-			<?php if ( $nq_shop > 0 ) : ?>
-				<a class="nq-collbar__chip<?php echo is_shop() ? ' is-current' : ''; ?>" href="<?php echo esc_url( (string) get_permalink( $nq_shop ) ); ?>">
-					<?php esc_html_e( 'All products', 'noviq-child' ); ?>
-					<span class="noviq-num nq-collbar__count"><?php echo esc_html( (string) wp_count_posts( 'product' )->publish ); ?></span>
-				</a>
-			<?php endif; ?>
-
-			<?php
-			foreach ( $nq_cats as $nq_cat ) :
-				if ( ! $nq_cat instanceof WP_Term ) {
-					continue;
-				}
-				?>
-				<a class="nq-collbar__chip<?php echo is_tax( 'product_cat', $nq_cat->term_id ) ? ' is-current' : ''; ?>"
-					href="<?php echo esc_url( (string) get_term_link( $nq_cat ) ); ?>">
-					<?php echo esc_html( $nq_cat->name ); ?>
-					<span class="noviq-num nq-collbar__count"><?php echo esc_html( (string) $nq_cat->count ); ?></span>
-				</a>
-			<?php endforeach; ?>
-		</div>
-	</nav>
-<?php endif; ?>
+<div class="nq-mobile-nav" id="nq-mobile-nav" hidden>
+	<?php \Noviq\Child\render_primary_menubar( 'nq-mobile-nav__list' ); ?>
+</div>
 
 <div class="nq-shell">

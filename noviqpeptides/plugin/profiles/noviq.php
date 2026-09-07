@@ -30,6 +30,7 @@ return array(
 		'lots'           => true,
 		'research_areas' => true,
 		'articles'       => true,
+		'newsletter'     => true,
 	),
 
 	'site' => array(
@@ -60,6 +61,15 @@ return array(
 		'free_shipping_threshold'   => 250,
 		'dispatch_cutoff'           => '2:00 PM CT',
 		'claim_window_hours'        => 72,
+		// Landing-page assurance / testing steps. Null = do not render.
+		'third_party_tested'        => null,
+		'made_in_usa'               => null,
+		'cgmp_compliant'            => null,
+		'heavy_metals_method'       => null,
+		'identity_method'           => 'Mass spectrometry',
+		'purity_method'             => 'RP-HPLC',
+		'content_method'            => null,
+		'consistency_method'        => null,
 	),
 
 	'ruo_short' => 'For laboratory and research use only. Not for human or veterinary use.',

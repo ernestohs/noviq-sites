@@ -1,34 +1,67 @@
 {
   "primary": [
     {
-      "label": "Catalog",
+      "label": "Shop",
       "path": "/shop/",
-      "note": null
+      "children": [
+        {
+          "label": "All products",
+          "path": "/shop/"
+        },
+        {
+          "label": "Metabolic research",
+          "path": "/collections/metabolic/"
+        },
+        {
+          "label": "Research peptides",
+          "path": "/collections/peptides/"
+        },
+        {
+          "label": "Blends",
+          "path": "/collections/blends/"
+        }
+      ]
     },
     {
-      "label": "Documentation",
-      "path": "/coa/",
-      "note": null
+      "label": "Research Library",
+      "path": "/research-hub/",
+      "children": [
+        {
+          "label": "Compound reference",
+          "path": "/research-hub/"
+        },
+        {
+          "label": "Comparisons",
+          "path": "/compare/"
+        },
+        {
+          "label": "Journal",
+          "path": "/blog/"
+        }
+      ]
     },
     {
-      "label": "Learn",
-      "path": "/learn/",
-      "note": null
-    },
-    {
-      "label": "Standard",
+      "label": "Quality & Testing",
       "path": "/quality-standard/",
-      "note": null
+      "children": [
+        {
+          "label": "Our testing standard",
+          "path": "/quality-standard/"
+        },
+        {
+          "label": "COA & SDS library",
+          "path": "/coa/"
+        },
+        {
+          "label": "Verify a lot",
+          "path": "/verify/"
+        }
+      ]
     },
     {
       "label": "Wholesale",
       "path": "/wholesale/",
-      "note": null
-    },
-    {
-      "label": "Journal",
-      "path": "/blog/",
-      "note": null
+      "children": []
     }
   ],
   "footer": [

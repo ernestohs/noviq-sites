@@ -26,7 +26,7 @@ final class Menus {
 
 		$navigation = $this->seeder->data( 'navigation' );
 
-		$primary = $this->upsert_menu( 'Primary', $this->flat_items( $navigation['primary'] ) );
+		$primary = $this->upsert_menu( 'Primary', $this->primary_items( $navigation['primary'] ) );
 		$footer  = $this->upsert_menu( 'Footer', $this->grouped_items( $navigation['footer'] ) );
 
 		if ( $this->seeder->is_dry_run() ) {
@@ -91,6 +91,27 @@ final class Menus {
 				'path'     => (string) $link['path'],
 				'children' => array(),
 			),
+			$links
+		);
+	}
+
+	/**
+	 * Primary menu may nest children (Shop, Research Library, Quality & Testing).
+	 *
+	 * @param array<int, array{label: string, path: string, children?: array}> $links Primary links.
+	 * @return array<int, array{label: string, path: ?string, children: array}>
+	 */
+	private function primary_items( array $links ): array {
+		return array_map(
+			function ( array $link ): array {
+				$children = $link['children'] ?? array();
+
+				return array(
+					'label'    => (string) $link['label'],
+					'path'     => (string) $link['path'],
+					'children' => $this->flat_items( is_array( $children ) ? $children : array() ),
+				);
+			},
 			$links
 		);
 	}
