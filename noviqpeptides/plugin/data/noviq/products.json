@@ -12,14 +12,26 @@
       "aod-9604"
     ],
     "summary": "hGH Fragment 176-191. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "AOD-9604 MAIN.png",
     "variants": [
       {
-        "sku": "DEV-AOD-9604",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-AOD-9604-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-AOD-9604-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-AOD-9604-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 6000
       }
     ],
@@ -42,14 +54,26 @@
       "bpc-157"
     ],
     "summary": "Synthetic 15-residue peptide with a proline-rich core, among the most widely referenced sequences in tissue-model research.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "BPC157 MAIN.png",
     "variants": [
       {
-        "sku": "DEV-BPC-157",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-BPC-157-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-BPC-157-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-BPC-157-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 6000
       }
     ],
@@ -72,14 +96,26 @@
       "cjc-1295"
     ],
     "summary": "Formula C152H252N44O42. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "cjc1295-main.png",
     "variants": [
       {
-        "sku": "DEV-CJC-1295",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-CJC-1295-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 11000
+      },
+      {
+        "sku": "DEV-CJC-1295-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 11000
+      },
+      {
+        "sku": "DEV-CJC-1295-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 11000
       }
     ],
@@ -103,14 +139,26 @@
       "ipamorelin"
     ],
     "summary": "Dual peptide blend. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "CJC1295+IPA MAIN.png",
     "variants": [
       {
-        "sku": "DEV-CJC-1295-IPA",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-CJC-1295-IPA-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 9000
+      },
+      {
+        "sku": "DEV-CJC-1295-IPA-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 9000
+      },
+      {
+        "sku": "DEV-CJC-1295-IPA-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 9000
       }
     ],
@@ -133,14 +181,26 @@
       "dsip"
     ],
     "summary": "Delta Sleep-Inducing Peptide. 10 mg. Formula C35H48N10O15. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "DSIP MAIN.png",
     "variants": [
       {
-        "sku": "DEV-DSIP",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-DSIP-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 5500
+      },
+      {
+        "sku": "DEV-DSIP-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 5500
+      },
+      {
+        "sku": "DEV-DSIP-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 5500
       }
     ],
@@ -163,14 +223,26 @@
       "epithalon"
     ],
     "summary": "Tetrapeptide. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "EPITHALON MAIN.png",
     "variants": [
       {
-        "sku": "DEV-EPITHALON",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-EPITHALON-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-EPITHALON-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-EPITHALON-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 6000
       }
     ],
@@ -193,14 +265,26 @@
       "ghk-cu"
     ],
     "summary": "Copper(II) complex of glycyl-histidyl-lysine, supplied as the characteristic blue lyophilate.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "GHKCu Main.png",
     "variants": [
       {
-        "sku": "DEV-GHK-CU",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-GHK-CU-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 5000
+      },
+      {
+        "sku": "DEV-GHK-CU-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 5000
+      },
+      {
+        "sku": "DEV-GHK-CU-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 5000
       }
     ],
@@ -223,14 +307,26 @@
       "ghrp-2"
     ],
     "summary": "Growth Hormone Releasing Peptide-2. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "GHRP-2 MAIN.png",
     "variants": [
       {
-        "sku": "DEV-GHRP-2",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-GHRP-2-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 3000
+      },
+      {
+        "sku": "DEV-GHRP-2-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 3000
+      },
+      {
+        "sku": "DEV-GHRP-2-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 3000
       }
     ],
@@ -255,14 +351,26 @@
       "tb-500"
     ],
     "summary": "GHK-Cu, BPC-157, TB-500. Ratio 5:1:1. 70 mg. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "GLOW Main.png",
     "variants": [
       {
-        "sku": "DEV-GLOW",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-GLOW-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 15000
+      },
+      {
+        "sku": "DEV-GLOW-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 15000
+      },
+      {
+        "sku": "DEV-GLOW-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 15000
       }
     ],
@@ -285,14 +393,26 @@
       "glutathione"
     ],
     "summary": "Tripeptide. Formula C10H17N3O6S. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "GLUTATHIONE MAIN.png",
     "variants": [
       {
-        "sku": "DEV-GLUTATHIONE",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-GLUTATHIONE-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 7500
+      },
+      {
+        "sku": "DEV-GLUTATHIONE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 7500
+      },
+      {
+        "sku": "DEV-GLUTATHIONE-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 7500
       }
     ],
@@ -315,14 +435,26 @@
       "gonadorelin"
     ],
     "summary": "GnRH Acetate. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "GONADORELIN MAIN.png",
     "variants": [
       {
-        "sku": "DEV-GONADORELIN",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-GONADORELIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 3500
+      },
+      {
+        "sku": "DEV-GONADORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 3500
+      },
+      {
+        "sku": "DEV-GONADORELIN-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 3500
       }
     ],
@@ -345,14 +477,26 @@
       "igf-1-lr3"
     ],
     "summary": "Long Arg3 IGF-1. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "IGF1 LR3 main.png",
     "variants": [
       {
-        "sku": "DEV-IGF-1-LR3",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-IGF-1-LR3-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 8500
+      },
+      {
+        "sku": "DEV-IGF-1-LR3-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 8500
+      },
+      {
+        "sku": "DEV-IGF-1-LR3-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 8500
       }
     ],
@@ -375,14 +519,26 @@
       "ipamorelin"
     ],
     "summary": "Amidated pentapeptide secretagogue containing Aib and D-2-naphthylalanine residues.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "IPAMORELIN MAIN.png",
     "variants": [
       {
-        "sku": "DEV-IPAMORELIN",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-IPAMORELIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4000
+      },
+      {
+        "sku": "DEV-IPAMORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 4000
+      },
+      {
+        "sku": "DEV-IPAMORELIN-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 4000
       }
     ],
@@ -405,14 +561,26 @@
       "kisspeptin-10"
     ],
     "summary": "Decapeptide. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "KISS PEPTIN MAIN.png",
     "variants": [
       {
-        "sku": "DEV-KISSPEPTIN-10",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-KISSPEPTIN-10-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-KISSPEPTIN-10-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-KISSPEPTIN-10-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 6000
       }
     ],
@@ -438,14 +606,26 @@
       "tb-500"
     ],
     "summary": "GHK-Cu, KPV, BPC-157, TB-500. Ratio 5:1:1:1. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "KLOW MAIN.png",
     "variants": [
       {
-        "sku": "DEV-KLOW",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-KLOW-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 20000
+      },
+      {
+        "sku": "DEV-KLOW-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 20000
+      },
+      {
+        "sku": "DEV-KLOW-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 20000
       }
     ],
@@ -468,14 +648,26 @@
       "lipo-c"
     ],
     "summary": "Lipotropic blend. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "LIPO-C main.png",
     "variants": [
       {
-        "sku": "DEV-LIPO-C",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-LIPO-C-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 8000
+      },
+      {
+        "sku": "DEV-LIPO-C-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 8000
+      },
+      {
+        "sku": "DEV-LIPO-C-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 8000
       }
     ],
@@ -498,14 +690,26 @@
       "mot-c"
     ],
     "summary": "10 mg. Formula C101H152N28O22S2. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "MOT-C Main.png",
     "variants": [
       {
-        "sku": "DEV-MOT-C",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-MOT-C-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 10000
+      },
+      {
+        "sku": "DEV-MOT-C-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 10000
+      },
+      {
+        "sku": "DEV-MOT-C-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 10000
       }
     ],
@@ -528,14 +732,26 @@
       "oxytocin-acetate"
     ],
     "summary": "10 mg. Formula C45H70N12O14S2. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "OXT-T -main.png",
     "variants": [
       {
-        "sku": "DEV-OXYTOCIN",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-OXYTOCIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4500
+      },
+      {
+        "sku": "DEV-OXYTOCIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 4500
+      },
+      {
+        "sku": "DEV-OXYTOCIN-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 4500
       }
     ],
@@ -558,14 +774,26 @@
       "retatrutide"
     ],
     "summary": "Triple-receptor incretin analogue (GIP / GLP-1 / glucagon) supplied lyophilized with a lot-matched Certificate of Analysis.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "RETA MAIN.png",
     "variants": [
       {
-        "sku": "DEV-RETATRUTIDE",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-RETATRUTIDE-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 10500
+      },
+      {
+        "sku": "DEV-RETATRUTIDE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 10500
+      },
+      {
+        "sku": "DEV-RETATRUTIDE-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 10500
       }
     ],
@@ -589,14 +817,26 @@
       "tirzepatide"
     ],
     "summary": "20 mg + 40 mg blend. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "RETA+TIRZ.png",
     "variants": [
       {
-        "sku": "DEV-RETA-TIRZ",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-RETA-TIRZ-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 19000
+      },
+      {
+        "sku": "DEV-RETA-TIRZ-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 19000
+      },
+      {
+        "sku": "DEV-RETA-TIRZ-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 19000
       }
     ],
@@ -619,14 +859,26 @@
       "semaglutide"
     ],
     "summary": "Acylated 31-residue GLP-1 receptor agonist analogue, supplied as a reference standard for incretin-receptor assays.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "semaglutide main.png",
     "variants": [
       {
-        "sku": "DEV-SEMAGLUTIDE",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-SEMAGLUTIDE-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-SEMAGLUTIDE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-SEMAGLUTIDE-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 6000
       }
     ],
@@ -649,14 +901,26 @@
       "semax"
     ],
     "summary": "ACTH(4-7) fragment extended with Pro-Gly-Pro, markedly more stable than the fragment alone.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "SEMAX main.png",
     "variants": [
       {
-        "sku": "DEV-SEMAX",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-SEMAX-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6500
+      },
+      {
+        "sku": "DEV-SEMAX-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6500
+      },
+      {
+        "sku": "DEV-SEMAX-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 6500
       }
     ],
@@ -679,14 +943,26 @@
       "sermorelin"
     ],
     "summary": "10 mg. Formula C149H246N44O42S. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "SERMORELLIN MAIN.png",
     "variants": [
       {
-        "sku": "DEV-SERMORELIN",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-SERMORELIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-SERMORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000
+      },
+      {
+        "sku": "DEV-SERMORELIN-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 6000
       }
     ],
@@ -709,14 +985,26 @@
       "snap-8"
     ],
     "summary": "Formula C41H70N16O16S. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "SNAP 8 MAIN.png",
     "variants": [
       {
-        "sku": "DEV-SNAP-8",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-SNAP-8-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 5500
+      },
+      {
+        "sku": "DEV-SNAP-8-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 5500
+      },
+      {
+        "sku": "DEV-SNAP-8-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 5500
       }
     ],
@@ -739,14 +1027,26 @@
       "tb-500"
     ],
     "summary": "N-acetylated heptapeptide corresponding to the actin-binding region of thymosin beta-4.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "TB500 Main.png",
     "variants": [
       {
-        "sku": "DEV-TB-500",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-TB-500-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 10000
+      },
+      {
+        "sku": "DEV-TB-500-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 10000
+      },
+      {
+        "sku": "DEV-TB-500-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 10000
       }
     ],
@@ -769,14 +1069,26 @@
       "tesamorelin"
     ],
     "summary": "Formula C188H296N50O57. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "TESA Main.png",
     "variants": [
       {
-        "sku": "DEV-TESAMORELIN",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-TESAMORELIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 12000
+      },
+      {
+        "sku": "DEV-TESAMORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 12000
+      },
+      {
+        "sku": "DEV-TESAMORELIN-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 12000
       }
     ],
@@ -799,14 +1111,26 @@
       "tirzepatide"
     ],
     "summary": "Dual GIP / GLP-1 receptor agonist analogue, 39 residues, verified by RP-HPLC and mass spectrometry against every released lot.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "TIRZ Main2.png",
     "variants": [
       {
-        "sku": "DEV-TIRZEPATIDE",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-TIRZEPATIDE-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 10000
+      },
+      {
+        "sku": "DEV-TIRZEPATIDE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 10000
+      },
+      {
+        "sku": "DEV-TIRZEPATIDE-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 10000
       }
     ],
@@ -830,14 +1154,26 @@
       "tb-500"
     ],
     "summary": "Co-lyophilized blend of BPC-157 and TB-500 in a single vial, each component assayed separately on the lot COA.",
-    "type": "simple",
-    "attribute": null,
+    "type": "variable",
+    "attribute": "vial-size",
     "image": "Wolverine main.png",
     "variants": [
       {
-        "sku": "DEV-WOLVERINE",
-        "label": "vial",
-        "amount_mg": null,
+        "sku": "DEV-WOLVERINE-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 19500
+      },
+      {
+        "sku": "DEV-WOLVERINE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 19500
+      },
+      {
+        "sku": "DEV-WOLVERINE-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
         "price_cents": 19500
       }
     ],

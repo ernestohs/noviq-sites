@@ -83,7 +83,7 @@ $nq_chips[] = __( 'Unmarked Packaging', 'noviq-child' );
 						<li>
 							<a href="<?php echo esc_url( $nq_url ); ?>" rel="noopener noreferrer" target="_blank">
 								<span class="screen-reader-text"><?php echo esc_html( ucfirst( $nq_net ) ); ?></span>
-								<?php \Noviq\Child\the_icon( $nq_net, array( 'size' => 20 ) ); ?>
+								<?php \Noviq\Child\the_icon( $nq_net, array( 'size' => 18 ) ); ?>
 							</a>
 						</li>
 					<?php endforeach; ?>
@@ -106,7 +106,7 @@ $nq_chips[] = __( 'Unmarked Packaging', 'noviq-child' );
 		<div class="nq-footer__nl">
 			<p class="nq-footer__nl-kicker"><?php esc_html_e( 'NEWSLETTER', 'noviq-child' ); ?></p>
 			<p class="nq-footer__nl-copy">
-				<?php esc_html_e( 'Research updates, new products, and exclusive offers. Unsubscribe anytime.', 'noviq-child' ); ?>
+				<?php esc_html_e( 'Research updates, new products, and exclusive offers, delivered to your inbox.', 'noviq-child' ); ?>
 			</p>
 			<?php
 			if ( shortcode_exists( 'noviq_newsletter' ) ) {

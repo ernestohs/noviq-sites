@@ -100,6 +100,7 @@
 
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 88px;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -795,15 +796,9 @@ body.noviq .nq-card__atc.loading {
 	opacity: 0.7;
 }
 
-/* Woo injects this after an AJAX add. */
+/* Woo injects this after an AJAX add; card ATC morphs in place instead. */
 body.noviq .nq-card a.added_to_cart {
-	display: block;
-	text-align: center;
-	padding: 10px;
-	font-size: 0.8rem;
-	font-weight: 600;
-	background: var( --nq-bg-alt );
-	color: var( --nq-primary );
+	display: none !important;
 }
 
 @media ( max-width: 560px ) {
@@ -2727,6 +2722,8 @@ body.noviq .nq-page-head__title {
 	.nq-marquee__track { animation: none; }
 	.nq-card:hover { transform: none; }
 	html { scroll-behavior: auto; }
+	.nq-fly__dot { display: none; }
+	body.noviq .nq-cart.is-bumped { animation: none; }
 }
 
 /* ============================================ 15. landing chrome overrides === */
@@ -2774,10 +2771,8 @@ body.noviq .nq-page-head__title {
 }
 
 .nq-masthead {
-	position: relative;
 	background: var( --nq-white );
 	backdrop-filter: none;
-	box-shadow: none;
 }
 
 .nq-masthead__inner {
@@ -2860,6 +2855,16 @@ body.noviq .nq-cart:hover {
 	color: var( --nq-white );
 }
 
+body.noviq .nq-cart.is-bumped {
+	animation: nq-cart-bump 380ms cubic-bezier( 0.34, 1.56, 0.64, 1 );
+}
+
+@keyframes nq-cart-bump {
+	0% { transform: scale( 1 ); }
+	40% { transform: scale( 1.12 ); }
+	100% { transform: scale( 1 ); }
+}
+
 .nq-cart__count {
 	position: absolute;
 	top: -6px;
@@ -2869,7 +2874,33 @@ body.noviq .nq-cart:hover {
 	font-size: 0.65rem;
 }
 
+.nq-fly {
+	position: fixed;
+	inset: 0;
+	z-index: 90;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.nq-fly__dot {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	margin: -6px 0 0 -6px;
+	border-radius: 999px;
+	will-change: transform, opacity;
+}
+
+.nq-fly__dot--1 { background: var( --nq-blue-cta ); }
+.nq-fly__dot--2 { background: var( --nq-blue-600 ); }
+.nq-fly__dot--3 { background: var( --nq-blue-500 ); }
+.nq-fly__dot--4 { background: var( --nq-blue-200 ); }
+.nq-fly__dot--5 { background: var( --nq-blue-800 ); }
+.nq-fly__dot--6 { background: var( --nq-navy-cap ); }
+
 .nq-menubar {
+	position: relative;
+	z-index: 30;
 	background: var( --nq-blue-800 );
 	box-shadow: inset 0 4px 5.8px rgba( 0, 0, 0, 0.15 );
 }
@@ -2954,8 +2985,9 @@ body.noviq .nq-menubar .nq-nav__list .sub-menu a:hover {
 }
 
 .nq-mobile-nav {
-	position: relative;
-	z-index: 40;
+	position: sticky;
+	top: 72px;
+	z-index: 45;
 }
 
 .nq-mobile-nav__list .sub-menu {
@@ -2980,7 +3012,7 @@ body.noviq .nq-mobile-nav__list .sub-menu a {
 /* Footer rebuild */
 
 .nq-footer {
-	background: #071526;
+	background: #0a1628;
 	padding: 0;
 	margin-top: 0;
 }
@@ -2989,42 +3021,62 @@ body.noviq .nq-mobile-nav__list .sub-menu a {
 	display: grid;
 	grid-template-columns: minmax( 0, 208px ) minmax( 0, 1fr ) minmax( 0, 208px );
 	gap: 48px;
-	padding: 64px 0 48px;
+	padding-top: 64px;
+	padding-bottom: 24px;
 }
 
 .nq-footer__brand {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 10px;
 }
 
 .nq-footer__tagline {
-	margin: 12px 0 0;
+	margin: 12px 0 2px;
 	max-width: none;
-	color: rgba( 255, 255, 255, 0.72 );
+	color: rgba( 255, 255, 255, 0.78 );
 	font-size: 0.875rem;
-	line-height: 1.55;
+	line-height: 1.5;
 }
 
 body.noviq .nq-footer__contact {
 	display: block;
+	color: rgba( 255, 255, 255, 0.5 );
+	font-size: 0.8125rem;
+}
+
+body.noviq .nq-footer__contact:hover {
 	color: rgba( 255, 255, 255, 0.85 );
-	font-size: 0.875rem;
 }
 
 .nq-footer__address {
 	margin: 0;
-	color: rgba( 255, 255, 255, 0.72 );
-	font-size: 0.875rem;
-	line-height: 1.45;
+	color: rgba( 255, 255, 255, 0.5 );
+	font-size: 0.8125rem;
+	line-height: 1.5;
 }
 
 .nq-footer__social {
 	display: flex;
-	gap: 12px;
+	gap: 14px;
 	list-style: none;
-	margin: 16px 0 0;
+	margin: 14px 0 0;
 	padding: 0;
+}
+
+body.noviq .nq-footer__social a {
+	display: grid;
+	place-items: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 10px;
+	background: rgba( 255, 255, 255, 0.06 );
+	color: rgba( 255, 255, 255, 0.62 );
+}
+
+body.noviq .nq-footer__social a:hover {
+	background: rgba( 255, 255, 255, 0.12 );
+	color: var( --nq-white );
 }
 
 .nq-footer__list {
@@ -3033,25 +3085,41 @@ body.noviq .nq-footer__contact {
 	gap: 24px;
 }
 
+.nq-footer__list > li > a {
+	font-family: var( --nq-font-body );
+	font-size: 0.6875rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	color: rgba( 255, 255, 255, 0.45 );
+	margin-bottom: 18px;
+}
+
+body.noviq .nq-footer__list .sub-menu a {
+	margin-bottom: 13px;
+	font-size: 0.84rem;
+	line-height: 1.4;
+	color: rgba( 255, 255, 255, 0.75 );
+}
+
 .nq-footer__nl-kicker {
 	margin: 0;
-	font-size: 0.75rem;
-	font-weight: 700;
-	letter-spacing: 0.1em;
-	color: var( --nq-white );
+	font-size: 0.6875rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	color: rgba( 255, 255, 255, 0.45 );
 }
 
 .nq-footer__nl-copy {
-	margin: 14px 0 16px;
-	font-size: 0.875rem;
-	color: rgba( 255, 255, 255, 0.72 );
-	line-height: 1.5;
+	margin: 14px 0 10px;
+	font-size: 0.8125rem;
+	color: rgba( 255, 255, 255, 0.75 );
+	line-height: 1.55;
 }
 
 .nq-nl {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 8px;
 }
 
 .nq-nl__honeypot {
@@ -3061,21 +3129,27 @@ body.noviq .nq-footer__contact {
 	overflow: hidden;
 }
 
-.nq-nl__input {
-	height: 41.5px;
+body.noviq input.nq-nl__input {
+	height: 42px;
 	border-radius: 8px;
-	border: 1px solid rgba( 255, 255, 255, 0.2 );
-	background: rgba( 255, 255, 255, 0.08 );
+	border: 1px solid rgba( 255, 255, 255, 0.1 );
+	background: rgba( 255, 255, 255, 0.05 );
 	padding: 0 13px;
+	font-size: 0.8125rem;
 	color: var( --nq-white );
 }
 
+body.noviq input.nq-nl__input::placeholder {
+	color: rgba( 255, 255, 255, 0.45 );
+}
+
 .nq-nl__submit {
-	height: 40px;
+	height: 41px;
 	border: 0;
 	border-radius: 8px;
 	background: var( --nq-blue-cta );
 	color: var( --nq-white );
+	font-size: 0.8125rem;
 	font-weight: 600;
 	cursor: pointer;
 }
@@ -3089,12 +3163,13 @@ body.noviq .nq-footer__contact {
 .nq-nl__msg--err { color: #ffb4a9; }
 
 .nq-footer__legal {
-	border-top: 1px solid rgba( 255, 255, 255, 0.12 );
-	padding: 24px 0;
+	border-top: 1px solid rgba( 255, 255, 255, 0.1 );
+	padding-top: 24px;
+	padding-bottom: 24px;
 }
 
 .nq-footer__bar {
-	border-top: 1px solid rgba( 255, 255, 255, 0.12 );
+	border-top: 1px solid rgba( 255, 255, 255, 0.1 );
 }
 
 .nq-footer__bar-inner {
@@ -3111,19 +3186,19 @@ body.noviq .nq-footer__contact {
 .nq-footer__copy,
 .nq-footer__pay {
 	margin: 0;
-	font-size: 0.8rem;
-	color: rgba( 255, 255, 255, 0.7 );
+	font-size: 0.75rem;
+	color: rgba( 255, 255, 255, 0.5 );
 }
 
 .nq-footer__chips {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 16px;
+	gap: 22px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	font-size: 0.8rem;
-	color: rgba( 255, 255, 255, 0.85 );
+	font-size: 0.75rem;
+	color: rgba( 255, 255, 255, 0.5 );
 }
 
 @media ( max-width: 1100px ) {
@@ -3237,6 +3312,38 @@ body.noviq li.product.nq-card:hover,
 	color: var( --nq-white );
 }
 
+.nq-card__fav {
+	position: absolute;
+	z-index: 3;
+	top: 9px;
+	right: 10px;
+	display: grid;
+	place-items: center;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	border: 0;
+	border-radius: 999px;
+	background: transparent;
+	color: #2c72ff;
+	cursor: pointer;
+}
+
+.nq-card__fav:hover,
+.nq-card__fav.is-active {
+	color: #ff383c;
+}
+
+.nq-card__fav.is-active .nq-card__fav-icon path {
+	fill: currentColor;
+}
+
+.nq-card__fav-icon {
+	width: 22px;
+	height: 22px;
+	pointer-events: none;
+}
+
 .nq-card__coa {
 	position: absolute;
 	z-index: 2;
@@ -3309,6 +3416,16 @@ body.noviq .nq-card__title {
 }
 
 .nq-card__doses li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 0;
+	min-width: 0;
+	height: auto;
+	background: transparent;
+}
+
+.nq-card__dose {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -3318,8 +3435,21 @@ body.noviq .nq-card__title {
 	border: 1px solid #c9d4e8;
 	border-radius: 8px;
 	font-size: 0.625rem;
+	font-family: inherit;
 	color: #27354a;
 	background: var( --nq-white );
+	cursor: pointer;
+}
+
+.nq-card__dose.is-selected {
+	border-color: #2c72ff;
+	border-width: 1.5px;
+	color: #121d31;
+}
+
+.nq-card__dose:disabled {
+	cursor: default;
+	opacity: 1;
 }
 
 .nq-card__foot {
@@ -3407,6 +3537,17 @@ body.noviq .nq-card__atc .nq-icon {
 	width: 18px;
 	height: 18px;
 	color: var( --nq-white );
+}
+
+body.noviq .nq-card__atc-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+}
+
+body.noviq .nq-card__atc-icon[hidden] {
+	display: none;
 }
 
 .nq-home .nq-section {
