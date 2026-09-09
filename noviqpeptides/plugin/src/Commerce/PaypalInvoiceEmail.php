@@ -12,7 +12,7 @@ namespace Noviq\Core\Commerce;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Customer email with order summary and PayPal.me payment link.
+ * Customer email with order summary and PayPal invoice payment link.
  */
 final class PaypalInvoiceEmail extends \WC_Email {
 

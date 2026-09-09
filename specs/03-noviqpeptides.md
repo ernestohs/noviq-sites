@@ -37,9 +37,18 @@ files we own, never a full WordPress copy.
 The client's responsibility, and the largest financial exposure across the
 three sites. RUO peptides require a high-risk merchant account; mainstream
 processors will terminate on detection. We do not select, configure, or hold
-credentials for it.
+credentials in git.
 
-Record here once known: TBD
+Interim storefront path: WooCommerce gateway `noviq_paypal_invoice` creates a
+PayPal Invoicing API invoice on checkout, stores the `recipient_view_url` on the
+order, and emails that link via the existing PayPal invoice email. Orders stay
+on-hold until an admin confirms payment manually (no webhooks yet).
+
+Credentials (REST Client ID / Secret, sandbox vs live) are entered only in
+WordPress admin under WooCommerce → Settings → Payments → PayPal Invoice, or
+for local Docker via `noviqpeptides/local/.env` (`PAYPAL_CLIENT_ID`,
+`PAYPAL_CLIENT_SECRET`, `PAYPAL_SANDBOX`) consumed by `setup.sh`. Never commit
+those values.
 
 ## Constraint inherited from the overview
 

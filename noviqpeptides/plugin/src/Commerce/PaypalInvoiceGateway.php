@@ -2,7 +2,7 @@
 /**
  * Interim PayPal invoice payment gateway.
  *
- * Places orders on hold and sends the customer a PayPal.me link by email.
+ * Places orders on hold and emails a PayPal Invoicing API payment link.
  * The admin reconciles payment manually and moves the order to Processing.
  *
  * @package Noviq\Core
@@ -15,11 +15,14 @@ namespace Noviq\Core\Commerce;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * WooCommerce payment gateway for PayPal.me invoice links.
+ * WooCommerce payment gateway for PayPal invoice payment links.
  */
 final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 
 	public const ID = 'noviq_paypal_invoice';
+
+	public const META_INVOICE_ID  = '_noviq_paypal_invoice_id';
+	public const META_PAYMENT_URL = '_noviq_paypal_payment_url';
 
 	public static function init(): void {
 		add_filter( 'woocommerce_payment_gateways', array( self::class, 'register_gateway' ) );
@@ -73,7 +76,7 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 		$this->icon               = '';
 		$this->has_fields         = false;
 		$this->method_title       = __( 'PayPal Invoice', 'noviq-core' );
-		$this->method_description = __( 'Accept orders now and collect payment via a PayPal.me link sent by email. Orders stay on hold until payment is confirmed manually.', 'noviq-core' );
+		$this->method_description = __( 'Accept orders now and collect payment via a PayPal invoice link created through the Invoicing API and sent by email. Orders stay on hold until payment is confirmed manually.', 'noviq-core' );
 		$this->supports           = array( 'products' );
 
 		$this->init_form_fields();
@@ -88,36 +91,63 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 		add_action( 'woocommerce_email_before_order_table', array( $this, 'email_instructions' ), 10, 4 );
 	}
 
+	/**
+	 * Keep the existing Client Secret when the password field is left blank.
+	 */
+	public function process_admin_options(): bool {
+		$post_key = 'woocommerce_' . $this->id . '_client_secret';
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- WooCommerce settings form.
+		if ( isset( $_POST[ $post_key ] ) && '' === trim( (string) wp_unslash( $_POST[ $post_key ] ) ) ) {
+			$_POST[ $post_key ] = $this->get_option( 'client_secret', '' ); // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		}
+
+		return parent::process_admin_options();
+	}
+
 	public function init_form_fields(): void {
 		$this->form_fields = array(
-			'enabled'        => array(
+			'enabled'       => array(
 				'title'   => __( 'Enable/Disable', 'noviq-core' ),
 				'type'    => 'checkbox',
 				'label'   => __( 'Enable PayPal invoice payments', 'noviq-core' ),
 				'default' => 'no',
 			),
-			'title'          => array(
+			'title'         => array(
 				'title'       => __( 'Title', 'noviq-core' ),
 				'type'        => 'text',
 				'description' => __( 'Payment method title shown at checkout.', 'noviq-core' ),
 				'default'     => __( 'Pay via PayPal', 'noviq-core' ),
 				'desc_tip'    => true,
 			),
-			'description'    => array(
+			'description'   => array(
 				'title'       => __( 'Description', 'noviq-core' ),
 				'type'        => 'textarea',
 				'description' => __( 'Payment method description shown at checkout.', 'noviq-core' ),
 				'default'     => __( 'Place your order now. You will receive an email with a PayPal payment link. Your order ships after payment is confirmed.', 'noviq-core' ),
 				'desc_tip'    => true,
 			),
-			'paypal_handle'  => array(
-				'title'       => __( 'PayPal.me handle', 'noviq-core' ),
+			'sandbox'       => array(
+				'title'       => __( 'Sandbox mode', 'noviq-core' ),
+				'type'        => 'checkbox',
+				'label'       => __( 'Use PayPal sandbox API endpoints', 'noviq-core' ),
+				'default'     => 'yes',
+				'description' => __( 'Leave enabled for local and staging. Uncheck only when using Live Client ID and Secret on a signed-off store.', 'noviq-core' ),
+			),
+			'client_id'     => array(
+				'title'       => __( 'Client ID', 'noviq-core' ),
 				'type'        => 'text',
-				'description' => __( 'Your PayPal.me username without the URL prefix.', 'noviq-core' ),
+				'description' => __( 'PayPal REST API Client ID from the developer dashboard.', 'noviq-core' ),
 				'default'     => '',
 				'desc_tip'    => true,
 			),
-			'instructions'   => array(
+			'client_secret' => array(
+				'title'       => __( 'Client Secret', 'noviq-core' ),
+				'type'        => 'password',
+				'description' => __( 'PayPal REST API Client Secret. Stored in WordPress options; never commit to git.', 'noviq-core' ),
+				'default'     => '',
+				'desc_tip'    => true,
+			),
+			'instructions'  => array(
 				'title'       => __( 'Instructions', 'noviq-core' ),
 				'type'        => 'textarea',
 				'description' => __( 'Shown on the thank-you page and in the payment email.', 'noviq-core' ),
@@ -128,44 +158,12 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 	}
 
 	/**
-	 * Build a PayPal.me URL for an order total.
+	 * Payment URL stored on the order after invoice creation.
 	 */
 	public static function payment_url_for_order( \WC_Order $order ): string {
-		$settings = get_option( 'woocommerce_' . self::ID . '_settings', array() );
-		$handle   = is_array( $settings ) ? (string) ( $settings['paypal_handle'] ?? '' ) : '';
-		$handle   = self::sanitize_handle( $handle );
+		$url = (string) $order->get_meta( self::META_PAYMENT_URL, true );
 
-		if ( '' === $handle ) {
-			return '';
-		}
-
-		$currency = strtoupper( (string) $order->get_currency() );
-		if ( '' === $currency ) {
-			$currency = 'USD';
-		}
-
-		$amount = number_format( (float) $order->get_total(), 2, '.', '' );
-
-		return sprintf( 'https://paypal.me/%s/%s%s', rawurlencode( $handle ), $amount, rawurlencode( $currency ) );
-	}
-
-	/**
-	 * Strip URL fragments and leading @ from a PayPal.me handle.
-	 */
-	public static function sanitize_handle( string $handle ): string {
-		$handle = trim( $handle );
-		$handle = ltrim( $handle, '@' );
-
-		if ( str_contains( $handle, 'paypal.me/' ) ) {
-			$parts  = explode( 'paypal.me/', $handle, 2 );
-			$handle = $parts[1] ?? $handle;
-		}
-
-		$handle = trim( $handle, '/' );
-		$handle = explode( '/', $handle )[0];
-		$handle = preg_replace( '/[^a-zA-Z0-9\-_]/', '', $handle ) ?? '';
-
-		return $handle;
+		return esc_url_raw( $url );
 	}
 
 	/**
@@ -184,7 +182,15 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 			);
 		}
 
-		if ( '' === self::sanitize_handle( (string) $this->get_option( 'paypal_handle' ) ) ) {
+		$client = PaypalApiClient::from_gateway_settings(
+			array(
+				'sandbox'       => $this->get_option( 'sandbox', 'yes' ),
+				'client_id'     => $this->get_option( 'client_id', '' ),
+				'client_secret' => $this->get_option( 'client_secret', '' ),
+			)
+		);
+
+		if ( ! $client->is_configured() ) {
 			wc_add_notice( __( 'PayPal payments are not configured yet. Please contact support.', 'noviq-core' ), 'error' );
 
 			return array(
@@ -193,9 +199,34 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 			);
 		}
 
+		$result = $client->create_payment_link_for_order( $order );
+		if ( is_wp_error( $result ) ) {
+			$order->add_order_note(
+				sprintf(
+					/* translators: %s: error message */
+					__( 'PayPal invoice creation failed: %s', 'noviq-core' ),
+					$result->get_error_message()
+				)
+			);
+			wc_add_notice( __( 'Unable to create a PayPal payment link. Please try again or contact support.', 'noviq-core' ), 'error' );
+
+			return array(
+				'result'   => 'failure',
+				'redirect' => '',
+			);
+		}
+
+		$order->update_meta_data( self::META_INVOICE_ID, $result['invoice_id'] );
+		$order->update_meta_data( self::META_PAYMENT_URL, $result['payment_url'] );
+		$order->save();
+
 		$order->update_status(
 			'on-hold',
-			__( 'Awaiting PayPal payment via invoice link.', 'noviq-core' )
+			sprintf(
+				/* translators: %s: PayPal invoice id */
+				__( 'Awaiting PayPal payment. Invoice %s.', 'noviq-core' ),
+				$result['invoice_id']
+			)
 		);
 
 		wc_reduce_stock_levels( $order_id );

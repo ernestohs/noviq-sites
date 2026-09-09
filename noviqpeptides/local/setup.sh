@@ -181,9 +181,31 @@ add_action(
 );
 EOF
 
-# Enable PayPal invoice gateway for local test orders
-wp option update woocommerce_noviq_paypal_invoice_settings '{"enabled":"yes","title":"Pay via PayPal","description":"Place your order now. You will receive an email with a PayPal payment link. Your order ships after payment is confirmed.","paypal_handle":"NoviqPeptidesLocal","instructions":"Please complete payment via PayPal using the link below. Include your order number in the PayPal note if prompted."}' --format=json 2>/dev/null || true
+# Enable PayPal invoice gateway for local test orders.
+# Credentials come from .env when set; otherwise configure in WP admin.
+PAYPAL_SETTINGS="$(
+  PAYPAL_SANDBOX="${PAYPAL_SANDBOX:-1}" \
+  PAYPAL_CLIENT_ID="${PAYPAL_CLIENT_ID:-}" \
+  PAYPAL_CLIENT_SECRET="${PAYPAL_CLIENT_SECRET:-}" \
+  python3 - <<'PY'
+import json, os
+sandbox = os.environ.get("PAYPAL_SANDBOX", "1")
+print(json.dumps({
+    "enabled": "yes",
+    "title": "Pay via PayPal",
+    "description": "Place your order now. You will receive an email with a PayPal payment link. Your order ships after payment is confirmed.",
+    "sandbox": "no" if sandbox in ("0", "false", "no") else "yes",
+    "client_id": os.environ.get("PAYPAL_CLIENT_ID", ""),
+    "client_secret": os.environ.get("PAYPAL_CLIENT_SECRET", ""),
+    "instructions": "Please complete payment via PayPal using the link below. Include your order number in the PayPal note if prompted.",
+}))
+PY
+)"
+wp option update woocommerce_noviq_paypal_invoice_settings "${PAYPAL_SETTINGS}" --format=json 2>/dev/null || true
 wp option update woocommerce_noviq_paypal_invoice_instructions_settings '{"enabled":"yes"}' --format=json 2>/dev/null || true
+if [[ -z "${PAYPAL_CLIENT_ID:-}" || -z "${PAYPAL_CLIENT_SECRET:-}" ]]; then
+  echo "PayPal Client ID/Secret not set in .env; enter them under WooCommerce > Settings > Payments > PayPal Invoice."
+fi
 
 echo ""
 echo "Store is ready."
