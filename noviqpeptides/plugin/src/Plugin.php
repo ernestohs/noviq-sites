@@ -46,6 +46,9 @@ final class Plugin {
 		if ( Profile::feature( 'volume_breaks' ) ) {
 			Commerce\VolumeBreaks::init();
 		}
+		if ( Profile::feature( 'referral_coupons' ) ) {
+			Commerce\ReferralCoupon::init();
+		}
 		if ( Profile::feature( 'subscriptions' ) ) {
 			Commerce\Subscriptions::init();
 		}

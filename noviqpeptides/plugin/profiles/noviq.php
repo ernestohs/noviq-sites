@@ -15,9 +15,10 @@ return array(
 
 	'features' => array(
 		'meta_boxes'     => true,
-		'volume_breaks'  => true,
-		'paypal_invoice' => true,
-		'subscriptions'  => true,
+		'volume_breaks'    => true,
+		'referral_coupons' => true,
+		'paypal_invoice'   => true,
+		'subscriptions'    => true,
 		'age_gate'       => true,
 		'ruo'            => true,
 		'attestation'    => true,

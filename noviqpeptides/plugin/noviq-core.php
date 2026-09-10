@@ -63,14 +63,17 @@ add_action(
 Plugin::instance()->boot();
 
 /**
- * Rewrite rules for the compound and comparison post types are registered on
- * activation; flush once so /learn/{slug} and /compare/{slug} resolve.
+ * Rewrite rules for compounds, comparisons, and /go/{CODE} are registered on
+ * activation; flush once so those paths resolve without a Permalinks save.
  */
 register_activation_hook(
 	__FILE__,
 	static function (): void {
 		PostTypes::register();
 		Taxonomies::register();
+		if ( Profile::feature( 'referral_coupons' ) ) {
+			Commerce\ReferralCoupon::register_rewrite();
+		}
 		flush_rewrite_rules();
 	}
 );
