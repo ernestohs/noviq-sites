@@ -239,7 +239,7 @@ final class Library {
 			$this->seeder,
 			'policies',
 			'Policies',
-			'<!-- wp:paragraph --><p>Terms, privacy, shipping, cancellation and accessibility.</p><!-- /wp:paragraph -->'
+			'<!-- wp:paragraph --><p>Terms, privacy, cookies, shipping, cancellation and accessibility.</p><!-- /wp:paragraph -->'
 		);
 
 		foreach ( $this->seeder->data( 'pages' ) as $data ) {
@@ -259,6 +259,12 @@ final class Library {
 				$content,
 				$parent
 			);
+		}
+
+		$privacy = get_page_by_path( 'policies/privacy' );
+		if ( $privacy instanceof \WP_Post ) {
+			update_option( 'woocommerce_privacy_policy_page_id', $privacy->ID );
+			update_option( 'wp_page_for_privacy_policy', $privacy->ID );
 		}
 	}
 

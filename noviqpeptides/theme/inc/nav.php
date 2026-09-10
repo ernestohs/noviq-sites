@@ -126,8 +126,9 @@ function render_primary_menubar( string $menu_class = 'nq-nav__list' ): void {
 			$has_kids ? ' menu-item-has-children' : ''
 		);
 		printf(
-			'<a href="%s">%s</a>',
+			'<a href="%s"%s>%s</a>',
 			esc_url( home_url( $item['path'] ) ),
+			$has_kids ? ' aria-haspopup="true" aria-expanded="false"' : '',
 			esc_html( $item['label'] )
 		);
 		if ( $has_kids ) {

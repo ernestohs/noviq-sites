@@ -122,7 +122,7 @@ if [[ -z "${POLICIES_ID}" ]]; then
   POLICIES_ID=$(wp post create --post_type=page --post_title="Policies" --post_name="policies" --post_status=publish --porcelain)
   echo "Created page /policies/ ($POLICIES_ID)"
 fi
-for pair in "shipping-returns:Shipping and Returns" "terms:Terms" "privacy:Privacy" "cancellation:Cancellation" "accessibility:Accessibility"; do
+for pair in "shipping-returns:Shipping and Returns" "terms:Terms" "privacy:Privacy" "cookies:Cookies" "cancellation:Cancellation" "accessibility:Accessibility"; do
   slug="${pair%%:*}"
   title="${pair##*:}"
   existing=$(wp post list --post_type=page --name="$slug" --field=ID 2>/dev/null | head -1 || true)

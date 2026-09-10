@@ -156,6 +156,10 @@
           "path": "/policies/privacy/"
         },
         {
+          "label": "Cookies",
+          "path": "/policies/cookies/"
+        },
+        {
           "label": "Cancellation policy",
           "path": "/policies/cancellation/"
         },

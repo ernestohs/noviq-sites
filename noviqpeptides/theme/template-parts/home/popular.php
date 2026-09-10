@@ -72,7 +72,7 @@ if ( array() === $nq_products ) {
 				<?php \Noviq\Child\the_icon( 'chevron-right', array( 'size' => 20, 'class' => 'nq-carousel__chev' ) ); ?>
 			</button>
 
-			<div class="nq-carousel__dots" data-nq-carousel-dots role="tablist" aria-label="<?php esc_attr_e( 'Product slides', 'noviq-child' ); ?>"></div>
+			<div class="nq-carousel__dots" data-nq-carousel-dots aria-label="<?php esc_attr_e( 'Product slides', 'noviq-child' ); ?>"></div>
 		</div>
 	</div>
 </section>

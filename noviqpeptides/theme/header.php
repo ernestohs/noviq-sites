@@ -87,7 +87,7 @@ $nq_account  = function_exists( 'wc_get_page_permalink' ) ? (string) wc_get_page
 
 		<div class="nq-masthead__actions">
 			<a class="nq-account" href="<?php echo esc_url( $nq_account ); ?>">
-				<span><?php esc_html_e( 'Account', 'noviq-child' ); ?></span>
+				<span class="nq-account__label"><?php esc_html_e( 'Account', 'noviq-child' ); ?></span>
 				<?php \Noviq\Child\the_icon( 'account', array( 'size' => 24 ) ); ?>
 			</a>
 

@@ -100,7 +100,35 @@ add_action(
 );
 
 /**
- * Mobile navigation toggle. Nine lines of vanilla JS rather than a dependency.
+ * Mark primary-nav parents that open a submenu for assistive tech.
+ *
+ * @param array<string, string> $atts Link attributes.
+ * @param \WP_Post              $item Menu item.
+ * @param \stdClass             $args Menu args.
+ * @param int                   $depth Depth.
+ * @return array<string, string>
+ */
+add_filter(
+	'nav_menu_link_attributes',
+	static function ( array $atts, $item, $args, int $depth ): array {
+		if ( 0 !== $depth || empty( $args->theme_location ) || 'primary' !== $args->theme_location ) {
+			return $atts;
+		}
+
+		$classes = is_array( $item->classes ) ? $item->classes : array();
+		if ( in_array( 'menu-item-has-children', $classes, true ) ) {
+			$atts['aria-haspopup'] = 'true';
+			$atts['aria-expanded'] = 'false';
+		}
+
+		return $atts;
+	},
+	10,
+	4
+);
+
+/**
+ * Mobile navigation toggle and desktop dropdown aria-expanded sync.
  */
 add_action(
 	'wp_footer',
@@ -110,11 +138,26 @@ add_action(
 		( function () {
 			var burger = document.querySelector( '.nq-burger' );
 			var panel = document.getElementById( 'nq-mobile-nav' );
-			if ( ! burger || ! panel ) { return; }
-			burger.addEventListener( 'click', function () {
-				var open = burger.getAttribute( 'aria-expanded' ) === 'true';
-				burger.setAttribute( 'aria-expanded', String( ! open ) );
-				panel.hidden = open;
+			if ( burger && panel ) {
+				burger.addEventListener( 'click', function () {
+					var open = burger.getAttribute( 'aria-expanded' ) === 'true';
+					burger.setAttribute( 'aria-expanded', String( ! open ) );
+					panel.hidden = open;
+				} );
+			}
+
+			document.querySelectorAll( '.nq-menubar .menu-item-has-children' ).forEach( function ( item ) {
+				var link = item.querySelector( ':scope > a' );
+				if ( ! link ) { return; }
+				var set = function ( open ) {
+					link.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
+				};
+				item.addEventListener( 'mouseenter', function () { set( true ); } );
+				item.addEventListener( 'mouseleave', function () { set( false ); } );
+				item.addEventListener( 'focusin', function () { set( true ); } );
+				item.addEventListener( 'focusout', function ( e ) {
+					if ( ! item.contains( e.relatedTarget ) ) { set( false ); }
+				} );
 			} );
 		}() );
 		</script>
@@ -298,13 +341,22 @@ function cart_pill_html(): string {
 
 	$icon = icon( 'cart', array( 'size' => 24 ) );
 
+	$announce = 0 === $count
+		? __( 'Cart is empty', 'noviq-child' )
+		: sprintf(
+			/* translators: %d: number of items in the cart. */
+			_n( '%d item in cart', '%d items in cart', $count, 'noviq-child' ),
+			$count
+		);
+
 	return sprintf(
-		'<a class="nq-cart" href="%1$s"><span class="nq-cart__label">%2$s</span>%3$s<span class="noviq-num nq-cart__count"%4$s>%5$d</span></a>',
+		'<a class="nq-cart" href="%1$s"><span class="nq-cart__label">%2$s</span>%3$s<span class="noviq-num nq-cart__count"%4$s>%5$d</span><span class="screen-reader-text nq-cart__live" aria-live="polite" aria-atomic="true">%6$s</span></a>',
 		esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ),
 		esc_html__( 'Cart', 'noviq-child' ),
 		$icon,
 		0 === $count ? ' hidden' : '',
-		(int) $count
+		(int) $count,
+		esc_html( $announce )
 	);
 }
 

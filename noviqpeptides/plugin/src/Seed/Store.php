@@ -232,6 +232,12 @@ final class Store {
 
 		$this->option( 'woocommerce_enable_guest_checkout', 'yes' );
 		$this->option( 'woocommerce_terms_page_id', $this->page_id( 'policies/terms' ) );
+		$this->option( 'woocommerce_privacy_policy_page_id', $this->page_id( 'policies/privacy' ) );
+
+		$privacy_id = $this->page_id( 'policies/privacy' );
+		if ( $privacy_id > 0 ) {
+			$this->option( 'wp_page_for_privacy_policy', $privacy_id );
+		}
 
 		$this->email_branding();
 	}

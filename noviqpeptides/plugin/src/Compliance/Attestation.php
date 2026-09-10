@@ -57,8 +57,12 @@ final class Attestation {
 	}
 
 	public static function register(): void {
+		add_action( 'woocommerce_admin_order_data_after_billing_address', array( self::class, 'render_admin' ) );
+		add_filter( 'woocommerce_email_order_meta_fields', array( self::class, 'email_field' ), 10, 3 );
+
 		if ( self::uses_block_checkout() ) {
 			self::register_block_field();
+			add_action( 'woocommerce_set_additional_field_value', array( self::class, 'record_block_field' ), 10, 4 );
 
 			return;
 		}
@@ -66,9 +70,6 @@ final class Attestation {
 		add_action( 'woocommerce_review_order_before_submit', array( self::class, 'render_field' ), 20 );
 		add_action( 'woocommerce_checkout_process', array( self::class, 'validate' ) );
 		add_action( 'woocommerce_checkout_create_order', array( self::class, 'record' ), 10, 2 );
-
-		add_action( 'woocommerce_admin_order_data_after_billing_address', array( self::class, 'render_admin' ) );
-		add_filter( 'woocommerce_email_order_meta_fields', array( self::class, 'email_field' ), 10, 3 );
 	}
 
 	/**
@@ -151,6 +152,30 @@ final class Attestation {
 				'error_message' => __( 'You must certify that you are 21 or older and a qualified researcher before this order can be placed.', 'noviq-core' ),
 			)
 		);
+	}
+
+	/**
+	 * Snapshot the same evidence trail on block checkout that classic checkout
+	 * records in record(). Checkbox value alone is not enough in a dispute.
+	 *
+	 * @param string               $key       Field id.
+	 * @param mixed                $value     Field value.
+	 * @param string               $group     Field group (shipping|billing|other).
+	 * @param \WC_Data             $wc_object Order or customer.
+	 */
+	public static function record_block_field( string $key, $value, string $group, $wc_object ): void {
+		if ( self::BLOCK_FIELD !== $key || ! $wc_object instanceof \WC_Order ) {
+			return;
+		}
+
+		$accepted = true === $value || 1 === $value || '1' === $value || 'yes' === $value;
+		if ( ! $accepted ) {
+			return;
+		}
+
+		$wc_object->update_meta_data( self::META_ACCEPTED, 'yes' );
+		$wc_object->update_meta_data( self::META_TEXT, self::text() );
+		$wc_object->update_meta_data( self::META_TIME, gmdate( 'c' ) );
 	}
 
 	public static function render_admin( \WC_Order $order ): void {

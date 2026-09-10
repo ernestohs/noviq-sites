@@ -81,7 +81,7 @@
 	/* Landing page (Figma 5:2) — additive; PDP/cart keep --nq-primary */
 	--nq-ink-900: #07182c;
 	--nq-blue-cta: #225ddf;
-	--nq-blue-cta-grad: linear-gradient(164deg, #2c72ff 0%, #2058d7 100%);
+	--nq-blue-cta-grad: linear-gradient(164deg, #2a6df5 0%, #2058d7 100%);
 	--nq-green-verified: #34c759;
 	--nq-on-dark-muted: #c3cfdd;
 	--nq-on-dark-kicker: #aebed1;
@@ -1066,7 +1066,18 @@ body.noviq .nq-footer__list .sub-menu a:hover {
 	.nq-footer__badges { grid-template-columns: repeat( 2, 1fr ); }
 	.nq-nav { display: none; }
 	.nq-burger { display: flex; }
-	.nq-cart__label { display: none; }
+	.nq-cart__label {
+		border: 0;
+		clip: rect( 1px, 1px, 1px, 1px );
+		clip-path: inset( 50% );
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		word-wrap: normal !important;
+	}
 }
 
 @media ( max-width: 560px ) {
@@ -2112,7 +2123,7 @@ body.noviq .nq-verify-band__copy h2 {
 }
 
 .nq-verify-band__input::placeholder {
-	color: rgba( 255, 255, 255, 0.7 );
+	color: rgba( 255, 255, 255, 0.8 );
 }
 
 .nq-verify-band__result-head {
@@ -2724,6 +2735,14 @@ body.noviq .nq-page-head__title {
 	html { scroll-behavior: auto; }
 	.nq-fly__dot { display: none; }
 	body.noviq .nq-cart.is-bumped { animation: none; }
+	body.noviq *,
+	body.noviq *::before,
+	body.noviq *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 /* ============================================ 15. landing chrome overrides === */
@@ -2806,7 +2825,7 @@ body.noviq .nq-page-head__title {
 	min-width: 0;
 }
 
-.nq-search__input:focus {
+.nq-search__input:focus:not( :focus-visible ) {
 	outline: none;
 }
 
@@ -3005,7 +3024,18 @@ body.noviq .nq-mobile-nav__list .sub-menu a {
 @media ( max-width: 900px ) {
 	.nq-search { display: none; }
 	.nq-menubar { display: none; }
-	.nq-account span { display: none; }
+	.nq-account__label {
+		border: 0;
+		clip: rect( 1px, 1px, 1px, 1px );
+		clip-path: inset( 50% );
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		word-wrap: normal !important;
+	}
 	.nq-burger { display: flex; }
 }
 
@@ -3090,7 +3120,7 @@ body.noviq .nq-footer__social a:hover {
 	font-size: 0.6875rem;
 	font-weight: 600;
 	letter-spacing: 0.12em;
-	color: rgba( 255, 255, 255, 0.45 );
+	color: rgba( 255, 255, 255, 0.46 );
 	margin-bottom: 18px;
 }
 
@@ -3106,7 +3136,7 @@ body.noviq .nq-footer__list .sub-menu a {
 	font-size: 0.6875rem;
 	font-weight: 600;
 	letter-spacing: 0.12em;
-	color: rgba( 255, 255, 255, 0.45 );
+	color: rgba( 255, 255, 255, 0.46 );
 }
 
 .nq-footer__nl-copy {
@@ -3140,7 +3170,28 @@ body.noviq input.nq-nl__input {
 }
 
 body.noviq input.nq-nl__input::placeholder {
-	color: rgba( 255, 255, 255, 0.45 );
+	color: rgba( 255, 255, 255, 0.46 );
+}
+
+.nq-nl__consent {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin: 0;
+	font-size: 0.75rem;
+	line-height: 1.45;
+	color: rgba( 255, 255, 255, 0.75 );
+	cursor: pointer;
+}
+
+.nq-nl__consent input {
+	flex: 0 0 auto;
+	margin-top: 2px;
+}
+
+.nq-nl__consent a {
+	color: var( --nq-white );
+	text-decoration: underline;
 }
 
 .nq-nl__submit {
@@ -3325,7 +3376,7 @@ body.noviq li.product.nq-card:hover,
 	border: 0;
 	border-radius: 999px;
 	background: transparent;
-	color: #2c72ff;
+	color: #2a6df5;
 	cursor: pointer;
 }
 
@@ -3442,7 +3493,7 @@ body.noviq .nq-card__title {
 }
 
 .nq-card__dose.is-selected {
-	border-color: #2c72ff;
+	border-color: #2a6df5;
 	border-width: 1.5px;
 	color: #121d31;
 }
@@ -3496,16 +3547,16 @@ body.noviq .nq-card__details {
 	min-width: 0;
 	height: 40px;
 	padding: 8px 16px;
-	border: 1px solid #2c72ff;
+	border: 1px solid #2a6df5;
 	border-radius: 142px;
-	color: #2c72ff;
+	color: #2a6df5;
 	font-weight: 500;
 	font-size: 1rem;
 	background: var( --nq-white );
 }
 
 body.noviq .nq-card__details:hover {
-	background: rgba( 44, 114, 255, 0.06 );
+	background: rgba( 42, 109, 245, 0.06 );
 	color: #2058d7;
 }
 
@@ -3519,8 +3570,8 @@ body.noviq .nq-card__atc {
 	padding: 8px 16px;
 	border: 0;
 	border-radius: 142px;
-	background-image: linear-gradient( 164.58deg, #2c72ff 0%, #2058d7 100% );
-	background-color: #2c72ff;
+	background-image: linear-gradient( 164.58deg, #2a6df5 0%, #2058d7 100% );
+	background-color: #2a6df5;
 	color: var( --nq-white );
 	gap: 8px;
 	font-size: 1rem;
