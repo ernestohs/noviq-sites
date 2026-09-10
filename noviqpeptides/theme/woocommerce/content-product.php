@@ -191,13 +191,14 @@ if ( null !== $nq_selected && $nq_selected['price'] > 0 ) {
 		<?php endif; ?>
 
 		<?php if ( array() !== $nq_doses ) : ?>
-			<ul class="nq-card__doses" aria-label="<?php esc_attr_e( 'Available sizes', 'noviq-child' ); ?>" data-nq-doses>
+			<ul class="nq-card__doses" role="listbox" aria-label="<?php esc_attr_e( 'Available sizes', 'noviq-child' ); ?>" data-nq-doses>
 				<?php foreach ( $nq_doses as $i => $nq_dose ) : ?>
 					<li>
 						<button
 							type="button"
 							class="nq-card__dose noviq-num<?php echo 0 === $i ? ' is-selected' : ''; ?>"
-							aria-pressed="<?php echo 0 === $i ? 'true' : 'false'; ?>"
+							role="option"
+							aria-selected="<?php echo 0 === $i ? 'true' : 'false'; ?>"
 							data-nq-dose
 							data-variation-id="<?php echo esc_attr( (string) $nq_dose['variation_id'] ); ?>"
 							data-attr-key="<?php echo esc_attr( $nq_dose['attr_key'] ); ?>"

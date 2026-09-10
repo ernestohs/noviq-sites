@@ -185,7 +185,7 @@
 				btn.addEventListener( 'click', function () {
 					buttons.forEach( function ( other ) {
 						other.classList.toggle( 'is-selected', other === btn );
-						other.setAttribute( 'aria-pressed', other === btn ? 'true' : 'false' );
+						other.setAttribute( 'aria-selected', other === btn ? 'true' : 'false' );
 					} );
 					updatePrice( card, btn );
 					updateAtc( card, btn );
