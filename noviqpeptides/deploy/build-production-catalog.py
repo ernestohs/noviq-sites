@@ -99,6 +99,8 @@ def psp_variants(slug: str) -> list[dict]:
         mg = v.get("attributes", {}).get("attribute_mg", "")
         label = mg_label(mg)
         price = v.get("display_price") or v.get("display_regular_price")
+        if price is None:
+            raise RuntimeError(f"Missing display_price/display_regular_price for {slug} variant {mg!r}")
         amt = re.sub(r"[^0-9.]", "", mg)
         out.append(
             {

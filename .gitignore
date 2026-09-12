@@ -1,4 +1,6 @@
 node_modules/
+__pycache__/
+*.py[cod]
 fastpeptidetesting/seed/.env
 noviqpeptides/local/.env
 noviqpeptides/local/data/
