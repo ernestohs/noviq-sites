@@ -31,10 +31,22 @@ set +a
 : "${REMOTE_WP_PATH:?}"
 SSH_PORT="${SSH_PORT:-22}"
 WP_CLI="${WP_CLI:-1}"
+WP_ALLOW_ROOT="${WP_ALLOW_ROOT:-0}"
 DEPLOY_LAYOUT="${DEPLOY_LAYOUT:-wordpress}"
 REMOTE_COMPOSE_PATH="${REMOTE_COMPOSE_PATH:-${REMOTE_WP_PATH}/local}"
 
-RSYNC_SSH="ssh -p ${SSH_PORT}"
+SSH_IDENTITY="${SSH_IDENTITY:-}"
+SSH_IDENTITY_ARGS=()
+if [[ -n "${SSH_IDENTITY}" ]]; then
+  SSH_IDENTITY_ARGS=(-i "${SSH_IDENTITY}")
+fi
+
+WP_REMOTE_FLAGS=()
+if [[ "${WP_ALLOW_ROOT}" == "1" ]]; then
+  WP_REMOTE_FLAGS=(--allow-root)
+fi
+
+RSYNC_SSH="ssh -p ${SSH_PORT} ${SSH_IDENTITY_ARGS[*]}"
 
 case "$DEPLOY_LAYOUT" in
   wordpress)
@@ -61,13 +73,20 @@ rsync -az --delete -e "$RSYNC_SSH" \
   ../plugin/ \
   "${SSH_USER}@${SSH_HOST}:${PLUGIN_DEST}"
 
-ssh -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" \
-  "chmod -R a+rX '${THEME_DEST}' '${PLUGIN_DEST}'"
+if [[ -d "${ROOT}/mu-plugins" ]]; then
+  echo "Syncing mu-plugins..."
+  rsync -az -e "$RSYNC_SSH" \
+    "${ROOT}/mu-plugins/" \
+    "${SSH_USER}@${SSH_HOST}:${REMOTE_WP_PATH}/wp-content/mu-plugins/"
+fi
+
+ssh -p "${SSH_PORT}" "${SSH_IDENTITY_ARGS[@]}" "${SSH_USER}@${SSH_HOST}" \
+  "chmod -R a+rX '${THEME_DEST}' '${PLUGIN_DEST}'; if [[ -d '${REMOTE_WP_PATH}/wp-content/mu-plugins' ]]; then chown -R www-data:www-data '${REMOTE_WP_PATH}/wp-content/mu-plugins' && chmod -R a+rX '${REMOTE_WP_PATH}/wp-content/mu-plugins'; fi"
 
 if [[ "$WP_CLI" == "1" ]]; then
   echo "Activating on remote..."
-  ssh -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" \
-    "cd '${REMOTE_WP_PATH}' && wp theme activate noviq-peptides && wp plugin activate noviq-peptides && wp rewrite flush --hard"
+  ssh -p "${SSH_PORT}" "${SSH_IDENTITY_ARGS[@]}" "${SSH_USER}@${SSH_HOST}" \
+    "cd '${REMOTE_WP_PATH}' && wp ${WP_REMOTE_FLAGS[*]} theme activate noviq-peptides && wp ${WP_REMOTE_FLAGS[*]} plugin activate noviq-peptides && wp ${WP_REMOTE_FLAGS[*]} rewrite flush --hard"
 fi
 
 echo "Deploy complete."
