@@ -19,6 +19,7 @@ final class PaypalApiClient {
 	private const SANDBOX_BASE = 'https://api-m.sandbox.paypal.com';
 	private const LIVE_BASE    = 'https://api-m.paypal.com';
 	private const LOG_SOURCE   = 'noviq-paypal-invoice';
+	private const OAUTH_SCOPE  = 'https://uri.paypal.com/services/invoicing/invoices/readwrite';
 
 	private string $client_id;
 	private string $client_secret;
@@ -55,8 +56,26 @@ final class PaypalApiClient {
 			return new \WP_Error( 'noviq_paypal_not_configured', __( 'PayPal API credentials are not configured.', 'noviq-core' ) );
 		}
 
+		$invoice = $this->create_invoice_payment_link( $order );
+		if ( ! is_wp_error( $invoice ) ) {
+			return $invoice;
+		}
+
+		if ( $this->should_fallback_to_checkout_order( $invoice ) ) {
+			$this->log( 'info', 'Invoicing API unavailable; creating Checkout order payment link instead.' );
+
+			return $this->create_checkout_order_payment_link( $order );
+		}
+
+		return $invoice;
+	}
+
+	/**
+	 * @return array{invoice_id: string, payment_url: string}|\WP_Error
+	 */
+	private function create_invoice_payment_link( \WC_Order $order ) {
 		$payload = $this->build_invoice_payload( $order );
-		$created = $this->request( 'POST', '/v2/invoicing/invoices', $payload );
+		$created = $this->request( 'POST', '/v2/invoicing/invoices', $payload, true );
 
 		if ( is_wp_error( $created ) ) {
 			return $created;
@@ -75,7 +94,8 @@ final class PaypalApiClient {
 			array(
 				'send_to_recipient' => false,
 				'send_to_invoicer'  => false,
-			)
+			),
+			true
 		);
 
 		if ( is_wp_error( $sent ) ) {
@@ -84,7 +104,7 @@ final class PaypalApiClient {
 
 		$payment_url = $this->extract_recipient_view_url( is_array( $sent ) ? $sent : array() );
 		if ( '' === $payment_url ) {
-			$details = $this->request( 'GET', '/v2/invoicing/invoices/' . rawurlencode( $invoice_id ) );
+			$details = $this->request( 'GET', '/v2/invoicing/invoices/' . rawurlencode( $invoice_id ), null, true );
 			if ( is_wp_error( $details ) ) {
 				return $details;
 			}
@@ -100,6 +120,87 @@ final class PaypalApiClient {
 		return array(
 			'invoice_id'  => $invoice_id,
 			'payment_url' => $payment_url,
+		);
+	}
+
+	/**
+	 * @return array{invoice_id: string, payment_url: string}|\WP_Error
+	 */
+	private function create_checkout_order_payment_link( \WC_Order $order ) {
+		$created = $this->request( 'POST', '/v2/checkout/orders', $this->build_checkout_order_payload( $order ) );
+		if ( is_wp_error( $created ) ) {
+			return $created;
+		}
+
+		$order_id = (string) ( $created['id'] ?? '' );
+		if ( '' === $order_id ) {
+			$this->log( 'error', 'Create checkout order response missing id.', array( 'body' => $created ) );
+
+			return new \WP_Error( 'noviq_paypal_create_failed', __( 'PayPal did not return an order id.', 'noviq-core' ) );
+		}
+
+		$payment_url = $this->extract_checkout_approve_url( is_array( $created ) ? $created : array() );
+		if ( '' === $payment_url ) {
+			$this->log( 'error', 'Checkout order created but approve link missing.', array( 'order_id' => $order_id ) );
+
+			return new \WP_Error( 'noviq_paypal_url_missing', __( 'PayPal did not return a payment link.', 'noviq-core' ) );
+		}
+
+		return array(
+			'invoice_id'  => $order_id,
+			'payment_url' => $payment_url,
+		);
+	}
+
+	private function should_fallback_to_checkout_order( \WP_Error $error ): bool {
+		if ( 'noviq_paypal_api' !== $error->get_error_code() ) {
+			return false;
+		}
+
+		$data = $error->get_error_data();
+		if ( ! is_array( $data ) ) {
+			return false;
+		}
+
+		return 'NOT_AUTHORIZED' === ( $data['paypal_name'] ?? '' );
+	}
+
+	/**
+	 * @return array<string, mixed>
+	 */
+	private function build_checkout_order_payload( \WC_Order $order ): array {
+		$currency = strtoupper( (string) $order->get_currency() );
+		if ( '' === $currency ) {
+			$currency = 'USD';
+		}
+
+		$order_number = (string) $order->get_order_number();
+		$return_url   = $order->get_checkout_order_received_url();
+		$cancel_url   = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' );
+
+		return array(
+			'intent'         => 'CAPTURE',
+			'purchase_units' => array(
+				array(
+					'reference_id' => (string) $order->get_id(),
+					'custom_id'    => $order_number,
+					'description'  => sprintf(
+						/* translators: %s: order number */
+						__( 'Noviq Peptides order #%s', 'noviq-core' ),
+						$order_number
+					),
+					'amount'       => array(
+						'currency_code' => $currency,
+						'value'         => $this->money( (float) $order->get_total() ),
+					),
+				),
+			),
+			'application_context' => array(
+				'return_url'  => $return_url,
+				'cancel_url'  => $cancel_url,
+				'brand_name'  => get_bloginfo( 'name' ),
+				'user_action' => 'PAY_NOW',
+			),
 		);
 	}
 
@@ -382,11 +483,31 @@ final class PaypalApiClient {
 	}
 
 	/**
+	 * @param array<string, mixed> $order_response
+	 */
+	private function extract_checkout_approve_url( array $order_response ): string {
+		foreach ( (array) ( $order_response['links'] ?? array() ) as $link ) {
+			if ( ! is_array( $link ) ) {
+				continue;
+			}
+
+			$rel = $link['rel'] ?? '';
+			if ( in_array( $rel, array( 'approve', 'payer-action' ), true ) ) {
+				$href = $link['href'] ?? '';
+
+				return is_string( $href ) ? $href : '';
+			}
+		}
+
+		return '';
+	}
+
+	/**
 	 * @param array<string, mixed>|null $body
 	 * @return array<string, mixed>|\WP_Error
 	 */
-	private function request( string $method, string $path, ?array $body = null ) {
-		$token = $this->get_access_token();
+	private function request( string $method, string $path, ?array $body = null, bool $invoicing_token = false ) {
+		$token = $this->get_access_token( $invoicing_token );
 		if ( is_wp_error( $token ) ) {
 			return $token;
 		}
@@ -430,7 +551,12 @@ final class PaypalApiClient {
 
 			return new \WP_Error(
 				'noviq_paypal_api',
-				__( 'PayPal could not create a payment link for this order.', 'noviq-core' )
+				__( 'PayPal could not create a payment link for this order.', 'noviq-core' ),
+				array(
+					'paypal_name'    => $payload['name'] ?? '',
+					'paypal_message' => $payload['message'] ?? '',
+					'http_code'      => $code,
+				)
 			);
 		}
 
@@ -440,11 +566,19 @@ final class PaypalApiClient {
 	/**
 	 * @return string|\WP_Error
 	 */
-	private function get_access_token() {
-		$cache_key = 'noviq_paypal_token_' . md5( $this->client_id . ( $this->sandbox ? '1' : '0' ) );
+	private function get_access_token( bool $invoicing = false ) {
+		$scope_key = $invoicing ? self::OAUTH_SCOPE : 'default';
+		$cache_key = 'noviq_paypal_token_' . md5( $this->client_id . ( $this->sandbox ? '1' : '0' ) . $scope_key );
 		$cached    = get_transient( $cache_key );
 		if ( is_string( $cached ) && '' !== $cached ) {
 			return $cached;
+		}
+
+		$body = array(
+			'grant_type' => 'client_credentials',
+		);
+		if ( $invoicing ) {
+			$body['scope'] = self::OAUTH_SCOPE;
 		}
 
 		$response = wp_remote_post(
@@ -455,9 +589,7 @@ final class PaypalApiClient {
 					'Authorization' => 'Basic ' . base64_encode( $this->client_id . ':' . $this->client_secret ),
 					'Accept'        => 'application/json',
 				),
-				'body'    => array(
-					'grant_type' => 'client_credentials',
-				),
+				'body'    => $body,
 			)
 		);
 
