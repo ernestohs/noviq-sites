@@ -46,7 +46,31 @@ if [[ "${WP_ALLOW_ROOT}" == "1" ]]; then
   WP_REMOTE_FLAGS=(--allow-root)
 fi
 
-RSYNC_SSH="ssh -p ${SSH_PORT} ${SSH_IDENTITY_ARGS[*]}"
+# Reuse one SSH session — the droplet drops rapid new handshakes (MaxStartups).
+NOVIQ_SSH_CONTROL="${NOVIQ_SSH_CONTROL:-/tmp/noviq-deploy-${USER}-%r@%h:%p}"
+SSH_COMMON=(
+  -p "${SSH_PORT}"
+  "${SSH_IDENTITY_ARGS[@]}"
+  -o ControlMaster=auto
+  -o "ControlPath=${NOVIQ_SSH_CONTROL}"
+  -o ControlPersist=120
+  -o ConnectTimeout=20
+)
+
+ssh_with_retry() {
+  local attempt=1
+  until ssh "${SSH_COMMON[@]}" "$@"; do
+    if (( attempt >= 6 )); then
+      return 1
+    fi
+    echo "SSH failed (attempt ${attempt}/6), retrying in 12s..."
+    sleep 12
+    attempt=$(( attempt + 1 ))
+  done
+}
+
+RSYNC_SSH="ssh ${SSH_COMMON[*]}"
+ssh_with_retry "${SSH_USER}@${SSH_HOST}" "echo deploy connected" >/dev/null
 
 case "$DEPLOY_LAYOUT" in
   wordpress)
@@ -80,12 +104,12 @@ if [[ -d "${ROOT}/mu-plugins" ]]; then
     "${SSH_USER}@${SSH_HOST}:${REMOTE_WP_PATH}/wp-content/mu-plugins/"
 fi
 
-ssh -p "${SSH_PORT}" "${SSH_IDENTITY_ARGS[@]}" "${SSH_USER}@${SSH_HOST}" \
+ssh_with_retry "${SSH_USER}@${SSH_HOST}" \
   "chmod -R a+rX '${THEME_DEST}' '${PLUGIN_DEST}'; if [[ -d '${REMOTE_WP_PATH}/wp-content/mu-plugins' ]]; then chown -R www-data:www-data '${REMOTE_WP_PATH}/wp-content/mu-plugins' && chmod -R a+rX '${REMOTE_WP_PATH}/wp-content/mu-plugins'; fi"
 
 if [[ "$WP_CLI" == "1" ]]; then
   echo "Activating on remote..."
-  ssh -p "${SSH_PORT}" "${SSH_IDENTITY_ARGS[@]}" "${SSH_USER}@${SSH_HOST}" \
+  ssh_with_retry "${SSH_USER}@${SSH_HOST}" \
     "cd '${REMOTE_WP_PATH}' && wp ${WP_REMOTE_FLAGS[*]} theme activate noviq-peptides && wp ${WP_REMOTE_FLAGS[*]} plugin activate noviq-peptides && wp ${WP_REMOTE_FLAGS[*]} rewrite flush --hard"
 fi
 

@@ -259,10 +259,13 @@ final class Catalog {
 			$product->set_sku( (string) $variant['sku'] );
 			$product->set_regular_price( $this->price( (int) $variant['price_cents'] ) );
 			$this->set_display_attribute( $product, $data );
+			$this->apply_stock( $product, $variant );
 		}
 
-		$product->set_manage_stock( false );
-		$product->set_stock_status( 'instock' );
+		if ( ! $this->seeder->is_production() ) {
+			$product->set_manage_stock( false );
+			$product->set_stock_status( 'instock' );
+		}
 
 		if ( ! empty( $data['virtual'] ) ) {
 			$product->set_virtual( true );
@@ -285,6 +288,9 @@ final class Catalog {
 
 		if ( 'variable' === $type ) {
 			$this->upsert_variations( $product_id, $data );
+			if ( $this->seeder->is_production() ) {
+				$this->prune_obsolete_variations( $product_id, $data );
+			}
 		}
 
 		$this->product_meta( $product_id, $data );
@@ -457,8 +463,7 @@ final class Catalog {
 			$variation->set_sku( $sku );
 			$variation->set_regular_price( $this->price( (int) $variant['price_cents'] ) );
 			$variation->set_status( 'publish' );
-			$variation->set_manage_stock( false );
-			$variation->set_stock_status( 'instock' );
+			$this->apply_stock( $variation, $variant );
 			$variation->set_attributes( array( $taxonomy => sanitize_title( (string) $variant['label'] ) ) );
 
 			$variation_id = $variation->save();
@@ -469,6 +474,65 @@ final class Catalog {
 		}
 
 		\WC_Product_Variable::sync( $product_id );
+	}
+
+	/**
+	 * Production seed tracks 100 units per variant. Dev seed leaves stock off.
+	 *
+	 * @param array<string, mixed> $variant Variant row from products JSON.
+	 */
+	private function apply_stock( \WC_Product $product, array $variant ): void {
+		if ( ! $this->seeder->is_production() ) {
+			$product->set_manage_stock( false );
+			$product->set_stock_status( 'instock' );
+
+			return;
+		}
+
+		$qty = isset( $variant['stock_qty'] ) ? (int) $variant['stock_qty'] : 100;
+		$product->set_manage_stock( true );
+		$product->set_stock_quantity( max( 0, $qty ) );
+		$product->set_stock_status( $qty > 0 ? 'instock' : 'outofstock' );
+	}
+
+	/**
+	 * Drop variation rows that no longer exist in the production catalog (e.g.
+	 * dev-only 15 mg tiers after aligning to PSP vial sizes).
+	 *
+	 * @param array<string, mixed> $data Product data.
+	 */
+	private function prune_obsolete_variations( int $product_id, array $data ): void {
+		if ( $this->seeder->is_dry_run() ) {
+			return;
+		}
+
+		$keep = array_map(
+			static fn( array $variant ): string => (string) $variant['sku'],
+			$data['variants']
+		);
+
+		$children = wc_get_products(
+			array(
+				'type'   => 'variation',
+				'parent' => $product_id,
+				'limit'  => -1,
+				'return' => 'ids',
+			)
+		);
+
+		foreach ( $children as $variation_id ) {
+			$variation = wc_get_product( (int) $variation_id );
+			if ( ! $variation instanceof \WC_Product_Variation ) {
+				continue;
+			}
+
+			if ( in_array( $variation->get_sku(), $keep, true ) ) {
+				continue;
+			}
+
+			wp_delete_post( (int) $variation_id, true );
+			$this->seeder->updated( sprintf( 'removed obsolete variation %s', $variation->get_sku() ?: (string) $variation_id ) );
+		}
 	}
 
 	/**

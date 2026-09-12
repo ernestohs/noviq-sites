@@ -31,7 +31,7 @@ if [[ -n "${SSH_IDENTITY}" ]]; then
   SSH_IDENTITY_ARGS=(-i "${SSH_IDENTITY}")
 fi
 
-RSYNC_SSH="ssh -p ${SSH_PORT} ${SSH_IDENTITY_ARGS[*]}"
+RSYNC_SSH="ssh -p ${SSH_PORT} ${SSH_IDENTITY_ARGS[@]}"
 
 SECRET_FILE="$(mktemp)"
 trap 'rm -f "${SECRET_FILE}"' EXIT

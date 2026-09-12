@@ -197,7 +197,10 @@ final class Store {
 		$this->option( 'woocommerce_currency_pos', 'left' );
 		$this->option( 'woocommerce_price_decimal_sep', '.' );
 		$this->option( 'woocommerce_price_thousand_sep', ',' );
-		$this->option( 'woocommerce_price_num_decimals', '2' );
+		$this->option(
+			'woocommerce_price_num_decimals',
+			$this->seeder->is_production() ? '0' : '2'
+		);
 		$this->option( 'woocommerce_weight_unit', 'g' );
 		$this->option( 'woocommerce_dimension_unit', 'cm' );
 

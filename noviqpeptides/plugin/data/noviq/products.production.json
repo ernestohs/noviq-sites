@@ -1,0 +1,1053 @@
+[
+  {
+    "handle": "aod-9604",
+    "sku": "DEV-AOD-9604",
+    "title": "AOD-9604",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "aod-9604"
+    ],
+    "summary": "hGH Fragment 176-191. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "AOD-9604 MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-AOD-9604-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 1
+  },
+  {
+    "handle": "bpc-157",
+    "sku": "DEV-BPC-157",
+    "title": "BPC-157",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [
+      "bpc-157"
+    ],
+    "summary": "Synthetic 15-residue peptide with a proline-rich core, among the most widely referenced sequences in tissue-model research.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "BPC157 MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-BPC-157-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 5000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-BPC-157-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": true,
+    "rank": 2
+  },
+  {
+    "handle": "cjc-1295",
+    "sku": "DEV-CJC-1295",
+    "title": "CJC-1295 (No DAC)",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "cjc-1295"
+    ],
+    "summary": "Formula C152H252N44O42. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "cjc1295-main.png",
+    "variants": [
+      {
+        "sku": "DEV-CJC-1295-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 3600,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-CJC-1295-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 3
+  },
+  {
+    "handle": "cjc-1295-ipamorelin",
+    "sku": "DEV-CJC-1295-IPA",
+    "title": "CJC-1295 (No DAC) + Ipamorelin",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "cjc-1295",
+      "ipamorelin"
+    ],
+    "summary": "Dual peptide blend. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "CJC1295+IPA MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-CJC-1295-IPA-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6600,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 4
+  },
+  {
+    "handle": "dsip",
+    "sku": "DEV-DSIP",
+    "title": "DSIP",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [
+      "dsip"
+    ],
+    "summary": "Delta Sleep-Inducing Peptide. 10 mg. Formula C35H48N10O15. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "DSIP MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-DSIP-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 5
+  },
+  {
+    "handle": "epithalon",
+    "sku": "DEV-EPITHALON",
+    "title": "Epithalon",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [
+      "epithalon"
+    ],
+    "summary": "Tetrapeptide. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "EPITHALON MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-EPITHALON-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-EPITHALON-50MG",
+        "label": "50mg",
+        "amount_mg": 50,
+        "price_cents": 13000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 6
+  },
+  {
+    "handle": "ghk-cu",
+    "sku": "DEV-GHK-CU",
+    "title": "GHK-Cu",
+    "kicker": "Copper tripeptide",
+    "category": "peptides",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [
+      "ghk-cu"
+    ],
+    "summary": "Copper(II) complex of glycyl-histidyl-lysine, supplied as the characteristic blue lyophilate.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "GHKCu Main.png",
+    "variants": [
+      {
+        "sku": "DEV-GHK-CU-50MG",
+        "label": "50mg",
+        "amount_mg": 50,
+        "price_cents": 3500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-GHK-CU-100MG",
+        "label": "100mg",
+        "amount_mg": 100,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 7
+  },
+  {
+    "handle": "ghrp-2",
+    "sku": "DEV-GHRP-2",
+    "title": "GHRP-2",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "ghrp-2"
+    ],
+    "summary": "Growth Hormone Releasing Peptide-2. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "GHRP-2 MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-GHRP-2-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 3000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 8
+  },
+  {
+    "handle": "glow",
+    "sku": "DEV-GLOW",
+    "title": "GLOW",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [
+      "ghk-cu",
+      "bpc-157",
+      "tb-500"
+    ],
+    "summary": "GHK-Cu, BPC-157, TB-500. Ratio 5:1:1. 70 mg. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "GLOW Main.png",
+    "variants": [
+      {
+        "sku": "DEV-GLOW-70MG",
+        "label": "70mg",
+        "amount_mg": 70,
+        "price_cents": 9500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 9
+  },
+  {
+    "handle": "glutathione",
+    "sku": "DEV-GLUTATHIONE",
+    "title": "Glutathione",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [
+      "glutathione"
+    ],
+    "summary": "Tripeptide. Formula C10H17N3O6S. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "GLUTATHIONE MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-GLUTATHIONE-500MG",
+        "label": "500mg",
+        "amount_mg": 500,
+        "price_cents": 3000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-GLUTATHIONE-1500MG",
+        "label": "1500mg",
+        "amount_mg": 1500,
+        "price_cents": 7000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 10
+  },
+  {
+    "handle": "gonadorelin",
+    "sku": "DEV-GONADORELIN",
+    "title": "Gonadorelin Acetate",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "hormone"
+    ],
+    "compounds": [
+      "gonadorelin"
+    ],
+    "summary": "GnRH Acetate. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "GONADORELIN MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-GONADORELIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 3500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-GONADORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 3500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-GONADORELIN-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
+        "price_cents": 3500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 11
+  },
+  {
+    "handle": "igf-1-lr3",
+    "sku": "DEV-IGF-1-LR3",
+    "title": "IGF-1 LR3",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "igf-1-lr3"
+    ],
+    "summary": "Long Arg3 IGF-1. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "IGF1 LR3 main.png",
+    "variants": [
+      {
+        "sku": "DEV-IGF-1-LR3-0.1MG",
+        "label": "0.1mg",
+        "amount_mg": 0.1,
+        "price_cents": 2500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-IGF-1-LR3-1MG",
+        "label": "1mg",
+        "amount_mg": 1,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 12
+  },
+  {
+    "handle": "ipamorelin",
+    "sku": "DEV-IPAMORELIN",
+    "title": "Ipamorelin",
+    "kicker": "Secretagogue",
+    "category": "peptides",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "ipamorelin"
+    ],
+    "summary": "Amidated pentapeptide secretagogue containing Aib and D-2-naphthylalanine residues.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "IPAMORELIN MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-IPAMORELIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-IPAMORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 5000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 13
+  },
+  {
+    "handle": "kisspeptin-10",
+    "sku": "DEV-KISSPEPTIN-10",
+    "title": "Kisspeptin-10",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "hormone"
+    ],
+    "compounds": [
+      "kisspeptin-10"
+    ],
+    "summary": "Decapeptide. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "KISS PEPTIN MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-KISSPEPTIN-10-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-KISSPEPTIN-10-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 14
+  },
+  {
+    "handle": "klow",
+    "sku": "DEV-KLOW",
+    "title": "KLOW",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [
+      "ghk-cu",
+      "kpv",
+      "bpc-157",
+      "tb-500"
+    ],
+    "summary": "GHK-Cu, KPV, BPC-157, TB-500. Ratio 5:1:1:1. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "KLOW MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-KLOW-80MG",
+        "label": "80mg",
+        "amount_mg": 80,
+        "price_cents": 12500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 15
+  },
+  {
+    "handle": "lipo-c",
+    "sku": "DEV-LIPO-C",
+    "title": "Lipo-C",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [
+      "lipo-c"
+    ],
+    "summary": "Lipotropic blend. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "LIPO-C main.png",
+    "variants": [
+      {
+        "sku": "DEV-LIPO-C-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 8000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-LIPO-C-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 8000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-LIPO-C-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
+        "price_cents": 8000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 16
+  },
+  {
+    "handle": "mot-c",
+    "sku": "DEV-MOT-C",
+    "title": "MOT-C",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [
+      "mot-c"
+    ],
+    "summary": "10 mg. Formula C101H152N28O22S2. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "MOT-C Main.png",
+    "variants": [
+      {
+        "sku": "DEV-MOT-C-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 7000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-MOT-C-50MG",
+        "label": "50mg",
+        "amount_mg": 50,
+        "price_cents": 19000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 17
+  },
+  {
+    "handle": "oxytocin-acetate",
+    "sku": "DEV-OXYTOCIN",
+    "title": "Oxytocin Acetate",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "hormone"
+    ],
+    "compounds": [
+      "oxytocin-acetate"
+    ],
+    "summary": "10 mg. Formula C45H70N12O14S2. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "OXT-T -main.png",
+    "variants": [
+      {
+        "sku": "DEV-OXYTOCIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-OXYTOCIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 5500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 18
+  },
+  {
+    "handle": "retatrutide",
+    "sku": "DEV-RETATRUTIDE",
+    "title": "Retatrutide",
+    "kicker": "Incretin analogue",
+    "category": "metabolic",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [
+      "retatrutide"
+    ],
+    "summary": "Triple-receptor incretin analogue (GIP / GLP-1 / glucagon) supplied lyophilized with a lot-matched Certificate of Analysis.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "RETA MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-RETATRUTIDE-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-RETATRUTIDE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 7000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-RETATRUTIDE-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 10500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-RETATRUTIDE-30MG",
+        "label": "30mg",
+        "amount_mg": 30,
+        "price_cents": 14500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-RETATRUTIDE-40MG",
+        "label": "40mg",
+        "amount_mg": 40,
+        "price_cents": 18000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": true,
+    "rank": 19
+  },
+  {
+    "handle": "retatrutide-tirzepatide",
+    "sku": "DEV-RETA-TIRZ",
+    "title": "Retatrutide + Tirzepatide",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [
+      "retatrutide",
+      "tirzepatide"
+    ],
+    "summary": "20 mg + 40 mg blend. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "RETA+TIRZ.png",
+    "variants": [
+      {
+        "sku": "DEV-RETA-TIRZ-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 19000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-RETA-TIRZ-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 19000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-RETA-TIRZ-15MG",
+        "label": "15mg",
+        "amount_mg": 15,
+        "price_cents": 19000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 20
+  },
+  {
+    "handle": "semaglutide",
+    "sku": "DEV-SEMAGLUTIDE",
+    "title": "Semaglutide",
+    "kicker": "Incretin analogue",
+    "category": "metabolic",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [
+      "semaglutide"
+    ],
+    "summary": "Acylated 31-residue GLP-1 receptor agonist analogue, supplied as a reference standard for incretin-receptor assays.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "semaglutide main.png",
+    "variants": [
+      {
+        "sku": "DEV-SEMAGLUTIDE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 6500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": true,
+    "rank": 21
+  },
+  {
+    "handle": "semax",
+    "sku": "DEV-SEMAX",
+    "title": "Semax",
+    "kicker": "Regulatory peptide",
+    "category": "peptides",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [
+      "semax"
+    ],
+    "summary": "ACTH(4-7) fragment extended with Pro-Gly-Pro, markedly more stable than the fragment alone.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "SEMAX main.png",
+    "variants": [
+      {
+        "sku": "DEV-SEMAX-11MG",
+        "label": "11mg",
+        "amount_mg": 11,
+        "price_cents": 4300,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 22
+  },
+  {
+    "handle": "sermorelin",
+    "sku": "DEV-SERMORELIN",
+    "title": "Sermorelin",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "sermorelin"
+    ],
+    "summary": "10 mg. Formula C149H246N44O42S. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "SERMORELLIN MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-SERMORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 8000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 23
+  },
+  {
+    "handle": "snap-8",
+    "sku": "DEV-SNAP-8",
+    "title": "SNAP-8",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "cosmetic"
+    ],
+    "compounds": [
+      "snap-8"
+    ],
+    "summary": "Formula C41H70N16O16S. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "SNAP 8 MAIN.png",
+    "variants": [
+      {
+        "sku": "DEV-SNAP-8-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 24
+  },
+  {
+    "handle": "tb-500",
+    "sku": "DEV-TB-500",
+    "title": "TB-500",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [
+      "tb-500"
+    ],
+    "summary": "N-acetylated heptapeptide corresponding to the actin-binding region of thymosin beta-4.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "TB500 Main.png",
+    "variants": [
+      {
+        "sku": "DEV-TB-500-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 4500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-TB-500-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 8000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 25
+  },
+  {
+    "handle": "tesamorelin",
+    "sku": "DEV-TESAMORELIN",
+    "title": "Tesamorelin",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "tesamorelin"
+    ],
+    "summary": "Formula C188H296N50O57. >99% HPLC.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "TESA Main.png",
+    "variants": [
+      {
+        "sku": "DEV-TESAMORELIN-5MG",
+        "label": "5mg",
+        "amount_mg": 5,
+        "price_cents": 6000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-TESAMORELIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 10000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 26
+  },
+  {
+    "handle": "tirzepatide",
+    "sku": "DEV-TIRZEPATIDE",
+    "title": "Tirzepatide",
+    "kicker": "Incretin analogue",
+    "category": "metabolic",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [
+      "tirzepatide"
+    ],
+    "summary": "Dual GIP / GLP-1 receptor agonist analogue, 39 residues, verified by RP-HPLC and mass spectrometry against every released lot.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "TIRZ Main2.png",
+    "variants": [
+      {
+        "sku": "DEV-TIRZEPATIDE-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 5500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-TIRZEPATIDE-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 8000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-TIRZEPATIDE-30MG",
+        "label": "30mg",
+        "amount_mg": 30,
+        "price_cents": 11500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-TIRZEPATIDE-60MG",
+        "label": "60mg",
+        "amount_mg": 60,
+        "price_cents": 20000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": true,
+    "rank": 27
+  },
+  {
+    "handle": "wolverine",
+    "sku": "DEV-WOLVERINE",
+    "title": "Wolverine",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [
+      "bpc-157",
+      "tb-500"
+    ],
+    "summary": "Co-lyophilized blend of BPC-157 and TB-500 in a single vial, each component assayed separately on the lot COA.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "image": "Wolverine main.png",
+    "variants": [
+      {
+        "sku": "DEV-WOLVERINE-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 8000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 28
+  }
+]

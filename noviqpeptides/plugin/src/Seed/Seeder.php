@@ -28,14 +28,16 @@ final class Seeder {
 	public function __construct(
 		private readonly bool $dry_run = false,
 		private readonly bool $skip_store = false,
+		private readonly bool $production = false,
 	) {}
 
 	public function run(): void {
 		$this->log(
 			sprintf(
-				'%s — profile %s.',
+				'%s — profile %s%s.',
 				$this->dry_run ? 'Dry run — nothing will be written' : 'Seeding storefront',
-				Profile::id()
+				Profile::id(),
+				$this->production ? ' (production catalog)' : ''
 			)
 		);
 
@@ -135,13 +137,23 @@ final class Seeder {
 	}
 
 	/**
+	 * Production catalog: PSP-aligned vial prices (ceil to whole dollars), PSP
+	 * variant sizes, 100-unit stock, zero decimal display. Local dev seed ignores
+	 * this flag and always loads products.json.
+	 */
+	public function is_production(): bool {
+		return $this->production;
+	}
+
+	/**
 	 * Load a data file. Missing files are a hard error: a silent empty seed is
 	 * worse than a loud failure.
 	 *
 	 * @return array<int|string, mixed>
 	 */
 	public function data( string $name ): array {
-		$path = NOVIQ_CORE_PATH . 'data/' . Profile::id() . '/' . $name . '.json';
+		$file = ( $this->production && 'products' === $name ) ? 'products.production' : $name;
+		$path = NOVIQ_CORE_PATH . 'data/' . Profile::id() . '/' . $file . '.json';
 
 		if ( ! is_readable( $path ) ) {
 			$this->error( sprintf( 'Missing data file %s. Run: node bin/build-seed-data.mjs', $path ) );

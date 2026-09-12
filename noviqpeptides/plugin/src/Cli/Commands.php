@@ -35,6 +35,10 @@ final class Commands {
 	 * [--skip-store]
 	 * : Leave WooCommerce settings, pages and shipping zones alone.
 	 *
+	 * [--production]
+	 * : Load products.production.json (PSP vial prices, stock qty). Use on the
+	 *   live host only — local Docker keeps products.json dev placeholders.
+	 *
 	 * [--dry-run]
 	 * : Report what would change without writing.
 	 *
@@ -42,6 +46,7 @@ final class Commands {
 	 *
 	 *     wp noviq seed
 	 *     wp noviq seed --dry-run
+	 *     wp noviq seed --production --skip-store
 	 *
 	 * @param string[]              $args       Positional arguments.
 	 * @param array<string, string> $assoc_args Flags.
@@ -53,7 +58,8 @@ final class Commands {
 
 		$seeder = new Seeder(
 			isset( $assoc_args['dry-run'] ),
-			isset( $assoc_args['skip-store'] )
+			isset( $assoc_args['skip-store'] ),
+			isset( $assoc_args['production'] )
 		);
 
 		$seeder->run();

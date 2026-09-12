@@ -77,6 +77,45 @@ The script syncs:
 
 Then runs `wp theme activate`, `wp plugin activate`, and `wp rewrite flush` over SSH when `WP_CLI=1`.
 
+### Production catalog (PSP vial prices + stock)
+
+Dev seed (`products.json`) keeps placeholder prices for localhost. Production uses **`products.production.json`** in the plugin:
+
+- Lyophilized **vial peptides only** (no PSP sprays, oral, bundles, or supplies)
+- Prices match [PSPeptides](https://pspeptides.com/shop/) vial PDPs, **rounded up** to whole dollars (`$54.99` → `$55`)
+- Variant sizes match PSP per product (not the dev 5/10/15 mg grid)
+- **100 units** stock per variant
+- Store displays **`$55`** (0 decimal places)
+
+Regenerate the production JSON after PSP price changes:
+
+```bash
+cd noviqpeptides/deploy
+python3 build-production-catalog.py
+```
+
+Deploy and apply on the server (rsync + production seed):
+
+```bash
+cd noviqpeptides/deploy
+./seed-production.sh
+```
+
+Catalog-only refresh without touching store pages/settings:
+
+```bash
+./seed-production.sh --skip-store
+```
+
+Or on the server directly after rsync:
+
+```bash
+NOVIQ_SEED_IMAGES=/var/www/noviq-seed-images \
+  wp --allow-root --path=/var/www/noviqpeptides --user=1 noviq seed --production
+```
+
+**Do not** run plain `wp noviq seed` on production after go-live — it reloads dev placeholder prices from `products.json`.
+
 ## GoDaddy
 
 Confirm the site uses GoDaddy **hosting** (Managed WordPress or cPanel), not only the domain registrar.
