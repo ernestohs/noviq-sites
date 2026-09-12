@@ -53,14 +53,8 @@ final class VipCoupons {
 
 		if ( $existing_id > 0 ) {
 			$coupon = new \WC_Coupon( $existing_id );
-			$same   = 'percent' === $coupon->get_discount_type()
-				&& abs( (float) $coupon->get_amount() - $amount ) < 0.001
-				&& $description === (string) $coupon->get_description()
-				&& null === $coupon->get_date_expires()
-				&& 0 === (int) $coupon->get_usage_limit()
-				&& 0 === (int) $coupon->get_usage_limit_per_user();
 
-			if ( $same ) {
+			if ( $this->matches_vip_fields( $coupon, $amount, $description ) ) {
 				$this->seeder->skipped( $label );
 
 				return;
@@ -94,6 +88,22 @@ final class VipCoupons {
 		}
 
 		$this->seeder->created( $label );
+	}
+
+	/**
+	 * True when every field apply_vip_fields() would write already matches.
+	 */
+	private function matches_vip_fields( \WC_Coupon $coupon, float $amount, string $description ): bool {
+		return 'percent' === $coupon->get_discount_type()
+			&& abs( (float) $coupon->get_amount() - $amount ) < 0.001
+			&& $description === (string) $coupon->get_description()
+			&& false === $coupon->get_individual_use()
+			&& 0 === (int) $coupon->get_usage_limit()
+			&& 0 === (int) $coupon->get_usage_limit_per_user()
+			&& null === $coupon->get_limit_usage_to_x_items()
+			&& null === $coupon->get_date_expires()
+			&& false === $coupon->get_free_shipping()
+			&& false === $coupon->get_exclude_sale_items();
 	}
 
 	private function apply_vip_fields( \WC_Coupon $coupon, float $amount, string $description ): void {
