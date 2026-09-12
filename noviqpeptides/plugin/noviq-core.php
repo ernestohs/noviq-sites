@@ -65,6 +65,8 @@ Plugin::instance()->boot();
 /**
  * Rewrite rules for compounds, comparisons, and /go/{CODE} are registered on
  * activation; flush once so those paths resolve without a Permalinks save.
+ * VIP root vanity URLs (/LELE10) are claimed from vip-coupons.json at request
+ * time and do not need a rewrite flush when the list changes.
  */
 register_activation_hook(
 	__FILE__,

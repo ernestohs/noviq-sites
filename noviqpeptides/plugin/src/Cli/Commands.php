@@ -60,6 +60,36 @@ final class Commands {
 	}
 
 	/**
+	 * Create or update VIP creator coupons from data/{profile}/vip-coupons.json.
+	 *
+	 * Each code is a perpetual percent discount with no usage cap. Idempotent
+	 * on coupon code. VIP share links are root paths: /{CODE} (e.g. /LELE10).
+	 * /go/{CODE} remains available for any coupon.
+	 *
+	 * ## OPTIONS
+	 *
+	 * [--dry-run]
+	 * : Report what would change without writing.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp noviq seed_vip_coupons
+	 *     wp noviq seed_vip_coupons --dry-run
+	 *
+	 * @param string[]              $args       Positional arguments.
+	 * @param array<string, string> $assoc_args Flags.
+	 */
+	public function seed_vip_coupons( array $args, array $assoc_args ): void {
+		if ( ! class_exists( \WooCommerce::class ) || ! class_exists( \WC_Coupon::class ) ) {
+			\WP_CLI::error( 'WooCommerce is not active. Activate it before seeding VIP coupons.' );
+		}
+
+		$seeder = new Seeder( isset( $assoc_args['dry-run'] ), true );
+		( new \Noviq\Core\Seed\VipCoupons( $seeder ) )->run();
+		$seeder->success( 'VIP coupon seed complete.' );
+	}
+
+	/**
 	 * Delete everything the seeder creates.
 	 *
 	 * Products, compounds, comparisons, articles and seeded pages are removed.

@@ -1,10 +1,10 @@
 <?php
 /**
- * /go/{CODE} referral links for existing WooCommerce coupons.
+ * Creator coupon referral links.
  *
- * Creators share a URL; the storefront validates the coupon, remembers it for
- * the session, and applies it when a cart is available. Coupons are never
- * created from the URL — Marketing → Coupons remains the source of truth.
+ * VIP codes (data/{profile}/vip-coupons.json) resolve at the site root:
+ * noviqpeptides.com/LELE10. Any other usable WooCommerce coupon still works
+ * via /go/{CODE}. Coupons are never created from the URL.
  *
  * @package Noviq\Core
  */
@@ -12,6 +12,8 @@
 declare(strict_types=1);
 
 namespace Noviq\Core\Commerce;
+
+use Noviq\Core\Profile;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -26,9 +28,13 @@ final class ReferralCoupon {
 	/** Guard against apply_coupon → calculate_totals re-entrancy. */
 	private static bool $applying = false;
 
+	/** @var list<string>|null Formatted VIP codes from vip-coupons.json. */
+	private static ?array $vip_codes = null;
+
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'register_rewrite' ) );
 		add_filter( 'query_vars', array( self::class, 'query_vars' ) );
+		add_filter( 'request', array( self::class, 'claim_vip_root' ) );
 		add_action( 'template_redirect', array( self::class, 'handle_go' ), 5 );
 
 		add_action( 'woocommerce_cart_loaded_from_session', array( self::class, 'maybe_apply' ), 20 );
@@ -58,6 +64,39 @@ final class ReferralCoupon {
 		$vars[] = self::QUERY_VAR;
 
 		return $vars;
+	}
+
+	/**
+	 * Map /LELE10 (VIP allowlist only) onto the same handler as /go/LELE10.
+	 *
+	 * Non-VIP single segments are left alone so pages and products keep working.
+	 *
+	 * @param array<string, mixed> $query_vars Parsed request vars.
+	 * @return array<string, mixed>
+	 */
+	public static function claim_vip_root( array $query_vars ): array {
+		if ( isset( $query_vars[ self::QUERY_VAR ] ) && '' !== (string) $query_vars[ self::QUERY_VAR ] ) {
+			return $query_vars;
+		}
+
+		if ( ! isset( $_SERVER['REQUEST_URI'] ) ) {
+			return $query_vars;
+		}
+
+		$path = (string) wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ), PHP_URL_PATH );
+		$path = trim( $path, '/' );
+		if ( '' === $path || str_contains( $path, '/' ) ) {
+			return $query_vars;
+		}
+
+		$code = wc_format_coupon_code( rawurldecode( $path ) );
+		if ( ! self::is_vip_code( $code ) ) {
+			return $query_vars;
+		}
+
+		$query_vars[ self::QUERY_VAR ] = $code;
+
+		return $query_vars;
 	}
 
 	/**
@@ -133,6 +172,50 @@ final class ReferralCoupon {
 		if ( $result ) {
 			self::clear_pending();
 		}
+	}
+
+	/**
+	 * @return list<string>
+	 */
+	public static function vip_codes(): array {
+		if ( null !== self::$vip_codes ) {
+			return self::$vip_codes;
+		}
+
+		$path = NOVIQ_CORE_PATH . 'data/' . Profile::id() . '/vip-coupons.json';
+		if ( ! is_readable( $path ) ) {
+			self::$vip_codes = array();
+
+			return self::$vip_codes;
+		}
+
+		$decoded = json_decode( (string) file_get_contents( $path ), true );
+		if ( ! is_array( $decoded ) ) {
+			self::$vip_codes = array();
+
+			return self::$vip_codes;
+		}
+
+		$codes = array();
+		foreach ( $decoded as $row ) {
+			if ( ! is_array( $row ) || ! isset( $row['code'] ) ) {
+				continue;
+			}
+			$code = wc_format_coupon_code( (string) $row['code'] );
+			if ( '' !== $code ) {
+				$codes[] = $code;
+			}
+		}
+
+		self::$vip_codes = array_values( array_unique( $codes ) );
+
+		return self::$vip_codes;
+	}
+
+	public static function is_vip_code( string $code ): bool {
+		$code = wc_format_coupon_code( $code );
+
+		return '' !== $code && in_array( $code, self::vip_codes(), true );
 	}
 
 	/**
