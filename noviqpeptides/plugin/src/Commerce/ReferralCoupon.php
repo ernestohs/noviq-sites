@@ -79,6 +79,11 @@ final class ReferralCoupon {
 			return $query_vars;
 		}
 
+		// Same WC gate as handle_go(): vip formatting needs wc_format_coupon_code().
+		if ( ! function_exists( 'WC' ) || ! function_exists( 'wc_format_coupon_code' ) ) {
+			return $query_vars;
+		}
+
 		if ( ! isset( $_SERVER['REQUEST_URI'] ) ) {
 			return $query_vars;
 		}
@@ -182,6 +187,10 @@ final class ReferralCoupon {
 			return self::$vip_codes;
 		}
 
+		if ( ! function_exists( 'wc_format_coupon_code' ) ) {
+			return array();
+		}
+
 		$path = NOVIQ_CORE_PATH . 'data/' . Profile::id() . '/vip-coupons.json';
 		if ( ! is_readable( $path ) ) {
 			self::$vip_codes = array();
@@ -213,6 +222,10 @@ final class ReferralCoupon {
 	}
 
 	public static function is_vip_code( string $code ): bool {
+		if ( ! function_exists( 'wc_format_coupon_code' ) ) {
+			return false;
+		}
+
 		$code = wc_format_coupon_code( $code );
 
 		return '' !== $code && in_array( $code, self::vip_codes(), true );
