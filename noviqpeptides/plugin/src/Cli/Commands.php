@@ -96,6 +96,44 @@ final class Commands {
 	}
 
 	/**
+	 * Import Certificates of Analysis from data/{profile}/coas.json + PDF dir.
+	 *
+	 * Production-only. Creates published noviq_lot rows linked to variation SKUs
+	 * and sideloads PDFs into the media library. Idempotent on lot_number and
+	 * PDF filename. Does not invent lot numbers or purity — those come from the
+	 * analysing lab via the manifest.
+	 *
+	 * Set NOVIQ_COA_DIR to the directory of PDFs (default /var/www/noviq-coa-pdfs).
+	 *
+	 * ## OPTIONS
+	 *
+	 * [--dry-run]
+	 * : Report what would change without writing.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp noviq import_coas
+	 *     wp noviq import_coas --dry-run
+	 *     NOVIQ_COA_DIR=/var/www/noviq-coa-pdfs wp noviq import_coas
+	 *
+	 * @param string[]              $args       Positional arguments.
+	 * @param array<string, string> $assoc_args Flags.
+	 */
+	public function import_coas( array $args, array $assoc_args ): void {
+		if ( ! class_exists( \WooCommerce::class ) ) {
+			\WP_CLI::error( 'WooCommerce is not active. Activate it before importing COAs.' );
+		}
+
+		if ( ! \Noviq\Core\Profile::feature( 'lots' ) ) {
+			\WP_CLI::error( 'Lots are disabled for this profile.' );
+		}
+
+		$seeder = new Seeder( isset( $assoc_args['dry-run'] ), true );
+		( new \Noviq\Core\Seed\ImportCoas( $seeder ) )->run();
+		$seeder->success( 'COA import complete.' );
+	}
+
+	/**
 	 * Delete everything the seeder creates.
 	 *
 	 * Products, compounds, comparisons, articles and seeded pages are removed.

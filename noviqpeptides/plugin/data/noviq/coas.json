@@ -1,0 +1,123 @@
+[
+  {
+    "file": "BPC-157_10mg.pdf",
+    "variant_sku": "DEV-BPC-157-10MG",
+    "lot_number": "BP10-0803",
+    "purity": 99.71,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "DSIP_5mg.pdf",
+    "variant_sku": "DEV-DSIP-5MG",
+    "lot_number": "DSIPS-0807",
+    "purity": 99.81,
+    "release_date": "2027-01-20"
+  },
+  {
+    "file": "GHK-Cu_50mg.pdf",
+    "variant_sku": "DEV-GHK-CU-50MG",
+    "lot_number": "GHK50-0803",
+    "purity": 99.77,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "GLOW_Mix_70mg.pdf",
+    "variant_sku": "DEV-GLOW-70MG",
+    "lot_number": "GLOW70-0803",
+    "purity": 99.8,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "Ipamorelin_10mg.pdf",
+    "variant_sku": "DEV-IPAMORELIN-10MG",
+    "lot_number": "IPA10-0803",
+    "purity": 99.78,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "Kisspeptin_10mg.pdf",
+    "variant_sku": "DEV-KISSPEPTIN-10-10MG",
+    "lot_number": "KISS10-0528",
+    "purity": 99.9,
+    "release_date": "2026-06-17"
+  },
+  {
+    "file": "KLOW_80mg(3).pdf",
+    "variant_sku": "DEV-KLOW-80MG",
+    "lot_number": "KLOW80-0713",
+    "purity": 99.81,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "MOTS-C_10mg.pdf",
+    "variant_sku": "DEV-MOT-C-10MG",
+    "lot_number": "MOTS10-0003",
+    "purity": 99.84,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "RETA_20mg.pdf",
+    "variant_sku": "DEV-RETATRUTIDE-20MG",
+    "lot_number": "RETA20-0803",
+    "purity": 99.77,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "SEMAGLUTIDE_10mg.pdf",
+    "variant_sku": "DEV-SEMAGLUTIDE-10MG",
+    "lot_number": "SEMA10-0616",
+    "purity": 99.9,
+    "release_date": "2026-06-25"
+  },
+  {
+    "file": "TB-500_10mg.pdf",
+    "variant_sku": "DEV-TB-500-10MG",
+    "lot_number": "TB10-0803",
+    "purity": 99.66,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "Tirzepatide_20mg.pdf",
+    "variant_sku": "DEV-TIRZEPATIDE-20MG",
+    "lot_number": "TIR20-0803",
+    "purity": 99.8,
+    "release_date": "2026-08-17"
+  },
+  {
+    "file": "Semax_10mg.pdf",
+    "variant_sku": "DEV-SEMAX-11MG",
+    "skip": true,
+    "notes": "PDF is 10mg; production catalog variant is 11mg. Hold until client decides."
+  },
+  {
+    "file": "Sermorelin_5mg.pdf",
+    "variant_sku": "DEV-SERMORELIN-10MG",
+    "skip": true,
+    "notes": "PDF is 5mg; production catalog has 10mg only. Hold until client decides."
+  },
+  {
+    "file": "Tesamorelin_20mg.pdf",
+    "skip": true,
+    "notes": "PDF is 20mg; production catalog has 5mg/10mg only. Hold until client decides."
+  },
+  {
+    "file": "Adamax_10mg.pdf",
+    "skip": true,
+    "notes": "Not in Noviq catalog."
+  },
+  {
+    "file": "MT-1_10mg.pdf",
+    "skip": true,
+    "notes": "Not in Noviq catalog."
+  },
+  {
+    "file": "NAD_500mg.pdf",
+    "skip": true,
+    "notes": "Not in Noviq catalog."
+  },
+  {
+    "file": "Selank_10mg.pdf",
+    "skip": true,
+    "notes": "Not in Noviq catalog."
+  }
+]

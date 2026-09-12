@@ -288,9 +288,7 @@ final class Catalog {
 
 		if ( 'variable' === $type ) {
 			$this->upsert_variations( $product_id, $data );
-			if ( $this->seeder->is_production() ) {
-				$this->prune_obsolete_variations( $product_id, $data );
-			}
+			$this->prune_obsolete_variations( $product_id, $data );
 		}
 
 		$this->product_meta( $product_id, $data );
@@ -496,8 +494,11 @@ final class Catalog {
 	}
 
 	/**
-	 * Drop variation rows that no longer exist in the production catalog (e.g.
-	 * dev-only 15 mg tiers after aligning to PSP vial sizes).
+	 * Drop variation rows whose SKU is not in the active seed catalog.
+	 *
+	 * Runs on every seed (dev or production) so switching modes does not leave
+	 * stale variants — e.g. production 20/30/40 mg after a dev re-seed, or dev
+	 * 15 mg tiers after a production seed aligned to PSP vial sizes.
 	 *
 	 * @param array<string, mixed> $data Product data.
 	 */

@@ -116,6 +116,28 @@ NOVIQ_SEED_IMAGES=/var/www/noviq-seed-images \
 
 **Do not** run plain `wp noviq seed` on production after go-live — it reloads dev placeholder prices from `products.json`.
 
+### Production COA import
+
+Local Docker keeps an empty `/coa` by design. Production lots come from real certificates in `docs/COAs/` plus the manifest `plugin/data/noviq/coas.json` (lot number, purity, release date transcribed from each PDF — never invented).
+
+**Prerequisite:** production catalog already applied (`./seed-production.sh`) so variation SKUs exist.
+
+```bash
+cd noviqpeptides/deploy
+./import-coas.sh --dry-run   # confirm SKU resolution + row counts
+./import-coas.sh             # rsync plugin + PDFs, then wp noviq import_coas
+```
+
+The script:
+
+1. Rsyncs theme + plugin (ships `coas.json` and `wp noviq import_coas`)
+2. Rsyncs `docs/COAs/*.pdf` to `/var/www/noviq-coa-pdfs/` on the droplet
+3. Runs `NOVIQ_COA_DIR=/var/www/noviq-coa-pdfs wp noviq import_coas` over SSH
+
+Idempotent on lot number and PDF filename. Rows marked `"skip": true` in the manifest are logged and not imported (size mismatches and products not in the catalog).
+
+Do **not** run `wp noviq import_coas` against local Docker as part of normal workflow — empty `/coa` on localhost is intentional.
+
 ## GoDaddy
 
 Confirm the site uses GoDaddy **hosting** (Managed WordPress or cPanel), not only the domain registrar.
