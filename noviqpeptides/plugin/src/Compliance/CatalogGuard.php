@@ -1,6 +1,6 @@
 <?php
 /**
- * Catalog guard: no bac water or injection consumables.
+ * Catalog guard: block injection consumables (syringes, prep pads).
  *
  * @package Noviq\Core
  */
@@ -14,15 +14,11 @@ defined( 'ABSPATH' ) || exit;
 final class CatalogGuard {
 
 	private const BLOCKED_TERMS = array(
-		'bacteriostatic',
-		'bac water',
-		'bacwater',
 		'syringe',
 		'syringes',
 		'prep pad',
 		'prep pads',
 		'alcohol pad',
-		'diluent',
 	);
 
 	public static function init(): void {
