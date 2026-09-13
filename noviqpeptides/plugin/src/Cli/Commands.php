@@ -68,7 +68,8 @@ final class Commands {
 	/**
 	 * Create or update VIP creator coupons from data/{profile}/vip-coupons.json.
 	 *
-	 * Each code is a perpetual percent discount with no usage cap. Idempotent
+	 * Each code is a perpetual percent discount with no usage cap (individual
+	 * use only — one coupon per cart). Idempotent
 	 * on coupon code. VIP share links are root paths: /{CODE} (e.g. /LELE10).
 	 * /go/{CODE} remains available for any coupon.
 	 *

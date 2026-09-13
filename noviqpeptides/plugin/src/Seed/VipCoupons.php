@@ -1,6 +1,6 @@
 <?php
 /**
- * VIP creator coupons — 10% perpetual, no usage cap.
+ * VIP creator coupons — 10% perpetual, no usage cap, individual use only.
  *
  * Codes come from data/{profile}/vip-coupons.json. Matching is on coupon code,
  * so re-runs update amount/description in place and never duplicate.
@@ -97,7 +97,7 @@ final class VipCoupons {
 		return 'percent' === $coupon->get_discount_type()
 			&& abs( (float) $coupon->get_amount() - $amount ) < 0.001
 			&& $description === (string) $coupon->get_description()
-			&& false === $coupon->get_individual_use()
+			&& true === $coupon->get_individual_use()
 			&& 0 === (int) $coupon->get_usage_limit()
 			&& 0 === (int) $coupon->get_usage_limit_per_user()
 			&& null === $coupon->get_limit_usage_to_x_items()
@@ -110,7 +110,7 @@ final class VipCoupons {
 		$coupon->set_description( $description );
 		$coupon->set_discount_type( 'percent' );
 		$coupon->set_amount( $amount );
-		$coupon->set_individual_use( false );
+		$coupon->set_individual_use( true );
 		$coupon->set_usage_limit( 0 );
 		$coupon->set_usage_limit_per_user( 0 );
 		$coupon->set_limit_usage_to_x_items( null );

@@ -4,7 +4,7 @@ Build plugin/data/noviq/products.production.json from PSP vial PDPs.
 
 Rules (production only — products.json stays dev placeholders):
   - Peptides tab, lyophilized vials only (no sprays, oral, bundles, supplies)
-  - Prices: ceil(PSP dollars) → whole USD (price_cents)
+  - Prices: PSP dollars → price_cents (ceil at cent precision)
   - Variants: match PSP vial sizes per product
   - stock_qty: 100 per variant
   - Noviq-only SKUs (no PSP match): keep dev variants, ceil dev prices
@@ -82,7 +82,7 @@ def mg_label(attr_mg: str) -> str:
 
 
 def ceil_cents(dollars: float) -> int:
-    return int(math.ceil(float(dollars))) * 100
+    return math.ceil(float(dollars) * 100)
 
 
 def sku_suffix(label: str) -> str:
@@ -150,7 +150,7 @@ def main() -> int:
                 variants.append(
                     {
                         **v,
-                        "price_cents": int(math.ceil(v["price_cents"] / 100)) * 100,
+                        "price_cents": ceil_cents(v["price_cents"] / 100),
                         "stock_qty": STOCK_QTY,
                     }
                 )

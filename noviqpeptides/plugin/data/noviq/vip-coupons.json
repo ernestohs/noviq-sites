@@ -78,5 +78,10 @@
     "code": "KALEEN10",
     "amount": 10,
     "description": "VIP creator — 10% perpetual"
+  },
+  {
+    "code": "TRIZZY10",
+    "amount": 10,
+    "description": "VIP creator — 10% perpetual"
   }
 ]
