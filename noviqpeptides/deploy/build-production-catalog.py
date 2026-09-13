@@ -7,7 +7,7 @@ Rules (production only — products.json stays dev placeholders):
   - Prices: PSP dollars → price_cents (ceil at cent precision)
   - Variants: match PSP vial sizes per product
   - stock_qty: 100 per variant
-  - Noviq-only SKUs (no PSP match): keep dev variants, ceil dev prices
+  - Noviq-only SKUs (no PSP match): keep dev variants, ceil dev prices to whole dollars
 
 Requires network. Re-run when PSP changes pricing.
 """
@@ -85,6 +85,10 @@ def ceil_cents(dollars: float) -> int:
     return math.ceil(float(dollars) * 100)
 
 
+def ceil_whole_dollar_cents(cents: int) -> int:
+    return math.ceil(cents / 100) * 100
+
+
 def sku_suffix(label: str) -> str:
     return re.sub(r"[^A-Z0-9.]", "", label.upper())
 
@@ -150,7 +154,7 @@ def main() -> int:
                 variants.append(
                     {
                         **v,
-                        "price_cents": ceil_cents(v["price_cents"] / 100),
+                        "price_cents": ceil_whole_dollar_cents(v["price_cents"]),
                         "stock_qty": STOCK_QTY,
                     }
                 )
