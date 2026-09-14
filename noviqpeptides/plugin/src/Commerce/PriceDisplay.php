@@ -19,32 +19,36 @@ defined( 'ABSPATH' ) || exit;
 final class PriceDisplay {
 
 	public static function init(): void {
-		add_filter( 'wc_price_args', array( self::class, 'fractional_decimals' ), 10, 2 );
+		add_filter( 'formatted_woocommerce_price', array( self::class, 'fractional_formatted_price' ), 10, 6 );
 		add_filter( 'woocommerce_get_price_html', array( self::class, 'supplies_price_html' ), 20, 2 );
 		add_filter( 'woocommerce_cart_item_price', array( self::class, 'cart_unit_price' ), 20, 3 );
 		add_filter( 'woocommerce_cart_item_subtotal', array( self::class, 'cart_line_subtotal' ), 20, 3 );
 	}
 
 	/**
-	 * Older WooCommerce builds pass only $args to wc_price_args.
+	 * wc_price_args receives only formatting args, not the amount. Re-format here
+	 * once WooCommerce has the raw price and the active decimal count.
 	 *
-	 * @param array<string, mixed> $args  wc_price() arguments.
-	 * @param float|string|int|null $price Raw price when WC forwards it.
-	 * @return array<string, mixed>
+	 * @param string               $formatted_price    Price string from number_format().
+	 * @param float                $price              Unformatted amount.
+	 * @param int                  $decimals           Decimal places used for $formatted_price.
+	 * @param string               $decimal_separator  Store decimal separator.
+	 * @param string               $thousand_separator Store thousands separator.
+	 * @param float|string         $original_price     Original wc_price() input.
 	 */
-	public static function fractional_decimals( array $args, $price = null ): array {
-		if ( isset( $args['decimals'] ) && self::FRACTIONAL_DECIMALS === (int) $args['decimals'] ) {
-			return $args;
+	public static function fractional_formatted_price(
+		string $formatted_price,
+		float $price,
+		int $decimals,
+		string $decimal_separator,
+		string $thousand_separator,
+		$original_price = ''
+	): string {
+		if ( $decimals >= self::FRACTIONAL_DECIMALS || ! self::has_fractional_cents( $price ) ) {
+			return $formatted_price;
 		}
 
-		$amount = self::resolve_amount( $price );
-		if ( null === $amount || ! self::has_fractional_cents( $amount ) ) {
-			return $args;
-		}
-
-		$args['decimals'] = self::FRACTIONAL_DECIMALS;
-
-		return $args;
+		return number_format( $price, self::FRACTIONAL_DECIMALS, $decimal_separator, $thousand_separator );
 	}
 
 	/**
@@ -128,22 +132,6 @@ final class PriceDisplay {
 		}
 
 		return wp_kses_post( wc_price( $price, $args ) );
-	}
-
-	/**
-	 * @param float|string|int|null $price Raw price when available.
-	 */
-	private static function resolve_amount( $price ): ?float {
-		if ( is_numeric( $price ) ) {
-			return (float) $price;
-		}
-
-		global $product;
-		if ( $product instanceof \WC_Product ) {
-			return (float) $product->get_price();
-		}
-
-		return null;
 	}
 
 	private static function has_fractional_cents( float $amount ): bool {
