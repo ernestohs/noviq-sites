@@ -21,7 +21,8 @@ final class PriceDisplay {
 	public static function init(): void {
 		add_filter( 'formatted_woocommerce_price', array( self::class, 'fractional_formatted_price' ), 10, 6 );
 		add_filter( 'woocommerce_get_price_html', array( self::class, 'supplies_price_html' ), 20, 2 );
-		add_filter( 'woocommerce_cart_item_price', array( self::class, 'cart_unit_price' ), 20, 3 );
+		// Priority 9: before VolumeBreaks (10) so tier strike-through is not overwritten.
+		add_filter( 'woocommerce_cart_item_price', array( self::class, 'cart_unit_price' ), 9, 3 );
 		add_filter( 'woocommerce_cart_item_subtotal', array( self::class, 'cart_line_subtotal' ), 20, 3 );
 	}
 

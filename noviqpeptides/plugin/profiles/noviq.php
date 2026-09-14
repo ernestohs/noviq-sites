@@ -16,6 +16,7 @@ return array(
 	'features' => array(
 		'meta_boxes'     => true,
 		'volume_breaks'    => true,
+		'price_display'    => true,
 		'referral_coupons' => true,
 		'paypal_invoice'   => true,
 		'subscriptions'    => true,
