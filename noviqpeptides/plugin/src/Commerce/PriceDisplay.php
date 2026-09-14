@@ -151,10 +151,6 @@ final class PriceDisplay {
 	}
 
 	private static function is_supplies_product( \WC_Product $product ): bool {
-		if ( function_exists( 'has_term' ) && has_term( 'supplies', 'product_cat', $product->get_id() ) ) {
-			return true;
-		}
-
-		return 'bacteriostatic-water' === $product->get_slug();
+		return function_exists( 'has_term' ) && has_term( 'supplies', 'product_cat', $product->get_id() );
 	}
 }

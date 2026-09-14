@@ -14,11 +14,6 @@
       "slug": "blends",
       "name": "Blends",
       "description": "Co-lyophilized multi-compound vials. Every component is quantified separately on the lot COA. A blend is not an excuse for a vague certificate."
-    },
-    {
-      "slug": "supplies",
-      "name": "Laboratory supplies",
-      "description": "Auxiliary reference materials supplied alongside the peptide catalog."
     }
   ],
   "research_areas": [

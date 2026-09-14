@@ -1049,32 +1049,5 @@
     "bundle_of": [],
     "featured": false,
     "rank": 28
-  },
-  {
-    "handle": "bacteriostatic-water",
-    "sku": "DEV-BAC-WATER",
-    "title": "Bacteriostatic Water",
-    "kicker": "Laboratory supply",
-    "category": "supplies",
-    "research_areas": [],
-    "compounds": [],
-    "summary": "H₂O with 0.9% benzyl alcohol. 10 mL. >99% HPLC.",
-    "type": "simple",
-    "attribute": null,
-    "image": "bacwater-main.png",
-    "variants": [
-      {
-        "sku": "DEV-BAC-WATER-10ML",
-        "label": "10mL",
-        "amount_mg": null,
-        "price_cents": 750,
-        "stock_qty": 100
-      }
-    ],
-    "tiers": [],
-    "addons": [],
-    "bundle_of": [],
-    "featured": false,
-    "rank": 29
   }
 ]

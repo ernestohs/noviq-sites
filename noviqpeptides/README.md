@@ -20,7 +20,7 @@ docker compose up -d
 ./setup.sh
 ```
 
-`setup.sh` installs WordPress and WooCommerce, activates the theme and plugin, then runs `wp noviq seed`. That seed is idempotent: 29 catalog products (DEV-* SKUs, with prices aligned to the public American Peptides catalog where a direct match exists), 24 compound records, client photos from `local/seed-images/`, pages, and menus.
+`setup.sh` installs WordPress and WooCommerce, activates the theme and plugin, then runs `wp noviq seed`. That seed is idempotent: 28 simple products (DEV-* SKUs, with prices aligned to the public American Peptides catalog where a direct match exists), 24 compound records, client photos from `local/seed-images/`, pages, and menus.
 
 Open http://localhost:8080 (store) and http://localhost:8080/wp-admin (admin / noviq-local-dev).
 
@@ -36,7 +36,7 @@ SKUs remain local-dev placeholders. Prices without a direct American Peptides ma
 
 ## Catalog rules
 
-- No syringes, prep pads, or reconstitution kit (bacteriostatic water is in catalog)
+- No bacteriostatic water, syringes, prep pads, or reconstitution kit
 - RUO, age gate, and checkout attestation come from the plugin
 - `/coa` and `/verify` stay empty until real lots exist
 
