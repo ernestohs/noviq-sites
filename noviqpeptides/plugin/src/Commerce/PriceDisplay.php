@@ -108,7 +108,7 @@ final class PriceDisplay {
 		return wp_kses_post( wc_price( $amount, array( 'decimals' => self::FRACTIONAL_DECIMALS ) ) );
 	}
 
-	private const FRACTIONAL_DECIMALS = 1;
+	private const FRACTIONAL_DECIMALS = 2;
 
 	private static function format_product_price_html( \WC_Product $product ): ?string {
 		$price    = (float) $product->get_price();
@@ -139,6 +139,12 @@ final class PriceDisplay {
 	}
 
 	private static function is_supplies_product( \WC_Product $product ): bool {
-		return function_exists( 'has_term' ) && has_term( 'supplies', 'product_cat', $product->get_id() );
+		if ( ! function_exists( 'has_term' ) ) {
+			return false;
+		}
+
+		$product_id = $product->is_type( 'variation' ) ? $product->get_parent_id() : $product->get_id();
+
+		return has_term( 'supplies', 'product_cat', $product_id );
 	}
 }
