@@ -73,6 +73,9 @@ final class Commands {
 	 * on coupon code. VIP share links are root paths: /{CODE} (e.g. /LELE10).
 	 * /go/{CODE} remains available for any coupon.
 	 *
+	 * Optional `share` fields in the JSON (title, description, image) are for
+	 * Open Graph previews only and are not written to WooCommerce.
+	 *
 	 * ## OPTIONS
 	 *
 	 * [--dry-run]
@@ -94,6 +97,85 @@ final class Commands {
 		$seeder = new Seeder( isset( $assoc_args['dry-run'] ), true );
 		( new \Noviq\Core\Seed\VipCoupons( $seeder ) )->run();
 		$seeder->success( 'VIP coupon seed complete.' );
+	}
+
+	/**
+	 * Audit VIP share Open Graph readiness from vip-coupons.json.
+	 *
+	 * Reports each code as OK or lists missing share fields / missing image
+	 * files under plugin/assets/. Read-only; does not write coupons.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp noviq vip_share_audit
+	 *
+	 * @param string[]              $args       Positional arguments.
+	 * @param array<string, string> $assoc_args Flags.
+	 */
+	public function vip_share_audit( array $args, array $assoc_args ): void {
+		$rows = \Noviq\Core\Commerce\VipCouponsRegistry::rows();
+		if ( array() === $rows ) {
+			\WP_CLI::warning( 'No VIP coupons found in data/{profile}/vip-coupons.json.' );
+			return;
+		}
+
+		$ok     = 0;
+		$issues = 0;
+
+		foreach ( $rows as $row ) {
+			if ( ! is_array( $row ) || ! isset( $row['code'] ) ) {
+				continue;
+			}
+
+			$code = function_exists( 'wc_format_coupon_code' )
+				? wc_format_coupon_code( (string) $row['code'] )
+				: strtolower( (string) $row['code'] );
+
+			$share  = ( isset( $row['share'] ) && is_array( $row['share'] ) ) ? $row['share'] : array();
+			$missing = array();
+
+			foreach ( array( 'creator_name', 'title', 'description', 'image' ) as $field ) {
+				if ( ! isset( $share[ $field ] ) || ! is_string( $share[ $field ] ) || '' === trim( $share[ $field ] ) ) {
+					$missing[] = 'share.' . $field;
+				}
+			}
+
+			$image_note = '';
+			if ( isset( $share['image'] ) && is_string( $share['image'] ) && '' !== trim( $share['image'] ) ) {
+				$rel = ltrim( str_replace( '\\', '/', trim( $share['image'] ) ), '/' );
+				if ( str_contains( $rel, '..' ) || ! is_readable( NOVIQ_CORE_PATH . 'assets/' . $rel ) ) {
+					$missing[]  = 'image file';
+					$image_note = ' (assets/' . $rel . ')';
+				}
+			}
+
+			$default_ok = is_readable( NOVIQ_CORE_PATH . 'assets/vip/default.jpg' );
+
+			if ( array() === $missing ) {
+				\WP_CLI::log( sprintf( 'OK      %s', $code ) );
+				++$ok;
+			} else {
+				\WP_CLI::log(
+					sprintf(
+						'MISSING %s — %s%s%s',
+						$code,
+						implode( ', ', $missing ),
+						$image_note,
+						$default_ok ? '' : ' [also missing assets/vip/default.jpg]'
+					)
+				);
+				++$issues;
+			}
+		}
+
+		\WP_CLI::log( '' );
+		\WP_CLI::success(
+			sprintf(
+				'VIP share audit: %d OK, %d with gaps (fallback OG still works when share is incomplete).',
+				$ok,
+				$issues
+			)
+		);
 	}
 
 	/**

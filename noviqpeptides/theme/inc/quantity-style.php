@@ -1,8 +1,8 @@
 <?php
 /**
- * PDP quantity style: stepper (default) or dropdown via cookie.
+ * Storefront quantity style: dropdown (default) or stepper via cookie.
  *
- * Set with ?qty=dropdown or ?qty=stepper. Cart is not affected.
+ * Override with ?qty=stepper or ?qty=dropdown (sets noviq_qty_style for one year).
  *
  * @package Noviq\Child
  */
@@ -14,19 +14,19 @@ namespace Noviq\Child;
 defined( 'ABSPATH' ) || exit;
 
 const QTY_COOKIE         = 'noviq_qty_style';
-const QTY_DROPDOWN_MAX   = 10;
+const QTY_DROPDOWN_MAX   = 25;
 
 /**
- * Current PDP quantity style.
+ * Current quantity control style (PDP, cart, checkout).
  */
 function quantity_style(): string {
 	if ( ! isset( $_COOKIE[ QTY_COOKIE ] ) ) {
-		return 'stepper';
+		return 'dropdown';
 	}
 
 	$raw = sanitize_key( wp_unslash( (string) $_COOKIE[ QTY_COOKIE ] ) );
 
-	return 'dropdown' === $raw ? 'dropdown' : 'stepper';
+	return 'stepper' === $raw ? 'stepper' : 'dropdown';
 }
 
 function quantity_dropdown_max(): int {

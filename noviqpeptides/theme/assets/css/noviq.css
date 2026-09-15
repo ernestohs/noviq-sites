@@ -1474,7 +1474,7 @@ body.noviq div.product form.cart .quantity {
 	margin-right: 12px;
 }
 
-body.noviq div.product form.cart .quantity select {
+body.noviq .quantity select {
 	min-width: 5.5rem;
 }
 
@@ -2430,6 +2430,12 @@ body.noviq .woocommerce-error {
 }
 
 /* Cart / checkout get the store measure, not the prose measure. */
+.nq-main--commerce {
+	max-width: var( --nq-maxw );
+	margin-inline: auto;
+	padding: clamp( 28px, 4vw, 48px ) var( --nq-gutter ) clamp( 48px, 7vw, 80px );
+}
+
 .nq-main--commerce .entry-content {
 	max-width: none;
 }
@@ -2465,6 +2471,80 @@ body.noviq .woocommerce table.cart td.actions .coupon input[type="text"] {
 body.noviq .woocommerce table.cart td.actions > .button {
 	float: none;
 	flex: 0 0 auto;
+}
+
+/* Quantities save on change (cart.js); manual update is redundant. */
+body.noviq .woocommerce-cart-form button[name="update_cart"] {
+	display: none;
+}
+
+/*
+ * woocommerce-smallscreen is dropped with woocommerce-layout; port the cart
+ * responsive stack so shop_table_responsive does not overflow on phones.
+ */
+@media ( max-width: 768px ) {
+	body.noviq table.shop_table_responsive thead {
+		display: none;
+	}
+
+	body.noviq table.shop_table_responsive tr {
+		display: block;
+	}
+
+	body.noviq table.shop_table_responsive td,
+	body.noviq table.shop_table_responsive tbody th {
+		display: block;
+		text-align: right !important;
+	}
+
+	body.noviq table.shop_table_responsive td::before {
+		content: attr( data-title ) ": ";
+		font-family: var( --nq-font-mono );
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var( --nq-text-subtle );
+		float: left;
+	}
+
+	body.noviq table.shop_table_responsive td.product-remove::before,
+	body.noviq table.shop_table_responsive td.actions::before {
+		display: none;
+	}
+
+	/* WC 10+ product name is tbody th — keep visible (stock smallscreen hides th). */
+	body.noviq table.shop_table_responsive tbody th.product-name {
+		display: block !important;
+		text-align: left !important;
+	}
+
+	body.noviq table.shop_table_responsive tbody th.product-name::before {
+		display: none;
+	}
+
+	body.noviq table.cart .product-thumbnail {
+		display: none;
+	}
+
+	body.noviq .woocommerce table.cart td.actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	body.noviq .woocommerce table.cart td.actions .coupon {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	body.noviq .woocommerce table.cart td.actions .coupon input[type="text"] {
+		width: 100%;
+		min-width: 0;
+	}
+
+	body.noviq .woocommerce table.cart td.actions > .button {
+		width: 100%;
+	}
 }
 
 /* ===================================================== 13. plugin panels === */

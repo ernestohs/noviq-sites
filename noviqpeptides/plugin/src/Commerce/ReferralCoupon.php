@@ -13,8 +13,6 @@ declare(strict_types=1);
 
 namespace Noviq\Core\Commerce;
 
-use Noviq\Core\Profile;
-
 defined( 'ABSPATH' ) || exit;
 
 final class ReferralCoupon {
@@ -27,9 +25,6 @@ final class ReferralCoupon {
 
 	/** Guard against apply_coupon → calculate_totals re-entrancy. */
 	private static bool $applying = false;
-
-	/** @var list<string>|null Formatted VIP codes from vip-coupons.json. */
-	private static ?array $vip_codes = null;
 
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'register_rewrite' ) );
@@ -119,9 +114,9 @@ final class ReferralCoupon {
 		}
 
 		$code = wc_format_coupon_code( rawurldecode( $code ) );
-		self::ensure_session();
 
 		if ( ! self::coupon_is_usable( $code ) ) {
+			self::ensure_session();
 			wc_add_notice(
 				__( 'That referral code is not valid or is no longer available.', 'noviq-core' ),
 				'error'
@@ -129,6 +124,12 @@ final class ReferralCoupon {
 			self::redirect_to_shop();
 		}
 
+		// Social crawlers need HTML with OG tags; humans keep stash + redirect.
+		if ( VipSharePreview::is_social_crawler() ) {
+			VipSharePreview::render( $code );
+		}
+
+		self::ensure_session();
 		self::stash( $code );
 		self::maybe_apply();
 
@@ -183,42 +184,7 @@ final class ReferralCoupon {
 	 * @return list<string>
 	 */
 	public static function vip_codes(): array {
-		if ( null !== self::$vip_codes ) {
-			return self::$vip_codes;
-		}
-
-		if ( ! function_exists( 'wc_format_coupon_code' ) ) {
-			return array();
-		}
-
-		$path = NOVIQ_CORE_PATH . 'data/' . Profile::id() . '/vip-coupons.json';
-		if ( ! is_readable( $path ) ) {
-			self::$vip_codes = array();
-
-			return self::$vip_codes;
-		}
-
-		$decoded = json_decode( (string) file_get_contents( $path ), true );
-		if ( ! is_array( $decoded ) ) {
-			self::$vip_codes = array();
-
-			return self::$vip_codes;
-		}
-
-		$codes = array();
-		foreach ( $decoded as $row ) {
-			if ( ! is_array( $row ) || ! isset( $row['code'] ) ) {
-				continue;
-			}
-			$code = wc_format_coupon_code( (string) $row['code'] );
-			if ( '' !== $code ) {
-				$codes[] = $code;
-			}
-		}
-
-		self::$vip_codes = array_values( array_unique( $codes ) );
-
-		return self::$vip_codes;
+		return VipCouponsRegistry::codes();
 	}
 
 	public static function is_vip_code( string $code ): bool {
@@ -228,7 +194,7 @@ final class ReferralCoupon {
 
 		$code = wc_format_coupon_code( $code );
 
-		return '' !== $code && in_array( $code, self::vip_codes(), true );
+		return '' !== $code && null !== VipCouponsRegistry::row( $code );
 	}
 
 	/**

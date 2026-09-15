@@ -15,7 +15,7 @@ namespace Noviq\Child;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '0.3.6';
+const VERSION = '0.3.7';
 
 require_once __DIR__ . '/inc/vial-image.php';
 require_once __DIR__ . '/inc/pdp-parts.php';
@@ -54,6 +54,17 @@ add_action(
 			|| ( function_exists( 'is_shop' ) && is_shop() )
 			|| ( function_exists( 'is_product_taxonomy' ) && is_product_taxonomy() )
 			|| ( function_exists( 'is_product' ) && is_product() );
+
+		if ( function_exists( 'is_cart' ) && is_cart() ) {
+			wp_enqueue_script( 'jquery-blockui' );
+			wp_enqueue_script(
+				'noviq-cart',
+				get_stylesheet_directory_uri() . '/assets/js/cart.js',
+				array( 'jquery', 'jquery-blockui' ),
+				VERSION,
+				true
+			);
+		}
 
 		if ( $needs_cards ) {
 			wp_enqueue_script(

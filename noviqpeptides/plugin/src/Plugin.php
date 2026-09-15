@@ -51,6 +51,7 @@ final class Plugin {
 		}
 		if ( Profile::feature( 'referral_coupons' ) ) {
 			Commerce\ReferralCoupon::init();
+			Commerce\VipSharePreview::init();
 		}
 		if ( Profile::feature( 'subscriptions' ) ) {
 			Commerce\Subscriptions::init();

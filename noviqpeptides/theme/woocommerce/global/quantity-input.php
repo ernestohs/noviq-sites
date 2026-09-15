@@ -2,8 +2,8 @@
 /**
  * Product quantity inputs.
  *
- * On the product page, cookie noviq_qty_style=dropdown renders a select.
- * Cart and every other screen keep the number input.
+ * Default: select dropdown (1–25, stock-capped). ?qty=stepper sets a cookie
+ * for the numeric stepper instead.
  *
  * @package Noviq\Child
  * @version 9.4.0
@@ -40,9 +40,7 @@ $label = ! empty( $args['product_name'] )
 	? sprintf( esc_html__( '%s quantity', 'woocommerce' ), wp_strip_all_tags( (string) $args['product_name'] ) )
 	: esc_html__( 'Quantity', 'woocommerce' );
 
-$use_dropdown = function_exists( 'is_product' )
-	&& is_product()
-	&& 'dropdown' === \Noviq\Child\quantity_style();
+$use_dropdown = 'dropdown' === \Noviq\Child\quantity_style();
 ?>
 <div class="quantity">
 	<?php do_action( 'woocommerce_before_quantity_input_field' ); ?>

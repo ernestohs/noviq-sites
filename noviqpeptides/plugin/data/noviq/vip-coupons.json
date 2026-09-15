@@ -2,12 +2,24 @@
   {
     "code": "LELE10",
     "amount": 10,
-    "description": "VIP creator — 10% perpetual"
+    "description": "VIP creator — 10% perpetual",
+    "share": {
+      "creator_name": "Lele",
+      "title": "Lele — 10% off research peptides",
+      "description": "Use code LELE10 at checkout for 10% off laboratory reagents at Noviq Peptides. For research use only.",
+      "image": "vip/lele10.jpg"
+    }
   },
   {
     "code": "BUNNY10",
     "amount": 10,
-    "description": "VIP creator — 10% perpetual"
+    "description": "VIP creator — 10% perpetual",
+    "share": {
+      "creator_name": "Bunny",
+      "title": "Bunny — 10% off research peptides",
+      "description": "Use code BUNNY10 at checkout for 10% off laboratory reagents at Noviq Peptides. For research use only.",
+      "image": "vip/bunny10.jpg"
+    }
   },
   {
     "code": "MALIA10",
