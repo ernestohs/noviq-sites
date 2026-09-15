@@ -124,10 +124,9 @@ final class ReferralCoupon {
 			self::redirect_to_shop();
 		}
 
-		// Social crawlers: OG HTML for VIP only; never stash or redirect.
-		if ( VipSharePreview::is_social_crawler() ) {
+		// VIP share links: crawlers get OG HTML; everyone else stashes + redirects.
+		if ( VipSharePreview::is_social_crawler() && self::is_vip_code( $code ) ) {
 			VipSharePreview::render( $code );
-			exit;
 		}
 
 		self::ensure_session();

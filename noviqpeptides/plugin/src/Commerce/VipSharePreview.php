@@ -57,10 +57,7 @@ final class VipSharePreview {
 	}
 
 	/**
-	 * Emit OG HTML for a VIP code and exit.
-	 *
-	 * Returns without output when the code is not VIP; the caller must exit
-	 * so crawlers do not fall through to stash/redirect.
+	 * Emit OG HTML for a VIP code and exit. No-op if the code is not VIP.
 	 */
 	public static function render( string $code ): void {
 		if ( ! ReferralCoupon::is_vip_code( $code ) ) {
