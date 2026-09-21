@@ -198,11 +198,15 @@ print(json.dumps({
     "client_id": os.environ.get("PAYPAL_CLIENT_ID", ""),
     "client_secret": os.environ.get("PAYPAL_CLIENT_SECRET", ""),
     "instructions": "Please complete payment via PayPal using the link below. Include your order number in the PayPal note if prompted.",
+    "reminders_enabled": "yes",
+    "reminder_interval_hours": "24",
+    "reminder_max_count": "30",
 }))
 PY
 )"
 wp option update woocommerce_noviq_paypal_invoice_settings "${PAYPAL_SETTINGS}" --format=json 2>/dev/null || true
 wp option update woocommerce_noviq_paypal_invoice_instructions_settings '{"enabled":"yes"}' --format=json 2>/dev/null || true
+wp option update woocommerce_noviq_paypal_invoice_reminder_settings '{"enabled":"yes"}' --format=json 2>/dev/null || true
 if [[ -z "${PAYPAL_CLIENT_ID:-}" || -z "${PAYPAL_CLIENT_SECRET:-}" ]]; then
   echo "PayPal Client ID/Secret not set in .env; enter them under WooCommerce > Settings > Payments > PayPal Invoice."
 fi

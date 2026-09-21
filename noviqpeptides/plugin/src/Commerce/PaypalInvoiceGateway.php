@@ -28,6 +28,7 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 		add_filter( 'woocommerce_payment_gateways', array( self::class, 'register_gateway' ) );
 		add_filter( 'woocommerce_email_classes', array( self::class, 'register_email' ) );
 		add_filter( 'woocommerce_email_enabled_customer_on_hold_order', array( self::class, 'disable_default_on_hold_email' ), 10, 2 );
+		PaymentReminders::init();
 	}
 
 	/**
@@ -49,7 +50,8 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 			return $emails;
 		}
 
-		$emails['Noviq_Paypal_Invoice_Email'] = new PaypalInvoiceEmail();
+		$emails['Noviq_Paypal_Invoice_Email']          = new PaypalInvoiceEmail();
+		$emails['Noviq_Paypal_Invoice_Reminder_Email'] = new PaypalInvoiceReminderEmail();
 
 		return $emails;
 	}
@@ -147,12 +149,41 @@ final class PaypalInvoiceGateway extends \WC_Payment_Gateway {
 				'default'     => '',
 				'desc_tip'    => true,
 			),
-			'instructions'  => array(
+			'instructions'              => array(
 				'title'       => __( 'Instructions', 'noviq-core' ),
 				'type'        => 'textarea',
 				'description' => __( 'Shown on the thank-you page and in the payment email.', 'noviq-core' ),
 				'default'     => __( 'Please complete payment via PayPal using the link below. Include your order number in the PayPal note if prompted.', 'noviq-core' ),
 				'desc_tip'    => true,
+			),
+			'reminders_enabled'         => array(
+				'title'   => __( 'Payment reminders', 'noviq-core' ),
+				'type'    => 'checkbox',
+				'label'   => __( 'Email payment reminders while the order stays on hold', 'noviq-core' ),
+				'default' => 'yes',
+			),
+			'reminder_interval_hours'   => array(
+				'title'             => __( 'Reminder interval (hours)', 'noviq-core' ),
+				'type'              => 'number',
+				'description'       => __( 'Hours after the previous send (initial instructions or last reminder) before the next reminder.', 'noviq-core' ),
+				'default'           => '24',
+				'desc_tip'          => true,
+				'custom_attributes' => array(
+					'min'  => '1',
+					'step' => '1',
+				),
+			),
+			'reminder_max_count'        => array(
+				'title'             => __( 'Maximum reminders', 'noviq-core' ),
+				'type'              => 'number',
+				'description'       => __( 'Stop after this many reminders. No auto-cancel when the cap is reached.', 'noviq-core' ),
+				'default'           => '30',
+				'desc_tip'          => true,
+				'custom_attributes' => array(
+					'min'  => '0',
+					'max'  => '365',
+					'step' => '1',
+				),
 			),
 		);
 	}

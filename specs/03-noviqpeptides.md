@@ -44,6 +44,12 @@ PayPal Invoicing API invoice on checkout, stores the `recipient_view_url` on the
 order, and emails that link via the existing PayPal invoice email. Orders stay
 on-hold until an admin confirms payment manually (no webhooks yet).
 
+While an unpaid PayPal invoice order remains on-hold, Action Scheduler sends
+payment reminder emails every 24 hours (measured from the previous send), up to
+30 reminders, then stops with no auto-cancel. Interval, max count, and enable
+toggle live under WooCommerce → Settings → Payments → PayPal Invoice. Reminder
+emails can also be disabled under WooCommerce → Settings → Emails.
+
 Credentials (REST Client ID / Secret, sandbox vs live) are entered only in
 WordPress admin under WooCommerce → Settings → Payments → PayPal Invoice, or
 for local Docker via `noviqpeptides/local/.env` (`PAYPAL_CLIENT_ID`,

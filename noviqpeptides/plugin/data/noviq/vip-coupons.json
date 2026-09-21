@@ -95,5 +95,20 @@
     "code": "TRIZZY10",
     "amount": 10,
     "description": "VIP creator — 10% perpetual"
+  },
+  {
+    "code": "TIM10",
+    "amount": 10,
+    "description": "VIP creator — 10% perpetual"
+  },
+  {
+    "code": "SUMMER10",
+    "amount": 10,
+    "description": "VIP creator — 10% perpetual"
+  },
+  {
+    "code": "LUPE10",
+    "amount": 10,
+    "description": "VIP creator — 10% perpetual"
   }
 ]

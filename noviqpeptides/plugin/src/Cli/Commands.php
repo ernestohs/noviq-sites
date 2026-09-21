@@ -256,6 +256,99 @@ final class Commands {
 	}
 
 	/**
+	 * Inspect or fire PayPal invoice payment reminders for an on-hold order.
+	 *
+	 * Reports eligibility, sent count, last send time and the next scheduled
+	 * Action Scheduler timestamp. With --run, triggers the next reminder now
+	 * (still subject to eligibility and sequence guards).
+	 *
+	 * ## OPTIONS
+	 *
+	 * --order-id=<id>
+	 * : WooCommerce order ID.
+	 *
+	 * [--run]
+	 * : Send the next due reminder immediately.
+	 *
+	 * [--dry-run]
+	 * : With --run, report what would happen without sending.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp noviq payment_reminders --order-id=42
+	 *     wp noviq payment_reminders --order-id=42 --run
+	 *     wp noviq payment_reminders --order-id=42 --run --dry-run
+	 *
+	 * @param string[]              $args       Positional arguments.
+	 * @param array<string, string> $assoc_args Flags.
+	 */
+	public function payment_reminders( array $args, array $assoc_args ): void {
+		if ( ! class_exists( \WooCommerce::class ) ) {
+			\WP_CLI::error( 'WooCommerce is not active.' );
+		}
+
+		if ( ! isset( $assoc_args['order-id'] ) ) {
+			\WP_CLI::error( 'Required: --order-id=<id>' );
+		}
+
+		$order_id = (int) $assoc_args['order-id'];
+		$order    = wc_get_order( $order_id );
+		if ( ! $order instanceof \WC_Order ) {
+			\WP_CLI::error( sprintf( 'Order %d not found.', $order_id ) );
+		}
+
+		$reminders = \Noviq\Core\Commerce\PaymentReminders::class;
+		$sent      = $reminders::sent_count( $order );
+		$max       = $reminders::max_count();
+		$next_seq  = $sent + 1;
+		$eligible  = $reminders::is_eligible( $order );
+		$next_ts   = $reminders::next_scheduled_timestamp( $order_id );
+		$last_at   = $reminders::last_sent_at( $order );
+
+		\WP_CLI::log( sprintf( 'Order:              #%s (ID %d)', $order->get_order_number(), $order_id ) );
+		\WP_CLI::log( sprintf( 'Status:             %s', $order->get_status() ) );
+		\WP_CLI::log( sprintf( 'Payment method:     %s', $order->get_payment_method() ) );
+		\WP_CLI::log( sprintf( 'Payment URL:        %s', \Noviq\Core\Commerce\PaypalInvoiceGateway::payment_url_for_order( $order ) !== '' ? 'present' : 'missing' ) );
+		\WP_CLI::log( sprintf( 'Reminders enabled:  %s', $reminders::reminders_enabled() ? 'yes' : 'no' ) );
+		\WP_CLI::log( sprintf( 'Interval hours:     %d', $reminders::interval_hours() ) );
+		\WP_CLI::log( sprintf( 'Sent / max:         %d / %d', $sent, $max ) );
+		\WP_CLI::log( sprintf( 'Last sent (GMT):    %s', '' !== $last_at ? $last_at : '(none)' ) );
+		\WP_CLI::log( sprintf( 'Eligible:           %s', $eligible ? 'yes' : 'no' ) );
+		\WP_CLI::log(
+			sprintf(
+				'Next scheduled:     %s',
+				$next_ts > 0 ? gmdate( 'Y-m-d H:i:s', $next_ts ) . ' GMT' : '(none)'
+			)
+		);
+
+		if ( ! isset( $assoc_args['run'] ) ) {
+			\WP_CLI::success( 'Payment reminder status reported.' );
+
+			return;
+		}
+
+		if ( isset( $assoc_args['dry-run'] ) ) {
+			\WP_CLI::log(
+				sprintf(
+					'Dry run: would attempt reminder sequence %d (eligible=%s).',
+					$next_seq,
+					$eligible ? 'yes' : 'no'
+				)
+			);
+			\WP_CLI::success( 'Dry run complete; nothing sent.' );
+
+			return;
+		}
+
+		$reminders::unschedule_for_order( $order_id );
+		$reminders::run( $order_id, $next_seq );
+
+		$order = wc_get_order( $order_id );
+		$sent  = $order instanceof \WC_Order ? $reminders::sent_count( $order ) : $sent;
+		\WP_CLI::success( sprintf( 'Runner finished. Sent count is now %d.', $sent ) );
+	}
+
+	/**
 	 * Print the compliance state of the site.
 	 *
 	 * Checks the invariants that matter in this category: that the lot registry
