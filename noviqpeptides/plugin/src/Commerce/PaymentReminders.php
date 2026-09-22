@@ -193,7 +193,7 @@ final class PaymentReminders {
 		}
 
 		$max = self::max_count();
-		for ( $sequence = 1; $sequence <= $max + 1; $sequence++ ) {
+		for ( $sequence = 1; $sequence <= $max; $sequence++ ) {
 			as_unschedule_all_actions(
 				self::HOOK,
 				array( $order_id, $sequence ),
@@ -231,7 +231,7 @@ final class PaymentReminders {
 		$max      = self::max_count();
 		$earliest = 0;
 
-		for ( $sequence = 1; $sequence <= $max + 1; $sequence++ ) {
+		for ( $sequence = 1; $sequence <= $max; $sequence++ ) {
 			$next = as_next_scheduled_action(
 				self::HOOK,
 				array( $order_id, $sequence ),
