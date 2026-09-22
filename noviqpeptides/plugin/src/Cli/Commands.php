@@ -389,6 +389,24 @@ final class Commands {
 		);
 		\WP_CLI::log( sprintf( 'Checkout page ID:         %d', (int) $checkout ) );
 
+		if ( \Noviq\Core\Profile::feature( 'buyer_accounts' ) ) {
+			$required = function_exists( 'WC' ) && WC()->checkout()
+				? ( WC()->checkout()->is_registration_required() ? 'required' : 'not required' )
+				: 'unknown';
+			$enabled  = function_exists( 'WC' ) && WC()->checkout()
+				? ( WC()->checkout()->is_registration_enabled() ? 'enabled' : 'disabled' )
+				: 'unknown';
+			\WP_CLI::log(
+				sprintf(
+					'Buyer accounts:           registration %s at checkout, signup %s',
+					$required,
+					$enabled
+				)
+			);
+		} else {
+			\WP_CLI::log( 'Buyer accounts:           disabled for this profile' );
+		}
+
 		if ( \Noviq\Core\Profile::feature( 'age_gate' ) ) {
 			\WP_CLI::log(
 				sprintf(

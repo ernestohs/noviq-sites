@@ -56,6 +56,15 @@ for local Docker via `noviqpeptides/local/.env` (`PAYPAL_CLIENT_ID`,
 `PAYPAL_CLIENT_SECRET`, `PAYPAL_SANDBOX`) consumed by `setup.sh`. Never commit
 those values.
 
+## Accounts
+
+Purchases require a registered WooCommerce account. Guest checkout is off and
+enforced in the plugin (`Compliance\BuyerAccounts`), not only via the Accounts
+settings checkbox. Guests may browse and add to cart; at checkout they log in
+or create an account inline (email plus a password they choose). Accounts are
+self-serve and can order immediately. The researcher attestation at checkout
+is unchanged and remains the compliance record.
+
 ## Constraint inherited from the overview
 
 This site must not link to bacwatermarket.com or fastpeptidetesting.com, and

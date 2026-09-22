@@ -233,7 +233,15 @@ final class Store {
 		$this->option( 'woocommerce_coming_soon', 'no' );
 		$this->option( 'woocommerce_store_pages_only', 'no' );
 
-		$this->option( 'woocommerce_enable_guest_checkout', 'yes' );
+		// Registered buyers only: no guest checkout. Filters in BuyerAccounts
+		// also force this so the admin checkbox cannot reopen anonymous orders.
+		$this->option( 'woocommerce_enable_guest_checkout', 'no' );
+		$this->option( 'woocommerce_enable_signup_and_login_from_checkout', 'yes' );
+		$this->option( 'woocommerce_enable_checkout_login_reminder', 'yes' );
+		$this->option( 'woocommerce_enable_myaccount_registration', 'yes' );
+		$this->option( 'woocommerce_registration_generate_username', 'yes' );
+		$this->option( 'woocommerce_registration_generate_password', 'no' );
+
 		$this->option( 'woocommerce_terms_page_id', $this->page_id( 'policies/terms' ) );
 		$this->option( 'woocommerce_privacy_policy_page_id', $this->page_id( 'policies/privacy' ) );
 

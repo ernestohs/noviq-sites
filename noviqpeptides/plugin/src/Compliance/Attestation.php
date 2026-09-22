@@ -43,7 +43,7 @@ final class Attestation {
 		return '' !== $text
 			? $text
 			: __(
-				'I certify that I am 21 years of age or older, and that I am a qualified researcher or am purchasing on behalf of a research institution. I understand these materials are supplied for in-vitro laboratory research only and are not for human or veterinary use.',
+				'I certify that I am 21 years of age or older, and that I am a qualified researcher or am purchasing on behalf of a research institution. I understand these materials are supplied for in-vitro laboratory research only.',
 				'noviq-core'
 			);
 	}

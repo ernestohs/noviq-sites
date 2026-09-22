@@ -39,7 +39,7 @@ $nq_faqs = array(
 		__( 'Stability depends on the compound, packaging, and storage conditions. The Certificate of Analysis and product documentation for each lot state the release date and any stated shelf window. Do not rely on a general claim in place of the lot record.', 'noviq-child' ),
 	),
 	array(
-		__( 'Are these peptides for human use?', 'noviq-child' ),
+		__( 'What are these materials supplied for?', 'noviq-child' ),
 		$nq_has_core ? \Noviq\Core\Claims::ruo_full() : '',
 	),
 	array(

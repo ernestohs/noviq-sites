@@ -21,6 +21,7 @@ return array(
 		'paypal_invoice'   => true,
 		'subscriptions'    => true,
 		'age_gate'       => true,
+		'buyer_accounts' => true,
 		'ruo'            => true,
 		'attestation'    => true,
 		'templates'      => true,
@@ -40,7 +41,7 @@ return array(
 		'short_name'      => 'Noviq',
 		'domain'          => 'noviqpeptides.demo-purposes-only.com',
 		'tagline'         => 'Analytical documentation on every lot.',
-		'description'     => 'Research-grade peptides supplied with lot-matched analytical documentation. For laboratory research use only — not for human or veterinary use.',
+		'description'     => 'Research-grade peptides supplied with lot-matched analytical documentation. For laboratory research use only.',
 		'legal_entity'    => 'Lava Goat Wholesale LLC',
 		'support_email'   => 'support@noviqpeptides.com',
 		'wholesale_email' => 'wholesale@noviqpeptides.com',
@@ -74,16 +75,16 @@ return array(
 		'consistency_method'        => null,
 	),
 
-	'ruo_short' => 'For laboratory and research use only. Not for human or veterinary use.',
+	'ruo_short' => 'For laboratory and research use only.',
 
-	'ruo_full' => 'All products supplied by Noviq Peptides are sold strictly as reference materials and reagents for in-vitro laboratory research. They are not drugs, foods, cosmetics, or dietary supplements; they are not approved by the U.S. Food and Drug Administration; and they are not intended to diagnose, treat, cure, or prevent any disease, or for human or veterinary consumption. By placing an order you certify that you are 21 years of age or older, that you are a qualified researcher or purchasing on behalf of a research institution, and that you will handle, store, and dispose of all materials in accordance with applicable law and good laboratory practice.',
+	'ruo_full' => 'All products supplied by Noviq Peptides are sold strictly as reference materials and reagents for in-vitro laboratory research. They are not drugs, foods, cosmetics, or dietary supplements; they are not approved by the U.S. Food and Drug Administration; and they are not intended to diagnose, treat, cure, or prevent any disease. By placing an order you certify that you are 21 years of age or older, that you are a qualified researcher or purchasing on behalf of a research institution, and that you will handle, store, and dispose of all materials in accordance with applicable law and good laboratory practice.',
 
 	'age_gate' => array(
 		'copy_version' => '1',
 		'question'     => 'Are you 21 years of age or older?',
 	),
 
-	'attestation_text' => 'I certify that I am 21 years of age or older, and that I am a qualified researcher or am purchasing on behalf of a research institution. I understand these materials are supplied for in-vitro laboratory research only and are not for human or veterinary use.',
+	'attestation_text' => 'I certify that I am 21 years of age or older, and that I am a qualified researcher or am purchasing on behalf of a research institution. I understand these materials are supplied for in-vitro laboratory research only.',
 
 	'ticker_items' => null,
 
