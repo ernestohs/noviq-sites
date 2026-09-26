@@ -39,22 +39,31 @@ three sites. RUO peptides require a high-risk merchant account; mainstream
 processors will terminate on detection. We do not select, configure, or hold
 credentials in git.
 
-Interim storefront path: WooCommerce gateway `noviq_paypal_invoice` creates a
-PayPal Invoicing API invoice on checkout, stores the `recipient_view_url` on the
-order, and emails that link via the existing PayPal invoice email. Orders stay
-on-hold until an admin confirms payment manually (no webhooks yet).
+Storefront path: Tagada hosted payment gateway (`tagada-gateway`, WooCommerce
+gateway id `tagada`, plugin 1.1.6 or newer). The shopper completes Woo checkout
+(address, shipping, tax, researcher attestation, account gate), then redirects
+to Tagada's hosted pay page. Order confirmation is server-side via webhook;
+an optional return with `?tgd_success=1` can show the Woo thank-you page.
 
-While an unpaid PayPal invoice order remains on-hold, Action Scheduler sends
-payment reminder emails every 24 hours (measured from the previous send), up to
-30 reminders, then stops with no auto-cancel. Interval, max count, and enable
-toggle live under WooCommerce → Settings → Payments → PayPal Invoice. Reminder
-emails can also be disabled under WooCommerce → Settings → Emails.
+The vendor zip is generated per store and funnel (`funnelId` / `stepId` baked
+in) from the Tagada CRM funnel editor → WooCommerce step → Download Gateway
+Plugin. Install through wp-admin only; do not commit the zip or put it on the
+rsync path. Re-download after any funnel change. Do not also install
+`tagada-checkout` (it hijacks `/checkout` before Woo gateways run) or enable
+Inline card alongside hosted.
 
-Credentials (REST Client ID / Secret, sandbox vs live) are entered only in
-WordPress admin under WooCommerce → Settings → Payments → PayPal Invoice, or
-for local Docker via `noviqpeptides/local/.env` (`PAYPAL_CLIENT_ID`,
-`PAYPAL_CLIENT_SECRET`, `PAYPAL_SANDBOX`) consumed by `setup.sh`. Never commit
-those values.
+The CRM access token (`sk_crm_…`) is entered only under WooCommerce → Settings
+→ Payments → Tagada Pay in WordPress admin. Never commit that value.
+
+Tagada re-prices from its synced catalogue and may add a
+`wc_total_reconciliation` line. Volume breaks and VIP coupons live in our
+plugin and must be parity-tested against the hosted page amount before go-live.
+See `noviqpeptides/docs/tagada-gateway-runbook.md`.
+
+After removing the former PayPal invoice gateway, run
+`wp noviq cancel_payment_reminders` once per environment to clear orphaned
+Action Scheduler rows and delete stored PayPal options (including the REST
+Client Secret).
 
 ## Accounts
 

@@ -56,15 +56,6 @@ final class Plugin {
 		if ( Profile::feature( 'subscriptions' ) ) {
 			Commerce\Subscriptions::init();
 		}
-		if ( Profile::feature( 'paypal_invoice' ) ) {
-			// After WooCommerce loads gateway/email classes (plugins_loaded @20 is too early on WC 11+).
-			add_action(
-				'woocommerce_init',
-				static function (): void {
-					Commerce\PaypalInvoiceGateway::init();
-				}
-			);
-		}
 		if ( Profile::feature( 'age_gate' ) ) {
 			Compliance\AgeGate::init();
 		}

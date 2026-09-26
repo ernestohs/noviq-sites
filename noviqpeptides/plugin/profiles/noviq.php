@@ -18,7 +18,6 @@ return array(
 		'volume_breaks'    => true,
 		'price_display'    => true,
 		'referral_coupons' => true,
-		'paypal_invoice'   => true,
 		'subscriptions'    => true,
 		'age_gate'       => true,
 		'buyer_accounts' => true,

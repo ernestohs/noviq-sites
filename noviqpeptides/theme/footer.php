@@ -3,7 +3,7 @@
  * Site footer.
  *
  * Brand column, four seeded nav groups, newsletter, RUO disclaimer, then a
- * bottom bar with copyright, PayPal-invoice billing note, and trust chips.
+ * bottom bar with copyright, payment billing note, and trust chips.
  *
  * @package Noviq\Child
  */
@@ -145,7 +145,7 @@ $nq_chips[] = __( 'Unmarked Packaging', 'noviq-child' );
 			</p>
 
 			<p class="nq-footer__pay">
-				<?php esc_html_e( 'Payment by PayPal invoice link emailed after checkout.', 'noviq-child' ); ?>
+				<?php esc_html_e( 'Card payments processed securely at checkout.', 'noviq-child' ); ?>
 			</p>
 
 			<ul class="nq-footer__chips">

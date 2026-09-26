@@ -50,7 +50,20 @@ cd noviqpeptides/deploy
 ./configure-resend.sh
 ```
 
-Uses the [Resend HTTP API](https://resend.com/docs/api-reference/emails/send-email) on port 443 (SMTP ports are blocked on many VPS hosts). From address must match the verified domain. WooCommerce order and PayPal invoice emails go through the same `wp_mail()` path.
+Uses the [Resend HTTP API](https://resend.com/docs/api-reference/emails/send-email) on port 443 (SMTP ports are blocked on many VPS hosts). From address must match the verified domain. WooCommerce order emails go through the same `wp_mail()` path.
+
+### Tagada payment webhooks
+
+Order confirmation for the Tagada hosted gateway is server-side. The production
+(and staging) host must expose a reachable HTTPS endpoint so Tagada can mark
+Woo orders paid. Local Docker (`localhost:8080`) cannot receive those deliveries;
+confirm payment status on staging, not on local. Install and webhook steps:
+`docs/tagada-gateway-runbook.md`. After deploying the PayPal removal, run once:
+
+```bash
+wp --allow-root --path=/var/www/noviqpeptides noviq cancel_payment_reminders --dry-run
+wp --allow-root --path=/var/www/noviqpeptides noviq cancel_payment_reminders
+```
 
 Test from the server:
 
