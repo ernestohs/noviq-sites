@@ -346,11 +346,18 @@ final class Commands {
 			);
 		}
 
+		$deleted = 0;
+		foreach ( $present_options as $option ) {
+			if ( false === get_option( $option, false ) ) {
+				++$deleted;
+			}
+		}
+
 		\WP_CLI::success(
 			sprintf(
 				'Cleanup finished. Pending reminder actions remaining: %d. Options deleted: %d.',
 				$remaining,
-				count( $present_options )
+				$deleted
 			)
 		);
 	}
