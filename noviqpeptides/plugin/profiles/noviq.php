@@ -19,8 +19,9 @@ return array(
 		'price_display'    => true,
 		'referral_coupons' => true,
 		'subscriptions'    => true,
-		'age_gate'       => true,
-		'buyer_accounts' => true,
+		'age_gate'           => false,
+		'registration_gate'  => true,
+		'buyer_accounts'     => true,
 		'ruo'            => true,
 		'attestation'    => true,
 		'templates'      => true,
@@ -45,8 +46,9 @@ return array(
 		'support_email'            => 'support@noviqpeptides.com',
 		'wholesale_email'          => 'wholesale@noviqpeptides.com',
 		'partner_email'            => 'partners@noviqpeptides.com',
-		// Paid-order "New order" admin email on noviqpeptides.com only.
-		'sales_notification_email' => 'Jeremymarch32@gmail.com',
+		// Paid-order recipient: set NOVIQ_SALES_NOTIFICATION_EMAIL on the host
+		// (deploy/.env + configure-sales-notifications.sh). Never commit a personal address.
+		'sales_notification_email' => null,
 		'phone'                    => '+1 541-515-1510',
 		'address'                  => '4030 W 1st Ave, Suite 100, Eugene, OR 97402',
 		'instagram'                => null,
@@ -83,6 +85,12 @@ return array(
 	'age_gate' => array(
 		'copy_version' => '1',
 		'question'     => 'Are you 21 years of age or older?',
+	),
+
+	// Consent shown and stored at registration. Bump copy_version when wording changes.
+	'registration_gate' => array(
+		'copy_version' => '1',
+		'consent_text' => 'I am 21 years of age or older, and I am a qualified researcher or am purchasing on behalf of a research institution. I understand these materials are supplied for in-vitro laboratory research only.',
 	),
 
 	'attestation_text' => 'I certify that I am 21 years of age or older, and that I am a qualified researcher or am purchasing on behalf of a research institution. I understand these materials are supplied for in-vitro laboratory research only.',

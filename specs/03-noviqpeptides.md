@@ -67,12 +67,29 @@ Client Secret).
 
 ## Accounts
 
-Purchases require a registered WooCommerce account. Guest checkout is off and
-enforced in the plugin (`Compliance\BuyerAccounts`), not only via the Accounts
-settings checkbox. Guests may browse and add to cart; at checkout they log in
-or create an account inline (email plus a password they choose). Accounts are
-self-serve and can order immediately. The researcher attestation at checkout
-is unchanged and remains the compliance record.
+The whole storefront requires a registered, logged-in WooCommerce account before
+any catalog or content is shown (payment-processor requirement). Guest browsing
+is off: `Compliance\RegistrationGate` exits on `template_redirect` with a
+standalone registration / magic-link sign-in document for logged-out visitors.
+Allowlisted without an account: `/policies/*`, `wp-login.php`, `admin-post.php`
+handlers, REST (Tagada webhooks), and the magic-link verification query.
+
+Accounts are passwordless. A new email creates a customer, records consent meta
+(wording, copy version, UTC timestamp, IP), and logs in immediately. An existing
+email (Register or Sign in) always receives a single-use, 15-minute magic link
+so typing someone else's address cannot take over their account. Rate limit: one
+send per email and IP per 60 seconds. Store API product routes return 401 when
+logged out; product / compound / lot / comparison sitemaps are omitted.
+
+SEO consequence: search engines see only the gate (and policy pages). Organic
+index of the catalog is intentionally dropped.
+
+Checkout attestation (`Compliance\Attestation`) is unchanged and remains the
+per-order compliance record. Guest checkout stays off via
+`Compliance\BuyerAccounts`.
+
+The prior cookie-only age overlay (`Compliance\AgeGate`) is disabled for this
+profile; the 21+ / RUO checkbox is part of registration.
 
 ## Constraint inherited from the overview
 

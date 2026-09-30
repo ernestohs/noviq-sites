@@ -52,6 +52,28 @@ cd noviqpeptides/deploy
 
 Uses the [Resend HTTP API](https://resend.com/docs/api-reference/emails/send-email) on port 443 (SMTP ports are blocked on many VPS hosts). From address must match the verified domain. WooCommerce order emails go through the same `wp_mail()` path.
 
+### Paid-order notification recipient
+
+WooCommerce "New order" mail on `noviqpeptides.com` is routed via
+`NOVIQ_SALES_NOTIFICATION_EMAIL`. That value lives only on the host (never in
+the theme/plugin profile in git).
+
+1. Add to `deploy/.env` (never commit):
+
+```bash
+SALES_NOTIFICATION_EMAIL=client@example.com
+```
+
+2. Push the secret:
+
+```bash
+cd noviqpeptides/deploy
+./configure-sales-notifications.sh
+```
+
+Local and staging hosts are unchanged; only production hostnames append this
+recipient (see `OrderNotifications`).
+
 ### Tagada payment webhooks
 
 Order confirmation for the Tagada hosted gateway is server-side. The production

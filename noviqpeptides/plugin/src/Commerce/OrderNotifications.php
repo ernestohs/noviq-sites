@@ -4,7 +4,8 @@
  *
  * WooCommerce's "New order" email fires when an order moves to processing or
  * completed (Tagada webhook path). Local and staging hosts are left alone so
- * test checkouts do not spam the live recipient.
+ * test checkouts do not spam the live recipient. Recipient comes from
+ * NOVIQ_SALES_NOTIFICATION_EMAIL on the host (see deploy/configure-sales-notifications.sh).
  *
  * @package Noviq\Core
  */
@@ -77,14 +78,7 @@ final class OrderNotifications {
 	}
 
 	private static function sales_email(): ?string {
-		$email = Claims::fact( 'sales_notification_email' );
-		if ( null === $email || '' === $email ) {
-			return null;
-		}
-
-		$clean = sanitize_email( $email );
-
-		return ( '' !== $clean && is_email( $clean ) ) ? $clean : null;
+		return Claims::sales_notification_email();
 	}
 
 	private static function is_production_host(): bool {

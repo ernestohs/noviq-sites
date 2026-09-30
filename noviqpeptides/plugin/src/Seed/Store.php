@@ -277,8 +277,9 @@ final class Store {
 
 		// Production seed: enable New order mail and set the sales recipient so
 		// the admin UI matches Commerce\OrderNotifications (live host filter).
-		$sales = Claims::fact( 'sales_notification_email' );
-		if ( $this->seeder->is_production() && null !== $sales && is_email( $sales ) ) {
+		// Recipient comes from NOVIQ_SALES_NOTIFICATION_EMAIL on the host.
+		$sales = Claims::sales_notification_email();
+		if ( $this->seeder->is_production() && null !== $sales ) {
 			$settings = get_option( 'woocommerce_new_order_settings', array() );
 			if ( ! is_array( $settings ) ) {
 				$settings = array();

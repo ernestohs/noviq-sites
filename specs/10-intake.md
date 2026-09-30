@@ -80,9 +80,12 @@ from the live policies into this table when auditing intake.
 | D2 | Support email per domain, three different addresses | TBD (in uploaded policies) |
 | D3 | Who writes terms, privacy, refund, and shipping policies | Client counsel; approved and uploaded Mar 2026 |
 | D4 | RUO disclaimer text, verbatim | TBD |
-| D5 | Where order notification emails go, per store | noviqpeptides production: Jeremymarch32@gmail.com (Woo "New order" on paid). bac / FPT: TBD |
+| D5 | Where order notification emails go, per store | noviqpeptides production: host secret `NOVIQ_SALES_NOTIFICATION_EMAIL` via `deploy/.env` (not in git; Woo "New order" on paid). bac / FPT: TBD |
 | D6 | High-risk gateway for bacwatermarket, if selected | TBD |
 | D7 | Owner email per Shopify store, must differ | TBD |
+| D8 | Registration-gate first-order promo (e.g. competitor "20% off"), amount, and coupon mechanics | TBD (not shipped; do not invent) |
+| D9 | Field-of-research dropdown: whether required, and the option list | TBD (not shipped; do not invent) |
+| D10 | Registration-gate RUO body copy if different from profile `ruo_full` / `ruo_short` | TBD; gate uses approved profile strings until then |
 
 ## E. Decisions the client must make
 

@@ -76,6 +76,40 @@ final class Claims {
 	}
 
 	/**
+	 * Paid-order "New order" admin recipient.
+	 *
+	 * Prefer the host secret NOVIQ_SALES_NOTIFICATION_EMAIL (wp-config define or
+	 * process env) so personal addresses stay out of the profile in git. Profile
+	 * site.sales_notification_email is a last-resort override for local fixtures.
+	 */
+	public static function sales_notification_email(): ?string {
+		$candidates = array();
+
+		if ( defined( 'NOVIQ_SALES_NOTIFICATION_EMAIL' ) && is_string( NOVIQ_SALES_NOTIFICATION_EMAIL ) ) {
+			$candidates[] = NOVIQ_SALES_NOTIFICATION_EMAIL;
+		}
+
+		$env = getenv( 'NOVIQ_SALES_NOTIFICATION_EMAIL' );
+		if ( is_string( $env ) && '' !== $env ) {
+			$candidates[] = $env;
+		}
+
+		$fact = self::fact( 'sales_notification_email' );
+		if ( null !== $fact ) {
+			$candidates[] = $fact;
+		}
+
+		foreach ( $candidates as $email ) {
+			$clean = sanitize_email( $email );
+			if ( '' !== $clean && is_email( $clean ) ) {
+				return $clean;
+			}
+		}
+
+		return null;
+	}
+
+	/**
 	 * Approved short RUO notice. Verbatim from the profile — do not paraphrase.
 	 */
 	public static function ruo_short(): string {

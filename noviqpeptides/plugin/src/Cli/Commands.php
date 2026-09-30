@@ -421,6 +421,17 @@ final class Commands {
 			\WP_CLI::log( 'Buyer accounts:           disabled for this profile' );
 		}
 
+		if ( \Noviq\Core\Profile::feature( 'registration_gate' ) ) {
+			\WP_CLI::log(
+				sprintf(
+					'Registration gate:        on (consent copy v%s); whole site gated for logged-out visitors',
+					\Noviq\Core\Compliance\RegistrationGate::copy_version()
+				)
+			);
+		} else {
+			\WP_CLI::log( 'Registration gate:        disabled for this profile' );
+		}
+
 		if ( \Noviq\Core\Profile::feature( 'age_gate' ) ) {
 			\WP_CLI::log(
 				sprintf(

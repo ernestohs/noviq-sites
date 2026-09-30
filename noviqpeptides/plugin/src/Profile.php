@@ -127,6 +127,18 @@ final class Profile {
 	}
 
 	/**
+	 * @return array{copy_version: string, consent_text: string}
+	 */
+	public static function registration_gate(): array {
+		$gate = self::all()['registration_gate'] ?? array();
+
+		return array(
+			'copy_version' => is_array( $gate ) && isset( $gate['copy_version'] ) ? (string) $gate['copy_version'] : '1',
+			'consent_text' => is_array( $gate ) && isset( $gate['consent_text'] ) ? (string) $gate['consent_text'] : '',
+		);
+	}
+
+	/**
 	 * Explicit ticker items, or null to build from claims.
 	 *
 	 * @return string[]|null
