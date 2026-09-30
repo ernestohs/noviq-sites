@@ -80,7 +80,7 @@ from the live policies into this table when auditing intake.
 | D2 | Support email per domain, three different addresses | TBD (in uploaded policies) |
 | D3 | Who writes terms, privacy, refund, and shipping policies | Client counsel; approved and uploaded Mar 2026 |
 | D4 | RUO disclaimer text, verbatim | TBD |
-| D5 | Where order notification emails go, per store | TBD |
+| D5 | Where order notification emails go, per store | noviqpeptides production: Jeremymarch32@gmail.com (Woo "New order" on paid). bac / FPT: TBD |
 | D6 | High-risk gateway for bacwatermarket, if selected | TBD |
 | D7 | Owner email per Shopify store, must differ | TBD |
 

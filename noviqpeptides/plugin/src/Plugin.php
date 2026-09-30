@@ -56,6 +56,7 @@ final class Plugin {
 		if ( Profile::feature( 'subscriptions' ) ) {
 			Commerce\Subscriptions::init();
 		}
+		Commerce\OrderNotifications::init();
 		if ( Profile::feature( 'age_gate' ) ) {
 			Compliance\AgeGate::init();
 		}

@@ -274,6 +274,19 @@ final class Store {
 
 		// Every order email carries the RUO footer, not just the storefront.
 		$this->option( 'woocommerce_email_footer_text', Claims::ruo_short() );
+
+		// Production seed: enable New order mail and set the sales recipient so
+		// the admin UI matches Commerce\OrderNotifications (live host filter).
+		$sales = Claims::fact( 'sales_notification_email' );
+		if ( $this->seeder->is_production() && null !== $sales && is_email( $sales ) ) {
+			$settings = get_option( 'woocommerce_new_order_settings', array() );
+			if ( ! is_array( $settings ) ) {
+				$settings = array();
+			}
+			$settings['enabled']   = 'yes';
+			$settings['recipient'] = $sales;
+			$this->option( 'woocommerce_new_order_settings', $settings );
+		}
 	}
 
 	/**
