@@ -60,6 +60,9 @@ final class Plugin {
 		if ( Profile::feature( 'age_gate' ) ) {
 			Compliance\AgeGate::init();
 		}
+		if ( Profile::feature( 'registration_gate' ) ) {
+			Compliance\RegistrationGate::init();
+		}
 		if ( Profile::feature( 'buyer_accounts' ) ) {
 			Compliance\BuyerAccounts::init();
 		}

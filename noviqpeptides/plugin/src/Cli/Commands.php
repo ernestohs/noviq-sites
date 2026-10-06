@@ -433,6 +433,19 @@ final class Commands {
 			\WP_CLI::log( 'Age gate:                 disabled for this profile' );
 		}
 
+		if ( \Noviq\Core\Profile::feature( 'registration_gate' ) ) {
+			\WP_CLI::log(
+				sprintf(
+					'Registration gate:       on — "%s" (copy v%s, %d research fields)',
+					\Noviq\Core\Compliance\RegistrationGate::heading(),
+					\Noviq\Core\Compliance\RegistrationGate::copy_version(),
+					count( \Noviq\Core\Compliance\RegistrationGate::research_fields() )
+				)
+			);
+		} else {
+			\WP_CLI::log( 'Registration gate:       disabled for this profile' );
+		}
+
 		\WP_CLI::success( 'Compliance report complete.' );
 	}
 }

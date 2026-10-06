@@ -127,6 +127,38 @@ final class Profile {
 	}
 
 	/**
+	 * Registration wall copy and research-field options.
+	 *
+	 * @return array{
+	 *     copy_version: string,
+	 *     heading: string,
+	 *     intro: string,
+	 *     attestation: string,
+	 *     research_fields: array<string, string>
+	 * }
+	 */
+	public static function registration_gate(): array {
+		$gate   = self::all()['registration_gate'] ?? array();
+		$fields = array();
+
+		if ( is_array( $gate ) && isset( $gate['research_fields'] ) && is_array( $gate['research_fields'] ) ) {
+			foreach ( $gate['research_fields'] as $slug => $label ) {
+				if ( is_string( $slug ) && is_string( $label ) && '' !== $slug && '' !== $label ) {
+					$fields[ $slug ] = $label;
+				}
+			}
+		}
+
+		return array(
+			'copy_version'    => is_array( $gate ) && isset( $gate['copy_version'] ) ? (string) $gate['copy_version'] : '1',
+			'heading'         => is_array( $gate ) && isset( $gate['heading'] ) ? (string) $gate['heading'] : '',
+			'intro'           => is_array( $gate ) && isset( $gate['intro'] ) ? (string) $gate['intro'] : '',
+			'attestation'     => is_array( $gate ) && isset( $gate['attestation'] ) ? (string) $gate['attestation'] : '',
+			'research_fields' => $fields,
+		);
+	}
+
+	/**
 	 * Explicit ticker items, or null to build from claims.
 	 *
 	 * @return string[]|null

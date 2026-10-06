@@ -67,12 +67,31 @@ Client Secret).
 
 ## Accounts
 
-Purchases require a registered WooCommerce account. Guest checkout is off and
-enforced in the plugin (`Compliance\BuyerAccounts`), not only via the Accounts
-settings checkbox. Guests may browse and add to cart; at checkout they log in
-or create an account inline (email plus a password they choose). Accounts are
-self-serve and can order immediately. The researcher attestation at checkout
-is unchanged and remains the compliance record.
+Tagada requires visitors to be registered before they see products. The plugin
+enforces this with `Compliance\RegistrationGate`: logged-out visitors get a
+standalone "Researcher access" screen (register or sign in) instead of any
+catalog, cart, or home content. Product HTML is never sent underneath an
+overlay.
+
+Allowlisted without an account: `policies/*` (terms, privacy, shipping,
+cancellation, cookies, accessibility), WooCommerce lost-password / reset
+endpoints, `wp-login.php`, `admin-post.php`, and non-catalog REST (so Tagada
+webhooks keep working). Store API product routes, product REST, product feeds,
+and product/CPT sitemaps are closed for guests. The site is effectively
+de-indexed for catalog content.
+
+Registration collects email, password, field of research, a 21+ researcher
+attestation (same wording family as checkout), and Terms/Privacy acceptance.
+Evidence is stored as user meta (`_noviq_reg_*`). Accounts are self-serve and
+can browse immediately; no admin approval step. There is no signup discount
+unless the client decides one later.
+
+Guest checkout stays off and is still enforced by `Compliance\BuyerAccounts`
+as a second line at checkout. The researcher attestation on the order remains
+the purchase-time compliance record and is unchanged.
+
+The cookie-only age overlay (`Compliance\AgeGate`) is off for this profile;
+the registration attestation replaces it.
 
 ## Constraint inherited from the overview
 

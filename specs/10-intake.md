@@ -93,6 +93,8 @@ from the live policies into this table when auditing intake.
 | E3 | Accepts the no-cross-linking constraint | TBD |
 | E4 | Scope for noviqpeptides: alignment only or rebuild | TBD |
 | E5 | Wants Shopify stores transferred to his ownership at launch | TBD |
+| E6 | Registration wall research-field list (starter: Biochemistry, Cell biology, Analytical chemistry, Pharmacology, Other) | TBD |
+| E7 | Registration wall heading and intro wording (starter ships in `profiles/noviq.php`) | TBD |
 
 ## F. Analytics and measurement (fastpeptidetesting)
 

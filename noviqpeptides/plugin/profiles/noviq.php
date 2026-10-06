@@ -19,8 +19,9 @@ return array(
 		'price_display'    => true,
 		'referral_coupons' => true,
 		'subscriptions'    => true,
-		'age_gate'       => true,
-		'buyer_accounts' => true,
+		'age_gate'          => false,
+		'registration_gate' => true,
+		'buyer_accounts'    => true,
 		'ruo'            => true,
 		'attestation'    => true,
 		'templates'      => true,
@@ -83,6 +84,23 @@ return array(
 	'age_gate' => array(
 		'copy_version' => '1',
 		'question'     => 'Are you 21 years of age or older?',
+	),
+
+	// Tagada requires registration before catalog access. Research-field list
+	// and wall wording are intake TBDs; starter values ship until the client
+	// signs off (see specs/10-intake.md).
+	'registration_gate' => array(
+		'copy_version' => '2',
+		'heading'      => 'Researcher access',
+		'intro'        => 'Products are supplied for Research Use Only. Confirm once to enter; we will remember you on this device while you stay signed in.',
+		'attestation'  => '',
+		'research_fields' => array(
+			'biochemistry'          => 'Biochemistry',
+			'cell_biology'          => 'Cell biology',
+			'analytical_chemistry'  => 'Analytical chemistry',
+			'pharmacology'          => 'Pharmacology',
+			'other'                 => 'Other',
+		),
 	),
 
 	'attestation_text' => 'I certify that I am 21 years of age or older, and that I am a qualified researcher or am purchasing on behalf of a research institution. I understand these materials are supplied for in-vitro laboratory research only.',

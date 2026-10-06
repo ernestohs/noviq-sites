@@ -4,8 +4,9 @@
  *
  * Guest checkout is off as policy, not preference: filters force registration
  * required and enabled so an admin cannot reopen anonymous purchases from
- * WooCommerce → Settings → Accounts. Guests may browse and add to cart; the
- * cart shows a notice and checkout creates or requires an account.
+ * WooCommerce → Settings → Accounts. Catalog browsing for guests is blocked
+ * separately by RegistrationGate; this class is the checkout second line so an
+ * order still cannot be placed without an account if that gate is ever off.
  *
  * @package Noviq\Core
  */
