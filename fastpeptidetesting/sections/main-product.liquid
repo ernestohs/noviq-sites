@@ -222,7 +222,11 @@
                   </div>
                 {%- when 'sample_intake' -%}
                   <div {{ block.shopify_attributes }}>
-                    {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id, hide_compound_name: product.tags contains 'primary' %}
+                    {%- assign hide_compound_name = false -%}
+                    {%- if product.tags contains 'primary' -%}
+                      {%- assign hide_compound_name = true -%}
+                    {%- endif -%}
+                    {% render 'sample-intake-fields', product_form_id: product_form_id, section_id: section.id, hide_compound_name: hide_compound_name %}
                   </div>
                 {%- when 'collapsible_tab' -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
