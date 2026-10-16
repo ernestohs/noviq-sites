@@ -1,0 +1,444 @@
+{%- liquid
+  assign peptide_product = all_products['peptide-testing']
+  assign from_price = section.settings.from_price
+  if peptide_product != blank and peptide_product.price > 0
+    assign from_price = peptide_product.price | money_without_trailing_zeros
+  endif
+  assign product_url = section.settings.primary_link
+  if product_url == blank
+    assign product_url = routes.root_url | append: 'products/peptide-testing'
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .fpt-hero {
+    position: relative;
+    min-height: 56rem;
+    color: #fff;
+    overflow: hidden;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__media {
+    position: absolute;
+    inset: 0;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(6, 27, 56, 0.82) 0%, rgba(9, 37, 71, 0.55) 55%, rgba(6, 27, 56, 0.35) 100%);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 3.2rem;
+    align-items: center;
+    padding: 6.4rem 0 5.6rem;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .fpt-hero__inner {
+      grid-template-columns: minmax(0, 1fr) 40rem;
+      gap: 4rem;
+      min-height: 70rem;
+      padding: 11.2rem 0 5.3rem;
+    }
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__badge {
+    display: inline-flex;
+    padding: 0.6rem 1.2rem;
+    border: 0.2rem solid #1e3e66;
+    border-radius: 10rem;
+    color: #a3d1ff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__title {
+    margin: 1.6rem 0 0;
+    font-size: clamp(3.6rem, 5vw, 6.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__sub {
+    margin: 1.6rem 0 0;
+    max-width: 48rem;
+    font-size: 1.8rem;
+    line-height: 1.45;
+    color: #d9e9fa;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2.4rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero__tagline {
+    margin: 4.8rem 0 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card {
+    background: #fff;
+    color: var(--fpt-navy);
+    border-radius: 1.8rem;
+    padding: 2.4rem;
+    box-shadow: 0 1.4rem 2.8rem rgba(0, 15, 38, 0.22);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__title {
+    margin: 0 0 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 5.5rem;
+    background: var(--fpt-sky);
+    color: var(--fpt-navy);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__step.is-active .fpt-hero-card__step-num {
+    background: var(--fpt-cobalt);
+    color: #fff;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__vials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__vial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.2rem;
+    height: 3.2rem;
+    padding: 0 0.8rem;
+    border: 0.1rem solid var(--fpt-border);
+    border-radius: 0.8rem;
+    background: #fff;
+    color: var(--fpt-navy);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__vial:hover,
+  #shopify-section-{{ section.id }} .fpt-hero-card__vial.is-active {
+    border-color: var(--fpt-cobalt);
+    background: var(--fpt-sky);
+    color: var(--fpt-cobalt);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__select {
+    width: 100%;
+    margin-bottom: 1.6rem;
+    padding: 1rem;
+    border: 0.1rem solid var(--fpt-border);
+    border-radius: 0.8rem;
+    background: #fff;
+    color: var(--fpt-navy);
+    font-size: 1.2rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__addons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__addon {
+    flex: 1 1 auto;
+    min-width: 7rem;
+    padding: 0.8rem 1.2rem;
+    border: 0.1rem solid var(--fpt-border);
+    border-radius: 0.8rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--fpt-navy);
+    text-decoration: none;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__from {
+    border-right: 0.1rem solid var(--fpt-border);
+    padding-right: 1.6rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__from-label {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__from-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__from-price span {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__turn-label {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card__turn-value {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-hero-card .fpt-btn {
+    width: 100%;
+  }
+{%- endstyle -%}
+
+<section class="fpt-hero" id="build-your-test">
+  <div class="fpt-hero__media" aria-hidden="true">
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 2400
+        | image_tag: widths: '750, 1100, 1500, 1780, 2000, 2400', sizes: '100vw', loading: 'eager', alt: ''
+      }}
+    {%- else -%}
+      <img
+        src="{{ 'fpt-hero-lab.png' | asset_url }}"
+        alt=""
+        width="1672"
+        height="941"
+        loading="eager"
+      >
+    {%- endif -%}
+  </div>
+  <div class="fpt-page-width fpt-hero__inner">
+    <div class="fpt-hero__copy">
+      {%- if section.settings.badge != blank -%}
+        <span class="fpt-hero__badge">{{ section.settings.badge | escape }}</span>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fpt-hero__title">{{ section.settings.heading | escape | newline_to_br }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="fpt-hero__sub">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+      <div class="fpt-hero__actions">
+        {%- if section.settings.primary_label != blank -%}
+          <a class="fpt-btn fpt-btn--primary" href="{{ product_url }}">
+            {{ section.settings.primary_label | escape }}
+            {% render 'fpt-chevron' %}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.secondary_label != blank -%}
+          <a class="fpt-btn fpt-btn--secondary" href="{{ section.settings.secondary_link }}">
+            {{ section.settings.secondary_label | escape }}
+            {% render 'fpt-chevron' %}
+          </a>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.tagline != blank -%}
+        <p class="fpt-hero__tagline">{{ section.settings.tagline | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <aside class="fpt-hero-card" aria-label="{{ section.settings.card_title | escape }}">
+      <h3 class="fpt-hero-card__title">{{ section.settings.card_title | escape }}</h3>
+      <div class="fpt-hero-card__steps" aria-hidden="true">
+        <span class="fpt-hero-card__step is-active"><span class="fpt-hero-card__step-num">1</span> Samples</span>
+        <span class="fpt-hero-card__step"><span class="fpt-hero-card__step-num">2</span> Peptides</span>
+        <span class="fpt-hero-card__step"><span class="fpt-hero-card__step-num">3</span> Add-ons</span>
+        <span class="fpt-hero-card__step"><span class="fpt-hero-card__step-num">4</span> Review</span>
+      </div>
+
+      <label class="fpt-hero-card__label" for="FptHeroVials-{{ section.id }}">Number of samples</label>
+      <div class="fpt-hero-card__vials" id="FptHeroVials-{{ section.id }}">
+        {%- for i in (1..5) -%}
+          <a
+            class="fpt-hero-card__vial{% if i == 1 %} is-active{% endif %}"
+            href="{{ product_url }}?vials={{ i }}"
+          >
+            {%- if i == 5 -%}5+{%- else -%}{{ i }}{%- endif -%}
+          </a>
+        {%- endfor -%}
+      </div>
+
+      <label class="fpt-hero-card__label" for="FptHeroPeptide-{{ section.id }}">Peptide type</label>
+      <select
+        class="fpt-hero-card__select"
+        id="FptHeroPeptide-{{ section.id }}"
+        data-product-url="{{ product_url | escape }}"
+      >
+        <option value="">Select peptide type</option>
+        {% render 'peptide-option-list' %}
+      </select>
+      <script>
+        (function () {
+          var select = document.getElementById('FptHeroPeptide-{{ section.id }}');
+          if (!select) return;
+          select.addEventListener('change', function () {
+            var opt = select.options[select.selectedIndex];
+            var handle = opt && opt.getAttribute('data-compound-handle');
+            if (!handle) return;
+            var base = select.getAttribute('data-product-url') || '/products/peptide-testing';
+            window.location.href = base + (base.indexOf('?') >= 0 ? '&' : '?') + 'compound=' + encodeURIComponent(handle);
+          });
+        })();
+      </script>
+
+      <span class="fpt-hero-card__label">Optional screens</span>
+      <div class="fpt-hero-card__addons">
+        <a class="fpt-hero-card__addon" href="{{ product_url }}">Endotoxin</a>
+        <a class="fpt-hero-card__addon" href="{{ product_url }}">Sterility</a>
+        <a class="fpt-hero-card__addon" href="{{ product_url }}">Heavy metals</a>
+      </div>
+
+      <div class="fpt-hero-card__meta">
+        <div class="fpt-hero-card__from">
+          <p class="fpt-hero-card__from-label">From</p>
+          <p class="fpt-hero-card__from-price">
+            {{ from_price }}
+            <span>/ vial</span>
+          </p>
+        </div>
+        <div>
+          <p class="fpt-hero-card__turn-label">Turnaround</p>
+          <p class="fpt-hero-card__turn-value">{{ section.settings.turnaround | escape }}</p>
+        </div>
+      </div>
+
+      <a class="fpt-btn fpt-btn--primary" href="{{ product_url }}">
+        {{ section.settings.card_cta_label | escape }}
+        {% render 'fpt-chevron' %}
+      </a>
+    </aside>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FPT hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge",
+      "default": "Independent testing. Real answers."
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Test your peptide\nwith confidence."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Fast, independent results with a COA you can verify."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary CTA label",
+      "default": "Build Your Test"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary CTA link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary CTA label",
+      "default": "View Methods"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary CTA link",
+      "default": "/pages/methods"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Same Science. A Clearer Path."
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Card title",
+      "default": "Build Your Test"
+    },
+    {
+      "type": "text",
+      "id": "from_price",
+      "label": "From price fallback",
+      "default": "$250",
+      "info": "Used when the Peptide Test product is unavailable. Live product price is preferred."
+    },
+    {
+      "type": "text",
+      "id": "turnaround",
+      "label": "Turnaround",
+      "default": "3 business days"
+    },
+    {
+      "type": "text",
+      "id": "card_cta_label",
+      "label": "Card CTA label",
+      "default": "Build Your Test"
+    }
+  ],
+  "presets": [{ "name": "FPT hero" }]
+}
+{% endschema %}

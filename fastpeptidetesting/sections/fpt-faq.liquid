@@ -1,0 +1,168 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .fpt-faq {
+    background: #fff;
+    padding: 6.4rem 0;
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__grid {
+    display: grid;
+    gap: 4rem;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .fpt-faq__grid {
+      grid-template-columns: minmax(0, 36rem) minmax(0, 1fr);
+      gap: 6.4rem;
+      align-items: start;
+    }
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__intro {
+    margin: 1.6rem 0 0;
+    max-width: 32rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__list {
+    display: grid;
+    gap: 0;
+    border-top: 0.1rem solid var(--fpt-border);
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__item {
+    border-bottom: 0.1rem solid var(--fpt-border);
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 2rem 0;
+    cursor: pointer;
+    list-style: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--fpt-sky);
+    color: var(--fpt-cobalt);
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__item[open] summary::after {
+    content: '−';
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__answer {
+    padding: 0 0 2rem;
+    font-size: 1.5rem;
+    line-height: 1.55;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-faq__answer p {
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<section class="fpt-faq" id="faq">
+  <div class="fpt-page-width fpt-faq__grid">
+    <div>
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fpt-section-heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="fpt-section-sub fpt-faq__intro">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
+    <div class="fpt-faq__list">
+      {%- for block in section.blocks -%}
+        <details class="fpt-faq__item"{% if forloop.first and section.settings.open_first %} open{% endif %} {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.heading | escape }}</summary>
+          <div class="fpt-faq__answer rte">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FPT FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Common questions" },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Straight answers about ordering, shipping samples, and receiving results."
+    },
+    { "type": "checkbox", "id": "open_first", "label": "Open first question", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Question", "default": "What does the base test include?" },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>HPLC purity analysis for customer-supplied samples at $250 per vial. Optional screens include endotoxin, sterility, heavy metals, Karl Fischer moisture, and vial vacuum.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FPT FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "heading": "What does the base test include?",
+            "answer": "<p>HPLC purity analysis for customer-supplied samples at $250 per vial. Optional screens include endotoxin, sterility, heavy metals, Karl Fischer moisture, and vial vacuum. Custom analytical work uses a quote form, not self-serve checkout.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "heading": "Can I test more than one vial?",
+            "answer": "<p>Yes. Choose 1 to 5 vials on Peptide Test and select the peptide for each vial. Base testing is $250 per vial.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "heading": "What are the turnaround options?",
+            "answer": "<p>Standard is 3 business days, included in the $250 per vial test price. Next-Day is +$199 per order. Same-Day is +$449 per order. Select turnaround on the Peptide Test page before adding to cart.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "heading": "Do I need to provide shipping at checkout?",
+            "answer": "<p>No. Testing products are configured as non-physical services. After checkout, use protective packaging and a tracked carrier to ship the sample to the lab address in the confirmation email.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "heading": "What am I attesting to?",
+            "answer": "<p>Samples are submitted for research and analytical purposes only, not for human or animal use. The certificate of analysis applies only to the tested sample. See the attestation page for the full list.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

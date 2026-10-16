@@ -103,11 +103,56 @@
     width: auto;
     min-width: auto;
     height: auto;
-    padding: 0.8rem 1.4rem;
+    padding: 1.2rem 1.6rem;
     margin-right: 0.8rem;
-    font-size: 1.2rem;
-    letter-spacing: 0.04em;
-    color: rgb(var(--color-button-text));
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
+    color: #fff;
+    border: none;
+    border-radius: 12.5rem;
+    background-image: linear-gradient(81deg, #0077ed 4%, #155dfc 99%);
+    box-shadow: 0 0.4rem 0.2rem rgba(0, 0, 0, 0.12);
+  }
+
+  .header__icon.header__icon--cta.button:hover {
+    color: #fff;
+    opacity: 0.92;
+  }
+
+  .header-wrapper {
+    box-shadow: 0 0.1rem 0 rgba(11, 42, 85, 0.08);
+  }
+
+  .header__heading-link .h2,
+  .header__heading-link .fpt-brand-wordmark {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0b2a55;
+    display: inline-flex;
+    gap: 0.45rem;
+    align-items: baseline;
+    white-space: nowrap;
+  }
+
+  .fpt-brand-wordmark .fpt-brand-fast {
+    color: #0b82f5;
+  }
+
+  .fpt-brand-wordmark .fpt-brand-rest {
+    color: #0b2a55;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  @media screen and (min-width: 990px) {
+    .header .list-menu__item--link {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #0b2a55;
+    }
   }
 </style>
 
@@ -217,7 +262,10 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ brand_name }}</span>
+          <span class="h2 fpt-brand-wordmark">
+            <span class="fpt-brand-fast">FAST</span>
+            <span class="fpt-brand-rest">PEPTIDE TESTING</span>
+          </span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
@@ -260,7 +308,10 @@
             }}
           </div>
         {%- else -%}
-          <span class="h2">{{ brand_name }}</span>
+          <span class="h2 fpt-brand-wordmark">
+            <span class="fpt-brand-fast">FAST</span>
+            <span class="fpt-brand-rest">PEPTIDE TESTING</span>
+          </span>
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}

@@ -18,63 +18,63 @@
           "settings": {
             "background": "#FFFFFF",
             "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
+            "text": "#0b2a55",
+            "button": "#0b82f5",
             "button_label": "#FFFFFF",
-            "secondary_button_label": "#121212",
-            "shadow": "#121212"
+            "secondary_button_label": "#0b2a55",
+            "shadow": "#061b38"
           }
         },
         "scheme-2": {
           "settings": {
-            "background": "#ECECEC",
+            "background": "#f7fbff",
             "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
+            "text": "#0b2a55",
+            "button": "#0b82f5",
             "button_label": "#FFFFFF",
-            "secondary_button_label": "#121212",
-            "shadow": "#121212"
+            "secondary_button_label": "#0b2a55",
+            "shadow": "#061b38"
           }
         },
         "scheme-3": {
           "settings": {
-            "background": "#121212",
+            "background": "#061b38",
             "background_gradient": "",
             "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#121212",
+            "button": "#0b82f5",
+            "button_label": "#FFFFFF",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "shadow": "#061b38"
           }
         },
         "scheme-4": {
           "settings": {
-            "background": "#121212",
+            "background": "#092547",
             "background_gradient": "",
             "text": "#FFFFFF",
-            "button": "#FFFFFF",
-            "button_label": "#121212",
+            "button": "#0b82f5",
+            "button_label": "#FFFFFF",
             "secondary_button_label": "#FFFFFF",
-            "shadow": "#121212"
+            "shadow": "#061b38"
           }
         },
         "scheme-5": {
           "settings": {
-            "background": "#F5F5F5",
+            "background": "#eaf5ff",
             "background_gradient": "",
-            "text": "#121212",
-            "button": "#121212",
+            "text": "#0b2a55",
+            "button": "#0b82f5",
             "button_label": "#FFFFFF",
-            "secondary_button_label": "#121212",
-            "shadow": "#121212"
+            "secondary_button_label": "#0b2a55",
+            "shadow": "#061b38"
           }
         }
       },
-      "type_header_font": "assistant_n4",
+      "type_header_font": "inter_n4",
       "heading_scale": 100,
-      "type_body_font": "assistant_n4",
+      "type_body_font": "inter_n4",
       "body_scale": 100,
-      "page_width": 1200,
+      "page_width": 1248,
       "spacing_sections": 0,
       "spacing_grid_horizontal": 8,
       "spacing_grid_vertical": 8,
@@ -82,7 +82,7 @@
       "animations_hover_elements": "none",
       "buttons_border_thickness": 1,
       "buttons_border_opacity": 100,
-      "buttons_radius": 0,
+      "buttons_radius": 40,
       "buttons_shadow_opacity": 0,
       "buttons_shadow_horizontal_offset": 0,
       "buttons_shadow_vertical_offset": 4,
@@ -96,7 +96,7 @@
       "variant_pills_shadow_blur": 5,
       "inputs_border_thickness": 1,
       "inputs_border_opacity": 55,
-      "inputs_radius": 0,
+      "inputs_radius": 8,
       "inputs_shadow_opacity": 0,
       "inputs_shadow_horizontal_offset": 0,
       "inputs_shadow_vertical_offset": 4,
@@ -107,7 +107,7 @@
       "card_color_scheme": "scheme-2",
       "card_border_thickness": 0,
       "card_border_opacity": 10,
-      "card_corner_radius": 0,
+      "card_corner_radius": 16,
       "card_shadow_opacity": 0,
       "card_shadow_horizontal_offset": 0,
       "card_shadow_vertical_offset": 4,
@@ -201,7 +201,7 @@
         }
       },
       "brand_name": "Fast Peptide Testing",
-      "accent_color": "#16A34A",
+      "accent_color": "#0b82f5",
       "client_preview_banner": false,
       "quantity_style": "dropdown",
       "dropdown_max": 10,

@@ -1,0 +1,125 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .fpt-trust {
+    background: #fff;
+    border-bottom: 0.1rem solid var(--fpt-border);
+  }
+  #shopify-section-{{ section.id }} .fpt-trust__grid {
+    display: grid;
+    gap: 2.4rem;
+    padding: 3.2rem 0;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .fpt-trust__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .fpt-trust__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      padding: 3.2rem 0;
+    }
+    #shopify-section-{{ section.id }} .fpt-trust__item:not(:last-child) {
+      border-right: 0.1rem solid var(--fpt-border);
+      padding-right: 2.4rem;
+      margin-right: 2.4rem;
+    }
+  }
+  #shopify-section-{{ section.id }} .fpt-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-trust__icon {
+    flex-shrink: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    color: var(--fpt-cobalt);
+  }
+  #shopify-section-{{ section.id }} .fpt-trust__label {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--fpt-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  #shopify-section-{{ section.id }} .fpt-trust__value {
+    margin: 0.2rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--fpt-navy);
+    line-height: 1.3;
+  }
+{%- endstyle -%}
+
+<section class="fpt-trust">
+  <div class="fpt-page-width fpt-trust__grid">
+    {%- for block in section.blocks -%}
+      <div class="fpt-trust__item" {{ block.shopify_attributes }}>
+        <span class="fpt-trust__icon" aria-hidden="true">
+          {%- case block.settings.icon -%}
+            {%- when 'clock' -%}
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/><path d="M16 10v7l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            {%- when 'shield' -%}
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4l10 4v8c0 6.5-4.2 10.8-10 12-5.8-1.2-10-5.5-10-12V8l10-4z" stroke="currentColor" stroke-width="2"/><path d="M12 16l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            {%- when 'doc' -%}
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="8" y="4" width="16" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 12h8M12 16h8M12 20h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            {%- else -%}
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 22V10h4l2 6 2-6h4v12h-3v-7l-2.5 6h-1L11 15v7H8z" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="20" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          {%- endcase -%}
+        </span>
+        <div>
+          {%- if block.settings.label != blank -%}
+            <p class="fpt-trust__label">{{ block.settings.label | escape }}</p>
+          {%- endif -%}
+          {%- if block.settings.value != blank -%}
+            <p class="fpt-trust__value">{{ block.settings.value | escape }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FPT trust bar",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "hplc", "label": "HPLC" },
+            { "value": "clock", "label": "Clock" },
+            { "value": "doc", "label": "Document" },
+            { "value": "shield", "label": "Shield" }
+          ],
+          "default": "hplc"
+        },
+        { "type": "text", "id": "label", "label": "Label", "default": "Method" },
+        { "type": "text", "id": "value", "label": "Value", "default": "HPLC purity analysis" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FPT trust bar",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "hplc", "label": "Core method", "value": "HPLC purity analysis" } },
+        { "type": "item", "settings": { "icon": "clock", "label": "Turnaround", "value": "3 business days standard" } },
+        { "type": "item", "settings": { "icon": "doc", "label": "Results", "value": "COA you can verify online" } },
+        { "type": "item", "settings": { "icon": "shield", "label": "Independence", "value": "Independent laboratory" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

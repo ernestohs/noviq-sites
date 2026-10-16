@@ -50,7 +50,9 @@ The three sites must read as three unrelated companies to a visitor, a processor
 
 ## Design system
 
-Shopify stores (bacwatermarket, fastpeptidetesting):
+Shopify stores:
+
+**bacwatermarket** (shared Shopify minimal tokens):
 
 | Token | Value |
 | --- | --- |
@@ -64,7 +66,22 @@ Shopify stores (bacwatermarket, fastpeptidetesting):
 
 Minimalist, whitespace-heavy. No gradients, no heavy shadows, no stock art. Missing images use a gray **IMAGE TBD** placeholder.
 
-**noviqpeptides** uses the client-approved navy storefront (primary `#0A4DA8`, deep navy `#042F73`, Space Grotesk / Inter), not the tokens above. Do not restyle it to the Shopify system unless the client asks.
+**fastpeptidetesting** uses the Figma landing design system (not the bacwatermarket tokens above):
+
+| Token | Value |
+| --- | --- |
+| Navy text | `#0b2a55` |
+| Navy deep / bands | `#061b38` / `#092547` |
+| Cobalt primary | `#0b82f5` |
+| CTA gradient | `#0077ED` → `#155DFC` |
+| Muted | `#6f8198` |
+| Pale / sky | `#f7fbff` / `#eaf5ff` |
+| Radius | ~16px cards, pill CTAs |
+| Font | Inter |
+
+Figma is visuals only. Catalog prices stay at confirmed intake values ($250 Peptide Test, real add-on prices). Do not invent LC-MS SKU pricing.
+
+**noviqpeptides** uses the client-approved navy storefront (primary `#0A4DA8`, deep navy `#042F73`, Space Grotesk / Inter), not the bacwatermarket tokens. Do not restyle it to the Shopify minimal system unless the client asks.
 
 ## Repository layout
 

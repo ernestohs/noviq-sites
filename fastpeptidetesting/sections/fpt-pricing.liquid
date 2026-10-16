@@ -1,0 +1,236 @@
+{%- liquid
+  assign peptide_product = all_products['peptide-testing']
+  assign endotoxin = all_products['endotoxin-testing']
+  assign sterility = all_products['sterility-testing']
+  assign heavy = all_products['heavy-metals-testing']
+  assign karl = all_products['karl-fischer-testing']
+  assign vacuum = all_products['vial-vacuum-testing']
+  assign base_price = section.settings.base_price
+  if peptide_product != blank and peptide_product.price > 0
+    assign base_price = peptide_product.price | money_without_trailing_zeros
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .fpt-pricing {
+    background: #fff;
+    padding: 6.4rem 0;
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.4rem;
+    align-items: flex-end;
+    margin-bottom: 3.2rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__eyebrow {
+    margin: 0 0 0.8rem;
+    font-size: 1.6rem;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__grid {
+    display: grid;
+    gap: 2.4rem;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .fpt-pricing__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem 1.7rem;
+    border: 0.1rem solid var(--fpt-border);
+    border-radius: var(--fpt-radius-card);
+    background: var(--fpt-pale);
+    min-height: 100%;
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__card-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__card-sub {
+    margin: 0.6rem 0 0;
+    font-size: 1.4rem;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__amount {
+    margin: 2rem 0 0;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__amount span {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-left: 0.4rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.2rem;
+    flex: 1;
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    font-size: 1.4rem;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__list li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: 0.2rem;
+    border-radius: 50%;
+    background: var(--fpt-cobalt);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1z'/%3E%3C/svg%3E") center / contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.5 11.5L3 8l1-1 2.5 2.5L12 4l1 1z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  #shopify-section-{{ section.id }} .fpt-pricing__card .fpt-btn {
+    width: 100%;
+    margin-top: 2.4rem;
+  }
+{%- endstyle -%}
+
+<section class="fpt-pricing" id="pricing">
+  <div class="fpt-page-width">
+    <div class="fpt-pricing__head">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="fpt-pricing__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="fpt-section-heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.button_label != blank -%}
+        <a class="fpt-btn fpt-btn--secondary-dark" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_label | escape }}
+          {% render 'fpt-chevron' %}
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="fpt-pricing__grid">
+      <article class="fpt-pricing__card">
+        <h3 class="fpt-pricing__card-title">{{ section.settings.card1_title | escape }}</h3>
+        <p class="fpt-pricing__card-sub">{{ section.settings.card1_sub | escape }}</p>
+        <p class="fpt-pricing__amount">{{ base_price }}<span>/ vial</span></p>
+        <ul class="fpt-pricing__list">
+          <li>HPLC chromatogram</li>
+          <li>Purity calculation</li>
+          <li>Verified COA</li>
+        </ul>
+        <a class="fpt-btn fpt-btn--primary" href="{{ section.settings.card1_link }}">
+          {{ section.settings.card1_cta | escape }}
+        </a>
+      </article>
+
+      <article class="fpt-pricing__card">
+        <h3 class="fpt-pricing__card-title">{{ section.settings.card2_title | escape }}</h3>
+        <p class="fpt-pricing__card-sub">{{ section.settings.card2_sub | escape }}</p>
+        <p class="fpt-pricing__amount" style="font-size: 2.4rem; line-height: 1.2;">
+          {{ section.settings.card2_price_label | escape }}
+        </p>
+        <ul class="fpt-pricing__list">
+          <li>
+            Endotoxin
+            {%- if endotoxin != blank -%}
+              ({{ endotoxin.price | money_without_trailing_zeros }}/vial)
+            {%- else -%}
+              (+$75/vial)
+            {%- endif -%}
+          </li>
+          <li>
+            Sterility
+            {%- if sterility != blank -%}
+              ({{ sterility.price | money_without_trailing_zeros }}/vial)
+            {%- else -%}
+              (+$75/vial)
+            {%- endif -%}
+          </li>
+          <li>
+            Heavy metals
+            {%- if heavy != blank -%}
+              ({{ heavy.price | money_without_trailing_zeros }}/vial)
+            {%- else -%}
+              (+$100/vial)
+            {%- endif -%}
+          </li>
+          <li>
+            Karl Fischer
+            {%- if karl != blank -%}
+              ({{ karl.price | money_without_trailing_zeros }}/vial)
+            {%- else -%}
+              (+$250/vial)
+            {%- endif -%}
+          </li>
+          <li>
+            Vial vacuum
+            {%- if vacuum != blank -%}
+              ({{ vacuum.price | money_without_trailing_zeros }}/vial)
+            {%- else -%}
+              (+$25/vial)
+            {%- endif -%}
+          </li>
+        </ul>
+        <a class="fpt-btn fpt-btn--primary" href="{{ section.settings.card2_link }}">
+          {{ section.settings.card2_cta | escape }}
+        </a>
+      </article>
+
+      <article class="fpt-pricing__card">
+        <h3 class="fpt-pricing__card-title">{{ section.settings.card3_title | escape }}</h3>
+        <p class="fpt-pricing__card-sub">{{ section.settings.card3_sub | escape }}</p>
+        <p class="fpt-pricing__amount" style="font-size: 2.8rem;">{{ section.settings.card3_price_label | escape }}</p>
+        <ul class="fpt-pricing__list">
+          <li>Custom method scoping</li>
+          <li>Detailed report</li>
+          <li>Quote before work begins</li>
+        </ul>
+        <a class="fpt-btn fpt-btn--primary" href="{{ section.settings.card3_link }}">
+          {{ section.settings.card3_cta | escape }}
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FPT pricing",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Professional testing at straightforward prices." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Simple, transparent pricing" },
+    { "type": "text", "id": "button_label", "label": "Header button", "default": "Learn more about our process" },
+    { "type": "url", "id": "button_link", "label": "Header button link", "default": "/pages/how-it-works" },
+    { "type": "text", "id": "base_price", "label": "Base price fallback", "default": "$250" },
+    { "type": "text", "id": "card1_title", "label": "Card 1 title", "default": "HPLC Analysis" },
+    { "type": "text", "id": "card1_sub", "label": "Card 1 subtitle", "default": "Purity with high-resolution data." },
+    { "type": "text", "id": "card1_cta", "label": "Card 1 CTA", "default": "Choose Option" },
+    { "type": "url", "id": "card1_link", "label": "Card 1 link", "default": "/products/peptide-testing" },
+    { "type": "text", "id": "card2_title", "label": "Card 2 title", "default": "Optional screens" },
+    { "type": "text", "id": "card2_sub", "label": "Card 2 subtitle", "default": "Add per-vial screens on Peptide Test." },
+    { "type": "text", "id": "card2_price_label", "label": "Card 2 price label", "default": "From +$25" },
+    { "type": "text", "id": "card2_cta", "label": "Card 2 CTA", "default": "Choose Option" },
+    { "type": "url", "id": "card2_link", "label": "Card 2 link", "default": "/products/peptide-testing" },
+    { "type": "text", "id": "card3_title", "label": "Card 3 title", "default": "Custom analytical" },
+    { "type": "text", "id": "card3_sub", "label": "Card 3 subtitle", "default": "Quote-only custom work." },
+    { "type": "text", "id": "card3_price_label", "label": "Card 3 price label", "default": "Quote" },
+    { "type": "text", "id": "card3_cta", "label": "Card 3 CTA", "default": "Contact Us" },
+    { "type": "url", "id": "card3_link", "label": "Card 3 link", "default": "/pages/custom-analytical" }
+  ],
+  "presets": [{ "name": "FPT pricing" }]
+}
+{% endschema %}

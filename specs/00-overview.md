@@ -8,7 +8,7 @@ Status: draft. Architecture settled, client details pending.
 | --- | --- | --- | --- | --- |
 | noviqpeptides.com | RUO peptides | WordPress + WooCommerce | Noviq Peptides | Built |
 | bacwatermarket.com | Bacteriostatic water, 1-pack and 5-pack | Shopify | TBD, see spec 01 | Not started |
-| fastpeptidetesting.com | HPLC peptide testing service | Shopify | March Analytics | Not started |
+| fastpeptidetesting.com | HPLC peptide testing service | Shopify | March Analytics | Landing built (Figma visuals + confirmed catalog) |
 
 Two Shopify stores, not three. A single Shopify store cannot serve three
 different websites: extra domains attached to a store redirect to its primary

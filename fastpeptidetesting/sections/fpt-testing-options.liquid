@@ -1,0 +1,276 @@
+{%- liquid
+  assign peptide_product = all_products['peptide-testing']
+  assign sterility_product = all_products['sterility-testing']
+  assign hplc_price = section.settings.hplc_price
+  if peptide_product != blank and peptide_product.price > 0
+    assign hplc_price = peptide_product.price | money_without_trailing_zeros | prepend: 'From '
+  endif
+  assign sterility_price = section.settings.sterility_price
+  if sterility_product != blank and sterility_product.price > 0
+    assign sterility_price = sterility_product.price | money_without_trailing_zeros | prepend: '+ '
+    assign sterility_price = sterility_price | append: ' / vial'
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .fpt-options {
+    position: relative;
+    color: #fff;
+    padding: 6.4rem 0;
+    overflow: hidden;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__bg {
+    position: absolute;
+    inset: 0;
+    background: var(--fpt-navy-mid);
+  }
+  #shopify-section-{{ section.id }} .fpt-options__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__inner {
+    position: relative;
+    z-index: 1;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.4rem;
+    align-items: flex-end;
+    margin-bottom: 3.2rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__head .fpt-section-heading {
+    color: #fff;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__head .fpt-section-sub {
+    margin-top: 1.2rem;
+    color: #b8d7f6;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__grid {
+    display: grid;
+    gap: 2.4rem;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .fpt-options__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    #shopify-section-{{ section.id }} .fpt-options__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  #shopify-section-{{ section.id }} .fpt-options__card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: var(--fpt-radius-card);
+    overflow: hidden;
+    box-shadow: 0 0.8rem 0.9rem rgba(0, 5, 20, 0.2);
+    text-decoration: none;
+    color: inherit;
+    min-height: 100%;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__card-media {
+    position: relative;
+    height: 17.8rem;
+    background: var(--fpt-sky);
+  }
+  #shopify-section-{{ section.id }} .fpt-options__card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 1.6rem 2.4rem 2.4rem;
+    flex: 1;
+  }
+  #shopify-section-{{ section.id }} .fpt-options__card-title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-options__card-text {
+    margin: 0.2rem 0 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-options__card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--fpt-navy);
+  }
+{%- endstyle -%}
+
+<section class="fpt-options" id="testing-options">
+  <div class="fpt-options__bg" aria-hidden="true">
+    {%- if section.settings.background_image != blank -%}
+      {{ section.settings.background_image | image_url: width: 2000 | image_tag: loading: 'lazy', alt: '' }}
+    {%- else -%}
+      <img src="{{ 'fpt-options-bg.png' | asset_url }}" alt="" width="1600" height="900" loading="lazy">
+    {%- endif -%}
+  </div>
+  <div class="fpt-page-width fpt-options__inner">
+    <div class="fpt-options__head">
+      <div>
+        {%- if section.settings.heading != blank -%}
+          <h2 class="fpt-section-heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="fpt-section-sub">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.button_label != blank -%}
+        <a class="fpt-btn fpt-btn--ghost-light" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_label | escape }}
+          {% render 'fpt-chevron' %}
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="fpt-options__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign card_cta = block.settings.cta_label
+          if block.settings.card_key == 'hplc' and hplc_price != blank
+            assign card_cta = hplc_price
+          elsif block.settings.card_key == 'sterility' and sterility_price != blank
+            assign card_cta = sterility_price
+          endif
+          assign media_asset = block.settings.image
+        -%}
+        <a class="fpt-options__card" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+          <div class="fpt-options__card-media">
+            {%- if media_asset != blank -%}
+              {{ media_asset | image_url: width: 800 | image_tag: loading: 'lazy', alt: block.settings.title }}
+            {%- else -%}
+              {%- case block.settings.card_key -%}
+                {%- when 'lcms' -%}
+                  <img src="{{ 'fpt-option-lcms.png' | asset_url }}" alt="" width="400" height="300" loading="lazy">
+                {%- when 'sterility' -%}
+                  <img src="{{ 'fpt-option-sterility.png' | asset_url }}" alt="" width="400" height="300" loading="lazy">
+                {%- when 'custom' -%}
+                  <img src="{{ 'fpt-option-custom.png' | asset_url }}" alt="" width="400" height="300" loading="lazy">
+                {%- else -%}
+                  <img src="{{ 'fpt-option-hplc.png' | asset_url }}" alt="" width="400" height="300" loading="lazy">
+              {%- endcase -%}
+            {%- endif -%}
+          </div>
+          <div class="fpt-options__card-body">
+            <div>
+              <h3 class="fpt-options__card-title">{{ block.settings.title | escape }}</h3>
+              {%- if block.settings.text != blank -%}
+                <p class="fpt-options__card-text">{{ block.settings.text | escape }}</p>
+              {%- endif -%}
+            </div>
+            <span class="fpt-options__card-cta">
+              {{ card_cta | escape }}
+              {% render 'fpt-chevron' %}
+            </span>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FPT testing options",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "image_picker", "id": "background_image", "label": "Background image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Testing options" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Choose the right analysis for your needs." },
+    { "type": "text", "id": "button_label", "label": "Header button", "default": "View all Methods" },
+    { "type": "url", "id": "button_link", "label": "Header button link", "default": "/pages/methods" },
+    { "type": "text", "id": "hplc_price", "label": "HPLC price fallback", "default": "From $250" },
+    { "type": "text", "id": "sterility_price", "label": "Sterility price fallback", "default": "+ $75 / vial" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Option card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "card_key",
+          "label": "Card key",
+          "options": [
+            { "value": "hplc", "label": "HPLC" },
+            { "value": "lcms", "label": "LC-MS" },
+            { "value": "sterility", "label": "Sterility" },
+            { "value": "custom", "label": "Custom" }
+          ],
+          "default": "hplc"
+        },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "HPLC" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Purity analysis with high-resolution chromatograms." },
+        { "type": "text", "id": "cta_label", "label": "CTA label", "default": "From $250" },
+        { "type": "url", "id": "link", "label": "Link", "default": "/products/peptide-testing" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FPT testing options",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "card_key": "hplc",
+            "title": "HPLC",
+            "text": "Purity analysis with high-resolution chromatograms.",
+            "cta_label": "From $250",
+            "link": "/products/peptide-testing"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_key": "lcms",
+            "title": "LC-MS",
+            "text": "Identity methods are documented on the methods page. Availability pending lab confirmation.",
+            "cta_label": "See methods",
+            "link": "/pages/methods"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_key": "sterility",
+            "title": "Sterility Testing",
+            "text": "Optional microbial screen added per vial on Peptide Test.",
+            "cta_label": "+ $75 / vial",
+            "link": "/products/peptide-testing"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "card_key": "custom",
+            "title": "Custom Analysis",
+            "text": "Need something specific? Request a custom analytical quote.",
+            "cta_label": "Contact Us",
+            "link": "/pages/custom-analytical"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

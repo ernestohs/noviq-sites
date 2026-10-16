@@ -1,0 +1,173 @@
+{%- assign verify_page = pages['verify'] -%}
+{%- assign verify_url = section.settings.verify_url -%}
+{%- if verify_url == blank and verify_page != blank -%}
+  {%- assign verify_url = verify_page.url -%}
+{%- endif -%}
+{%- if verify_url == blank -%}
+  {%- assign verify_url = '/pages/verify' -%}
+{%- endif -%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .fpt-verify {
+    background: linear-gradient(160deg, #f2f8ff 0%, #e5f2ff 100%);
+    padding: 7.2rem 0;
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__grid {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .fpt-verify__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 49rem);
+      gap: 4.8rem;
+    }
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__eyebrow {
+    margin: 0 0 1.6rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__title {
+    margin: 0;
+    font-size: clamp(3.2rem, 4vw, 4.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #1570ef;
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__text {
+    margin: 1.6rem 0 0;
+    max-width: 54rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--fpt-navy-deep);
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2.4rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__input {
+    flex: 1 1 24rem;
+    min-height: 4.6rem;
+    padding: 1.2rem 1.6rem;
+    border: 0.1rem solid #8e99a7;
+    border-radius: 0.8rem;
+    background: #fff;
+    font-size: 1.4rem;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__preview img {
+    width: 100%;
+    max-width: 49rem;
+    height: auto;
+    border-radius: 1.2rem;
+    box-shadow: 0 1.2rem 3.2rem rgba(6, 27, 56, 0.12);
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__note {
+    margin: 0.8rem 0 0;
+    font-size: 1.2rem;
+    color: var(--fpt-muted);
+  }
+  #shopify-section-{{ section.id }} .fpt-verify__preview-cta {
+    width: 100%;
+    max-width: 49rem;
+  }
+{%- endstyle -%}
+
+<section class="fpt-verify" id="verify">
+  <div class="fpt-page-width fpt-verify__grid">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="fpt-verify__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fpt-verify__title">{{ section.settings.heading | escape | newline_to_br }}</h2>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <p class="fpt-verify__text">{{ section.settings.text | escape }}</p>
+      {%- endif -%}
+      <form class="fpt-verify__form" action="{{ verify_url }}" method="get">
+        <label class="visually-hidden" for="FptVerifyLot-{{ section.id }}">Lot number</label>
+        <input
+          class="fpt-verify__input"
+          id="FptVerifyLot-{{ section.id }}"
+          type="text"
+          name="id"
+          placeholder="{{ section.settings.placeholder | escape }}"
+          autocomplete="off"
+        >
+        <button class="fpt-btn fpt-btn--primary" type="submit">
+          {{ section.settings.button_label | escape }}
+          {% render 'fpt-chevron' %}
+        </button>
+      </form>
+      {%- if section.settings.note != blank -%}
+        <p class="fpt-verify__note">{{ section.settings.note | escape }}</p>
+      {%- endif -%}
+    </div>
+    <div class="fpt-verify__preview">
+      {%- if section.settings.preview_image != blank -%}
+        {{
+          section.settings.preview_image
+          | image_url: width: 1000
+          | image_tag: loading: 'lazy', alt: 'Illustrative certificate of analysis preview'
+        }}
+      {%- else -%}
+        <img
+          src="{{ 'fpt-coa-preview.png' | asset_url }}"
+          alt="Illustrative certificate of analysis preview"
+          width="529"
+          height="412"
+          loading="lazy"
+        >
+      {%- endif -%}
+      {%- if section.settings.preview_cta_label != blank -%}
+        <a class="fpt-btn fpt-btn--primary fpt-verify__preview-cta" href="{{ section.settings.preview_cta_link | default: verify_url }}">
+          {{ section.settings.preview_cta_label | escape }}
+          {% render 'fpt-chevron' %}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FPT COA verify",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Transparent Results" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Verify a COA\nAnytime." },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Every certificate of analysis includes a unique lot number and can be verified online. No account required."
+    },
+    { "type": "text", "id": "placeholder", "label": "Input placeholder", "default": "Enter lot number (e.g. FPT-2024-00123)" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Verify a lot" },
+    { "type": "url", "id": "verify_url", "label": "Verify page URL", "default": "/pages/verify" },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note",
+      "default": "Verification returns a result only when a matching certificate has been published."
+    },
+    { "type": "image_picker", "id": "preview_image", "label": "COA preview image" },
+    { "type": "text", "id": "preview_cta_label", "label": "Preview CTA", "default": "View COA" },
+    { "type": "url", "id": "preview_cta_link", "label": "Preview CTA link", "default": "/pages/sample-coa" }
+  ],
+  "presets": [{ "name": "FPT COA verify" }]
+}
+{% endschema %}

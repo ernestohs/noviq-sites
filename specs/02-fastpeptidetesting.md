@@ -81,13 +81,23 @@ difference generates chargebacks.
 
 ## Homepage
 
-1. `image-banner` or `slideshow`, what the lab does and turnaround time
-2. `featured-collection` or `multicolumn`, the service list with prices
-3. `icons-with-content`, methodology trust points, for example HPLC, in-house
-   instrumentation, chain of custody, independent
-4. `multirow`, how it works as a numbered process: order, ship sample, receive
-   report
-5. `collapsible-content`, FAQ
+Figma landing visuals (`fpt-*` sections in `templates/index.json`). Commerce
+copy and prices stay on the confirmed catalog; Figma dollar amounts are not
+source of truth.
+
+1. `fpt-hero` — full-bleed lab hero + Build Your Test teaser card (deep-links to
+   Peptide Test; full configurator stays on the PDP)
+2. `fpt-trust-bar` — HPLC, turnaround, COA verify, independence
+3. `fpt-process` — Order / Ship / Analyze / Receive
+4. `fpt-testing-options` — HPLC ($250), LC-MS (methods only until intake
+   confirms), Sterility (+$75 add-on), Custom (quote)
+5. `fpt-coa-verify` — lot lookup posting to `/pages/verify`
+6. `fpt-pricing` — Peptide Test + optional screens + custom quote
+7. `fpt-faq` — common questions at confirmed prices
+8. `fpt-final-cta` — closing CTA band
+
+Design tokens: navy `#0b2a55`, cobalt `#0b82f5`, Inter, pill CTAs. See AGENTS.md
+FPT exception.
 
 ## Pages
 
@@ -180,13 +190,13 @@ unless there is a concrete crawl rule to change.
 
 | Asset | Status |
 | --- | --- |
-| Logo, SVG preferred | TBD |
-| Favicon, 512x512 PNG | TBD |
-| Brand colours, hex | TBD |
-| Any lab or instrument photography | TBD |
+| Logo, SVG preferred | March Analytics files bound in settings; storefront wordmark Fast Peptide Testing |
+| Favicon, 512x512 PNG | Bound in settings |
+| Brand colours, hex | Confirmed via Figma: navy `#0b2a55`, cobalt `#0b82f5` (see Homepage) |
+| Any lab or instrument photography | Theme assets `fpt-hero-lab.png`, option cards, final CTA (replaceable via Theme Editor) |
 
-Should look like a laboratory, not like an ecommerce brand. Restrained
-typography, minimal colour, no lifestyle imagery.
+Should look like a laboratory. FPT landing uses the blue/navy Figma system, not
+the bacwatermarket minimal tokens.
 
 ## Definition of done
 

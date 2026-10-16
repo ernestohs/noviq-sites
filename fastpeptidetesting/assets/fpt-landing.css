@@ -1,0 +1,125 @@
+/* Fast Peptide Testing landing + chrome (Figma visuals, catalog commerce) */
+:root {
+  --fpt-navy: #0b2a55;
+  --fpt-navy-deep: #061b38;
+  --fpt-navy-mid: #092547;
+  --fpt-cobalt: #0b82f5;
+  --fpt-muted: #6f8198;
+  --fpt-pale: #f7fbff;
+  --fpt-sky: #eaf5ff;
+  --fpt-border: #d6e5f4;
+  --fpt-radius-card: 1.6rem;
+  --fpt-radius-pill: 12.5rem;
+  --fpt-gradient: linear-gradient(81deg, #0077ed 4%, #155dfc 99%);
+}
+
+.fpt-page-width {
+  width: 100%;
+  max-width: 124.8rem;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+}
+
+@media screen and (min-width: 990px) {
+  .fpt-page-width {
+    padding: 0 9.6rem;
+  }
+}
+
+.fpt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 4.8rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--fpt-radius-pill);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.fpt-btn:hover {
+  opacity: 0.92;
+}
+
+.fpt-btn--primary {
+  color: #fff;
+  background-image: var(--fpt-gradient);
+  box-shadow: 0 0.4rem 0.2rem rgba(0, 0, 0, 0.18);
+}
+
+.fpt-btn--secondary {
+  color: #fff;
+  background: transparent;
+  border: 0.1rem solid #fff;
+}
+
+.fpt-btn--secondary-dark {
+  color: var(--fpt-navy);
+  background: #fff;
+  border: 0.1rem solid var(--fpt-border);
+}
+
+.fpt-btn--ghost-light {
+  color: #fff;
+  background: transparent;
+  border: 0.1rem solid #fff;
+  min-height: 4rem;
+}
+
+.fpt-btn__chevron {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.fpt-section-heading {
+  margin: 0;
+  font-size: clamp(2.8rem, 4vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--fpt-navy);
+}
+
+.fpt-section-sub {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: var(--fpt-muted);
+}
+
+/* Footer Figma chrome */
+.footer.fpt-footer {
+  background: #fff;
+  border-top: 0.1rem solid var(--fpt-border);
+  color: var(--fpt-navy);
+}
+
+.footer.fpt-footer .footer-block__heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--fpt-navy);
+  margin-bottom: 1.2rem;
+}
+
+.footer.fpt-footer .footer-block__details-content .list-menu__item--link,
+.footer.fpt-footer .footer-block__details-content a {
+  color: var(--fpt-muted);
+  font-size: 1.4rem;
+}
+
+.footer.fpt-footer .footer__content-bottom {
+  border-top-color: var(--fpt-border);
+}
+
+.footer.fpt-footer .copyright__content,
+.footer.fpt-footer .policies li a {
+  color: var(--fpt-muted);
+  font-size: 1.3rem;
+}

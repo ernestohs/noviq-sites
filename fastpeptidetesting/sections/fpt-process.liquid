@@ -1,0 +1,178 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .fpt-process {
+    background: var(--fpt-pale);
+    padding: 6.4rem 0;
+  }
+  #shopify-section-{{ section.id }} .fpt-process__head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.4rem;
+    align-items: flex-end;
+    margin-bottom: 3.2rem;
+  }
+  #shopify-section-{{ section.id }} .fpt-process__sub {
+    margin: 1.2rem 0 0;
+  }
+  #shopify-section-{{ section.id }} .fpt-process__grid {
+    display: grid;
+    gap: 1.6rem;
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .fpt-process__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media screen and (min-width: 990px) {
+    #shopify-section-{{ section.id }} .fpt-process__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  #shopify-section-{{ section.id }} .fpt-process__card {
+    background: #fff;
+    border-radius: var(--fpt-radius-card);
+    padding: 2.4rem 1.6rem;
+    text-align: center;
+    box-shadow: 0 0.4rem 1.6rem rgba(6, 27, 56, 0.06);
+  }
+  #shopify-section-{{ section.id }} .fpt-process__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 1.6rem;
+    border-radius: 50%;
+    background: var(--fpt-sky);
+    color: var(--fpt-cobalt);
+  }
+  #shopify-section-{{ section.id }} .fpt-process__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 0.8rem;
+    border-radius: 50%;
+    background: var(--fpt-navy);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  #shopify-section-{{ section.id }} .fpt-process__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--fpt-navy);
+  }
+  #shopify-section-{{ section.id }} .fpt-process__body {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.45;
+    color: var(--fpt-muted);
+  }
+{%- endstyle -%}
+
+<section class="fpt-process" id="how-it-works">
+  <div class="fpt-page-width">
+    <div class="fpt-process__head">
+      <div>
+        {%- if section.settings.heading != blank -%}
+          <h2 class="fpt-section-heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="fpt-section-sub fpt-process__sub">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.button_label != blank -%}
+        <a class="fpt-btn fpt-btn--primary" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_label | escape }}
+          {% render 'fpt-chevron' %}
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="fpt-process__grid">
+      {%- for block in section.blocks -%}
+        <article class="fpt-process__card" {{ block.shopify_attributes }}>
+          <div class="fpt-process__icon" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              {%- case block.settings.icon -%}
+                {%- when 'ship' -%}
+                  <path d="M10 28h28l-4 8H14l-4-8zM14 20h20v8H14z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="18" cy="38" r="2" fill="currentColor"/><circle cx="30" cy="38" r="2" fill="currentColor"/>
+                {%- when 'analyze' -%}
+                  <rect x="10" y="12" width="8" height="24" rx="1" stroke="currentColor" stroke-width="2"/>
+                  <rect x="20" y="18" width="8" height="18" rx="1" stroke="currentColor" stroke-width="2"/>
+                  <rect x="30" y="8" width="8" height="28" rx="1" stroke="currentColor" stroke-width="2"/>
+                {%- when 'report' -%}
+                  <rect x="12" y="8" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M18 18h12M18 24h12M18 30h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                {%- else -%}
+                  <rect x="12" y="10" width="24" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M18 18h12M18 24h12M18 30h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              {%- endcase -%}
+            </svg>
+          </div>
+          <h3 class="fpt-process__title">
+            <span class="fpt-process__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            {{ block.settings.title | escape }}
+          </h3>
+          {%- if block.settings.text != blank -%}
+            <p class="fpt-process__body">{{ block.settings.text | escape }}</p>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FPT process",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How it works" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Order, ship your sample, and receive a verified report." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Build Your Test" },
+    { "type": "url", "id": "button_link", "label": "Button link", "default": "/products/peptide-testing" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "order", "label": "Order" },
+            { "value": "ship", "label": "Ship" },
+            { "value": "analyze", "label": "Analyze" },
+            { "value": "report", "label": "Report" }
+          ],
+          "default": "order"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Order testing" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Configure vials, peptides, and optional screens on Peptide Test." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FPT process",
+      "blocks": [
+        { "type": "step", "settings": { "icon": "order", "title": "Order", "text": "Configure vials, peptides, optional screens, and turnaround." } },
+        { "type": "step", "settings": { "icon": "ship", "title": "Ship sample", "text": "Send the sample with protective packaging and tracking." } },
+        { "type": "step", "settings": { "icon": "analyze", "title": "Lab analysis", "text": "HPLC purity analysis with documented chain of custody." } },
+        { "type": "step", "settings": { "icon": "report", "title": "Receive report", "text": "Results issued as a certificate of analysis to you only." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

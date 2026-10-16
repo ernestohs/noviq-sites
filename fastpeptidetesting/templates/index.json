@@ -1,317 +1,264 @@
 {
   "sections": {
     "hero": {
-      "type": "image-banner",
+      "type": "fpt-hero",
+      "settings": {
+        "badge": "Independent testing. Real answers.",
+        "heading": "Test your peptide\nwith confidence.",
+        "subheading": "Fast, independent results with a COA you can verify.",
+        "primary_label": "Build Your Test",
+        "primary_link": "shopify://products/peptide-testing",
+        "secondary_label": "View Methods",
+        "secondary_link": "shopify://pages/methods",
+        "tagline": "Same Science. A Clearer Path.",
+        "card_title": "Build Your Test",
+        "from_price": "$250",
+        "turnaround": "3 business days",
+        "card_cta_label": "Build Your Test"
+      }
+    },
+    "trust": {
+      "type": "fpt-trust-bar",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "trust1": {
+          "type": "item",
           "settings": {
-            "heading": "Independent peptide purity testing by HPLC",
-            "heading_size": "h0"
+            "icon": "hplc",
+            "label": "Core method",
+            "value": "HPLC purity analysis"
           }
         },
-        "text": {
-          "type": "text",
+        "trust2": {
+          "type": "item",
           "settings": {
-            "text": "HPLC purity, LC-MS identity, and optional add-on screens for customer-supplied research samples. Results issued as a certificate of analysis.",
-            "text_style": "body"
+            "icon": "clock",
+            "label": "Turnaround",
+            "value": "3 business days standard"
           }
         },
-        "buttons": {
-          "type": "buttons",
+        "trust3": {
+          "type": "item",
           "settings": {
-            "button_label_1": "Order Testing",
-            "button_link_1": "shopify://products/peptide-testing",
-            "button_style_secondary_1": false,
-            "button_label_2": "How it works",
-            "button_link_2": "shopify://pages/how-it-works",
-            "button_style_secondary_2": true
+            "icon": "doc",
+            "label": "Results",
+            "value": "COA you can verify online"
+          }
+        },
+        "trust4": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "label": "Independence",
+            "value": "Independent laboratory"
           }
         }
       },
-      "block_order": ["heading", "text", "buttons"],
-      "settings": {
-        "image": "shopify://shop_images/hero-hplc-lab.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "small",
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "content_box_opacity": 80,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
+      "block_order": ["trust1", "trust2", "trust3", "trust4"],
+      "settings": {}
     },
-    "featured_product": {
-      "type": "featured-product",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "heading_size": "h1"
-          }
-        },
-        "price": {
-          "type": "price"
-        },
-        "text_includes": {
-          "type": "text",
-          "settings": {
-            "text": "$250 per vial. Configure peptides, optional screens, and turnaround on this page.",
-            "text_style": "subtitle"
-          }
-        },
-        "peptide_test_configurator": {
-          "type": "peptide_test_configurator",
-          "settings": {}
-        },
-        "sample_intake": {
-          "type": "sample_intake",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
-          }
-        }
-      },
-      "block_order": [
-        "title",
-        "price",
-        "text_includes",
-        "peptide_test_configurator",
-        "sample_intake",
-        "buy_buttons"
-      ],
-      "settings": {
-        "product": "peptide-testing",
-        "color_scheme": "scheme-1",
-        "secondary_background": false,
-        "media_size": "medium",
-        "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "media_position": "left",
-        "image_zoom": "none",
-        "hide_variants": true,
-        "enable_video_looping": false,
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "order-testing",
-        "products_to_show": 4,
-        "title": "Order testing",
-        "heading_size": "h1",
-        "description": "<p>Configure Peptide Test: choose vials, peptides, optional screens, and turnaround.</p>",
-        "show_description": true,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "icons_trust": {
-      "type": "icons-with-content",
-      "blocks": {
-        "col1": {
-          "type": "column",
-          "settings": {
-            "icon": "science",
-            "heading": "Analytical methods",
-            "text": "<p>Base tests cover HPLC purity, potency, and identity. Methods follow USP validation principles. Instrument names are published after lab confirmation.</p>"
-          }
-        },
-        "col2": {
-          "type": "column",
-          "settings": {
-            "icon": "biotech",
-            "heading": "Quality-control background",
-            "text": "<p>Testing is performed on laboratory instrumentation operated by Fast Peptide Testing, with methods drawn from pharmaceutical QC practice.</p>"
-          }
-        },
-        "col3": {
-          "type": "column",
-          "settings": {
-            "icon": "inventory_2",
-            "heading": "Chain of custody",
-            "text": "<p>Samples are received, logged, and tracked through reporting. The certificate of analysis applies only to the vial tested.</p>"
-          }
-        },
-        "col4": {
-          "type": "column",
-          "settings": {
-            "icon": "verified_user",
-            "heading": "Independent lab",
-            "text": "<p>Fast Peptide Testing is operated as an independent laboratory. We do not sell the compounds we test.</p>"
-          }
-        }
-      },
-      "block_order": ["col1", "col2", "col3", "col4"],
-      "settings": {
-        "heading": "How we test",
-        "heading_size": "h1",
-        "columns_desktop": 4,
-        "columns_mobile": "1",
-        "color_scheme": "scheme-2",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "divider_1": {
-      "type": "section-divider",
-      "settings": {
-        "thickness": 1,
-        "width": 100,
-        "color": "#D4D4D4",
-        "opacity": 100,
-        "color_scheme": "scheme-1",
-        "padding_top": 8,
-        "padding_bottom": 8
-      }
-    },
-    "how_it_works": {
-      "type": "multicolumn",
+    "process": {
+      "type": "fpt-process",
       "blocks": {
         "step1": {
-          "type": "column",
+          "type": "step",
           "settings": {
-            "title": "1. Order",
-            "text": "<p>Open Peptide Test. Choose vial count, select a peptide for each vial, optional screens, and turnaround. Provide sample details so they attach to the order.</p>",
-            "link_label": "",
-            "link": ""
+            "icon": "order",
+            "title": "Order",
+            "text": "Configure vials, peptides, optional screens, and turnaround."
           }
         },
         "step2": {
-          "type": "column",
+          "type": "step",
           "settings": {
-            "title": "2. Ship sample",
-            "text": "<p>After checkout you receive the lab receiving address. Use protective packaging and a tracked carrier, with the order number on the package. Do not require a signature.</p>",
-            "link_label": "",
-            "link": ""
+            "icon": "ship",
+            "title": "Ship sample",
+            "text": "Send the sample with protective packaging and tracking."
           }
         },
         "step3": {
-          "type": "column",
+          "type": "step",
           "settings": {
-            "title": "3. Receive report",
-            "text": "<p>Results are issued as a certificate of analysis by email. Certificates are delivered only to the customer and are never published publicly.</p>",
-            "link_label": "",
-            "link": ""
+            "icon": "analyze",
+            "title": "Lab analysis",
+            "text": "HPLC purity analysis with documented chain of custody."
+          }
+        },
+        "step4": {
+          "type": "step",
+          "settings": {
+            "icon": "report",
+            "title": "Receive report",
+            "text": "Results issued as a certificate of analysis to you only."
           }
         }
       },
-      "block_order": ["step1", "step2", "step3"],
+      "block_order": ["step1", "step2", "step3", "step4"],
       "settings": {
-        "title": "How it works",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "button_label": "Order Testing",
-        "button_link": "shopify://products/peptide-testing",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "How it works",
+        "subheading": "Order, ship your sample, and receive a verified report.",
+        "button_label": "Build Your Test",
+        "button_link": "shopify://products/peptide-testing"
+      }
+    },
+    "options": {
+      "type": "fpt-testing-options",
+      "blocks": {
+        "opt1": {
+          "type": "card",
+          "settings": {
+            "card_key": "hplc",
+            "title": "HPLC",
+            "text": "Purity analysis with high-resolution chromatograms.",
+            "cta_label": "From $250",
+            "link": "shopify://products/peptide-testing"
+          }
+        },
+        "opt2": {
+          "type": "card",
+          "settings": {
+            "card_key": "lcms",
+            "title": "LC-MS",
+            "text": "Identity methods are documented on the methods page. Availability pending lab confirmation.",
+            "cta_label": "See methods",
+            "link": "shopify://pages/methods"
+          }
+        },
+        "opt3": {
+          "type": "card",
+          "settings": {
+            "card_key": "sterility",
+            "title": "Sterility Testing",
+            "text": "Optional microbial screen added per vial on Peptide Test.",
+            "cta_label": "+ $75 / vial",
+            "link": "shopify://products/peptide-testing"
+          }
+        },
+        "opt4": {
+          "type": "card",
+          "settings": {
+            "card_key": "custom",
+            "title": "Custom Analysis",
+            "text": "Need something specific? Request a custom analytical quote.",
+            "cta_label": "Contact Us",
+            "link": "shopify://pages/custom-analytical"
+          }
+        }
+      },
+      "block_order": ["opt1", "opt2", "opt3", "opt4"],
+      "settings": {
+        "heading": "Testing options",
+        "subheading": "Choose the right analysis for your needs.",
+        "button_label": "View all Methods",
+        "button_link": "shopify://pages/methods",
+        "hplc_price": "From $250",
+        "sterility_price": "+ $75 / vial"
+      }
+    },
+    "verify": {
+      "type": "fpt-coa-verify",
+      "settings": {
+        "eyebrow": "Transparent Results",
+        "heading": "Verify a COA\nAnytime.",
+        "text": "Every certificate of analysis includes a unique lot number and can be verified online. No account required.",
+        "placeholder": "Enter lot number (e.g. FPT-2024-00123)",
+        "button_label": "Verify a lot",
+        "verify_url": "shopify://pages/verify",
+        "note": "Verification returns a result only when a matching certificate has been published.",
+        "preview_cta_label": "View COA",
+        "preview_cta_link": "shopify://pages/sample-coa"
+      }
+    },
+    "pricing": {
+      "type": "fpt-pricing",
+      "settings": {
+        "eyebrow": "Professional testing at straightforward prices.",
+        "heading": "Simple, transparent pricing",
+        "button_label": "Learn more about our process",
+        "button_link": "shopify://pages/how-it-works",
+        "base_price": "$250",
+        "card1_title": "HPLC Analysis",
+        "card1_sub": "Purity with high-resolution data.",
+        "card1_cta": "Choose Option",
+        "card1_link": "shopify://products/peptide-testing",
+        "card2_title": "Optional screens",
+        "card2_sub": "Add per-vial screens on Peptide Test.",
+        "card2_price_label": "From +$25",
+        "card2_cta": "Choose Option",
+        "card2_link": "shopify://products/peptide-testing",
+        "card3_title": "Custom analytical",
+        "card3_sub": "Quote-only custom work.",
+        "card3_price_label": "Quote",
+        "card3_cta": "Contact Us",
+        "card3_link": "shopify://pages/custom-analytical"
       }
     },
     "faq": {
-      "type": "collapsible-content",
+      "type": "fpt-faq",
       "blocks": {
         "faq1": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
             "heading": "What does the base test include?",
-            "icon": "none",
-            "row_content": "<p>Purity, potency, and identity as one purchase. Heavy metal, sterility, endotoxin, Karl Fischer moisture, and vial vacuum are optional add-ons priced per vial. Custom analytical work uses a quote form, not self-serve checkout.</p>",
-            "page": ""
+            "answer": "<p>HPLC purity analysis for customer-supplied samples at $250 per vial. Optional screens include endotoxin, sterility, heavy metals, Karl Fischer moisture, and vial vacuum. Custom analytical work uses a quote form, not self-serve checkout.</p>"
           }
         },
         "faq2": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
             "heading": "Can I test more than one vial?",
-            "icon": "none",
-            "row_content": "<p>Yes. Choose 1 to 5 vials on Peptide Test and select the peptide for each vial. Base testing is $250 per vial.</p>",
-            "page": ""
+            "answer": "<p>Yes. Choose 1 to 5 vials on Peptide Test and select the peptide for each vial. Base testing is $250 per vial.</p>"
           }
         },
         "faq3": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
             "heading": "What are the turnaround options?",
-            "icon": "none",
-            "row_content": "<p>Standard is 3 business days, included in the $250 per vial test price. Next-Day is +$199 per order. Same-Day is +$449 per order. Select turnaround on the Peptide Test page before adding to cart.</p>",
-            "page": ""
+            "answer": "<p>Standard is 3 business days, included in the $250 per vial test price. Next-Day is +$199 per order. Same-Day is +$449 per order. Select turnaround on the Peptide Test page before adding to cart.</p>"
           }
         },
         "faq4": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
             "heading": "Do I need to provide shipping at checkout?",
-            "icon": "none",
-            "row_content": "<p>No. Testing products are configured as non-physical services. After checkout, use protective packaging and a tracked carrier to ship the sample to the lab address in the confirmation email.</p>",
-            "page": ""
+            "answer": "<p>No. Testing products are configured as non-physical services. After checkout, use protective packaging and a tracked carrier to ship the sample to the lab address in the confirmation email.</p>"
           }
         },
         "faq5": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
             "heading": "What am I attesting to?",
-            "icon": "none",
-            "row_content": "<p>Samples are submitted for research and analytical purposes only, not for human or animal use. The certificate of analysis applies only to the tested sample. See the attestation page for the full list.</p>",
-            "page": "attestation"
+            "answer": "<p>Samples are submitted for research and analytical purposes only, not for human or animal use. The certificate of analysis applies only to the tested sample. See the attestation page for the full list.</p>"
           }
         }
       },
       "block_order": ["faq1", "faq2", "faq3", "faq4", "faq5"],
       "settings": {
-        "caption": "",
-        "heading": "FAQ",
-        "heading_size": "h1",
-        "heading_alignment": "left",
-        "layout": "none",
-        "container_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_first",
-        "enable_faq_schema": true,
-        "padding_top": 36,
-        "padding_bottom": 48
+        "heading": "Common questions",
+        "subheading": "Straight answers about ordering, shipping samples, and receiving results.",
+        "open_first": true
+      }
+    },
+    "final_cta": {
+      "type": "fpt-final-cta",
+      "settings": {
+        "eyebrow": "Independent testing for a clearer tomorrow",
+        "heading": "Ready for clearer answers?",
+        "text": "Fast, independent peptide testing. Real results you can verify.",
+        "primary_label": "Start a Test",
+        "primary_link": "shopify://products/peptide-testing",
+        "secondary_label": "Talk to the Lab",
+        "secondary_link": "shopify://pages/contact-us"
       }
     }
   },
   "order": [
     "hero",
-    "featured_product",
-    "featured_collection",
-    "icons_trust",
-    "divider_1",
-    "how_it_works",
-    "faq"
+    "trust",
+    "process",
+    "options",
+    "verify",
+    "pricing",
+    "faq",
+    "final_cta"
   ]
 }
