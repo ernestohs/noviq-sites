@@ -14,7 +14,7 @@ node apply-configurable-catalog.mjs   # required: Peptide Test model + peptide-o
 
 - Primary product `peptide-testing` ($250 × 1–5 vials)
 - Checkout helpers: rush next/same day; endotoxin, sterility, heavy metals, Karl Fischer, vial vacuum (unit prices per vial)
-- Compound products retained for SEO (not in `order-testing` collection membership list)
+- Compound products retained for SEO (not in `order-testing` collection membership list): `product.compound` template with a link to Peptide Test, single $250 variant tracked at zero stock so it cannot be checked out
 - `custom-analytical-service` as DRAFT / quote-only
 - Page `custom-analytical` and menus pointing at Peptide Test
 - `snippets/peptide-option-list.liquid` for the storefront dropdown
@@ -66,7 +66,7 @@ Prefer `npx shopify theme push --theme fpt-preview` from `fastpeptidetesting/` w
 ## Manual QA (configurable Peptide Test)
 
 1. `/products/peptide-testing`: change vial count 1–5; peptide selects appear/hide; estimated total updates
-2. Select add-ons; totals scale by vial count (e.g. 2 vials + endotoxin = $398 + $150)
+2. Select add-ons; totals scale by vial count (e.g. 2 vials + endotoxin = $500 + $150)
 3. Select Next-Day / Same-Day; rush fee appears in estimate
 4. Add to cart: Peptide Test line has properties for peptides, add-ons, turnaround, fees; helper lines match quantity
 5. `/pages/compounds/bpc-157` CTA opens Peptide Test with Vial 1 prefilled

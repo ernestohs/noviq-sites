@@ -258,10 +258,10 @@ function productInput(product) {
       ],
       price: variant.price,
       sku: variant.sku,
-      inventoryPolicy: 'CONTINUE',
+      inventoryPolicy: variant.inventory_policy || 'CONTINUE',
       inventoryItem: {
         sku: variant.sku,
-        tracked: false,
+        tracked: Boolean(variant.tracked),
         requiresShipping: false,
       },
     })),

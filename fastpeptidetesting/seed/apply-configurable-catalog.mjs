@@ -203,6 +203,19 @@ function main() {
     .map((p) => ({
       ...p,
       collection: false,
+      template_suffix: 'compound',
+      option_name: null,
+      variants: [
+        {
+          title: 'Default Title',
+          price: PRICE_PER_VIAL.toFixed(2),
+          sku: p.variants[0].sku,
+          option_value: null,
+          requires_shipping: false,
+          tracked: true,
+          inventory_policy: 'DENY',
+        },
+      ],
       description_html: [
         `<p>HPLC purity and potency analysis for ${escapeHtml(compoundDisplayName(p))}. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>`,
         `<p>Base testing is $${PRICE_PER_VIAL}.00 per vial via <a href="/products/peptide-testing?compound=${compoundHandleFromProduct(p)}">Peptide Test</a>.</p>`,

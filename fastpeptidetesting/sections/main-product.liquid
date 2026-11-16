@@ -220,6 +220,19 @@
                   <div {{ block.shopify_attributes }}>
                     {% render 'peptide-test-configurator', product: product, product_form_id: product_form_id, section_id: section.id %}
                   </div>
+                {%- when 'peptide_test_link' -%}
+                  {%- assign compound_handle = product.handle | remove_last: '-testing' -%}
+                  <div class="product-form__buttons" {{ block.shopify_attributes }}>
+                    {%- if block.settings.text != blank -%}
+                      <p class="caption">{{ block.settings.text | escape }}</p>
+                    {%- endif -%}
+                    <a
+                      href="{{ routes.root_url | remove_last: '/' }}/products/peptide-testing?compound={{ compound_handle | url_encode }}"
+                      class="button button--full-width button--primary"
+                    >
+                      {{- block.settings.label | escape -}}
+                    </a>
+                  </div>
                 {%- when 'sample_intake' -%}
                   <div {{ block.shopify_attributes }}>
                     {%- assign hide_compound_name = false -%}
@@ -982,6 +995,24 @@
         {
           "type": "paragraph",
           "content": "Required sample fields attached to the order as line item properties."
+        }
+      ]
+    },
+    {
+      "type": "peptide_test_link",
+      "name": "Peptide Test link",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Button label",
+          "default": "Order on Peptide Test"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Helper text"
         }
       ]
     },

@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "text_includes": {
+          "type": "text",
+          "settings": {
+            "text": "Ordered through Peptide Test. Choose vial count, peptides, optional screens, and turnaround on the Peptide Test page.",
+            "text_style": "subtitle"
+          }
+        },
+        "peptide_test_link": {
+          "type": "peptide_test_link",
+          "settings": {
+            "label": "Order on Peptide Test",
+            "text": ""
+          }
+        },
+        "description": {
+          "type": "description"
+        }
+      },
+      "block_order": ["title", "text_includes", "peptide_test_link", "description"],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_position": "left",
+        "gallery_layout": "stacked",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": ["main"]
+}

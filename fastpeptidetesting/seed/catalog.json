@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T15:25:50.514Z",
+  "generated_at": "2026-11-16T02:34:02.465Z",
   "source": "https://peptidetest.com",
   "note": "March Analytics catalog. Commerce uses Peptide Test ($250/vial). Compound products retained for SEO. Rush and screens are checkout helpers.",
   "collection": {
@@ -87,82 +87,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Benzyl Alcohol. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=benzyl-alcohol\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Benzyl Alcohol Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Benzyl Alcohol. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
+          "title": "Default Title",
           "price": "250.00",
           "sku": "MA-BENZYLALCOHO-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "385.00",
-          "sku": "MA-BENZYLALCOHO-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "370.00",
-          "sku": "MA-BENZYLALCOHO-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-BENZYLALCOHO-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "490.00",
-          "sku": "MA-BENZYLALCOHO-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "655.00",
-          "sku": "MA-BENZYLALCOHO-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "610.00",
-          "sku": "MA-BENZYLALCOHO-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "790.00",
-          "sku": "MA-BENZYLALCOHO-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "730.00",
-          "sku": "MA-BENZYLALCOHO-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "blend-assay-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
@@ -178,82 +116,20 @@
       "description_html": "<p>HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=bpc-157-and-tb-500-tb4\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "BPC-157 and TB-500 (TB4) Blend Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for BPC-157 and TB-500 (TB4) Blend. Ship your sample after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-BPC157ANDTB5-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-BPC157ANDTB5-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-BPC157ANDTB5-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-BPC157ANDTB5-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-BPC157ANDTB5-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-BPC157ANDTB5-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-BPC157ANDTB5-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-BPC157ANDTB5-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-BPC157ANDTB5-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "bpc-157-arginate-assay-purity-and-mass-testing",
@@ -269,82 +145,20 @@
       "description_html": "<p>HPLC purity and potency analysis for BPC-157 Arginate. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=bpc-157-arginate\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "BPC-157 Arginate Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for BPC-157 Arginate. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "200.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-BPC157ARGINA-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "335.00",
-          "sku": "MA-BPC157ARGINA-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "320.00",
-          "sku": "MA-BPC157ARGINA-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "470.00",
-          "sku": "MA-BPC157ARGINA-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "440.00",
-          "sku": "MA-BPC157ARGINA-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "605.00",
-          "sku": "MA-BPC157ARGINA-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "560.00",
-          "sku": "MA-BPC157ARGINA-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "740.00",
-          "sku": "MA-BPC157ARGINA-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "680.00",
-          "sku": "MA-BPC157ARGINA-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "bpc-157-purity-and-mass-testing",
@@ -360,82 +174,20 @@
       "description_html": "<p>HPLC purity and potency analysis for BPC-157. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=bpc-157\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "BPC-157 Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for BPC-157. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "200.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-BPC157-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "335.00",
-          "sku": "MA-BPC157-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "320.00",
-          "sku": "MA-BPC157-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "470.00",
-          "sku": "MA-BPC157-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "440.00",
-          "sku": "MA-BPC157-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "605.00",
-          "sku": "MA-BPC157-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "560.00",
-          "sku": "MA-BPC157-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "740.00",
-          "sku": "MA-BPC157-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "680.00",
-          "sku": "MA-BPC157-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "cagrilintide-purity-and-mass-testing",
@@ -451,82 +203,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Cagrilintide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=cagrilintide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Cagrilintide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Cagrilintide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-CAGRILINTIDE-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-CAGRILINTIDE-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-CAGRILINTIDE-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-CAGRILINTIDE-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-CAGRILINTIDE-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-CAGRILINTIDE-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-CAGRILINTIDE-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-CAGRILINTIDE-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-CAGRILINTIDE-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "blend-assay-cagrireta-purity-and-mass-testing",
@@ -542,82 +232,20 @@
       "description_html": "<p>HPLC purity and potency analysis for CagriReta. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=cagrireta\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "CagriReta Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for CagriReta. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "800.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-CAGRIRETA-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "935.00",
-          "sku": "MA-CAGRIRETA-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "920.00",
-          "sku": "MA-CAGRIRETA-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "1070.00",
-          "sku": "MA-CAGRIRETA-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "1040.00",
-          "sku": "MA-CAGRIRETA-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "1205.00",
-          "sku": "MA-CAGRIRETA-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "1160.00",
-          "sku": "MA-CAGRIRETA-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "1340.00",
-          "sku": "MA-CAGRIRETA-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "1280.00",
-          "sku": "MA-CAGRIRETA-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "blend-assay-cagrisema-purity-and-mass-testing",
@@ -633,82 +261,20 @@
       "description_html": "<p>HPLC purity and potency analysis for CagriSema. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=cagrisema\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "CagriSema Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for CagriSema. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "700.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-CAGRISEMA-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "835.00",
-          "sku": "MA-CAGRISEMA-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "820.00",
-          "sku": "MA-CAGRISEMA-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "970.00",
-          "sku": "MA-CAGRISEMA-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-CAGRISEMA-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "1105.00",
-          "sku": "MA-CAGRISEMA-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "1060.00",
-          "sku": "MA-CAGRISEMA-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "1240.00",
-          "sku": "MA-CAGRISEMA-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "1180.00",
-          "sku": "MA-CAGRISEMA-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "cjc-1295-no-dac-purity-and-mass-testing",
@@ -724,82 +290,20 @@
       "description_html": "<p>HPLC purity and potency analysis for CJC-1295 (no DAC). Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=cjc-1295-no-dac\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "CJC-1295 (no DAC) Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for CJC-1295 (no DAC). Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "200.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-CJC1295NODAC-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "335.00",
-          "sku": "MA-CJC1295NODAC-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "320.00",
-          "sku": "MA-CJC1295NODAC-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "470.00",
-          "sku": "MA-CJC1295NODAC-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "440.00",
-          "sku": "MA-CJC1295NODAC-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "605.00",
-          "sku": "MA-CJC1295NODAC-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "560.00",
-          "sku": "MA-CJC1295NODAC-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "740.00",
-          "sku": "MA-CJC1295NODAC-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "680.00",
-          "sku": "MA-CJC1295NODAC-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "custom-analytical-service",
@@ -871,82 +375,20 @@
       "description_html": "<p>HPLC purity and potency analysis for GHK-Cu. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=ghk-cu\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "GHK-Cu Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for GHK-Cu. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
+          "title": "Default Title",
           "price": "250.00",
           "sku": "MA-GHKCU-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "385.00",
-          "sku": "MA-GHKCU-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "370.00",
-          "sku": "MA-GHKCU-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-GHKCU-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "490.00",
-          "sku": "MA-GHKCU-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "655.00",
-          "sku": "MA-GHKCU-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "610.00",
-          "sku": "MA-GHKCU-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "790.00",
-          "sku": "MA-GHKCU-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "730.00",
-          "sku": "MA-GHKCU-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "glow-blend-assay-ghk-cu-bpc-157-and-tb-500-tb4-purity-and-mass-testing",
@@ -962,82 +404,20 @@
       "description_html": "<p>HPLC purity and potency analysis for GLOW Blend. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=glow-blend\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "GLOW Blend Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for GLOW Blend - GHK-Cu, BPC-157 and TB-500 (TB4). Ship your sample after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "600.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-GLOWBLEND-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "735.00",
-          "sku": "MA-GLOWBLEND-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "720.00",
-          "sku": "MA-GLOWBLEND-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "870.00",
-          "sku": "MA-GLOWBLEND-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "840.00",
-          "sku": "MA-GLOWBLEND-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "1005.00",
-          "sku": "MA-GLOWBLEND-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "960.00",
-          "sku": "MA-GLOWBLEND-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "1140.00",
-          "sku": "MA-GLOWBLEND-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "1080.00",
-          "sku": "MA-GLOWBLEND-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "metals-analysis-epa-methods",
@@ -1081,82 +461,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=ipamorelin-and-cjc-1295-no-dac\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Ipamorelin and CJC-1295 (no DAC) Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Ipamorelin and CJC-1295 (no DAC). Ship your sample after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-IPAMORELINAN-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-IPAMORELINAN-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-IPAMORELINAN-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-IPAMORELINAN-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-IPAMORELINAN-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-IPAMORELINAN-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-IPAMORELINAN-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-IPAMORELINAN-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-IPAMORELINAN-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "blend-assay-ipamorelin-and-tesamorelin-purity-and-mass-testing-copy",
@@ -1172,82 +490,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=ipamorelin-and-tesamorelin\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Ipamorelin and Tesamorelin Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Ipamorelin and Tesamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "450.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-IPAMORELINAN-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "585.00",
-          "sku": "MA-IPAMORELINAN-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "570.00",
-          "sku": "MA-IPAMORELINAN-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "720.00",
-          "sku": "MA-IPAMORELINAN-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "690.00",
-          "sku": "MA-IPAMORELINAN-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "855.00",
-          "sku": "MA-IPAMORELINAN-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "810.00",
-          "sku": "MA-IPAMORELINAN-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "990.00",
-          "sku": "MA-IPAMORELINAN-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "930.00",
-          "sku": "MA-IPAMORELINAN-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "ipamorelin-purity-and-mass-testing",
@@ -1263,82 +519,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Ipamorelin. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=ipamorelin\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Ipamorelin Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Ipamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "200.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-IPAMORELIN-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "335.00",
-          "sku": "MA-IPAMORELIN-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "320.00",
-          "sku": "MA-IPAMORELIN-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "470.00",
-          "sku": "MA-IPAMORELIN-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "440.00",
-          "sku": "MA-IPAMORELIN-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "605.00",
-          "sku": "MA-IPAMORELIN-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "560.00",
-          "sku": "MA-IPAMORELIN-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "740.00",
-          "sku": "MA-IPAMORELIN-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "680.00",
-          "sku": "MA-IPAMORELIN-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "karl-fischer-water-analysis",
@@ -1382,82 +576,20 @@
       "description_html": "<p>HPLC purity and potency analysis for KLOW Blend. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=klow-blend\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "KLOW Blend Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for KLOW Blend - KPV, GHK-Cu, BPC-157 and TB-500 (TB4). Certificate of analysis issued after testing.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "800.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-KLOWBLEND-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "935.00",
-          "sku": "MA-KLOWBLEND-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "920.00",
-          "sku": "MA-KLOWBLEND-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "1070.00",
-          "sku": "MA-KLOWBLEND-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "1040.00",
-          "sku": "MA-KLOWBLEND-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "1205.00",
-          "sku": "MA-KLOWBLEND-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "1160.00",
-          "sku": "MA-KLOWBLEND-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "1340.00",
-          "sku": "MA-KLOWBLEND-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "1280.00",
-          "sku": "MA-KLOWBLEND-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "kpv-purity-and-mass-testing",
@@ -1473,82 +605,20 @@
       "description_html": "<p>HPLC purity and potency analysis for KPV. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=kpv\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "KPV Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for KPV. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-KPV-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-KPV-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-KPV-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-KPV-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-KPV-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-KPV-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-KPV-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-KPV-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-KPV-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "mazdutide-purity-and-mass-testing",
@@ -1564,82 +634,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Mazdutide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=mazdutide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Mazdutide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Mazdutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-MAZDUTIDE-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-MAZDUTIDE-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-MAZDUTIDE-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-MAZDUTIDE-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-MAZDUTIDE-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-MAZDUTIDE-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-MAZDUTIDE-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-MAZDUTIDE-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-MAZDUTIDE-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "mots-c-purity-and-mass-testing",
@@ -1655,82 +663,20 @@
       "description_html": "<p>HPLC purity and potency analysis for MOTS-c. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=mots-c\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "MOTS-c Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for MOTS-c. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-MOTSC-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-MOTSC-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-MOTSC-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-MOTSC-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-MOTSC-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-MOTSC-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-MOTSC-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-MOTSC-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-MOTSC-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "nad-purity-and-mass-testing",
@@ -1746,82 +692,20 @@
       "description_html": "<p>HPLC purity and potency analysis for NAD+. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=nad\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "NAD+ Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for NAD+. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-NAD-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-NAD-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-NAD-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-NAD-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-NAD-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-NAD-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-NAD-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-NAD-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-NAD-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "retatrutide-purity-and-mass-testing",
@@ -1837,82 +721,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Retatrutide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=retatrutide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Retatrutide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Retatrutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-RETATRUTIDE-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-RETATRUTIDE-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-RETATRUTIDE-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-RETATRUTIDE-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-RETATRUTIDE-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-RETATRUTIDE-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-RETATRUTIDE-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-RETATRUTIDE-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-RETATRUTIDE-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": null,
@@ -1982,82 +804,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Semaglutide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=semaglutide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Semaglutide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Semaglutide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "300.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-SEMAGLUTIDE-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "435.00",
-          "sku": "MA-SEMAGLUTIDE-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "420.00",
-          "sku": "MA-SEMAGLUTIDE-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "570.00",
-          "sku": "MA-SEMAGLUTIDE-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "540.00",
-          "sku": "MA-SEMAGLUTIDE-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "705.00",
-          "sku": "MA-SEMAGLUTIDE-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "660.00",
-          "sku": "MA-SEMAGLUTIDE-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "840.00",
-          "sku": "MA-SEMAGLUTIDE-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "780.00",
-          "sku": "MA-SEMAGLUTIDE-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "ss-31-elamipretide-purity-and-mass-testing-copy",
@@ -2073,82 +833,20 @@
       "description_html": "<p>HPLC purity and potency analysis for SS-31 Elamipretide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=ss-31-elamipretide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "SS-31 Elamipretide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for SS-31 Elamipretide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "400.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-SS31ELAMIPRE-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "535.00",
-          "sku": "MA-SS31ELAMIPRE-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-SS31ELAMIPRE-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "670.00",
-          "sku": "MA-SS31ELAMIPRE-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "640.00",
-          "sku": "MA-SS31ELAMIPRE-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "805.00",
-          "sku": "MA-SS31ELAMIPRE-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "760.00",
-          "sku": "MA-SS31ELAMIPRE-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "940.00",
-          "sku": "MA-SS31ELAMIPRE-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "880.00",
-          "sku": "MA-SS31ELAMIPRE-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "sterility-test",
@@ -2192,82 +890,20 @@
       "description_html": "<p>HPLC purity and potency analysis for TB-500 (TB4). Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=tb-500-tb4\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "TB-500 (TB4) Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for TB-500 (TB4). Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "200.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-TB500TB4-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "335.00",
-          "sku": "MA-TB500TB4-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "320.00",
-          "sku": "MA-TB500TB4-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "470.00",
-          "sku": "MA-TB500TB4-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "440.00",
-          "sku": "MA-TB500TB4-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "605.00",
-          "sku": "MA-TB500TB4-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "560.00",
-          "sku": "MA-TB500TB4-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "740.00",
-          "sku": "MA-TB500TB4-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "680.00",
-          "sku": "MA-TB500TB4-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "tesamorelin-purity-and-mass-testing",
@@ -2283,82 +919,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Tesamorelin. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=tesamorelin\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Tesamorelin Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Tesamorelin. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
+          "title": "Default Title",
           "price": "250.00",
           "sku": "MA-TESAMORELIN-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "385.00",
-          "sku": "MA-TESAMORELIN-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "370.00",
-          "sku": "MA-TESAMORELIN-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "520.00",
-          "sku": "MA-TESAMORELIN-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "490.00",
-          "sku": "MA-TESAMORELIN-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "655.00",
-          "sku": "MA-TESAMORELIN-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "610.00",
-          "sku": "MA-TESAMORELIN-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "790.00",
-          "sku": "MA-TESAMORELIN-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "730.00",
-          "sku": "MA-TESAMORELIN-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "tirzepatide-purity-and-mass-testing",
@@ -2374,82 +948,20 @@
       "description_html": "<p>HPLC purity and potency analysis for Tirzepatide. Prefer the single Peptide Test product to configure vials, add-ons, and turnaround.</p>\n<p>Base testing is $250.00 per vial via <a href=\"/products/peptide-testing?compound=tirzepatide\">Peptide Test</a>.</p>\n<p>Samples are submitted for research and analytical purposes only. Not for human or animal use.</p>",
       "seo_title": "Tirzepatide Testing | March Analytics",
       "seo_description": "HPLC purity and potency analysis for Tirzepatide. Ship your sample to March Analytics after checkout and receive a certificate of analysis.",
-      "option_name": "Number of Vials",
+      "option_name": null,
       "variants": [
         {
-          "title": "1 Vial",
-          "price": "300.00",
+          "title": "Default Title",
+          "price": "250.00",
           "sku": "MA-TIRZEPATIDE-1",
-          "option_value": "1 Vial",
+          "option_value": null,
           "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Differentiated Results)",
-          "price": "435.00",
-          "sku": "MA-TIRZEPATIDE-2",
-          "option_value": "2 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "2 Vials (Non-Differentiated Results)",
-          "price": "420.00",
-          "sku": "MA-TIRZEPATIDE-3",
-          "option_value": "2 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Differentiated Results)",
-          "price": "570.00",
-          "sku": "MA-TIRZEPATIDE-4",
-          "option_value": "3 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "3 Vials (Non-Differentiated Results)",
-          "price": "540.00",
-          "sku": "MA-TIRZEPATIDE-5",
-          "option_value": "3 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Differentiated Results)",
-          "price": "705.00",
-          "sku": "MA-TIRZEPATIDE-6",
-          "option_value": "4 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "4 Vials (Non-Differentiated Results)",
-          "price": "660.00",
-          "sku": "MA-TIRZEPATIDE-7",
-          "option_value": "4 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Differentiated Results)",
-          "price": "840.00",
-          "sku": "MA-TIRZEPATIDE-8",
-          "option_value": "5 Vials (Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
-        },
-        {
-          "title": "5 Vials (Non-Differentiated Results)",
-          "price": "780.00",
-          "sku": "MA-TIRZEPATIDE-9",
-          "option_value": "5 Vials (Non-Differentiated Results)",
-          "requires_shipping": false,
-          "tracked": false
+          "tracked": true,
+          "inventory_policy": "DENY"
         }
       ],
-      "collection": false
+      "collection": false,
+      "template_suffix": "compound"
     },
     {
       "source_handle": "vial-vacuum-test-add-on-test",

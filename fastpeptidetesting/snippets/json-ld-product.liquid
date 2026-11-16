@@ -14,7 +14,8 @@
   {%- if product.featured_image %}
   "image": {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }},
   {%- endif %}
-  "additionalType": "https://schema.org/Service",
+  "additionalType": "https://schema.org/Service"
+  {%- unless product.tags contains 'compound' -%},
   "offers": {
     "@type": "Offer",
     "price": {{ current_variant.price | money_without_currency | remove: ',' | json }},
@@ -23,5 +24,6 @@
     "url": {{ product_url | json }},
     "seller": { "@id": {{ org_id | json }} }
   }
+  {%- endunless %}
 }
 </script>
