@@ -93,6 +93,19 @@ the purchase-time compliance record and is unchanged.
 The cookie-only age overlay (`Compliance\AgeGate`) is off for this profile;
 the registration attestation replaces it.
 
+## Affiliates
+
+Oct 2026, client decisions (Adam):
+
+- Recruiters are Lele (`LELE10`) and Jess (`JESS10`). Each also sells under that same code. Own sales earn the 25% rep commission and the 7% recruiter commission.
+- Jess's reps: `BUNNY10`, `MALIA10`, `LILLIE10`, `MUSHY10`, `JAELYNN10`, `MAGICAL10`, `ROSE10`, `LANDYN10`, `KENDALL10`, `EMILY10`.
+- House reps, no recruiter and no 7% line: `BRIANNA10`, `KEISHA10`, `SORIAH10`, `KALEEN10`.
+- `TRIZZY10`, `TIM10`, `SUMMER10`, and `LUPE10` stay plain 10% VIP promotions until an administrator links them to a rep.
+- Volume breaks are the price the commission is calculated on. The affiliate 10% stacks with that price. The code does not stack with a different coupon; the referral is still recorded.
+- Login emails are not in the repo. `wp noviq affiliates seed` creates the program records and links the existing VIP coupons. An administrator attaches users later.
+
+Commissions are 25% (rep) and 7% (recruiter) of product line totals after discounts, excluding tax, shipping, and fees. They post when the order is paid, as an idempotent ledger in integer cents. Refunds and payment reversals are additional negative rows. Customer ownership is the first paid referral and follows that customer afterward. Rep and recruiter dashboards are My Account screens. Payouts are a monthly CSV, paid manually. Operations: `noviqpeptides/docs/affiliates.md`.
+
 ## Constraint inherited from the overview
 
 This site must not link to bacwatermarket.com or fastpeptidetesting.com, and
@@ -100,6 +113,21 @@ must not share branding with them. See `specs/00-overview.md`.
 
 Outbound links from here to the Shopify sites are lower risk than the reverse,
 but stay out until the client accepts the tradeoff in writing.
+
+## Catalog
+
+Oct 2026: the catalog carries every americanpeptides.us product except
+bacteriostatic water ("Reconstitution Solution") and American Peptides merch.
+Generic compound names only, no AP marks, photography, or marketing copy.
+Production pricing keeps the client rule: PSP vial price where PSP sells the
+vial, otherwise the AP price, rounded up to whole dollars, 100 units per
+variant. Rules and regeneration steps: `noviqpeptides/deploy/README.md`.
+
+Oct 2026: vials are 10 mg and larger only. AOD-9604, DSIP, GHRP-2 and IGF-1 LR3
+stay at their existing sub-10 mg sizes. Blends count the vial total. Dihexa
+capsules, the Selank 5 mg spray, and the Tirzepatide / AOD-9604 / Tesamorelin set
+are retired. Research sets carry 10 mg vials, priced at the AP set price plus the
+higher AP or PSP 5-to-10 mg vial step.
 
 ## Policy pages
 

@@ -7,6 +7,7 @@ noviqpeptides/local/data/
 noviqpeptides/local/seed-images/*.png
 noviqpeptides/deploy/.env
 noviqpeptides/deploy/preview/.env
+noviqpeptides/deploy/backups/
 *.zip
 scripts/venv/
 scripts/generated_test_images/

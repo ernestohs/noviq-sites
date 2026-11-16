@@ -49,6 +49,7 @@ services:
       - ../plugin:/var/www/html/wp-content/plugins/noviq-peptides
       - ./setup.sh:/setup.sh:ro
       - ./seed-images:/seed-images:ro
+      - ../tests:/tests:ro
     depends_on:
       db:
         condition: service_healthy

@@ -1,0 +1,24 @@
+{
+  "recruiters": [
+    { "name": "Lele", "code": "LELE10" },
+    { "name": "Jess", "code": "JESS10" }
+  ],
+  "reps": [
+    { "name": "Lele", "code": "LELE10", "recruiter": "Lele" },
+    { "name": "Jess", "code": "JESS10", "recruiter": "Jess" },
+    { "name": "Bunny", "code": "BUNNY10", "recruiter": "Jess" },
+    { "name": "Malia", "code": "MALIA10", "recruiter": "Jess" },
+    { "name": "Lillie", "code": "LILLIE10", "recruiter": "Jess" },
+    { "name": "Mushy", "code": "MUSHY10", "recruiter": "Jess" },
+    { "name": "Jaelynn", "code": "JAELYNN10", "recruiter": "Jess" },
+    { "name": "Magical", "code": "MAGICAL10", "recruiter": "Jess" },
+    { "name": "Rose", "code": "ROSE10", "recruiter": "Jess" },
+    { "name": "Landyn", "code": "LANDYN10", "recruiter": "Jess" },
+    { "name": "Kendall", "code": "KENDALL10", "recruiter": "Jess" },
+    { "name": "Emily", "code": "EMILY10", "recruiter": "Jess" },
+    { "name": "Brianna", "code": "BRIANNA10", "recruiter": null },
+    { "name": "Keisha", "code": "KEISHA10", "recruiter": null },
+    { "name": "Soriah", "code": "SORIAH10", "recruiter": null },
+    { "name": "Kaleen", "code": "KALEEN10", "recruiter": null }
+  ]
+}

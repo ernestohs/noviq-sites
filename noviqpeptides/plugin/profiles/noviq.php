@@ -18,6 +18,7 @@ return array(
 		'volume_breaks'    => true,
 		'price_display'    => true,
 		'referral_coupons' => true,
+		'affiliates'       => true,
 		'subscriptions'    => true,
 		'age_gate'          => false,
 		'registration_gate' => true,

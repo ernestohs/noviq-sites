@@ -94,18 +94,42 @@ Then runs `wp theme activate`, `wp plugin activate`, and `wp rewrite flush` over
 
 Dev seed (`products.json`) keeps placeholder prices for localhost. Production uses **`products.production.json`** in the plugin:
 
-- Lyophilized **vial peptides only** (no PSP sprays, oral, bundles, or supplies)
-- Prices match [PSPeptides](https://pspeptides.com/shop/) vial PDPs, **rounded up** to whole dollars (`$54.99` → `$55`)
-- Variant sizes match PSP per product (not the dev 5/10/15 mg grid)
+- Same 76 products as the dev seed (original Noviq catalog plus the American Peptides catalog, minus bac water and AP merch)
+- **10 mg and larger** only (`catalog_rules.py`). Exceptions kept at their existing sizes: AOD-9604, DSIP, GHRP-2, IGF-1 LR3. Blends count the vial total (`5mg + 5mg` stays). Products only sold under 10 mg are retired (Dihexa capsules, Selank 5 mg spray, the Tirzepatide / AOD-9604 / Tesamorelin set)
+- Research sets with a 5 mg vial ship it at 10 mg; the set price adds the higher of the AP and PSP 5-to-10 mg vial price step (BPC-157 +$40, Ipamorelin +$20, Sermorelin +$20)
+- Lyophilized vials that PSP also sells: prices match [PSPeptides](https://pspeptides.com/shop/) vial PDPs, **rounded up** to whole dollars (`$54.99` → `$55`), and variant sizes match PSP
+- Everything else (Noviq-only vials, AP vials PSP lacks, sprays, strips, research sets): dev variants and prices, rounded up to whole dollars (`$292.50` → `$293`)
 - **100 units** stock per variant
 - Store displays **`$55`** (0 decimal places)
 
-Regenerate the production JSON after PSP price changes:
+Regenerate after AP or PSP price changes (AP first, because the production build reads the dev seed):
 
 ```bash
 cd noviqpeptides/deploy
+python3 build-ap-catalog.py
 python3 build-production-catalog.py
 ```
+
+`build-production-catalog.py` rewrites every PSP-matched row from live PSP data, so review the diff for price changes on existing products before deploying. To re-apply catalog changes without picking up PSP price drift, run `python3 build-production-catalog.py --keep-psp-prices` (reuses the PSP sizes and prices already in `products.production.json`, no network).
+
+The seed removes dropped sizes (obsolete variations) but never deletes products. After retiring a product, delete it in WP admin on any store that already has it.
+
+Back up the live store first. The seed hard-deletes dropped variations and rewrites store settings, so rollback needs a full snapshot:
+
+```bash
+cd noviqpeptides/deploy
+./backup-production.sh
+```
+
+Writes `backups/<timestamp>/` (gitignored, owner-only permissions): `db.sql.gz` (full database), `wp-content.tar.gz` (deployed theme, plugin, mu-plugins), `catalog.json` (products and variations with SKU, price, stock for diffing), `manifest.txt`, `SHA256SUMS`. The dump holds customer and order data; keep it off shared drives and out of git.
+
+Roll back to a snapshot:
+
+```bash
+./restore-production.sh backups/<timestamp>
+```
+
+It verifies checksums and host, asks for confirmation, takes a `-pre-restore` backup, then restores files and imports the database. The import replaces everything, so orders placed after the snapshot are lost; export them first if the store has taken orders since.
 
 Deploy and apply on the server (rsync + production seed):
 
@@ -150,6 +174,33 @@ The script:
 Idempotent on lot number and PDF filename. Rows marked `"skip": true` in the manifest are logged and not imported (size mismatches and products not in the catalog).
 
 Do **not** run `wp noviq import_coas` against local Docker as part of normal workflow — empty `/coa` on localhost is intentional.
+
+### Affiliate program
+
+Ship the plugin first. Tables are created on the next request (`noviq_affiliates_db_version`). Then seed the roster. This is separate from catalog seed.
+
+```bash
+cd noviqpeptides/deploy
+./backup-production.sh
+./rsync-own-server.sh
+```
+
+On the server, after the plugin is loaded:
+
+```bash
+wp --allow-root --path=/var/www/noviqpeptides --user=1 noviq affiliates seed --dry-run
+wp --allow-root --path=/var/www/noviqpeptides --user=1 noviq affiliates seed
+wp --allow-root --path=/var/www/noviqpeptides --user=1 noviq affiliates attach-user LELE10 person@example.com --recruiter
+```
+
+`attach-user` waits on real login emails from the client. Optional history, dry-run first:
+
+```bash
+wp --allow-root --path=/var/www/noviqpeptides --user=1 noviq affiliates backfill --since=YYYY-MM-DD --dry-run
+wp --allow-root --path=/var/www/noviqpeptides --user=1 noviq affiliates backfill --since=YYYY-MM-DD
+```
+
+Confirm a paid order on staging with the Tagada webhook. Local Docker cannot receive that webhook. Full rules: `noviqpeptides/docs/affiliates.md`.
 
 ## GoDaddy
 

@@ -76,6 +76,11 @@ register_activation_hook(
 		if ( Profile::feature( 'referral_coupons' ) ) {
 			Commerce\ReferralCoupon::register_rewrite();
 		}
+		if ( Profile::feature( 'affiliates' ) ) {
+			Affiliates\Schema::install();
+			Affiliates\Account\Dashboard::register_endpoint();
+			update_option( 'noviq_affiliates_db_version', Affiliates\Schema::DB_VERSION, false );
+		}
 		flush_rewrite_rules();
 	}
 );

@@ -100,6 +100,7 @@ to `$order->get_total()` to the cent:
 | 10 units across 5 variants | No volume tier (per-variant rule) |
 | VIP referral coupon alone | Coupon discount on Woo total |
 | VIP coupon + qty 5 | Stacked coupon and 10% tier |
+| Rep code + volume tier | Same stack as the VIP row: the rep code is the 10% individual-use coupon on the volume price. The hosted charge matches `$order->get_total()`. A `wc_total_reconciliation` fee is part of that charge and is excluded from the affiliate commission base |
 
 If any row diverges, stop go-live and switch to Inline card (`tagada_inline`),
 which charges `$order->get_total()` directly, or fix catalogue sync on the

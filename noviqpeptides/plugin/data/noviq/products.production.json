@@ -48,13 +48,6 @@
     "image": "BPC157 MAIN.png",
     "variants": [
       {
-        "sku": "DEV-BPC-157-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 5000,
-        "stock_qty": 100
-      },
-      {
         "sku": "DEV-BPC-157-10MG",
         "label": "10mg",
         "amount_mg": 10,
@@ -85,13 +78,6 @@
     "attribute": "vial-size",
     "image": "cjc1295-main.png",
     "variants": [
-      {
-        "sku": "DEV-CJC-1295-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 3600,
-        "stock_qty": 100
-      },
       {
         "sku": "DEV-CJC-1295-10MG",
         "label": "10mg",
@@ -365,13 +351,6 @@
     "image": "GONADORELIN MAIN.png",
     "variants": [
       {
-        "sku": "DEV-GONADORELIN-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 3500,
-        "stock_qty": 100
-      },
-      {
         "sku": "DEV-GONADORELIN-10MG",
         "label": "10mg",
         "amount_mg": 10,
@@ -448,13 +427,6 @@
     "image": "IPAMORELIN MAIN.png",
     "variants": [
       {
-        "sku": "DEV-IPAMORELIN-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 4000,
-        "stock_qty": 100
-      },
-      {
         "sku": "DEV-IPAMORELIN-10MG",
         "label": "10mg",
         "amount_mg": 10,
@@ -485,13 +457,6 @@
     "attribute": "vial-size",
     "image": "KISS PEPTIN MAIN.png",
     "variants": [
-      {
-        "sku": "DEV-KISSPEPTIN-10-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 4000,
-        "stock_qty": 100
-      },
       {
         "sku": "DEV-KISSPEPTIN-10-10MG",
         "label": "10mg",
@@ -557,13 +522,6 @@
     "attribute": "vial-size",
     "image": "LIPO-C main.png",
     "variants": [
-      {
-        "sku": "DEV-LIPO-C-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 8000,
-        "stock_qty": 100
-      },
       {
         "sku": "DEV-LIPO-C-10MG",
         "label": "10mg",
@@ -641,13 +599,6 @@
     "image": "OXT-T -main.png",
     "variants": [
       {
-        "sku": "DEV-OXYTOCIN-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 4000,
-        "stock_qty": 100
-      },
-      {
         "sku": "DEV-OXYTOCIN-10MG",
         "label": "10mg",
         "amount_mg": 10,
@@ -678,13 +629,6 @@
     "attribute": "vial-size",
     "image": "RETA MAIN.png",
     "variants": [
-      {
-        "sku": "DEV-RETATRUTIDE-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 4000,
-        "stock_qty": 100
-      },
       {
         "sku": "DEV-RETATRUTIDE-10MG",
         "label": "10mg",
@@ -738,13 +682,6 @@
     "attribute": "vial-size",
     "image": "RETA+TIRZ.png",
     "variants": [
-      {
-        "sku": "DEV-RETA-TIRZ-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 19000,
-        "stock_qty": 100
-      },
       {
         "sku": "DEV-RETA-TIRZ-10MG",
         "label": "10mg",
@@ -908,13 +845,6 @@
     "image": "TB500 Main.png",
     "variants": [
       {
-        "sku": "DEV-TB-500-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 4500,
-        "stock_qty": 100
-      },
-      {
         "sku": "DEV-TB-500-10MG",
         "label": "10mg",
         "amount_mg": 10,
@@ -945,13 +875,6 @@
     "attribute": "vial-size",
     "image": "TESA Main.png",
     "variants": [
-      {
-        "sku": "DEV-TESAMORELIN-5MG",
-        "label": "5mg",
-        "amount_mg": 5,
-        "price_cents": 6000,
-        "stock_qty": 100
-      },
       {
         "sku": "DEV-TESAMORELIN-10MG",
         "label": "10mg",
@@ -1049,5 +972,1551 @@
     "bundle_of": [],
     "featured": false,
     "rank": 28
+  },
+  {
+    "handle": "5-amino-1mq",
+    "sku": "DEV-5-AMINO-1MQ",
+    "title": "5-Amino-1MQ",
+    "kicker": "Research compound",
+    "category": "peptides",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [],
+    "summary": "Methylquinolinium small molecule studied as a nicotinamide N-methyltransferase (NNMT) inhibitor.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-5-AMINO-1MQ-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 5000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 29
+  },
+  {
+    "handle": "adamax",
+    "sku": "DEV-ADAMAX",
+    "title": "Adamax",
+    "kicker": "Regulatory peptide",
+    "category": "peptides",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "Semax-related heptapeptide analogue carrying an adamantane modification.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-ADAMAX-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 6600,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 30
+  },
+  {
+    "handle": "ara-290",
+    "sku": "DEV-ARA-290",
+    "title": "ARA-290",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [],
+    "summary": "Peptide derived from the helix B surface of erythropoietin, also referred to as cibinetide.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-ARA-290-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 31
+  },
+  {
+    "handle": "cagrilintide",
+    "sku": "DEV-CAGRILINTIDE",
+    "title": "Cagrilintide",
+    "kicker": "Amylin analogue",
+    "category": "metabolic",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [],
+    "summary": "Long-acting acylated amylin analogue used as a reference standard in amylin and calcitonin receptor assays.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-CAGRILINTIDE-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 12600,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 32
+  },
+  {
+    "handle": "humanin",
+    "sku": "DEV-HUMANIN",
+    "title": "Humanin",
+    "kicker": "Mitochondrial-derived peptide",
+    "category": "peptides",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [],
+    "summary": "Mitochondrial-derived peptide encoded within the 16S rRNA region, studied in cellular stress models.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-HUMANIN-10MG",
+        "label": "10mg",
+        "amount_mg": 10,
+        "price_cents": 15000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 33
+  },
+  {
+    "handle": "kpv",
+    "sku": "DEV-KPV",
+    "title": "KPV",
+    "kicker": "Tripeptide",
+    "category": "peptides",
+    "research_areas": [
+      "immune"
+    ],
+    "compounds": [
+      "kpv"
+    ],
+    "summary": "Lys-Pro-Val, the C-terminal tripeptide of alpha-melanocyte-stimulating hormone.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-KPV-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 34
+  },
+  {
+    "handle": "melanotan-1",
+    "sku": "DEV-MELANOTAN-1",
+    "title": "Melanotan-1",
+    "kicker": "Melanocortin analogue",
+    "category": "peptides",
+    "research_areas": [
+      "cosmetic"
+    ],
+    "compounds": [],
+    "summary": "Linear alpha-MSH analogue, also known as afamelanotide, used in melanocortin receptor research.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-MELANOTAN-1-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 35
+  },
+  {
+    "handle": "melanotan-2",
+    "sku": "DEV-MELANOTAN-2",
+    "title": "Melanotan-2",
+    "kicker": "Melanocortin analogue",
+    "category": "peptides",
+    "research_areas": [
+      "cosmetic"
+    ],
+    "compounds": [],
+    "summary": "Cyclic lactam alpha-MSH analogue used as a non-selective melanocortin receptor reference ligand.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-MELANOTAN-2-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 36
+  },
+  {
+    "handle": "nad",
+    "sku": "DEV-NAD",
+    "title": "NAD+",
+    "kicker": "Coenzyme",
+    "category": "peptides",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [],
+    "summary": "Nicotinamide adenine dinucleotide, oxidised form, supplied lyophilized for redox and sirtuin pathway assays.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-NAD-100MG",
+        "label": "100mg",
+        "amount_mg": 100.0,
+        "price_cents": 4500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-NAD-500MG",
+        "label": "500mg",
+        "amount_mg": 500.0,
+        "price_cents": 8000,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-NAD-1000MG",
+        "label": "1000mg",
+        "amount_mg": 1000.0,
+        "price_cents": 10600,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 37
+  },
+  {
+    "handle": "p-21",
+    "sku": "DEV-P-21",
+    "title": "P-21",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "Ciliary neurotrophic factor-derived peptide (P021) studied in neurotrophic signalling models.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-P-21-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 38
+  },
+  {
+    "handle": "pe-22-28",
+    "sku": "DEV-PE-22-28",
+    "title": "PE-22-28",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "Seven-residue peptide derived from spadin, studied as a TREK-1 channel ligand.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-PE-22-28-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 4500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 39
+  },
+  {
+    "handle": "pt-141",
+    "sku": "DEV-PT-141",
+    "title": "PT-141",
+    "kicker": "Melanocortin analogue",
+    "category": "peptides",
+    "research_areas": [
+      "hormone"
+    ],
+    "compounds": [],
+    "summary": "Cyclic heptapeptide melanocortin receptor agonist, also known as bremelanotide.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-PT-141-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 4500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 40
+  },
+  {
+    "handle": "selank",
+    "sku": "DEV-SELANK",
+    "title": "Selank",
+    "kicker": "Regulatory peptide",
+    "category": "peptides",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "Synthetic heptapeptide analogue of tuftsin extended with Pro-Gly-Pro.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-SELANK-11MG",
+        "label": "11mg",
+        "amount_mg": 11.0,
+        "price_cents": 3300,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 41
+  },
+  {
+    "handle": "ss-31",
+    "sku": "DEV-SS-31",
+    "title": "SS-31",
+    "kicker": "Mitochondria-targeted peptide",
+    "category": "peptides",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [],
+    "summary": "Aromatic-cationic tetrapeptide, also known as elamipretide, that localises to the inner mitochondrial membrane.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-SS-31-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 6500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-SS-31-50MG",
+        "label": "50mg",
+        "amount_mg": 50.0,
+        "price_cents": 18000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 42
+  },
+  {
+    "handle": "thymosin-alpha-1",
+    "sku": "DEV-THYMOSIN-ALPHA-1",
+    "title": "Thymosin Alpha-1",
+    "kicker": "Research peptide",
+    "category": "peptides",
+    "research_areas": [
+      "immune"
+    ],
+    "compounds": [],
+    "summary": "28-residue N-acetylated peptide originally isolated from thymic tissue.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-THYMOSIN-ALPHA-1-10MG",
+        "label": "10mg",
+        "amount_mg": 10.0,
+        "price_cents": 5500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 43
+  },
+  {
+    "handle": "cjc-1295-ghrp-6",
+    "sku": "DEV-CJC-1295-GHRP-6",
+    "title": "CJC-1295 (No DAC) + GHRP-6",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "cjc-1295"
+    ],
+    "summary": "Co-lyophilized blend of CJC-1295 (No DAC) and GHRP-6, 5 mg each.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-CJC-1295-GHRP-6-5MG5MG",
+        "label": "5mg + 5mg",
+        "amount_mg": null,
+        "price_cents": 8500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 44
+  },
+  {
+    "handle": "retatrutide-cagrilintide",
+    "sku": "DEV-RETATRUTIDE-CAGRILINTIDE",
+    "title": "Retatrutide + Cagrilintide",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "metabolic"
+    ],
+    "compounds": [
+      "retatrutide"
+    ],
+    "summary": "Co-lyophilized blend of Retatrutide (12.5 mg) and Cagrilintide (2.5 mg).",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-RETATRUTIDE-CAGRILINTIDE-12.5MG2.5MG",
+        "label": "12.5mg + 2.5mg",
+        "amount_mg": null,
+        "price_cents": 20000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 45
+  },
+  {
+    "handle": "selank-semax",
+    "sku": "DEV-SELANK-SEMAX",
+    "title": "Selank + Semax",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [
+      "semax"
+    ],
+    "summary": "Co-lyophilized blend of Selank and Semax, 5 mg each.",
+    "type": "variable",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-SELANK-SEMAX-10MG55MG",
+        "label": "10mg-5/5mg",
+        "amount_mg": null,
+        "price_cents": 5500,
+        "stock_qty": 100
+      },
+      {
+        "sku": "DEV-SELANK-SEMAX-40MG3010MG",
+        "label": "40mg-30/10mg",
+        "amount_mg": null,
+        "price_cents": 13000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 46
+  },
+  {
+    "handle": "tesamorelin-ipamorelin",
+    "sku": "DEV-TESAMORELIN-IPAMORELIN",
+    "title": "Tesamorelin + Ipamorelin",
+    "kicker": "Blend",
+    "category": "blends",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [
+      "tesamorelin",
+      "ipamorelin"
+    ],
+    "summary": "Co-lyophilized blend of Tesamorelin (10 mg) and Ipamorelin (5 mg).",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-TESAMORELIN-IPAMORELIN-10MG5MG",
+        "label": "10mg + 5mg",
+        "amount_mg": null,
+        "price_cents": 14000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 47
+  },
+  {
+    "handle": "pinealon",
+    "sku": "DEV-PINEALON",
+    "title": "Pinealon",
+    "kicker": "Bioregulator",
+    "category": "bioregulators",
+    "research_areas": [
+      "bioregulator"
+    ],
+    "compounds": [],
+    "summary": "Glu-Asp-Arg tripeptide from the Khavinson bioregulator series.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-PINEALON-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 48
+  },
+  {
+    "handle": "prostamax",
+    "sku": "DEV-PROSTAMAX",
+    "title": "Prostamax",
+    "kicker": "Bioregulator",
+    "category": "bioregulators",
+    "research_areas": [
+      "bioregulator"
+    ],
+    "compounds": [],
+    "summary": "Short peptide from the Khavinson bioregulator series, studied in prostate tissue models.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-PROSTAMAX-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 49
+  },
+  {
+    "handle": "testagen",
+    "sku": "DEV-TESTAGEN",
+    "title": "Testagen",
+    "kicker": "Bioregulator",
+    "category": "bioregulators",
+    "research_areas": [
+      "bioregulator"
+    ],
+    "compounds": [],
+    "summary": "Short peptide from the Khavinson bioregulator series, studied in testicular tissue models.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-TESTAGEN-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 50
+  },
+  {
+    "handle": "thymalin",
+    "sku": "DEV-THYMALIN",
+    "title": "Thymalin",
+    "kicker": "Bioregulator",
+    "category": "bioregulators",
+    "research_areas": [
+      "bioregulator",
+      "immune"
+    ],
+    "compounds": [],
+    "summary": "Polypeptide complex from the Khavinson bioregulator series, originally derived from thymic tissue.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-THYMALIN-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 7000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 51
+  },
+  {
+    "handle": "vesugen",
+    "sku": "DEV-VESUGEN",
+    "title": "Vesugen",
+    "kicker": "Bioregulator",
+    "category": "bioregulators",
+    "research_areas": [
+      "bioregulator"
+    ],
+    "compounds": [],
+    "summary": "Short peptide from the Khavinson bioregulator series, studied in vascular endothelium models.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-VESUGEN-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 52
+  },
+  {
+    "handle": "vilon",
+    "sku": "DEV-VILON",
+    "title": "Vilon",
+    "kicker": "Bioregulator",
+    "category": "bioregulators",
+    "research_areas": [
+      "bioregulator"
+    ],
+    "compounds": [],
+    "summary": "Lys-Glu dipeptide from the Khavinson bioregulator series.",
+    "type": "simple",
+    "attribute": "vial-size",
+    "variants": [
+      {
+        "sku": "DEV-VILON-20MG",
+        "label": "20mg",
+        "amount_mg": 20,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 53
+  },
+  {
+    "handle": "adamax-liquid-spray",
+    "sku": "DEV-ADAMAX-LIQUID-SPRAY",
+    "title": "Adamax Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "Adamax pre-dissolved in a 10 mL metered spray bottle, 10 mg per bottle (1 mg/mL).",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-ADAMAX-LIQUID-SPRAY-10MG10ML",
+        "label": "10mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 54
+  },
+  {
+    "handle": "dsip-blend-liquid-spray",
+    "sku": "DEV-DSIP-BLEND-LIQUID-SPRAY",
+    "title": "DSIP Blend Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [
+      "dsip"
+    ],
+    "summary": "DSIP 10 mg, Pinealon 10 mg, melatonin 50 mg and GABA 250 mg pre-dissolved in a 10 mL metered spray bottle.",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-DSIP-BLEND-LIQUID-SPRAY-10ML",
+        "label": "10 mL",
+        "amount_mg": null,
+        "price_cents": 11000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 55
+  },
+  {
+    "handle": "glutathione-liquid-spray",
+    "sku": "DEV-GLUTATHIONE-LIQUID-SPRAY",
+    "title": "Glutathione Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [
+      "glutathione"
+    ],
+    "summary": "Reduced L-glutathione pre-dissolved in a 10 mL metered spray bottle, 500 mg per bottle (50 mg/mL).",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-GLUTATHIONE-LIQUID-SPRAY-500MG10ML",
+        "label": "500mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 56
+  },
+  {
+    "handle": "na-semax-amidate-liquid-spray",
+    "sku": "DEV-NA-SEMAX-AMIDATE-LIQUID-SPRAY",
+    "title": "NA-Semax Amidate Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "N-acetyl Semax amide pre-dissolved in a 10 mL metered spray bottle, 10 mg per bottle (1 mg/mL).",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-NA-SEMAX-AMIDATE-LIQUID-SPRAY-10MG10ML",
+        "label": "10mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 57
+  },
+  {
+    "handle": "nad-liquid-spray",
+    "sku": "DEV-NAD-LIQUID-SPRAY",
+    "title": "NAD+ Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [],
+    "summary": "NAD+ pre-dissolved in a 10 mL metered spray bottle, 500 mg per bottle (50 mg/mL).",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-NAD-LIQUID-SPRAY-500MG10ML",
+        "label": "500mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 10000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 58
+  },
+  {
+    "handle": "oxytocin-liquid-spray",
+    "sku": "DEV-OXYTOCIN-LIQUID-SPRAY",
+    "title": "Oxytocin Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "hormone"
+    ],
+    "compounds": [
+      "oxytocin-acetate"
+    ],
+    "summary": "Oxytocin pre-dissolved in a 10 mL metered spray bottle, 10 mg per bottle (1 mg/mL).",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-OXYTOCIN-LIQUID-SPRAY-10MG10ML",
+        "label": "10mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 59
+  },
+  {
+    "handle": "pinealon-liquid-spray",
+    "sku": "DEV-PINEALON-LIQUID-SPRAY",
+    "title": "Pinealon Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "bioregulator"
+    ],
+    "compounds": [],
+    "summary": "Pinealon (Glu-Asp-Arg) pre-dissolved in a 10 mL metered spray bottle, 10 mg per bottle (1 mg/mL).",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-PINEALON-LIQUID-SPRAY-10MG10ML",
+        "label": "10mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 60
+  },
+  {
+    "handle": "pt-141-liquid-spray",
+    "sku": "DEV-PT-141-LIQUID-SPRAY",
+    "title": "PT-141 Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "hormone"
+    ],
+    "compounds": [],
+    "summary": "PT-141 pre-dissolved in a 10 mL metered spray bottle, 10 mg per bottle (1 mg/mL).",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-PT-141-LIQUID-SPRAY-10MG10ML",
+        "label": "10mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 61
+  },
+  {
+    "handle": "selank-semax-liquid-spray",
+    "sku": "DEV-SELANK-SEMAX-LIQUID-SPRAY",
+    "title": "Selank + Semax Liquid Spray",
+    "kicker": "Liquid spray",
+    "category": "sprays",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [
+      "semax"
+    ],
+    "summary": "Selank and Semax pre-dissolved in a 10 mL metered spray bottle, 10 mg combined per bottle.",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-SELANK-SEMAX-LIQUID-SPRAY-10MG10ML",
+        "label": "10mg / 10 mL",
+        "amount_mg": null,
+        "price_cents": 9000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 62
+  },
+  {
+    "handle": "nad-dissolving-strips",
+    "sku": "DEV-NAD-DISSOLVING-STRIPS",
+    "title": "NAD+ Dissolving Strips",
+    "kicker": "Dissolving strips",
+    "category": "strips",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [],
+    "summary": "NAD+ in a thin-film matrix that disperses in aqueous media. 30 strips per tin.",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-NAD-DISSOLVING-STRIPS-30STRIPS",
+        "label": "30 strips",
+        "amount_mg": null,
+        "price_cents": 6000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 63
+  },
+  {
+    "handle": "paraxanthine-blend-dissolving-strips",
+    "sku": "DEV-PARAXANTHINE-BLEND-DISSOLVING-STRIPS",
+    "title": "Paraxanthine Blend Dissolving Strips",
+    "kicker": "Dissolving strips",
+    "category": "strips",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "Paraxanthine, L-theanine, alpha-GPC, huperzine A, vinpocetine and vitamins B3, B9 and B12 in a thin-film matrix. 30 strips per tin.",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-PARAXANTHINE-BLEND-DISSOLVING-STRIPS-30STRIPS",
+        "label": "30 strips",
+        "amount_mg": null,
+        "price_cents": 4000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 64
+  },
+  {
+    "handle": "selank-semax-dissolving-strips",
+    "sku": "DEV-SELANK-SEMAX-DISSOLVING-STRIPS",
+    "title": "Selank + Semax Dissolving Strips",
+    "kicker": "Dissolving strips",
+    "category": "strips",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [
+      "semax"
+    ],
+    "summary": "Selank and Semax in a thin-film matrix that disperses in aqueous media. 20 strips per box.",
+    "type": "simple",
+    "attribute": "size",
+    "variants": [
+      {
+        "sku": "DEV-SELANK-SEMAX-DISSOLVING-STRIPS-20STRIPS",
+        "label": "20 strips",
+        "amount_mg": null,
+        "price_cents": 17400,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [],
+    "featured": false,
+    "rank": 65
+  },
+  {
+    "handle": "set-retatrutide-ghk-cu-melanotan-1",
+    "sku": "DEV-SET-RETATRUTIDE-GHK-CU-MELANOTAN-1",
+    "title": "Retatrutide, GHK-Cu & Melanotan-1 Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "metabolic",
+      "cosmetic"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: Retatrutide 10 mg, GHK-Cu 50 mg and Melanotan-1 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-RETATRUTIDE-GHK-CU-MELANOTAN-1-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 17000,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "Retatrutide 10 mg",
+        "handle": "retatrutide"
+      },
+      {
+        "label": "GHK-Cu 50 mg",
+        "handle": "ghk-cu"
+      },
+      {
+        "label": "Melanotan-1 10 mg",
+        "handle": "melanotan-1"
+      }
+    ],
+    "featured": false,
+    "rank": 66
+  },
+  {
+    "handle": "set-glow-ghk-cu-kpv",
+    "sku": "DEV-SET-GLOW-GHK-CU-KPV",
+    "title": "GLOW, GHK-Cu & KPV Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "tissue",
+      "cosmetic"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: GLOW 70 mg, GHK-Cu 100 mg and KPV 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-GLOW-GHK-CU-KPV-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 29300,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "GLOW 70 mg",
+        "handle": "glow"
+      },
+      {
+        "label": "GHK-Cu 100 mg",
+        "handle": "ghk-cu"
+      },
+      {
+        "label": "KPV 10 mg",
+        "handle": "kpv"
+      }
+    ],
+    "featured": false,
+    "rank": 67
+  },
+  {
+    "handle": "set-thymosin-alpha-1-thymalin-mots-c",
+    "sku": "DEV-SET-THYMOSIN-ALPHA-1-THYMALIN-MOTS-C",
+    "title": "Thymosin Alpha-1, Thymalin & MOT-C Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "immune"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: Thymosin Alpha-1 10 mg, Thymalin 20 mg and MOT-C 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-THYMOSIN-ALPHA-1-THYMALIN-MOTS-C-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 29300,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "Thymosin Alpha-1 10 mg",
+        "handle": "thymosin-alpha-1"
+      },
+      {
+        "label": "Thymalin 20 mg",
+        "handle": "thymalin"
+      },
+      {
+        "label": "MOT-C 10 mg",
+        "handle": "mot-c"
+      }
+    ],
+    "featured": false,
+    "rank": 68
+  },
+  {
+    "handle": "set-cjc-ipamorelin-tb-500-bpc-157",
+    "sku": "DEV-SET-CJC-IPAMORELIN-TB-500-BPC-157",
+    "title": "CJC-1295 (No DAC) + Ipamorelin, TB-500, BPC-157 & Ipamorelin Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "growth",
+      "tissue"
+    ],
+    "compounds": [],
+    "summary": "4-vial research set: CJC-1295 (No DAC) + Ipamorelin 10 mg, TB-500 10 mg, BPC-157 10 mg and Ipamorelin 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-CJC-IPAMORELIN-TB-500-BPC-157-4VIALS",
+        "label": "4 vials",
+        "amount_mg": null,
+        "price_cents": 30800,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "CJC-1295 (No DAC) + Ipamorelin 10 mg",
+        "handle": "cjc-1295-ipamorelin"
+      },
+      {
+        "label": "TB-500 10 mg",
+        "handle": "tb-500"
+      },
+      {
+        "label": "BPC-157 10 mg",
+        "handle": "bpc-157"
+      },
+      {
+        "label": "Ipamorelin 10 mg",
+        "handle": "ipamorelin"
+      }
+    ],
+    "featured": false,
+    "rank": 69
+  },
+  {
+    "handle": "set-klow-bpc-157-ghk-cu",
+    "sku": "DEV-SET-KLOW-BPC-157-GHK-CU",
+    "title": "KLOW, BPC-157 & GHK-Cu Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: KLOW 80 mg, BPC-157 10 mg and GHK-Cu 100 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-KLOW-BPC-157-GHK-CU-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 32400,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "KLOW 80 mg",
+        "handle": "klow"
+      },
+      {
+        "label": "BPC-157 10 mg",
+        "handle": "bpc-157"
+      },
+      {
+        "label": "GHK-Cu 100 mg",
+        "handle": "ghk-cu"
+      }
+    ],
+    "featured": false,
+    "rank": 70
+  },
+  {
+    "handle": "set-nad-mots-c-ss-31",
+    "sku": "DEV-SET-NAD-MOTS-C-SS-31",
+    "title": "NAD+, MOT-C & SS-31 Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "longevity"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: NAD+ 1000 mg, MOT-C 10 mg and SS-31 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-NAD-MOTS-C-SS-31-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 34700,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "NAD+ 1000 mg",
+        "handle": "nad"
+      },
+      {
+        "label": "MOT-C 10 mg",
+        "handle": "mot-c"
+      },
+      {
+        "label": "SS-31 10 mg",
+        "handle": "ss-31"
+      }
+    ],
+    "featured": false,
+    "rank": 71
+  },
+  {
+    "handle": "set-semax-selank-pinealon",
+    "sku": "DEV-SET-SEMAX-SELANK-PINEALON",
+    "title": "Semax, Selank & Pinealon Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "neuro"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: Semax 10 mg, Selank 10 mg and Pinealon 20 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-SEMAX-SELANK-PINEALON-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 15300,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "Semax 10 mg",
+        "handle": "semax"
+      },
+      {
+        "label": "Selank 10 mg",
+        "handle": "selank"
+      },
+      {
+        "label": "Pinealon 20 mg",
+        "handle": "pinealon"
+      }
+    ],
+    "featured": false,
+    "rank": 72
+  },
+  {
+    "handle": "set-thymosin-alpha-1-nad-mots-c",
+    "sku": "DEV-SET-THYMOSIN-ALPHA-1-NAD-MOTS-C",
+    "title": "Thymosin Alpha-1, NAD+ & MOT-C Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "immune",
+      "longevity"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: Thymosin Alpha-1 10 mg, NAD+ 500 mg and MOT-C 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-THYMOSIN-ALPHA-1-NAD-MOTS-C-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 31500,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "Thymosin Alpha-1 10 mg",
+        "handle": "thymosin-alpha-1"
+      },
+      {
+        "label": "NAD+ 500 mg",
+        "handle": "nad"
+      },
+      {
+        "label": "MOT-C 10 mg",
+        "handle": "mot-c"
+      }
+    ],
+    "featured": false,
+    "rank": 73
+  },
+  {
+    "handle": "set-cjc-ipamorelin-sermorelin-ipamorelin",
+    "sku": "DEV-SET-CJC-IPAMORELIN-SERMORELIN-IPAMORELIN",
+    "title": "CJC-1295 (No DAC) + Ipamorelin, Sermorelin & Ipamorelin Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "growth"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: CJC-1295 (No DAC) + Ipamorelin 10 mg, Sermorelin 10 mg and Ipamorelin 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-CJC-IPAMORELIN-SERMORELIN-IPAMORELIN-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 19300,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "CJC-1295 (No DAC) + Ipamorelin 10 mg",
+        "handle": "cjc-1295-ipamorelin"
+      },
+      {
+        "label": "Sermorelin 10 mg",
+        "handle": "sermorelin"
+      },
+      {
+        "label": "Ipamorelin 10 mg",
+        "handle": "ipamorelin"
+      }
+    ],
+    "featured": false,
+    "rank": 74
+  },
+  {
+    "handle": "set-wolverine-kpv-ghk-cu",
+    "sku": "DEV-SET-WOLVERINE-KPV-GHK-CU",
+    "title": "Wolverine (BPC-157 + TB-500), KPV & GHK-Cu Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "tissue"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: Wolverine (BPC-157 + TB-500) 20 mg, KPV 10 mg and GHK-Cu 50 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-WOLVERINE-KPV-GHK-CU-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 26100,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "Wolverine (BPC-157 + TB-500) 20 mg",
+        "handle": "wolverine"
+      },
+      {
+        "label": "KPV 10 mg",
+        "handle": "kpv"
+      },
+      {
+        "label": "GHK-Cu 50 mg",
+        "handle": "ghk-cu"
+      }
+    ],
+    "featured": false,
+    "rank": 75
+  },
+  {
+    "handle": "set-bpc-157-tb-500-ipamorelin",
+    "sku": "DEV-SET-BPC-157-TB-500-IPAMORELIN",
+    "title": "BPC-157, TB-500 & Ipamorelin Set",
+    "kicker": "Research set",
+    "category": "bundles",
+    "research_areas": [
+      "tissue",
+      "growth"
+    ],
+    "compounds": [],
+    "summary": "3-vial research set: BPC-157 10 mg, TB-500 10 mg and Ipamorelin 10 mg.",
+    "type": "simple",
+    "attribute": null,
+    "variants": [
+      {
+        "sku": "DEV-SET-BPC-157-TB-500-IPAMORELIN-3VIALS",
+        "label": "3 vials",
+        "amount_mg": null,
+        "price_cents": 23100,
+        "stock_qty": 100
+      }
+    ],
+    "tiers": [],
+    "addons": [],
+    "bundle_of": [
+      {
+        "label": "BPC-157 10 mg",
+        "handle": "bpc-157"
+      },
+      {
+        "label": "TB-500 10 mg",
+        "handle": "tb-500"
+      },
+      {
+        "label": "Ipamorelin 10 mg",
+        "handle": "ipamorelin"
+      }
+    ],
+    "featured": false,
+    "rank": 76
   }
 ]

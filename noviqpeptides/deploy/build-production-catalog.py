@@ -3,16 +3,20 @@
 Build plugin/data/noviq/products.production.json from PSP vial PDPs.
 
 Rules (production only — products.json stays dev placeholders):
-  - Peptides tab, lyophilized vials only (no sprays, oral, bundles, supplies)
-  - Prices: PSP dollars → price_cents (ceil at cent precision)
-  - Variants: match PSP vial sizes per product
+  - PSP pricing applies to lyophilized vial PDPs only (never PSP sprays, oral, bundles, supplies)
+  - Prices: PSP dollars → price_cents, ceil to whole dollars ($54.99 → $55)
+  - Variants: match PSP vial sizes per product, minus sizes under 10 mg (catalog_rules.py)
   - stock_qty: 100 per variant
-  - Noviq-only SKUs (no PSP match): keep dev variants, ceil dev prices to whole dollars
+  - No PSP match (Noviq-only, AP sprays / strips / sets / vials PSP lacks): keep dev
+    variants, ceil dev prices to whole dollars
 
-Requires network. Re-run when PSP changes pricing.
+Requires network. Re-run when PSP changes pricing (after build-ap-catalog.py).
+--keep-psp-prices reuses the PSP sizes and prices already in products.production.json
+(no network), to re-apply catalog changes without picking up PSP price drift.
 """
 from __future__ import annotations
 
+import argparse
 import copy
 import html
 import json
@@ -21,6 +25,8 @@ import re
 import sys
 import urllib.request
 from pathlib import Path
+
+from catalog_rules import apply_min_mg
 
 REPO = Path(__file__).resolve().parents[1]
 DEV_PRODUCTS = REPO / "plugin/data/noviq/products.json"
@@ -54,9 +60,23 @@ PSP_SLUGS: dict[str, str] = {
     "tesamorelin": "tesamorelin-1-vial",
     "tirzepatide": "buy-tirzepatide",
     "wolverine": "bpc-157-tb-500-blend",
+    "5-amino-1mq": "buy-5-amino-1mq",
+    "adamax": "buy-adamax-peptide",
+    "ara-290": "buy-ara-290",
+    "cagrilintide": "buy-cagrilintide",
+    "kpv": "buy-kpv-peptide-1-vial",
+    "melanotan-1": "buy-melanotan-1",
+    "melanotan-2": "buy-melanotan-ii",
+    "nad": "buy-nad",
+    "p-21": "buy-p21-peptide",
+    "pe-22-28": "buy-pe-22-28",
+    "pt-141": "buy-pt-141",
+    "selank": "buy-selank",
+    "selank-semax": "buy-selank-semax-blend",
+    "ss-31": "buy-ss-31-10mg",
+    "thymosin-alpha-1": "buy-thymosin-alpha-1",
 }
 
-NOVIQ_ONLY = frozenset({"gonadorelin", "lipo-c", "retatrutide-tirzepatide"})
 STOCK_QTY = 100
 
 
@@ -105,24 +125,35 @@ def psp_variants(slug: str) -> list[dict]:
         price = v.get("display_price") or v.get("display_regular_price")
         if price is None:
             raise RuntimeError(f"Missing display_price/display_regular_price for {slug} variant {mg!r}")
-        amt = re.sub(r"[^0-9.]", "", mg)
+        amt = re.fullmatch(r"\s*([\d.]+)\s*MG\s*", mg, re.I)
         out.append(
             {
                 "label": label,
-                "amount_mg": float(amt) if amt else None,
-                "price_cents": ceil_cents(price),
+                "amount_mg": float(amt.group(1)) if amt else None,
+                "price_cents": ceil_whole_dollar_cents(ceil_cents(price)),
             }
         )
     return out
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--keep-psp-prices", action="store_true")
+    args = parser.parse_args()
+
     base = json.loads(DEV_PRODUCTS.read_text())
     psp_data: dict[str, list[dict]] = {}
+    current = {p["handle"]: p for p in json.loads(OUT.read_text())} if args.keep_psp_prices else {}
 
     for handle, slug in PSP_SLUGS.items():
         try:
-            psp_data[handle] = psp_variants(slug)
+            if args.keep_psp_prices:
+                if handle not in current:
+                    raise RuntimeError(f"not in {OUT.name}; run without --keep-psp-prices")
+                variants = current[handle]["variants"]
+            else:
+                variants = psp_variants(slug)
+            psp_data[handle] = apply_min_mg({"handle": handle, "variants": variants})["variants"]
             print(f"  {handle}: {len(psp_data[handle])} variant(s) from {slug}", file=sys.stderr)
         except Exception as exc:
             print(f"ERROR {handle} ({slug}): {exc}", file=sys.stderr)
@@ -148,7 +179,9 @@ def main() -> int:
                     }
                 )
             row["variants"] = variants
-        elif handle in NOVIQ_ONLY:
+            if len(variants) > 1:
+                row["type"] = "variable"
+        else:
             variants = []
             for v in product["variants"]:
                 variants.append(
@@ -159,9 +192,6 @@ def main() -> int:
                     }
                 )
             row["variants"] = variants
-        else:
-            print(f"ERROR: unhandled product {handle}", file=sys.stderr)
-            return 1
 
         out.append(row)
 

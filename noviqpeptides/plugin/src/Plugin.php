@@ -53,6 +53,9 @@ final class Plugin {
 			Commerce\ReferralCoupon::init();
 			Commerce\VipSharePreview::init();
 		}
+		if ( Profile::feature( 'affiliates' ) ) {
+			Affiliates\Module::init();
+		}
 		if ( Profile::feature( 'subscriptions' ) ) {
 			Commerce\Subscriptions::init();
 		}

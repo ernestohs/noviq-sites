@@ -246,6 +246,12 @@ final class ReferralCoupon {
 			)
 		);
 		$_COOKIE[ self::COOKIE ] = $code;
+
+		/**
+		 * Affiliate attribution listens so a code still counts when the coupon
+		 * itself cannot be applied (for example it loses to another promotion).
+		 */
+		do_action( 'noviq_referral_code_stashed', $code );
 	}
 
 	private static function pending_code(): string {

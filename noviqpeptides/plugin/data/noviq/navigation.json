@@ -19,6 +19,22 @@
         {
           "label": "Blends",
           "path": "/collections/blends/"
+        },
+        {
+          "label": "Bioregulators",
+          "path": "/collections/bioregulators/"
+        },
+        {
+          "label": "Liquid sprays",
+          "path": "/collections/sprays/"
+        },
+        {
+          "label": "Dissolving strips",
+          "path": "/collections/strips/"
+        },
+        {
+          "label": "Research sets",
+          "path": "/collections/bundles/"
         }
       ]
     },
@@ -83,6 +99,22 @@
         {
           "label": "Blends",
           "path": "/collections/blends/"
+        },
+        {
+          "label": "Bioregulators",
+          "path": "/collections/bioregulators/"
+        },
+        {
+          "label": "Liquid sprays",
+          "path": "/collections/sprays/"
+        },
+        {
+          "label": "Dissolving strips",
+          "path": "/collections/strips/"
+        },
+        {
+          "label": "Research sets",
+          "path": "/collections/bundles/"
         }
       ]
     },

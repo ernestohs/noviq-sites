@@ -92,7 +92,7 @@ function sku_for( \WC_Product $product ): string {
 /**
  * Render the image panel for a product.
  *
- * Order: featured image, shared vial photo fallback, then generated SVG.
+ * Order: featured image, then generated SVG.
  *
  * @param string $size Registered image size used for a real featured image.
  */
@@ -101,16 +101,6 @@ function render( \WC_Product $product, string $size = 'woocommerce_thumbnail' ):
 		return sprintf(
 			'<div class="nq-media nq-media--photo">%s</div>',
 			$product->get_image( $size )
-		);
-	}
-
-	$fallback = get_stylesheet_directory() . '/assets/img/product/vial-default.png';
-	if ( is_readable( $fallback ) ) {
-		$src = get_stylesheet_directory_uri() . '/assets/img/product/vial-default.png';
-		return sprintf(
-			'<div class="nq-media nq-media--photo"><img src="%1$s" alt="%2$s" loading="lazy" decoding="async" /></div>',
-			esc_url( $src ),
-			esc_attr( $product->get_name() )
 		);
 	}
 
